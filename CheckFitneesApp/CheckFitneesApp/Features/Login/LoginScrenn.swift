@@ -37,16 +37,16 @@ class LoginScrenn: UIView {
         return image
     }()
     
-    lazy var nameLabel: UILabel = {
+    lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Name:"
+        label.text = "Email:"
         label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
         label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         return label
     }()
     
-    lazy var nameTextField: UITextField = {
+    lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
@@ -144,8 +144,8 @@ extension LoginScrenn: ViewCode {
     func configElements() {
         addSubview(titleLabel)
         addSubview(imagePerson)
-        addSubview(nameLabel)
-        addSubview(nameTextField)
+        addSubview(emailLabel)
+        addSubview(emailTextField)
         addSubview(passwordLabel)
         addSubview(passwordTextField)
         addSubview(forgotPasswordButton)
@@ -155,23 +155,23 @@ extension LoginScrenn: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 15),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
             imagePerson.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 13),
             imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagePerson.heightAnchor.constraint(equalToConstant: 222),
-            imagePerson.widthAnchor.constraint(equalToConstant: 311),
+            imagePerson.heightAnchor.constraint(equalToConstant: 190),
+            imagePerson.widthAnchor.constraint(equalToConstant: 280),
             
-            nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 18),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
+            emailLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 18),
+            emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 10),
-            nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 10),
+            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            passwordLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 12),
+            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 12),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
             passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 10),
@@ -181,7 +181,7 @@ extension LoginScrenn: ViewCode {
             forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,constant: 5),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -25),
             
-            loginButton.topAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor,constant: 100),
+            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -60),
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             loginButton.heightAnchor.constraint(equalToConstant: 55),
