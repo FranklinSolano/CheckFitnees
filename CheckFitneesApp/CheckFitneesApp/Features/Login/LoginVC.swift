@@ -31,8 +31,8 @@ class LoginVC: UIViewController {
 
 extension LoginVC: LoginScrennProtocol {
     func actionForgotPassword() {
-//        let vc:RegisterVC = RegisterVC()
-//        self.navigationController?.pushViewController(vc, animated: false)
+        let vc:ForgotPaswordVC = ForgotPaswordVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func actionLogin() {
