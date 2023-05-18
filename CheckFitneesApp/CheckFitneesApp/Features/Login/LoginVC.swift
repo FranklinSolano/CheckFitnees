@@ -20,6 +20,11 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+    }
 }
 
 //MARK: - LoginScreenProtocol
