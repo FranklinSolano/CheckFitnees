@@ -51,7 +51,7 @@ class LoginScrenn: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
+        tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true

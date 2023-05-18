@@ -82,7 +82,7 @@ class RegisterScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
+        tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
@@ -109,6 +109,7 @@ class RegisterScreen: UIView {
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
         tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.isSecureTextEntry = true
         return tf
     }()
     
@@ -131,6 +132,7 @@ class RegisterScreen: UIView {
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
         tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.isSecureTextEntry = true
         return tf
     }()
     
@@ -227,10 +229,10 @@ extension RegisterScreen: ViewCode {
             confirmPasswordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             confirmPasswordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            singUpButton.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -50),
+            singUpButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
             singUpButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             singUpButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            singUpButton.heightAnchor.constraint(equalToConstant: 55)
+            singUpButton.heightAnchor.constraint(equalToConstant: 55),
         ])
     }
 }
