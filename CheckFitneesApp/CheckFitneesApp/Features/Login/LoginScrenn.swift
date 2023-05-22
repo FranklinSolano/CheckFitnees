@@ -125,15 +125,15 @@ class LoginScrenn: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func tapeedForgotPassword(){
+    @objc private func tapeedForgotPassword(){
         delegate?.actionForgotPassword()
     }
     
-    @objc func tapeedLoginButton(){
+    @objc private func tapeedLoginButton(){
         delegate?.actionLogin()
     }
     
-    @objc func tapeedRegisterButton(){
+    @objc private func tapeedRegisterButton(){
         delegate?.actionRegister()
     }
 }
