@@ -52,6 +52,8 @@
 		EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */; };
 		EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3D2A1B9B4100AA1692 /* NewAlertCustonScreen.swift */; };
 		EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonVC.swift */; };
+		EBAF5D432A1BB4B500AA1692 /* CalculadorasVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D422A1BB4B500AA1692 /* CalculadorasVC.swift */; };
+		EBAF5D452A1BB4C900AA1692 /* CalculadorasScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D442A1BB4C900AA1692 /* CalculadorasScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +76,8 @@
 		EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		EBAF5D3D2A1B9B4100AA1692 /* NewAlertCustonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonScreen.swift; sourceTree = "<group>"; };
 		EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonVC.swift; sourceTree = "<group>"; };
+		EBAF5D422A1BB4B500AA1692 /* CalculadorasVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadorasVC.swift; sourceTree = "<group>"; };
+		EBAF5D442A1BB4C900AA1692 /* CalculadorasScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadorasScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,7 @@
 		EB2917AE2A1658E400183A92 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EBAF5D412A1BB49D00AA1692 /* Calculadoras */,
 				EBAF5D3C2A1B9B0200AA1692 /* NewAlertCuston */,
 				EBAF5D352A197DE100AA1692 /* Home */,
 				EB2917AF2A16628800183A92 /* ForgotPassword */,
@@ -210,6 +215,15 @@
 				EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonVC.swift */,
 			);
 			path = NewAlertCuston;
+			sourceTree = "<group>";
+		};
+		EBAF5D412A1BB49D00AA1692 /* Calculadoras */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF5D422A1BB4B500AA1692 /* CalculadorasVC.swift */,
+				EBAF5D442A1BB4C900AA1692 /* CalculadorasScreen.swift */,
+			);
+			path = Calculadoras;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB2917B32A1662C300183A92 /* ForgotPaswordVC.swift in Sources */,
+				EBAF5D452A1BB4C900AA1692 /* CalculadorasScreen.swift in Sources */,
 				EBAF5D372A197DF500AA1692 /* HomeVC.swift in Sources */,
 				EB2917AB2A1658C200183A92 /* RegisterScreen.swift in Sources */,
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
@@ -329,6 +344,7 @@
 				EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */,
 				EB2917A52A1595A900183A92 /* LoginScrenn.swift in Sources */,
 				EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */,
+				EBAF5D432A1BB4B500AA1692 /* CalculadorasVC.swift in Sources */,
 				EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonVC.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 			);
