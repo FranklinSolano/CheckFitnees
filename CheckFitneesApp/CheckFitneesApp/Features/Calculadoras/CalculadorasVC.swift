@@ -30,7 +30,8 @@ extension CalculadorasVC: CalculadorasScreenProtocol {
     }
     
     func actionTaxaMetabolicaButton() {
-        
+        let vc: TaxaMetabolicaVC = TaxaMetabolicaVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func actionPorcentualGorduraButton() {
