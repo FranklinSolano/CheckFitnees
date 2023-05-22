@@ -36,8 +36,8 @@ extension LoginVC: LoginScrennProtocol {
     }
     
     func actionLogin() {
-//        let vc:RegisterVC = RegisterVC()
-//        self.navigationController?.pushViewController(vc, animated: false)
+        let vc:HomeVC = HomeVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func actionRegister() {
