@@ -26,7 +26,7 @@ class NewAlertCustonVC: UIViewController {
 
 extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
     func actionBackButton() {
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
     
     func actionAdicionarButton() {

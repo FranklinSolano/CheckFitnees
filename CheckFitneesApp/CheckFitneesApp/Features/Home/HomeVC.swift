@@ -30,7 +30,8 @@ extension HomeVC: HomeScreenProtocol {
     func actionAddButton() {
         let vc:NewAlertCustonVC = NewAlertCustonVC()
         vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: false)
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true)
     }
 }
 
@@ -38,7 +39,7 @@ extension HomeVC: HomeScreenProtocol {
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -48,6 +49,11 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc:CalculadorasVC = CalculadorasVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 }
