@@ -12,7 +12,7 @@ class HomeCell: UITableViewCell {
     lazy var contentViewHome: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        view.backgroundColor = UIColor.corTwo
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
         return view
@@ -22,8 +22,8 @@ class HomeCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Nome: Franklin Solano"
-        label.textColor = UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -31,8 +31,8 @@ class HomeCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
-        label.textColor = UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -41,7 +41,7 @@ class HomeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        backgroundColor = UIColor.corOne
         setupViewCode()
     }
     

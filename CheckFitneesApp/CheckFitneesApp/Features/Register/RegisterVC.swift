@@ -31,7 +31,7 @@ class RegisterVC: UIViewController {
 
 extension RegisterVC: RegisterScreenProtocol {
     func actionBackButton() {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     func actionSingUpButton() {

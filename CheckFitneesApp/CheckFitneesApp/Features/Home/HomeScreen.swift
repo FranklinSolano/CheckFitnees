@@ -22,8 +22,8 @@ class HomeScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "CheckFitnees"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Chalkduster", size: 40)
         label.textAlignment = .center
         return label
     }()
@@ -32,9 +32,9 @@ class HomeScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("     Adicionar Aluno", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        button.setTitleColor(UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.backgroundColor = UIColor.corTwo
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.contentHorizontalAlignment = .left
@@ -46,7 +46,7 @@ class HomeScreen: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "plus.circle.fill")
-        image.tintColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        image.tintColor = UIColor.corOne
         return image
     }()
     
@@ -54,7 +54,7 @@ class HomeScreen: UIView {
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        tv.backgroundColor = UIColor.corOne
         tv.separatorStyle = .none
         tv.register(HomeCell.self, forCellReuseIdentifier: HomeCell.identifier)
         return tv
@@ -63,8 +63,7 @@ class HomeScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
-    }
+        backgroundColor = UIColor.corOne    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

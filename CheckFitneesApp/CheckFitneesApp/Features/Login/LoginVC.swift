@@ -42,7 +42,8 @@ extension LoginVC: LoginScrennProtocol {
     
     func actionRegister() {
         let vc:RegisterVC = RegisterVC()
-        self.navigationController?.pushViewController(vc, animated: false)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true)
     }
     
     

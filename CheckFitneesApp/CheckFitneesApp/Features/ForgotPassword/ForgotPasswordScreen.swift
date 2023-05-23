@@ -23,8 +23,8 @@ class ForgotPasswordScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "CheckFitnees"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Chalkduster", size: 40)
         label.textAlignment = .center
         return label
     }()
@@ -33,7 +33,7 @@ class ForgotPasswordScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = .white
+        button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -49,8 +49,8 @@ class ForgotPasswordScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Insira o seu email abaixo para receber um link para redefinir a senha"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Trebuchet MS", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -60,8 +60,8 @@ class ForgotPasswordScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -74,7 +74,7 @@ class ForgotPasswordScreen: UIView {
         tf.placeholder = "Digite seu email:"
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = UIColor.corTwo
         return tf
     }()
     
@@ -82,9 +82,9 @@ class ForgotPasswordScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("To enter", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        button.setTitleColor(UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.backgroundColor = UIColor.corTwo
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedEnterButton), for: .touchUpInside)
@@ -94,7 +94,7 @@ class ForgotPasswordScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        backgroundColor = UIColor.corOne
     }
     
     required init?(coder: NSCoder) {

@@ -23,9 +23,9 @@ class LoginScrenn: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont(name: "Chalkduster", size: 40)
         label.text = "CheckFitnees"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
+        label.textColor = UIColor.corTwo
         label.textAlignment = .center
         return label
     }()
@@ -41,8 +41,8 @@ class LoginScrenn: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -55,7 +55,7 @@ class LoginScrenn: UIView {
         tf.placeholder = "Digite seu email:"
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = UIColor.corTwo
         return tf
     }()
     
@@ -63,8 +63,8 @@ class LoginScrenn: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Senha:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -78,7 +78,7 @@ class LoginScrenn: UIView {
         tf.isSecureTextEntry = true
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = UIColor.corTwo
         return tf
     }()
     
@@ -86,8 +86,8 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Esqueceu senha?", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        button.setTitleColor(UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 13)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
         button.addTarget(self, action: #selector(tapeedForgotPassword), for: .touchUpInside)
         return button
     }()
@@ -96,9 +96,9 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        button.setTitleColor(UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 18)
+        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.backgroundColor = UIColor.corTwo
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tapeedLoginButton), for: .touchUpInside)
@@ -109,8 +109,8 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Não tem conta ? Cadastre se", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .semibold)
-        button.setTitleColor(UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1), for: .normal)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 13)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
         button.addTarget(self, action: #selector(tapeedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -118,7 +118,7 @@ class LoginScrenn: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        backgroundColor = UIColor.corOne
     }
     
     required init?(coder: NSCoder) {

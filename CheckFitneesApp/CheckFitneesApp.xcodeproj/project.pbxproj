@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		EB1AE0272A1BC83500B32E1F /* TaxaMetabolicaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */; };
 		EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */; };
+		EB1AE02C2A1BDD1800B32E1F /* PorcentualHomemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */; };
+		EB1AE02E2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */; };
+		EB1AE0312A1C011D00B32E1F /* PorcentualMulherScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0302A1C011D00B32E1F /* PorcentualMulherScreen.swift */; };
+		EB1AE0332A1C013700B32E1F /* PorcentualMulherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0322A1C013700B32E1F /* PorcentualMulherVC.swift */; };
+		EB1AE0352A1C5A8100B32E1F /* Cors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0342A1C5A8100B32E1F /* Cors.swift */; };
 		EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29178F2A1593D900183A92 /* AppDelegate.swift */; };
 		EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917912A1593D900183A92 /* SceneDelegate.swift */; };
 		EB2917942A1593D900183A92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917932A1593D900183A92 /* LoginVC.swift */; };
@@ -61,6 +66,11 @@
 /* Begin PBXFileReference section */
 		EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaScreen.swift; sourceTree = "<group>"; };
 		EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaVC.swift; sourceTree = "<group>"; };
+		EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualHomemVC.swift; sourceTree = "<group>"; };
+		EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualHomemScreen.swift; sourceTree = "<group>"; };
+		EB1AE0302A1C011D00B32E1F /* PorcentualMulherScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualMulherScreen.swift; sourceTree = "<group>"; };
+		EB1AE0322A1C013700B32E1F /* PorcentualMulherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualMulherVC.swift; sourceTree = "<group>"; };
+		EB1AE0342A1C5A8100B32E1F /* Cors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cors.swift; sourceTree = "<group>"; };
 		EB29178C2A1593D900183A92 /* CheckFitneesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckFitneesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB29178F2A1593D900183A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB2917912A1593D900183A92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +142,17 @@
 			path = TaxaMetabolicaBasal;
 			sourceTree = "<group>";
 		};
+		EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */,
+				EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */,
+				EB1AE0302A1C011D00B32E1F /* PorcentualMulherScreen.swift */,
+				EB1AE0322A1C013700B32E1F /* PorcentualMulherVC.swift */,
+			);
+			path = PorcentualGordura;
+			sourceTree = "<group>";
+		};
 		EB2917832A1593D900183A92 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				EB2917A72A15963D00183A92 /* ViewCode.swift */,
+				EB1AE0342A1C5A8100B32E1F /* Cors.swift */,
 			);
 			path = Protocolo;
 			sourceTree = "<group>";
@@ -192,6 +214,7 @@
 		EB2917AE2A1658E400183A92 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */,
 				EB1AE0252A1BC80F00B32E1F /* TaxaMetabolicaBasal */,
 				EBAF5D412A1BB49D00AA1692 /* Calculadoras */,
 				EBAF5D3C2A1B9B0200AA1692 /* NewAlertCuston */,
@@ -347,13 +370,18 @@
 			files = (
 				EB2917B32A1662C300183A92 /* ForgotPaswordVC.swift in Sources */,
 				EBAF5D452A1BB4C900AA1692 /* CalculadorasScreen.swift in Sources */,
+				EB1AE0312A1C011D00B32E1F /* PorcentualMulherScreen.swift in Sources */,
 				EBAF5D372A197DF500AA1692 /* HomeVC.swift in Sources */,
+				EB1AE02C2A1BDD1800B32E1F /* PorcentualHomemVC.swift in Sources */,
 				EB2917AB2A1658C200183A92 /* RegisterScreen.swift in Sources */,
+				EB1AE02E2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift in Sources */,
 				EB1AE0272A1BC83500B32E1F /* TaxaMetabolicaScreen.swift in Sources */,
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
 				EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */,
 				EB2917942A1593D900183A92 /* LoginVC.swift in Sources */,
 				EB2917A82A15963D00183A92 /* ViewCode.swift in Sources */,
+				EB1AE0352A1C5A8100B32E1F /* Cors.swift in Sources */,
+				EB1AE0332A1C013700B32E1F /* PorcentualMulherVC.swift in Sources */,
 				EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */,
 				EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */,
 				EB2917AD2A1658D100183A92 /* RegisterVC.swift in Sources */,

@@ -22,7 +22,7 @@ class NewAlertCustonScreen: UIView {
     lazy var contentViewAlert: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        view.backgroundColor = UIColor.corTwo
         view.clipsToBounds = true
         view.layer.cornerRadius = 27
         return view
@@ -32,7 +32,7 @@ class NewAlertCustonScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "multiply.circle.fill"), for: .normal)
-        button.tintColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        button.tintColor = UIColor.corOne
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -41,8 +41,8 @@ class NewAlertCustonScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Nome:"
-        label.textColor = UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -55,6 +55,7 @@ class NewAlertCustonScreen: UIView {
         tf.placeholder = "Digite seu nome"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 7
+        tf.backgroundColor = UIColor.corTwo
         return tf
     }()
     
@@ -62,8 +63,8 @@ class NewAlertCustonScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade:"
-        label.textColor = UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
     
@@ -76,6 +77,7 @@ class NewAlertCustonScreen: UIView {
         tf.placeholder = "Digite sua modalidade:"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 7
+        tf.backgroundColor = UIColor.corTwo
         return tf
     }()
     
@@ -83,9 +85,9 @@ class NewAlertCustonScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Adicionar", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-        button.setTitleColor(UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 8
         button.addTarget(self, action: #selector(tappedAdicionarButton), for: .touchUpInside)
@@ -95,7 +97,7 @@ class NewAlertCustonScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        backgroundColor = UIColor.corOne
     }
     
     required init?(coder: NSCoder) {
