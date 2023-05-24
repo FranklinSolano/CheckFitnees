@@ -27,9 +27,9 @@ class CalculadorasScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 40)
+        label.text = "CheckFitness"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -38,7 +38,7 @@ class CalculadorasScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.corOne
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -47,7 +47,7 @@ class CalculadorasScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Aluno: Franklin Stilhano Solano"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -56,7 +56,7 @@ class CalculadorasScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -66,8 +66,8 @@ class CalculadorasScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Taxa Metabólica Basal", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedTaxaMetabolicaButton), for: .touchUpInside)
@@ -79,8 +79,8 @@ class CalculadorasScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Porcentual de Gordura", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedPorcentualGorduraButton), for: .touchUpInside)
@@ -92,8 +92,8 @@ class CalculadorasScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Ciclo de Carboidratos", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedCicloCarboidratosButton), for: .touchUpInside)
@@ -105,8 +105,8 @@ class CalculadorasScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Dieta Flexivel Facil", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedDietaFlexivelButton), for: .touchUpInside)
@@ -118,8 +118,8 @@ class CalculadorasScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Dieta Avançada", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedDietaAvancadaButton), for: .touchUpInside)
@@ -131,8 +131,8 @@ class CalculadorasScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Volume de Treino", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedVolumeTreinoButton), for: .touchUpInside)
@@ -142,7 +142,7 @@ class CalculadorasScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.corTwo
     }
     
     required init?(coder: NSCoder) {

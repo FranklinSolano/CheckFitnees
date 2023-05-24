@@ -22,9 +22,9 @@ class ForgotPasswordScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
+        label.text = "CheckFitness"
         label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 40)
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -38,18 +38,20 @@ class ForgotPasswordScreen: UIView {
         return button
     }()
     
-    lazy var imagePerson: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "imagePerson")
-        return image
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corTwo
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
-    
+  
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Insira o seu email abaixo para receber um link para redefinir a senha"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -60,7 +62,7 @@ class ForgotPasswordScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
@@ -74,7 +76,7 @@ class ForgotPasswordScreen: UIView {
         tf.placeholder = "Digite seu email:"
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -83,8 +85,8 @@ class ForgotPasswordScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("To enter", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedEnterButton), for: .touchUpInside)
@@ -116,7 +118,7 @@ extension ForgotPasswordScreen: ViewCode {
     func configElements() {
         addSubview(titleLabel)
         addSubview(backButton)
-        addSubview(imagePerson)
+        addSubview(contentView)
         addSubview(descriptionLabel)
         addSubview(emailLabel)
         addSubview(emailTextField)
@@ -132,12 +134,12 @@ extension ForgotPasswordScreen: ViewCode {
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            imagePerson.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 13),
-            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagePerson.heightAnchor.constraint(equalToConstant: 190),
-            imagePerson.widthAnchor.constraint(equalToConstant: 280),
+            contentView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 40),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            descriptionLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
+            descriptionLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
             descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
@@ -148,7 +150,7 @@ extension ForgotPasswordScreen: ViewCode {
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            enterButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
+            enterButton.bottomAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 100),
             enterButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             enterButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             enterButton.heightAnchor.constraint(equalToConstant: 55)

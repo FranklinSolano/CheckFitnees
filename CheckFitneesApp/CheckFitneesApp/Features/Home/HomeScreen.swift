@@ -21,9 +21,9 @@ class HomeScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 40)
+        label.text = "CheckFitness"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -33,10 +33,10 @@ class HomeScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("     Adicionar Aluno", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = 15
         button.contentHorizontalAlignment = .left
         button.addTarget(self, action: #selector(tappedAddAluno), for: .touchUpInside)
         return button
@@ -46,7 +46,7 @@ class HomeScreen: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "plus.circle.fill")
-        image.tintColor = UIColor.corOne
+        image.tintColor = UIColor.corTwo
         return image
     }()
     
@@ -54,7 +54,7 @@ class HomeScreen: UIView {
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor.corOne
+        tv.backgroundColor = UIColor.corTwo
         tv.separatorStyle = .none
         tv.register(HomeCell.self, forCellReuseIdentifier: HomeCell.identifier)
         return tv
@@ -63,7 +63,9 @@ class HomeScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne    }
+        backgroundColor = UIColor.corTwo
+        
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -103,8 +105,8 @@ extension HomeScreen: ViewCode {
             
             imagePlus.centerYAnchor.constraint(equalTo: addAlunoButton.centerYAnchor),
             imagePlus.trailingAnchor.constraint(equalTo: addAlunoButton.trailingAnchor,constant: -30),
-            imagePlus.heightAnchor.constraint(equalToConstant: 55),
-            imagePlus.widthAnchor.constraint(equalToConstant: 55),
+            imagePlus.heightAnchor.constraint(equalToConstant: 30),
+            imagePlus.widthAnchor.constraint(equalToConstant: 30),
             
             tableView.topAnchor.constraint(equalTo: addAlunoButton.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),

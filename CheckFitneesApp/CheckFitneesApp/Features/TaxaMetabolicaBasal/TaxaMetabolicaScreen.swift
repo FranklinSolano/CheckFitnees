@@ -22,9 +22,9 @@ class TaxaMetabolicaScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 40)
+        label.text = "CheckFitness"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -33,7 +33,7 @@ class TaxaMetabolicaScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.corOne
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -42,7 +42,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Aluno: Franklin Stilhano Solano"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -51,7 +51,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -60,7 +60,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Peso:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -70,11 +70,11 @@ class TaxaMetabolicaScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite seu Peso"
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Digite seu peso em cm"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -82,7 +82,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Altura:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -92,11 +92,11 @@ class TaxaMetabolicaScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite sua altura"
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Digite sua altura em cm"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -104,7 +104,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Idade:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -114,11 +114,11 @@ class TaxaMetabolicaScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
+        tf.keyboardType = .numberPad
         tf.placeholder = "Digite sua idade"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -126,7 +126,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sexo:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -140,7 +140,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.placeholder = "Digite seu sexo:"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -148,7 +148,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Biotipo:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -162,7 +162,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.placeholder = "Digite seu biotipo"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -170,7 +170,7 @@ class TaxaMetabolicaScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sua Taxa Metabólica Basal é 2700 kcal"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 25)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -181,9 +181,9 @@ class TaxaMetabolicaScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Calcular", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 20)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedCalcularButton), for: .touchUpInside)
@@ -193,7 +193,7 @@ class TaxaMetabolicaScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.corTwo
     }
     
     required init?(coder: NSCoder) {

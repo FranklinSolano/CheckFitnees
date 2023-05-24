@@ -12,7 +12,7 @@ class HomeCell: UITableViewCell {
     lazy var contentViewHome: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.corOne
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
         return view
@@ -22,7 +22,7 @@ class HomeCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Nome: Franklin Solano"
-        label.textColor = UIColor.corOne
+        label.textColor = UIColor.corTwo
         label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
@@ -31,7 +31,7 @@ class HomeCell: UITableViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corOne
+        label.textColor = UIColor.corTwo
         label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
@@ -41,7 +41,7 @@ class HomeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.corTwo
         setupViewCode()
     }
     

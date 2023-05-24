@@ -23,9 +23,9 @@ class RegisterScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
+        label.text = "CheckFitness"
         label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 40)
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -46,13 +46,6 @@ class RegisterScreen: UIView {
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
-    }()
-    
-    lazy var imagePerson: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "imagePerson")
-        return image
     }()
     
     lazy var nameLabel: UILabel = {
@@ -185,7 +178,6 @@ extension RegisterScreen: ViewCode {
         addSubview(titleLabel)
         addSubview(backButton)
         addSubview(contentView)
-//        addSubview(imagePerson)
         addSubview(nameLabel)
         addSubview(nameTextField)
         addSubview(emailLabel)
@@ -211,7 +203,7 @@ extension RegisterScreen: ViewCode {
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 80),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
             nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 10),
@@ -239,7 +231,7 @@ extension RegisterScreen: ViewCode {
             confirmPasswordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             confirmPasswordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            singUpButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
+            singUpButton.bottomAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor,constant: 100),
             singUpButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             singUpButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             singUpButton.heightAnchor.constraint(equalToConstant: 55),

@@ -23,9 +23,9 @@ class PorcentualHomemScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 40)
+        label.text = "CheckFitness"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -34,7 +34,7 @@ class PorcentualHomemScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.corOne
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -43,7 +43,7 @@ class PorcentualHomemScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Aluno: Franklin Stilhano Solano"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -52,7 +52,7 @@ class PorcentualHomemScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -62,11 +62,11 @@ class PorcentualHomemScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Homem", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 20)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.setTitleColor(UIColor.corOne, for: .normal)
         
         let bottomBorder = CALayer()
         bottomBorder.frame = CGRect(x: 0, y: button.frame.height - 1, width: button.frame.width, height: 2)
-        bottomBorder.backgroundColor = UIColor.corTwo.cgColor
+        bottomBorder.backgroundColor = UIColor.corOne.cgColor
         button.layer.addSublayer(bottomBorder)
         
         return button
@@ -77,7 +77,7 @@ class PorcentualHomemScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Mulher", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 20)
-        button.setTitleColor(UIColor.corTwo , for: .normal)
+        button.setTitleColor(UIColor.corOne , for: .normal)
         button.addTarget(self, action: #selector(tappedCalculoMulherButton), for: .touchUpInside)
         return button
     }()
@@ -86,7 +86,7 @@ class PorcentualHomemScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Altura:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -96,11 +96,11 @@ class PorcentualHomemScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite sua Altura"
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Ex: 170"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -108,7 +108,7 @@ class PorcentualHomemScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Cintura:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -118,28 +118,19 @@ class PorcentualHomemScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite sua cintura"
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Ex: 75"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
-
-lazy var quadrilLabel: UILabel = {
-    let label = UILabel()
-    label.translatesAutoresizingMaskIntoConstraints = false
-    label.text = "Quadril:"
-    label.textColor = UIColor.corTwo
-    label.font = UIFont(name: "Trebuchet MS", size: 20)
-    return label
-}()
     
     lazy var pescocoLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Pescoço:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -149,11 +140,11 @@ lazy var quadrilLabel: UILabel = {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite seu pescoço"
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Ex: 35"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -161,7 +152,7 @@ lazy var quadrilLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Peso:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -171,11 +162,11 @@ lazy var quadrilLabel: UILabel = {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite seu peso:"
+        tf.keyboardType = .numberPad
+        tf.placeholder = "Ex: 70"
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -183,9 +174,9 @@ lazy var quadrilLabel: UILabel = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Calcular", for: .normal)
-        button.titleLabel?.font =  UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedCalcularButton), for: .touchUpInside)
@@ -196,7 +187,7 @@ lazy var quadrilLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "% de gordura (BF)"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -210,7 +201,7 @@ lazy var quadrilLabel: UILabel = {
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
         tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -218,7 +209,7 @@ lazy var quadrilLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Massa magra (kg)"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -232,7 +223,7 @@ lazy var quadrilLabel: UILabel = {
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
         tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -240,7 +231,7 @@ lazy var quadrilLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Massa gorda (kg)"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 20)
         return label
     }()
@@ -254,14 +245,14 @@ lazy var quadrilLabel: UILabel = {
         tf.clipsToBounds = true
         tf.layer.cornerRadius = 8
         tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.corTwo
     }
     
     required init?(coder: NSCoder) {
@@ -365,11 +356,11 @@ extension PorcentualHomemScreen: ViewCode {
                 pesoTextField.trailingAnchor.constraint(equalTo: alturaTextField.trailingAnchor),
                 pesoTextField.heightAnchor.constraint(equalToConstant: 25),
                 
-                resultButton.topAnchor.constraint(equalTo: pesoTextField.bottomAnchor,constant: 80),
+                resultButton.topAnchor.constraint(equalTo: pesoTextField.bottomAnchor,constant: 35),
                 resultButton.centerXAnchor.constraint(equalTo: centerXAnchor),
                 resultButton.widthAnchor.constraint(equalToConstant: 150),
                 
-                bfGorduraLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 25),
+                bfGorduraLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 40),
                 bfGorduraLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
                 
                 bfGorduraTextField.topAnchor.constraint(equalTo: bfGorduraLabel.bottomAnchor,constant: 10),

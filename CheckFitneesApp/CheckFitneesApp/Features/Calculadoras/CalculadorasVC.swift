@@ -26,8 +26,7 @@ class CalculadorasVC: UIViewController {
 
 extension CalculadorasVC: CalculadorasScreenProtocol {
     func actionBackButton() {
-        let vc:HomeVC = HomeVC()
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func actionTaxaMetabolicaButton() {

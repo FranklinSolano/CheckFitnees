@@ -23,8 +23,8 @@ class LoginScrenn: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Chalkduster", size: 40)
-        label.text = "CheckFitnees"
+        label.font = UIFont(name: "Chalkduster", size: 30)
+        label.text = "CheckFitness"
         label.textColor = UIColor.corTwo
         label.textAlignment = .center
         return label
@@ -33,15 +33,25 @@ class LoginScrenn: UIView {
     lazy var imagePerson: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "imagePerson")
+        image.image = UIImage(systemName: "figure.strengthtraining.traditional")
+        image.tintColor = UIColor.corTwo
         return image
+    }()
+    
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corTwo
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
     
     lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
@@ -55,7 +65,7 @@ class LoginScrenn: UIView {
         tf.placeholder = "Digite seu email:"
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -63,7 +73,7 @@ class LoginScrenn: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Senha:"
-        label.textColor = UIColor.corTwo
+        label.textColor = UIColor.corOne
         label.font = UIFont(name: "Trebuchet MS", size: 16)
         return label
     }()
@@ -78,7 +88,7 @@ class LoginScrenn: UIView {
         tf.isSecureTextEntry = true
         tf.layer.cornerRadius = 12
         tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTwo
+        tf.backgroundColor = UIColor.corTextField
         return tf
     }()
     
@@ -86,8 +96,8 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Esqueceu senha?", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 13)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 15)
+        button.setTitleColor(UIColor.corOne, for: .normal)
         button.addTarget(self, action: #selector(tapeedForgotPassword), for: .touchUpInside)
         return button
     }()
@@ -97,8 +107,8 @@ class LoginScrenn: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 18)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.backgroundColor = UIColor.corTwo
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tapeedLoginButton), for: .touchUpInside)
@@ -109,8 +119,8 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Não tem conta ? Cadastre se", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 13)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.setTitleColor(UIColor.corOne, for: .normal)
         button.addTarget(self, action: #selector(tapeedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -144,6 +154,7 @@ extension LoginScrenn: ViewCode {
     func configElements() {
         addSubview(titleLabel)
         addSubview(imagePerson)
+        addSubview(contentView)
         addSubview(emailLabel)
         addSubview(emailTextField)
         addSubview(passwordLabel)
@@ -159,12 +170,17 @@ extension LoginScrenn: ViewCode {
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            imagePerson.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 13),
+            imagePerson.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 30),
             imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagePerson.heightAnchor.constraint(equalToConstant: 190),
-            imagePerson.widthAnchor.constraint(equalToConstant: 280),
+            imagePerson.heightAnchor.constraint(equalToConstant: 105),
+            imagePerson.widthAnchor.constraint(equalToConstant: 150),
             
-            emailLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 18),
+            contentView.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 20),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            emailLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 40),
             emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
             emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 10),
@@ -181,7 +197,7 @@ extension LoginScrenn: ViewCode {
             forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,constant: 5),
             forgotPasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -25),
             
-            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -60),
+            loginButton.bottomAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor,constant: 100),
             loginButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             loginButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             loginButton.heightAnchor.constraint(equalToConstant: 55),

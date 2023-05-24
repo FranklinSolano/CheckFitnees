@@ -30,7 +30,7 @@ extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
     }
     
     func actionAdicionarButton() {
-        dismiss(animated: false)
+        dismiss(animated: true)
     }
     
     
