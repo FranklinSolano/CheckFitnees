@@ -72,7 +72,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -94,7 +94,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -116,7 +116,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -138,7 +138,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -160,7 +160,7 @@ class TaxaMetabolicaScreen: UIView {
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf

@@ -64,7 +64,7 @@ class LoginScrenn: UIView {
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -87,7 +87,7 @@ class LoginScrenn: UIView {
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.isSecureTextEntry = true
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf

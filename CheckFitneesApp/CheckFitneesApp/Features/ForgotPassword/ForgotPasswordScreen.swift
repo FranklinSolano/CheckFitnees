@@ -76,7 +76,7 @@ class ForgotPasswordScreen: UIView {
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf

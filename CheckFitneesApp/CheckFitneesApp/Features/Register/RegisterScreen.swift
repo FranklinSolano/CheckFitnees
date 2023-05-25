@@ -62,10 +62,9 @@ class RegisterScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.attributedPlaceholder = NSAttributedString(string: "Digite seu nome:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite seu nome:"
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -86,10 +85,9 @@ class RegisterScreen: UIView {
         tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.borderStyle = .none
         return tf
@@ -109,11 +107,9 @@ class RegisterScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite sua senha:"
-        tf.layer.cornerRadius = 12
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.isSecureTextEntry = true
         tf.borderStyle = .none
@@ -134,10 +130,9 @@ class RegisterScreen: UIView {
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha novamente:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite sua senha novamente:"
-        tf.backgroundColor = .black
+        tf.backgroundColor = UIColor.corTwo
         tf.textColor = UIColor.corOne
         tf.isSecureTextEntry = true
         tf.borderStyle = .none
