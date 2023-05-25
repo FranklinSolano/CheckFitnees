@@ -43,7 +43,7 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Aluno: Franklin Stilhano Solano"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
@@ -52,7 +52,7 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
@@ -61,20 +61,20 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Peso:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var pesoTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Digite seu peso em cm"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -83,20 +83,20 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Altura:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var alturaTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 170",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Digite sua altura em cm"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -105,20 +105,20 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Idade:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var idadeTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua idade:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Digite sua idade"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -127,20 +127,20 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sexo:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var sexoTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu sexo:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.placeholder = "Digite seu sexo:"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -149,20 +149,20 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Biotipo:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var biotipoTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu biotipo",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.placeholder = "Digite seu biotipo"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -171,7 +171,7 @@ class TaxaMetabolicaScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Sua Taxa Metabólica Basal é 2700 kcal"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 25)
+        label.font = UIFont(name: "PingFang SC", size: 25)
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
@@ -194,10 +194,19 @@ class TaxaMetabolicaScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
+        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configTextField(){
+        pesoTextField.setBottomBorder()
+        alturaTextField.setBottomBorder()
+        idadeTextField.setBottomBorder()
+        sexoTextField.setBottomBorder()
+        biotipoTextField.setBottomBorder()
     }
     
     @objc private func tappedBackButton(){
@@ -251,7 +260,7 @@ extension TaxaMetabolicaScreen: ViewCode {
             pesoLabel.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 60),
             pesoLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            pesoTextField.topAnchor.constraint(equalTo: pesoLabel.topAnchor),
+            pesoTextField.centerYAnchor.constraint(equalTo: pesoLabel.centerYAnchor),
             pesoTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
             pesoTextField.leadingAnchor.constraint(equalTo: pesoLabel.trailingAnchor,constant: 8),
             pesoTextField.heightAnchor.constraint(equalToConstant: 25),
@@ -260,7 +269,7 @@ extension TaxaMetabolicaScreen: ViewCode {
             alturaLabel.topAnchor.constraint(equalTo: pesoLabel.bottomAnchor,constant: 25),
             alturaLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),
             
-            alturaTextField.topAnchor.constraint(equalTo: pesoTextField.bottomAnchor,constant: 25),
+            alturaTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
             alturaTextField.leadingAnchor.constraint(equalTo: alturaLabel.trailingAnchor,constant: 8),
             alturaTextField.heightAnchor.constraint(equalToConstant: 25),
             alturaTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
@@ -268,7 +277,7 @@ extension TaxaMetabolicaScreen: ViewCode {
             idadeLabel.topAnchor.constraint(equalTo: alturaLabel.bottomAnchor,constant: 25),
             idadeLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),
             
-            idadeTextField.topAnchor.constraint(equalTo: alturaTextField.bottomAnchor,constant: 25),
+            idadeTextField.centerYAnchor.constraint(equalTo: idadeLabel.centerYAnchor),
             idadeTextField.leadingAnchor.constraint(equalTo: idadeLabel.trailingAnchor,constant: 8),
             idadeTextField.heightAnchor.constraint(equalToConstant: 25),
             idadeTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
@@ -276,7 +285,7 @@ extension TaxaMetabolicaScreen: ViewCode {
             sexoLabel.topAnchor.constraint(equalTo: idadeLabel.bottomAnchor,constant: 25),
             sexoLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),
             
-            sexoTextField.topAnchor.constraint(equalTo: idadeTextField.bottomAnchor,constant: 25),
+            sexoTextField.centerYAnchor.constraint(equalTo: sexoLabel.centerYAnchor),
             sexoTextField.leadingAnchor.constraint(equalTo: sexoLabel.trailingAnchor,constant: 8),
             sexoTextField.heightAnchor.constraint(equalToConstant: 25),
             sexoTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
@@ -284,7 +293,7 @@ extension TaxaMetabolicaScreen: ViewCode {
             biotipoLabel.topAnchor.constraint(equalTo: sexoLabel.bottomAnchor,constant: 25),
             biotipoLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),
             
-            biotipoTextField.topAnchor.constraint(equalTo: sexoTextField.bottomAnchor,constant: 23),
+            biotipoTextField.centerYAnchor.constraint(equalTo: biotipoLabel.centerYAnchor),
             biotipoTextField.leadingAnchor.constraint(equalTo: biotipoLabel.trailingAnchor,constant: 8),
             biotipoTextField.heightAnchor.constraint(equalToConstant: 25),
             biotipoTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),

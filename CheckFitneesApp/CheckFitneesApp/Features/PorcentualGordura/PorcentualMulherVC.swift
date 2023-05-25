@@ -28,8 +28,7 @@ class PorcentualMulherVC: UIViewController {
 
 extension PorcentualMulherVC: PorcentualMulherScreenProtocol {
     func actionBackButton() {
-        let vc:CalculadorasVC = CalculadorasVC()
-        self.navigationController?.pushViewController(vc, animated: false)
+        self.navigationController?.popViewController(animated: false)
     }
     
     func actionHomemButton() {

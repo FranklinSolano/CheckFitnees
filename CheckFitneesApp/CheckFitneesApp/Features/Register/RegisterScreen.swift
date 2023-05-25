@@ -53,20 +53,21 @@ class RegisterScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Name:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var nameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu nome:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite seu nome:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -75,20 +76,22 @@ class RegisterScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -97,21 +100,23 @@ class RegisterScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Password:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite sua senha:"
         tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
         tf.isSecureTextEntry = true
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -120,21 +125,22 @@ class RegisterScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Confirm Password:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha novamente:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite sua senha novamente:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
         tf.isSecureTextEntry = true
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -142,7 +148,7 @@ class RegisterScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("SingUp", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 18)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         button.setTitleColor(UIColor.corTwo, for: .normal)
         button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
@@ -155,10 +161,18 @@ class RegisterScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
+        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configTextField(){
+        nameTextField.setBottomBorder()
+        emailTextField.setBottomBorder()
+        passwordTextField.setBottomBorder()
+        confirmPasswordTextField.setBottomBorder()
     }
     
     @objc private func tappedBackButton(){
@@ -168,7 +182,6 @@ class RegisterScreen: UIView {
     @objc private func tappedSingUpButton(){
         delegate?.actionSingUpButton()
     }
-    
 }
 
 //MARK: - ViewCode

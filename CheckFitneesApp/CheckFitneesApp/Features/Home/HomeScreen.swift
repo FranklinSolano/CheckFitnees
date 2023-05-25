@@ -32,7 +32,7 @@ class HomeScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("     Adicionar Aluno", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 16)
         button.setTitleColor(UIColor.corTwo, for: .normal)
         button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true

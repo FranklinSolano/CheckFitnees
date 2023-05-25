@@ -23,7 +23,7 @@ class HomeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Nome: Franklin Solano"
         label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
@@ -32,7 +32,7 @@ class HomeCell: UITableViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
         label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     

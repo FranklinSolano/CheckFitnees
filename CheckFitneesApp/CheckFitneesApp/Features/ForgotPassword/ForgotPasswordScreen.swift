@@ -52,7 +52,7 @@ class ForgotPasswordScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Insira o seu email abaixo para receber um link para redefinir a senha"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
@@ -63,20 +63,22 @@ class ForgotPasswordScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -84,7 +86,7 @@ class ForgotPasswordScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("To enter", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         button.setTitleColor(UIColor.corTwo, for: .normal)
         button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
@@ -97,6 +99,7 @@ class ForgotPasswordScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
+        emailTextField.setBottomBorder()
     }
     
     required init?(coder: NSCoder) {

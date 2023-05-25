@@ -44,7 +44,7 @@ class PorcentualMulherScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Aluno: Franklin Stilhano Solano"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
@@ -53,7 +53,7 @@ class PorcentualMulherScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Modalidade: Academia"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
@@ -61,7 +61,7 @@ class PorcentualMulherScreen: UIView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Homem", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 20)
+        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 20)
         button.setTitleColor(UIColor.corOne, for: .normal)
         button.addTarget(self, action: #selector(tappedCalculoHomemButton), for: .touchUpInside)
         return button
@@ -71,7 +71,7 @@ class PorcentualMulherScreen: UIView {
         let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Mulher", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 20)
+        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 20)
         button.setTitleColor(UIColor.corOne, for: .normal)
         
         let bottomBorder = CALayer()
@@ -81,113 +81,157 @@ class PorcentualMulherScreen: UIView {
         return button
     }()
     
-    lazy var alturaLabel: UILabel = {
+    lazy var triciptalLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Altura:"
+        label.text = "Triciptal:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
-    lazy var alturaTextField: UITextField = {
+    lazy var triciptalTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 32",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Ex: 170"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
-    lazy var cinturaLabel: UILabel = {
+    lazy var peitoralLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Cintura:"
+        label.text = "Peitoral:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
-    lazy var cinturaTextField: UITextField = {
+    lazy var peitoralTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 80",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Ex: 75"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
-    lazy var quadrilLabel: UILabel = {
+    lazy var supraLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Quadril:"
+        label.text = "Supra-ilíaca"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
-    lazy var quadrilTextField: UITextField = {
+    lazy var supraTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Ex: 80"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
-    lazy var pescocoLabel: UILabel = {
+    lazy var abdominalLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Pescoço:"
+        label.text = "Abdominal"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
-    lazy var pescocoTextField: UITextField = {
+    lazy var abdominalTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 75",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Ex: 35"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
-    lazy var pesoLabel: UILabel = {
+    lazy var coxaLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Peso:"
+        label.text = "Coxa:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
-    lazy var pesoTextField: UITextField = {
+    lazy var coxaTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 65",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .numberPad
-        tf.placeholder = "Ex: 70"
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
+        return tf
+    }()
+    
+    lazy var subescapularLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Subescapular:"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "PingFang SC", size: 20)
+        return label
+    }()
+    
+    lazy var subescapularTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 55",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        tf.autocorrectionType = .no
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .numberPad
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
+        return tf
+    }()
+    
+    lazy var axilarLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Axiliar Média:"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "PingFang SC", size: 20)
+        return label
+    }()
+    
+    lazy var axilarTextField: UITextField = {
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 32",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        tf.autocorrectionType = .no
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .numberPad
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -209,20 +253,21 @@ class PorcentualMulherScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "% de gordura (BF)"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var bfGorduraTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "13.4 %"
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
+        tf.keyboardType = .numberPad
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
         tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corTextField
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -231,42 +276,21 @@ class PorcentualMulherScreen: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Massa magra (kg)"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        label.font = UIFont(name: "PingFang SC", size: 20)
         return label
     }()
     
     lazy var massaMagraTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.text = "50.0 Kg"
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
+        tf.keyboardType = .numberPad
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
         tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corTextField
-        return tf
-    }()
-    
-    lazy var massaGordaLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Massa gorda (kg)"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
-        return label
-    }()
-    
-    lazy var massaGordaTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.clipsToBounds = true
-        tf.layer.cornerRadius = 8
-        tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corTextField
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -274,10 +298,23 @@ class PorcentualMulherScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
+        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configTextField(){
+        triciptalTextField.setBottomBorder()
+        peitoralTextField.setBottomBorder()
+        supraTextField.setBottomBorder()
+        abdominalTextField.setBottomBorder()
+        coxaTextField.setBottomBorder()
+        subescapularTextField.setBottomBorder()
+        axilarTextField.setBottomBorder()
+        bfGorduraTextField.setBottomBorder()
+        massaMagraTextField.setBottomBorder()
     }
     
     @objc private func tappedBackButton(){
@@ -303,23 +340,25 @@ extension PorcentualMulherScreen: ViewCode {
         addSubview(modalidadeLabel)
         addSubview(homemButton)
         addSubview(mulherButton)
-        addSubview(alturaLabel)
-        addSubview(alturaTextField)
-        addSubview(cinturaLabel)
-        addSubview(cinturaTextField)
-        addSubview(quadrilLabel)
-        addSubview(quadrilTextField)
-        addSubview(pescocoLabel)
-        addSubview(pescocoTextField)
-        addSubview(pesoLabel)
-        addSubview(pesoTextField)
+        addSubview(triciptalLabel)
+        addSubview(triciptalTextField)
+        addSubview(peitoralLabel)
+        addSubview(peitoralTextField)
+        addSubview(supraLabel)
+        addSubview(supraTextField)
+        addSubview(abdominalLabel)
+        addSubview(abdominalTextField)
+        addSubview(coxaLabel)
+        addSubview(coxaTextField)
+        addSubview(subescapularLabel)
+        addSubview(subescapularTextField)
+        addSubview(axilarLabel)
+        addSubview(axilarTextField)
         addSubview(resultButton)
         addSubview(bfGorduraLabel)
         addSubview(bfGorduraTextField)
         addSubview(massaMagraLabel)
         addSubview(massaMagraTextField)
-        addSubview(massaGordaLabel)
-        addSubview(massaGordaTextField)
     }
     
     func configConstraint() {
@@ -342,56 +381,71 @@ extension PorcentualMulherScreen: ViewCode {
             homemButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 100),
             homemButton.widthAnchor.constraint(equalToConstant: 100),
             
-            
             mulherButton.topAnchor.constraint(equalTo: homemButton.topAnchor),
             mulherButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -100),
             mulherButton.widthAnchor.constraint(equalToConstant: 100),
             
-            alturaLabel.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 30),
-            alturaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            triciptalLabel.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 30),
+            triciptalLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            alturaTextField.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 30),
-            alturaTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-            alturaTextField.leadingAnchor.constraint(equalTo: alturaLabel.trailingAnchor,constant: 8),
-            alturaTextField.heightAnchor.constraint(equalToConstant: 25),
+            triciptalTextField.centerYAnchor.constraint(equalTo: triciptalLabel.centerYAnchor),
+            triciptalTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            triciptalTextField.leadingAnchor.constraint(equalTo: triciptalLabel.trailingAnchor,constant: 8),
+            triciptalTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            cinturaLabel.topAnchor.constraint(equalTo: alturaTextField.bottomAnchor,constant: 17),
-            cinturaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            peitoralLabel.topAnchor.constraint(equalTo: triciptalTextField.bottomAnchor,constant: 17),
+            peitoralLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            cinturaTextField.topAnchor.constraint(equalTo: alturaTextField.bottomAnchor,constant: 17),
-            cinturaTextField.leadingAnchor.constraint(equalTo: cinturaLabel.trailingAnchor,constant: 8),
-            cinturaTextField.trailingAnchor.constraint(equalTo: alturaTextField.trailingAnchor),
-            cinturaTextField.heightAnchor.constraint(equalToConstant: 25),
+            peitoralTextField.centerYAnchor.constraint(equalTo: peitoralLabel.centerYAnchor),
+            peitoralTextField.leadingAnchor.constraint(equalTo: peitoralLabel.trailingAnchor,constant: 8),
+            peitoralTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
+            peitoralTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            quadrilLabel.topAnchor.constraint(equalTo: cinturaLabel.bottomAnchor,constant: 17),
-            quadrilLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            supraLabel.topAnchor.constraint(equalTo: peitoralLabel.bottomAnchor,constant: 17),
+           supraLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            quadrilTextField.topAnchor.constraint(equalTo: cinturaTextField.bottomAnchor,constant: 17),
-            quadrilTextField.leadingAnchor.constraint(equalTo: quadrilLabel.trailingAnchor,constant: 8),
-            quadrilTextField.trailingAnchor.constraint(equalTo: alturaTextField.trailingAnchor),
-            quadrilTextField.heightAnchor.constraint(equalToConstant: 25),
+            supraTextField.centerYAnchor.constraint(equalTo: supraLabel.centerYAnchor),
+            supraTextField.leadingAnchor.constraint(equalTo: supraLabel.trailingAnchor,constant: 8),
+            supraTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
+            supraTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            pescocoLabel.topAnchor.constraint(equalTo: quadrilLabel.bottomAnchor,constant: 17),
-            pescocoLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            abdominalLabel.topAnchor.constraint(equalTo: supraLabel.bottomAnchor,constant: 17),
+            abdominalLabel.leadingAnchor.constraint(equalTo: triciptalLabel.leadingAnchor),
             
-            pescocoTextField.topAnchor.constraint(equalTo: quadrilTextField.bottomAnchor,constant: 17),
-            pescocoTextField.leadingAnchor.constraint(equalTo: pescocoLabel.trailingAnchor,constant: 8),
-            pescocoTextField.trailingAnchor.constraint(equalTo: alturaTextField.trailingAnchor),
-            pescocoTextField.heightAnchor.constraint(equalToConstant: 25),
+            abdominalTextField.centerYAnchor.constraint(equalTo: abdominalLabel.centerYAnchor),
+            abdominalTextField.leadingAnchor.constraint(equalTo: abdominalLabel.trailingAnchor,constant: 8),
+            abdominalTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
+            abdominalTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            pesoLabel.topAnchor.constraint(equalTo: pescocoLabel.bottomAnchor,constant: 17),
-            pesoLabel.leadingAnchor.constraint(equalTo: alturaLabel.leadingAnchor),
+            coxaLabel.topAnchor.constraint(equalTo: abdominalTextField.bottomAnchor,constant: 17),
+            coxaLabel.leadingAnchor.constraint(equalTo: triciptalLabel.leadingAnchor),
             
-            pesoTextField.topAnchor.constraint(equalTo: pescocoTextField.bottomAnchor,constant: 17),
-            pesoTextField.leadingAnchor.constraint(equalTo: pesoLabel.trailingAnchor,constant: 8),
-            pesoTextField.trailingAnchor.constraint(equalTo: alturaTextField.trailingAnchor),
-            pesoTextField.heightAnchor.constraint(equalToConstant: 25),
+            coxaTextField.centerYAnchor.constraint(equalTo: coxaLabel.centerYAnchor),
+            coxaTextField.leadingAnchor.constraint(equalTo: coxaLabel.trailingAnchor,constant: 8),
+            coxaTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
+            coxaTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            resultButton.topAnchor.constraint(equalTo: pesoTextField.bottomAnchor,constant: 45),
+            subescapularLabel.topAnchor.constraint(equalTo: coxaTextField.bottomAnchor,constant: 17),
+            subescapularLabel.leadingAnchor.constraint(equalTo: triciptalLabel.leadingAnchor),
+            
+            subescapularTextField.centerYAnchor.constraint(equalTo: subescapularLabel.centerYAnchor),
+            subescapularTextField.leadingAnchor.constraint(equalTo: subescapularLabel.trailingAnchor,constant: 8),
+            subescapularTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
+            subescapularTextField.heightAnchor.constraint(equalToConstant: 25),
+            
+            axilarLabel.topAnchor.constraint(equalTo: subescapularLabel.bottomAnchor,constant: 17),
+            axilarLabel.leadingAnchor.constraint(equalTo: triciptalLabel.leadingAnchor),
+            
+            axilarTextField.centerYAnchor.constraint(equalTo: axilarLabel.centerYAnchor),
+            axilarTextField.leadingAnchor.constraint(equalTo: axilarLabel.trailingAnchor,constant: 8),
+            axilarTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
+            axilarTextField.heightAnchor.constraint(equalToConstant: 25),
+            
+            resultButton.topAnchor.constraint(equalTo: axilarLabel.bottomAnchor,constant: 40),
             resultButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             resultButton.widthAnchor.constraint(equalToConstant: 150),
             
-            bfGorduraLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 25),
+            bfGorduraLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 40),
             bfGorduraLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
             
             bfGorduraTextField.topAnchor.constraint(equalTo: bfGorduraLabel.bottomAnchor,constant: 10),
@@ -403,15 +457,7 @@ extension PorcentualMulherScreen: ViewCode {
             
             massaMagraTextField.topAnchor.constraint(equalTo: massaMagraLabel.bottomAnchor,constant: 10),
             massaMagraTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            massaMagraTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            
-            massaGordaLabel.topAnchor.constraint(equalTo: massaMagraTextField.bottomAnchor,constant: 15),
-            massaGordaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
-            
-            massaGordaTextField.topAnchor.constraint(equalTo: massaGordaLabel.bottomAnchor,constant: 10),
-            massaGordaTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            massaGordaTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20)
-        ])
+            massaMagraTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20)        ])
     }
 }
 

@@ -52,20 +52,21 @@ class LoginScrenn: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
-        tf.placeholder = "Digite seu email:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -74,21 +75,21 @@ class LoginScrenn: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Senha:"
         label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 16)
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
-        tf.placeholder = "Digite sua senha"
         tf.isSecureTextEntry = true
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor.corTextField
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -96,7 +97,7 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Esqueceu senha?", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 15)
+        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 15)
         button.setTitleColor(UIColor.corOne, for: .normal)
         button.addTarget(self, action: #selector(tapeedForgotPassword), for: .touchUpInside)
         return button
@@ -106,7 +107,7 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 18)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         button.setTitleColor(UIColor.corTwo, for: .normal)
         button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
@@ -119,7 +120,7 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Não tem conta ? Cadastre se", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 16)
+        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 16)
         button.setTitleColor(UIColor.corOne, for: .normal)
         button.addTarget(self, action: #selector(tapeedRegisterButton), for: .touchUpInside)
         return button
@@ -129,6 +130,9 @@ class LoginScrenn: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
+        emailTextField.setBottomBorder()
+        passwordTextField.setBottomBorder()
+        print("teste \(UIFont.familyNames)")
     }
     
     required init?(coder: NSCoder) {
