@@ -19,20 +19,14 @@ class HomeCell: UITableViewCell {
     }()
     
     lazy var addAlunoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nome: Franklin Solano"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
+        label.textColor = .corTwo
         return label
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Modalidade Academia")
+        label.textColor = .corTwo
         return label
     }()
     

@@ -19,6 +19,7 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
+        screen?.configTextField(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +47,14 @@ extension LoginVC: LoginScrennProtocol {
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true)
     }
-    
-    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension LoginVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
 

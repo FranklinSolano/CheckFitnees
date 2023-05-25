@@ -17,7 +17,10 @@
 		EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0372A1E710700B32E1F /* TabBarVC.swift */; };
 		EB1AE03A2A1E734000B32E1F /* PerfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0392A1E734000B32E1F /* PerfilVC.swift */; };
 		EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */; };
-		EB1AE03E2A1E982600B32E1F /* Extension-TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE03D2A1E982600B32E1F /* Extension-TextField.swift */; };
+		EB1AE0412A1FDB4A00B32E1F /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0402A1FDB4A00B32E1F /* TextFieldCustom.swift */; };
+		EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */; };
+		EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */; };
+		EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */; };
 		EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29178F2A1593D900183A92 /* AppDelegate.swift */; };
 		EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917912A1593D900183A92 /* SceneDelegate.swift */; };
 		EB2917942A1593D900183A92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917932A1593D900183A92 /* LoginVC.swift */; };
@@ -78,7 +81,10 @@
 		EB1AE0372A1E710700B32E1F /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		EB1AE0392A1E734000B32E1F /* PerfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilVC.swift; sourceTree = "<group>"; };
 		EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
-		EB1AE03D2A1E982600B32E1F /* Extension-TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-TextField.swift"; sourceTree = "<group>"; };
+		EB1AE0402A1FDB4A00B32E1F /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
+		EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
+		EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelCustom.swift; sourceTree = "<group>"; };
+		EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabelCustom.swift; sourceTree = "<group>"; };
 		EB29178C2A1593D900183A92 /* CheckFitneesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckFitneesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB29178F2A1593D900183A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB2917912A1593D900183A92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +177,17 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
+		EB1AE03F2A1FDB2400B32E1F /* Generic Componentes */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AE0402A1FDB4A00B32E1F /* TextFieldCustom.swift */,
+				EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */,
+				EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */,
+				EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */,
+			);
+			path = "Generic Componentes";
+			sourceTree = "<group>";
+		};
 		EB2917832A1593D900183A92 = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +207,7 @@
 		EB29178E2A1593D900183A92 /* CheckFitneesApp */ = {
 			isa = PBXGroup;
 			children = (
+				EB1AE03F2A1FDB2400B32E1F /* Generic Componentes */,
 				EB2917A62A15962D00183A92 /* Extensions */,
 				EB2917AE2A1658E400183A92 /* Features */,
 				EB29178F2A1593D900183A92 /* AppDelegate.swift */,
@@ -216,7 +234,6 @@
 			children = (
 				EB2917A72A15963D00183A92 /* Extension-ViewCode.swift */,
 				EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */,
-				EB1AE03D2A1E982600B32E1F /* Extension-TextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -388,6 +405,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB1AE0412A1FDB4A00B32E1F /* TextFieldCustom.swift in Sources */,
 				EB2917B32A1662C300183A92 /* ForgotPaswordVC.swift in Sources */,
 				EBAF5D452A1BB4C900AA1692 /* CalculadorasScreen.swift in Sources */,
 				EB1AE0312A1C011D00B32E1F /* PorcentualMulherScreen.swift in Sources */,
@@ -398,6 +416,7 @@
 				EB1AE02E2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift in Sources */,
 				EB1AE0272A1BC83500B32E1F /* TaxaMetabolicaScreen.swift in Sources */,
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
+				EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */,
 				EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */,
 				EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */,
 				EB2917942A1593D900183A92 /* LoginVC.swift in Sources */,
@@ -407,11 +426,12 @@
 				EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */,
 				EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */,
 				EB2917AD2A1658D100183A92 /* RegisterVC.swift in Sources */,
-				EB1AE03E2A1E982600B32E1F /* Extension-TextField.swift in Sources */,
+				EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */,
 				EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */,
 				EB2917A52A1595A900183A92 /* LoginScrenn.swift in Sources */,
 				EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */,
 				EBAF5D432A1BB4B500AA1692 /* CalculadorasVC.swift in Sources */,
+				EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */,
 				EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonVC.swift in Sources */,
 				EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,

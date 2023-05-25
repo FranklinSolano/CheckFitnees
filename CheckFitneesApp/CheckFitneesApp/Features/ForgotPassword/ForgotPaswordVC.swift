@@ -19,6 +19,7 @@ class ForgotPaswordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
+        screen?.configTextField(delegate: self)
     }
 }
 
@@ -32,6 +33,13 @@ extension ForgotPaswordVC: ForgotPasswordScreenProtocol {
     func actionEnterButton() {
         //alert com navegacao 
     }
-    
-    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension ForgotPaswordVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

@@ -20,12 +20,7 @@ class TaxaMetabolicaScreen: UIView {
     }
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
         return label
     }()
     
@@ -39,153 +34,82 @@ class TaxaMetabolicaScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Aluno: Franklin Stilhano Solano"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Modalidade Academia")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var pesoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Peso:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Peso:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var pesoTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu peso:")
         return tf
     }()
     
     lazy var alturaLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Altura:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Altura:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var alturaTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 170",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite sua altura:")
         return tf
     }()
     
     lazy var idadeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Idade:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Idade:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var idadeTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua idade:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite sua idade:")
         return tf
     }()
     
     lazy var sexoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sexo:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Sexo:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var sexoTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu sexo:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu sexo")
         return tf
     }()
     
     lazy var biotipoLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Biotipo:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
-        return label
-    }()
+        let label = TextLabelCustom(title: "Biotipo:")
+        label.font = UIFont.systemFont(ofSize: 20)
+        return label    }()
     
     lazy var biotipoTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu biotipo",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu biotipo:")
         return tf
     }()
     
     lazy var taxaMetabolicaLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Sua Taxa Metabólica Basal é 2700 kcal"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 25)
+        let label = TextLabelCustom(title: "Sua Taxa Metabólica Basal é 2700 Kcal")
+        label.font = UIFont.systemFont(ofSize: 25)
         label.numberOfLines = 0
         label.textAlignment = .center
         return label
     }()
     
     lazy var resultButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Calcular", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Calcular")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.addTarget(self, action: #selector(tappedCalcularButton), for: .touchUpInside)
         return button
     }()
@@ -194,19 +118,18 @@ class TaxaMetabolicaScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
-        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configTextField(){
-        pesoTextField.setBottomBorder()
-        alturaTextField.setBottomBorder()
-        idadeTextField.setBottomBorder()
-        sexoTextField.setBottomBorder()
-        biotipoTextField.setBottomBorder()
+    public func configTextField(delegate: UITextFieldDelegate) {
+        pesoTextField.delegate = delegate
+        alturaTextField.delegate = delegate
+        idadeTextField.delegate = delegate
+        sexoTextField.delegate = delegate
+        biotipoTextField.delegate = delegate
     }
     
     @objc private func tappedBackButton(){

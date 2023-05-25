@@ -19,14 +19,9 @@ class RegisterScreen: UIView {
         self.delegate = delegate
     }
     
-    
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
+        label.textColor = .corTwo
         return label
     }()
     
@@ -49,105 +44,49 @@ class RegisterScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Name:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Nome:")
         return label
     }()
     
     lazy var nameTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu nome:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.keyboardType = .default
-        tf.placeholder = "Digite seu nome:"
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu nome")
         return tf
     }()
     
     lazy var emailLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Email:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Nome:")
         return label
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocapitalizationType = .none
-        tf.autocorrectionType = .no
-        tf.keyboardType = .emailAddress
-        tf.placeholder = "Digite seu email:"
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu email:")
         return tf
     }()
     
     lazy var passwordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Password:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Senha:")
         return label
     }()
     
     lazy var passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.keyboardType = .default
-        tf.placeholder = "Digite sua senha:"
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
+        let tf = TextFieldCustom(placeholder: "Digite sua senha:")
         tf.isSecureTextEntry = true
-        tf.borderStyle = .none
         return tf
     }()
     
     lazy var confirmPasswordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Confirm Password:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Confirmar senha:")
         return label
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha novamente:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.keyboardType = .default
-        tf.placeholder = "Digite sua senha novamente:"
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
+        let tf = TextFieldCustom(placeholder: "Digite novamente sua senha:")
         tf.isSecureTextEntry = true
-        tf.borderStyle = .none
         return tf
     }()
     
     lazy var singUpButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("SingUp", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Cadastrar")
         button.addTarget(self, action: #selector(tappedSingUpButton), for: .touchUpInside)
         return button
     }()
@@ -156,18 +95,17 @@ class RegisterScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
-        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configTextField(){
-        nameTextField.setBottomBorder()
-        emailTextField.setBottomBorder()
-        passwordTextField.setBottomBorder()
-        confirmPasswordTextField.setBottomBorder()
+    public func configTextField(delegate: UITextFieldDelegate){
+        nameTextField.delegate = delegate
+        emailTextField.delegate = delegate
+        passwordTextField.delegate = delegate
+        confirmPasswordTextField.delegate = delegate
     }
     
     @objc private func tappedBackButton(){

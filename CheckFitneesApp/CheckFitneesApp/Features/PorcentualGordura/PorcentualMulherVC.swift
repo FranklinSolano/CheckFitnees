@@ -19,12 +19,12 @@ class PorcentualMulherVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
-
+        screen?.configTextField(delegate: self)
     }
 
 }
 
-//MARK: -
+//MARK: - PorcentualMulherScreenProtocol
 
 extension PorcentualMulherVC: PorcentualMulherScreenProtocol {
     func actionBackButton() {
@@ -38,6 +38,13 @@ extension PorcentualMulherVC: PorcentualMulherScreenProtocol {
     func actionCalcular() {
         
     }
-    
-    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension PorcentualMulherVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

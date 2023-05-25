@@ -21,12 +21,7 @@ class PorcentualMulherScreen: UIView {
     }
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
         return label
     }()
     
@@ -40,20 +35,14 @@ class PorcentualMulherScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Aluno: Franklin Stilhano Solano"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Modalidade Academia")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
@@ -82,215 +71,109 @@ class PorcentualMulherScreen: UIView {
     }()
     
     lazy var triciptalLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Triciptal:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Triciptal:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var triciptalTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 32",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 32")
         return tf
     }()
     
     lazy var peitoralLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Peitoral:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Peitoral:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var peitoralTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 80",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 80")
         return tf
     }()
     
     lazy var supraLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Supra-ilíaca"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Supra-ilíaca:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var supraTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 70")
         return tf
     }()
     
     lazy var abdominalLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Abdominal"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Abdominal:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var abdominalTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 75",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 75")
         return tf
     }()
     
     lazy var coxaLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Coxa:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Coxa:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var coxaTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 65",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 65")
         return tf
     }()
     
     lazy var subescapularLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Subescapular:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Subescapular")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var subescapularTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 55",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 55")
         return tf
     }()
     
     lazy var axilarLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Axiliar Média:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Axiliar Média:")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var axilarTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 32",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Ex: 32")
         return tf
     }()
     
     lazy var resultButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Calcular", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Calcular")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedCalcularButton), for: .touchUpInside)
         return button
     }()
     
     lazy var bfGorduraLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "% de gordura (BF)"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
-        return label
-    }()
+        let label = TextLabelCustom(title: "% de Gordura")
+        label.font = UIFont.systemFont(ofSize: 20)
+        return label    }()
     
     lazy var bfGorduraTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.text = "13.4 %"
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
+        let tf = TextFieldCustom(placeholder: "Ex: 55")
         tf.textAlignment = .center
-        tf.borderStyle = .none
         return tf
     }()
     
     lazy var massaMagraLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Massa magra (kg)"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Massa Magra")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var massaMagraTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.text = "50.0 Kg"
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .numberPad
-        tf.backgroundColor = UIColor.corTwo
-        tf.textColor = UIColor.corOne
+        let tf = TextFieldCustom(placeholder: "Ex: 55")
         tf.textAlignment = .center
-        tf.borderStyle = .none
         return tf
     }()
     
@@ -298,23 +181,20 @@ class PorcentualMulherScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
-        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configTextField(){
-        triciptalTextField.setBottomBorder()
-        peitoralTextField.setBottomBorder()
-        supraTextField.setBottomBorder()
-        abdominalTextField.setBottomBorder()
-        coxaTextField.setBottomBorder()
-        subescapularTextField.setBottomBorder()
-        axilarTextField.setBottomBorder()
-        bfGorduraTextField.setBottomBorder()
-        massaMagraTextField.setBottomBorder()
+    public func configTextField(delegate: UITextFieldDelegate) {
+        triciptalTextField.delegate = delegate
+        peitoralTextField.delegate = delegate
+        supraTextField.delegate = delegate
+        abdominalTextField.delegate = delegate
+        coxaTextField.delegate = delegate
+        subescapularTextField.delegate = delegate
+        axilarTextField.delegate = delegate
     }
     
     @objc private func tappedBackButton(){

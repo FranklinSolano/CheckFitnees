@@ -19,6 +19,7 @@ class PorcentualHomemVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
+        screen?.configTextField(delegate: self)
     }
 
 }
@@ -38,6 +39,13 @@ extension PorcentualHomemVC: PorcentualHomemScreenProtocol {
     func actionCalcular() {
         
     }
-    
-    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension PorcentualHomemVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }
