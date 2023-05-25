@@ -35,7 +35,8 @@ extension CalculadorasVC: CalculadorasScreenProtocol {
     }
     
     func actionPorcentualGorduraButton() {
-        
+        let vc:PorcentualHomemVC = PorcentualHomemVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func actionCicloCarboidratosButton() {

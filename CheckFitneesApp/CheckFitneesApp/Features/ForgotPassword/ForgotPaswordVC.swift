@@ -26,7 +26,7 @@ class ForgotPaswordVC: UIViewController {
 
 extension ForgotPaswordVC: ForgotPasswordScreenProtocol {
     func actionBackButton() {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     func actionEnterButton() {

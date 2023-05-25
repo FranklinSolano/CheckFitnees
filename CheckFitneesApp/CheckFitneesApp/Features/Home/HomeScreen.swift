@@ -21,9 +21,9 @@ class HomeScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
+        label.text = "CheckFitness"
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -32,11 +32,11 @@ class HomeScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("     Adicionar Aluno", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25, weight: .semibold)
-        button.setTitleColor(UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 16)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        button.layer.cornerRadius = 15
         button.contentHorizontalAlignment = .left
         button.addTarget(self, action: #selector(tappedAddAluno), for: .touchUpInside)
         return button
@@ -46,7 +46,7 @@ class HomeScreen: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "plus.circle.fill")
-        image.tintColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        image.tintColor = UIColor.corTwo
         return image
     }()
     
@@ -54,7 +54,7 @@ class HomeScreen: UIView {
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        tv.backgroundColor = UIColor.corTwo
         tv.separatorStyle = .none
         tv.register(HomeCell.self, forCellReuseIdentifier: HomeCell.identifier)
         return tv
@@ -63,7 +63,8 @@ class HomeScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        backgroundColor = UIColor.corTwo
+        
     }
     
     required init?(coder: NSCoder) {
@@ -104,8 +105,8 @@ extension HomeScreen: ViewCode {
             
             imagePlus.centerYAnchor.constraint(equalTo: addAlunoButton.centerYAnchor),
             imagePlus.trailingAnchor.constraint(equalTo: addAlunoButton.trailingAnchor,constant: -30),
-            imagePlus.heightAnchor.constraint(equalToConstant: 55),
-            imagePlus.widthAnchor.constraint(equalToConstant: 55),
+            imagePlus.heightAnchor.constraint(equalToConstant: 30),
+            imagePlus.widthAnchor.constraint(equalToConstant: 30),
             
             tableView.topAnchor.constraint(equalTo: addAlunoButton.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),

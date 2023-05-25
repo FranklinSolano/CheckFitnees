@@ -23,9 +23,9 @@ class RegisterScreen: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitnees"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 40, weight: .semibold)
+        label.text = "CheckFitness"
+        label.textColor = UIColor.corTwo
+        label.font = UIFont(name: "Chalkduster", size: 30)
         label.textAlignment = .center
         return label
     }()
@@ -34,37 +34,40 @@ class RegisterScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = .white
+        button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
     
-    lazy var imagePerson: UIImageView = {
-        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "imagePerson")
-        return image
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corTwo
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
     
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Name:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var nameTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu nome:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite seu nome:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -72,21 +75,23 @@ class RegisterScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Email:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        tf.autocapitalizationType = .none
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .emailAddress
         tf.placeholder = "Digite seu email:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -94,22 +99,24 @@ class RegisterScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Password:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var passwordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite sua senha:"
         tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
         tf.isSecureTextEntry = true
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -117,22 +124,23 @@ class RegisterScreen: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Confirm Password:"
-        label.textColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
-        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = UIColor.corOne
+        label.font = UIFont(name: "PingFang SC", size: 16)
         return label
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
         let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha novamente:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
         tf.autocorrectionType = .no
         tf.borderStyle = .roundedRect
         tf.keyboardType = .default
         tf.placeholder = "Digite sua senha novamente:"
-        tf.layer.cornerRadius = 12
-        tf.clipsToBounds = true
-        tf.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        tf.backgroundColor = .black
+        tf.textColor = UIColor.corOne
         tf.isSecureTextEntry = true
+        tf.borderStyle = .none
         return tf
     }()
     
@@ -141,8 +149,8 @@ class RegisterScreen: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("SingUp", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        button.setTitleColor(UIColor(red: 104/255, green: 84/255, blue: 84/255, alpha: 1), for: .normal)
-        button.backgroundColor = UIColor(red: 217/255, green: 217/255, blue: 217/255, alpha: 1)
+        button.setTitleColor(UIColor.corTwo, for: .normal)
+        button.backgroundColor = UIColor.corOne
         button.clipsToBounds = true
         button.layer.cornerRadius = 12
         button.addTarget(self, action: #selector(tappedSingUpButton), for: .touchUpInside)
@@ -152,11 +160,19 @@ class RegisterScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor(red: 50/255, green: 42/255, blue: 42/255, alpha: 1)
+        backgroundColor = UIColor.corOne
+        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func configTextField(){
+        nameTextField.setBottomBorder()
+        emailTextField.setBottomBorder()
+        passwordTextField.setBottomBorder()
+        confirmPasswordTextField.setBottomBorder()
     }
     
     @objc private func tappedBackButton(){
@@ -166,7 +182,6 @@ class RegisterScreen: UIView {
     @objc private func tappedSingUpButton(){
         delegate?.actionSingUpButton()
     }
-    
 }
 
 //MARK: - ViewCode
@@ -175,7 +190,7 @@ extension RegisterScreen: ViewCode {
     func configElements() {
         addSubview(titleLabel)
         addSubview(backButton)
-        addSubview(imagePerson)
+        addSubview(contentView)
         addSubview(nameLabel)
         addSubview(nameTextField)
         addSubview(emailLabel)
@@ -196,12 +211,12 @@ extension RegisterScreen: ViewCode {
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            imagePerson.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 13),
-            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagePerson.heightAnchor.constraint(equalToConstant: 190),
-            imagePerson.widthAnchor.constraint(equalToConstant: 280),
+            contentView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 40),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 18),
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
             nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 10),
@@ -229,7 +244,7 @@ extension RegisterScreen: ViewCode {
             confirmPasswordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             confirmPasswordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            singUpButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -30),
+            singUpButton.bottomAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor,constant: 100),
             singUpButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             singUpButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             singUpButton.heightAnchor.constraint(equalToConstant: 55),
