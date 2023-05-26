@@ -103,13 +103,10 @@ class NewAlertCustonScreen: UIView {
 
 extension NewAlertCustonScreen: ViewCode {
     func configElements() {
-        addSubview(contentViewAlert)
-        contentViewAlert.addSubview(backButton)
-        contentViewAlert.addSubview(nameLabel)
-        contentViewAlert.addSubview(nameTextField)
-        contentViewAlert.addSubview(modalidadeLabel)
-        contentViewAlert.addSubview(modalidadeTextField)
-        contentViewAlert.addSubview(adicionarButton)
+        let views: [UIView] = [contentViewAlert,backButton,nameLabel,nameTextField,modalidadeLabel,modalidadeTextField,adicionarButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

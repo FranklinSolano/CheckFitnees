@@ -121,18 +121,10 @@ class RegisterScreen: UIView {
 
 extension RegisterScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(backButton)
-        addSubview(contentView)
-        addSubview(nameLabel)
-        addSubview(nameTextField)
-        addSubview(emailLabel)
-        addSubview(emailTextField)
-        addSubview(passwordLabel)
-        addSubview(passwordTextField)
-        addSubview(confirmPasswordLabel)
-        addSubview(confirmPasswordTextField)
-        addSubview(singUpButton)
+        let views: [UIView] = [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,singUpButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

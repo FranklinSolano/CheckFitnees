@@ -27,9 +27,14 @@ class PorcentualHomemVC: UIViewController {
 //MARK: -
 
 extension PorcentualHomemVC: PorcentualHomemScreenProtocol {
+    func actionCalculoHomem() {
+        screen?.lineView.backgroundColor = .corOne
+        screen?.line2View.backgroundColor = .clear
+    }
+    
     func actionCalculoMulher() {
-        let vc:PorcentualMulherVC = PorcentualMulherVC()
-        self.navigationController?.pushViewController(vc, animated: false)
+        screen?.lineView.backgroundColor = .clear
+        screen?.line2View.backgroundColor = .corOne
     }
     
     func actionBackButton() {

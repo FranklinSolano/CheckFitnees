@@ -122,16 +122,10 @@ class LoginScrenn: UIView {
 
 extension LoginScrenn: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(imagePerson)
-        addSubview(contentView)
-        addSubview(emailLabel)
-        addSubview(emailTextField)
-        addSubview(passwordLabel)
-        addSubview(passwordTextField)
-        addSubview(forgotPasswordButton)
-        addSubview(loginButton)
-        addSubview(registerButton)
+        let views: [UIView] = [titleLabel,imagePerson,contentView,emailLabel,emailTextField,passwordLabel,passwordTextField,forgotPasswordButton,loginButton,registerButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

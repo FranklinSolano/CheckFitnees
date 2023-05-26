@@ -44,7 +44,7 @@ class ForgotPasswordScreen: UIView {
     }()
   
     lazy var descriptionLabel: UILabel = {
-        let label = TextLabelCustom(title: "Email:")
+        let label = TextLabelCustom(title: "Informe o seu Email abaixo.")
         label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -94,13 +94,10 @@ class ForgotPasswordScreen: UIView {
 
 extension ForgotPasswordScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(backButton)
-        addSubview(contentView)
-        addSubview(descriptionLabel)
-        addSubview(emailLabel)
-        addSubview(emailTextField)
-        addSubview(enterButton)
+        let views: [UIView] = [titleLabel,backButton,contentView,descriptionLabel,emailLabel,emailTextField,enterButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

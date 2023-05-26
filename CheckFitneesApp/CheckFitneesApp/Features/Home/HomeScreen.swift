@@ -73,11 +73,10 @@ class HomeScreen: UIView {
 
 extension HomeScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(addAlunoButton)
-        addAlunoButton.addSubview(imagePlus)
-        addSubview(tableView)
-        addSubview(imagePlus)
+        let views: [UIView] = [titleLabel,addAlunoButton,imagePlus,tableView,imagePlus]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

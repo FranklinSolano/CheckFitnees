@@ -145,28 +145,14 @@ class TaxaMetabolicaScreen: UIView {
 
 extension TaxaMetabolicaScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(backButton)
-        addSubview(nameLabel)
-        addSubview(modalidadeLabel)
-        addSubview(pesoLabel)
-        addSubview(pesoTextField)
-        addSubview(alturaLabel)
-        addSubview(alturaTextField)
-        addSubview(idadeLabel)
-        addSubview(idadeTextField)
-        addSubview(sexoLabel)
-        addSubview(sexoTextField)
-        addSubview(biotipoLabel)
-        addSubview(biotipoTextField)
-        addSubview(taxaMetabolicaLabel)
-        addSubview(resultButton)
-        
+        let views: [UIView] = [titleLabel, backButton,nameLabel,modalidadeLabel,pesoLabel,pesoTextField,alturaLabel,alturaTextField,idadeLabel,idadeTextField,sexoLabel,sexoTextField,biotipoLabel,biotipoTextField,taxaMetabolicaLabel,resultButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            
             titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
@@ -187,7 +173,6 @@ extension TaxaMetabolicaScreen: ViewCode {
             pesoTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
             pesoTextField.leadingAnchor.constraint(equalTo: pesoLabel.trailingAnchor,constant: 8),
             pesoTextField.heightAnchor.constraint(equalToConstant: 25),
-            
             
             alturaLabel.topAnchor.constraint(equalTo: pesoLabel.bottomAnchor,constant: 25),
             alturaLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),

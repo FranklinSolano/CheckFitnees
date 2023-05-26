@@ -11,8 +11,6 @@
 		EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */; };
 		EB1AE02C2A1BDD1800B32E1F /* PorcentualHomemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */; };
 		EB1AE02E2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */; };
-		EB1AE0312A1C011D00B32E1F /* PorcentualMulherScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0302A1C011D00B32E1F /* PorcentualMulherScreen.swift */; };
-		EB1AE0332A1C013700B32E1F /* PorcentualMulherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0322A1C013700B32E1F /* PorcentualMulherVC.swift */; };
 		EB1AE0352A1C5A8100B32E1F /* Extension-Cors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */; };
 		EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0372A1E710700B32E1F /* TabBarVC.swift */; };
 		EB1AE03A2A1E734000B32E1F /* PerfilVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0392A1E734000B32E1F /* PerfilVC.swift */; };
@@ -21,6 +19,10 @@
 		EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */; };
 		EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */; };
 		EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */; };
+		EB1AE04C2A2066EE00B32E1F /* CicloCarboidratosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04B2A2066EE00B32E1F /* CicloCarboidratosScreen.swift */; };
+		EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04D2A20670600B32E1F /* CicloCarboidratosVC.swift */; };
+		EB1AE0502A2082B400B32E1F /* CicloCarboidratosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04F2A2082B400B32E1F /* CicloCarboidratosCell.swift */; };
+		EB1AE0522A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0512A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift */; };
 		EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29178F2A1593D900183A92 /* AppDelegate.swift */; };
 		EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917912A1593D900183A92 /* SceneDelegate.swift */; };
 		EB2917942A1593D900183A92 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917932A1593D900183A92 /* LoginVC.swift */; };
@@ -75,8 +77,6 @@
 		EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaVC.swift; sourceTree = "<group>"; };
 		EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualHomemVC.swift; sourceTree = "<group>"; };
 		EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualHomemScreen.swift; sourceTree = "<group>"; };
-		EB1AE0302A1C011D00B32E1F /* PorcentualMulherScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualMulherScreen.swift; sourceTree = "<group>"; };
-		EB1AE0322A1C013700B32E1F /* PorcentualMulherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualMulherVC.swift; sourceTree = "<group>"; };
 		EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Cors.swift"; sourceTree = "<group>"; };
 		EB1AE0372A1E710700B32E1F /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		EB1AE0392A1E734000B32E1F /* PerfilVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilVC.swift; sourceTree = "<group>"; };
@@ -85,6 +85,10 @@
 		EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
 		EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelCustom.swift; sourceTree = "<group>"; };
 		EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabelCustom.swift; sourceTree = "<group>"; };
+		EB1AE04B2A2066EE00B32E1F /* CicloCarboidratosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosScreen.swift; sourceTree = "<group>"; };
+		EB1AE04D2A20670600B32E1F /* CicloCarboidratosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosVC.swift; sourceTree = "<group>"; };
+		EB1AE04F2A2082B400B32E1F /* CicloCarboidratosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosCell.swift; sourceTree = "<group>"; };
+		EB1AE0512A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosCellScreen.swift; sourceTree = "<group>"; };
 		EB29178C2A1593D900183A92 /* CheckFitneesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckFitneesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB29178F2A1593D900183A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB2917912A1593D900183A92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,8 +165,6 @@
 			children = (
 				EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */,
 				EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */,
-				EB1AE0302A1C011D00B32E1F /* PorcentualMulherScreen.swift */,
-				EB1AE0322A1C013700B32E1F /* PorcentualMulherVC.swift */,
 			);
 			path = PorcentualGordura;
 			sourceTree = "<group>";
@@ -186,6 +188,25 @@
 				EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */,
 			);
 			path = "Generic Componentes";
+			sourceTree = "<group>";
+		};
+		EB1AE04A2A2066B900B32E1F /* CicloCarboidratos */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AE04B2A2066EE00B32E1F /* CicloCarboidratosScreen.swift */,
+				EB1AE04D2A20670600B32E1F /* CicloCarboidratosVC.swift */,
+				EB1AE0532A2172BE00B32E1F /* Cell */,
+			);
+			path = CicloCarboidratos;
+			sourceTree = "<group>";
+		};
+		EB1AE0532A2172BE00B32E1F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB1AE04F2A2082B400B32E1F /* CicloCarboidratosCell.swift */,
+				EB1AE0512A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		EB2917832A1593D900183A92 = {
@@ -250,6 +271,7 @@
 		EB2917AE2A1658E400183A92 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				EB1AE04A2A2066B900B32E1F /* CicloCarboidratos */,
 				EB1AE0362A1E70D400B32E1F /* TabBar */,
 				EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */,
 				EB1AE0252A1BC80F00B32E1F /* TaxaMetabolicaBasal */,
@@ -408,13 +430,14 @@
 				EB1AE0412A1FDB4A00B32E1F /* TextFieldCustom.swift in Sources */,
 				EB2917B32A1662C300183A92 /* ForgotPaswordVC.swift in Sources */,
 				EBAF5D452A1BB4C900AA1692 /* CalculadorasScreen.swift in Sources */,
-				EB1AE0312A1C011D00B32E1F /* PorcentualMulherScreen.swift in Sources */,
 				EBAF5D372A197DF500AA1692 /* HomeVC.swift in Sources */,
 				EB1AE02C2A1BDD1800B32E1F /* PorcentualHomemVC.swift in Sources */,
 				EB2917AB2A1658C200183A92 /* RegisterScreen.swift in Sources */,
 				EB1AE03A2A1E734000B32E1F /* PerfilVC.swift in Sources */,
 				EB1AE02E2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift in Sources */,
 				EB1AE0272A1BC83500B32E1F /* TaxaMetabolicaScreen.swift in Sources */,
+				EB1AE0522A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift in Sources */,
+				EB1AE04C2A2066EE00B32E1F /* CicloCarboidratosScreen.swift in Sources */,
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
 				EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */,
 				EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */,
@@ -422,7 +445,6 @@
 				EB2917942A1593D900183A92 /* LoginVC.swift in Sources */,
 				EB2917A82A15963D00183A92 /* Extension-ViewCode.swift in Sources */,
 				EB1AE0352A1C5A8100B32E1F /* Extension-Cors.swift in Sources */,
-				EB1AE0332A1C013700B32E1F /* PorcentualMulherVC.swift in Sources */,
 				EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */,
 				EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */,
 				EB2917AD2A1658D100183A92 /* RegisterVC.swift in Sources */,
@@ -432,7 +454,9 @@
 				EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */,
 				EBAF5D432A1BB4B500AA1692 /* CalculadorasVC.swift in Sources */,
 				EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */,
+				EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */,
 				EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonVC.swift in Sources */,
+				EB1AE0502A2082B400B32E1F /* CicloCarboidratosCell.swift in Sources */,
 				EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 			);

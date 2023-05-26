@@ -30,3 +30,21 @@ class ButtonCustom: UIButton {
     }
 
 }
+
+extension UIButton {
+    func teste(button: UIButton){
+        
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: button.frame.height - 1, width: button.frame.width, height: 2)
+        bottomBorder.backgroundColor = UIColor.corOne.cgColor
+        button.layer.addSublayer(bottomBorder)
+    }
+    
+    func teste1(button: UIButton){
+        
+        let bottomBorder = CALayer()
+        bottomBorder.frame = CGRect(x: 0, y: button.frame.height - 1, width: button.frame.width, height: 2)
+        bottomBorder.backgroundColor = UIColor.red.cgColor
+        button.layer.addSublayer(bottomBorder)
+    }
+}

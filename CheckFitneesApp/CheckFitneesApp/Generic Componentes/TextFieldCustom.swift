@@ -28,7 +28,6 @@ class TextFieldCustom: UITextField {
         self.autocorrectionType = .no
         self.borderStyle = .roundedRect
         self.keyboardType = .default
-        self.isSecureTextEntry = true
         self.backgroundColor = UIColor.corTwo
         self.textColor = UIColor.corOne
         self.borderStyle = .none

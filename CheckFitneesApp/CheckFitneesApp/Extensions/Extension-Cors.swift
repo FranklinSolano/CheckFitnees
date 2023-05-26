@@ -13,7 +13,7 @@ extension UIColor {
     }
     
     static var corOne: UIColor {
-        return UIColor(red: 14/255, green: 27/255, blue: 80/255, alpha: 1)
+        return UIColor(red: 31/255, green: 57/255, blue: 89/255, alpha: 1)
     }
     
     static var corTextField: UIColor {
