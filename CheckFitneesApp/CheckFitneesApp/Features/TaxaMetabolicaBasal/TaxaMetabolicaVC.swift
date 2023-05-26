@@ -19,10 +19,11 @@ class TaxaMetabolicaVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
+        screen?.configTextField(delegate: self)
     }
 }
 
-//MARK: -
+//MARK: - TaxaMetabolicaScreenProtocol
 
 extension TaxaMetabolicaVC: TaxaMetabolicaScreenProtocol {
     func actionBackButton() {
@@ -32,6 +33,13 @@ extension TaxaMetabolicaVC: TaxaMetabolicaScreenProtocol {
     func actionCalcularButton() {
         
     }
-    
-    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension TaxaMetabolicaVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

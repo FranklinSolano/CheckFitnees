@@ -20,12 +20,8 @@ class ForgotPasswordScreen: UIView {
     }
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
+        label.textColor = .corTwo
         return label
     }()
     
@@ -48,49 +44,25 @@ class ForgotPasswordScreen: UIView {
     }()
   
     lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Insira o seu email abaixo para receber um link para redefinir a senha"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 20)
+        let label = TextLabelCustom(title: "Informe o seu Email abaixo.")
+        label.font = UIFont.systemFont(ofSize: 20)
         label.textAlignment = .center
         label.numberOfLines = 0
         return label
     }()
     
     lazy var emailLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Email:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Email:")
         return label
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocapitalizationType = .none
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .emailAddress
-        tf.placeholder = "Digite seu email:"
-        tf.backgroundColor = .black
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu email:")
         return tf
     }()
     
     lazy var enterButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("To enter", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Enviar")
         button.addTarget(self, action: #selector(tappedEnterButton), for: .touchUpInside)
         return button
     }()
@@ -99,11 +71,14 @@ class ForgotPasswordScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
-        emailTextField.setBottomBorder()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configTextField(delegate: UITextFieldDelegate){
+        emailTextField.delegate = delegate
     }
     
     @objc private func tappedBackButton(){
@@ -119,13 +94,10 @@ class ForgotPasswordScreen: UIView {
 
 extension ForgotPasswordScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(backButton)
-        addSubview(contentView)
-        addSubview(descriptionLabel)
-        addSubview(emailLabel)
-        addSubview(emailTextField)
-        addSubview(enterButton)
+        let views: [UIView] = [titleLabel,backButton,contentView,descriptionLabel,emailLabel,emailTextField,enterButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

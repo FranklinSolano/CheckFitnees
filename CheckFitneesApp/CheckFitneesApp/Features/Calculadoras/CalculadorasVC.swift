@@ -40,7 +40,8 @@ extension CalculadorasVC: CalculadorasScreenProtocol {
     }
     
     func actionCicloCarboidratosButton() {
-        
+        let vc:CicloCarboidratosVC = CicloCarboidratosVC()
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func actionDietaFlexivelButton() {

@@ -19,10 +19,11 @@ class NewAlertCustonVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
+        screen?.configTextField(delegate: self)
     }
 }
 
-//MARK: -
+//MARK: - NewAlertCustonScreenProtocol
 
 extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
     func actionBackButton() {
@@ -32,6 +33,13 @@ extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
     func actionAdicionarButton() {
         dismiss(animated: true)
     }
-    
-    
+}
+
+//MARK: - UITextFieldDelegate
+
+extension NewAlertCustonVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

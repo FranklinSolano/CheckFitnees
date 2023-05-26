@@ -25,12 +25,7 @@ class CalculadorasScreen: UIView {
     }
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
         return label
     }()
     
@@ -44,97 +39,55 @@ class CalculadorasScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Aluno: Franklin Stilhano Solano"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Modalidade: Academia"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Trebuchet MS", size: 20)
+        let label = TextLabelCustom(title: "Modalidade Academia")
+        label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var TaxaMetabolicaBasalButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Taxa Metabólica Basal", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Taxa Metabólica Basal")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedTaxaMetabolicaButton), for: .touchUpInside)
         return button
     }()
     
     lazy var porcentualGorduraButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Porcentual de Gordura", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Porcentual de Gordura %")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedPorcentualGorduraButton), for: .touchUpInside)
         return button
     }()
     
     lazy var cicloDeCarboitradosButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Ciclo de Carboidratos", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Ciclo de Carboidratos")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedCicloCarboidratosButton), for: .touchUpInside)
         return button
     }()
     
     lazy var dietaFlexivelButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Dieta Flexivel Facil", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Dieta Flexivel")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedDietaFlexivelButton), for: .touchUpInside)
         return button
     }()
     
     lazy var dietaAvancadaButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Dieta Avançada", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Dieta Avançada")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedDietaAvancadaButton), for: .touchUpInside)
         return button
     }()
     
     lazy var volumeTreinolButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Volume de Treino", for: .normal)
-        button.titleLabel?.font = UIFont(name: "Trebuchet MS", size: 25)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Volume de Treino")
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         button.addTarget(self, action: #selector(tappedVolumeTreinoButton), for: .touchUpInside)
         return button
     }()
@@ -182,17 +135,10 @@ class CalculadorasScreen: UIView {
 
 extension CalculadorasScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(backButton)
-        addSubview(nameLabel)
-        addSubview(modalidadeLabel)
-        addSubview(TaxaMetabolicaBasalButton)
-        addSubview(porcentualGorduraButton)
-        addSubview(cicloDeCarboitradosButton)
-        addSubview(dietaFlexivelButton)
-        addSubview(dietaAvancadaButton)
-        addSubview(volumeTreinolButton)
-        
+        let views: [UIView] = [titleLabel,backButton,nameLabel,modalidadeLabel,TaxaMetabolicaBasalButton,porcentualGorduraButton,cicloDeCarboitradosButton,dietaFlexivelButton,dietaAvancadaButton,volumeTreinolButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

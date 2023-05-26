@@ -21,12 +21,9 @@ class LoginScrenn: UIView {
     }
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corTwo
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
+        label.textColor = .corTwo
+        print("teste \(UIFont.familyNames)")
         return label
     }()
     
@@ -48,48 +45,22 @@ class LoginScrenn: UIView {
     }()
     
     lazy var emailLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Email:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Email:")
         return label
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu email:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocapitalizationType = .none
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .emailAddress
-        tf.backgroundColor = .black
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu email:")
         return tf
     }()
     
     lazy var passwordLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Senha:"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Senha:")
         return label
     }()
     
     lazy var passwordTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua senha:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.isSecureTextEntry = true
-        tf.backgroundColor = .black
-        tf.textColor = UIColor.corOne
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite sua senha:")
         return tf
     }()
     
@@ -104,14 +75,7 @@ class LoginScrenn: UIView {
     }()
     
     lazy var loginButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Login", for: .normal)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 12
+        let button = ButtonCustom(title: "Entrar")
         button.addTarget(self, action: #selector(tapeedLoginButton), for: .touchUpInside)
         return button
     }()
@@ -130,13 +94,15 @@ class LoginScrenn: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
-        emailTextField.setBottomBorder()
-        passwordTextField.setBottomBorder()
-        print("teste \(UIFont.familyNames)")
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configTextField(delegate: UITextFieldDelegate){
+        emailTextField.delegate = delegate
+        passwordTextField.delegate = delegate
     }
     
     @objc private func tapeedForgotPassword(){
@@ -156,16 +122,10 @@ class LoginScrenn: UIView {
 
 extension LoginScrenn: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(imagePerson)
-        addSubview(contentView)
-        addSubview(emailLabel)
-        addSubview(emailTextField)
-        addSubview(passwordLabel)
-        addSubview(passwordTextField)
-        addSubview(forgotPasswordButton)
-        addSubview(loginButton)
-        addSubview(registerButton)
+        let views: [UIView] = [titleLabel,imagePerson,contentView,emailLabel,emailTextField,passwordLabel,passwordTextField,forgotPasswordButton,loginButton,registerButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {
@@ -187,14 +147,14 @@ extension LoginScrenn: ViewCode {
             emailLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 40),
             emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 10),
+            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 5),
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
             passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 12),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 10),
+            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 5),
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             

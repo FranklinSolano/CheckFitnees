@@ -19,24 +19,12 @@ class HomeScreen: UIView {
     }
     
     lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "CheckFitness"
-        label.textColor = UIColor.corOne
-        label.font = UIFont(name: "Chalkduster", size: 30)
-        label.textAlignment = .center
+        let label = TitleLabelCustom()
         return label
     }()
     
     lazy var addAlunoButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("     Adicionar Aluno", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 16)
-        button.setTitleColor(UIColor.corTwo, for: .normal)
-        button.backgroundColor = UIColor.corOne
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 15
+        let button = ButtonCustom(title: "     Adicionar")
         button.contentHorizontalAlignment = .left
         button.addTarget(self, action: #selector(tappedAddAluno), for: .touchUpInside)
         return button
@@ -85,11 +73,10 @@ class HomeScreen: UIView {
 
 extension HomeScreen: ViewCode {
     func configElements() {
-        addSubview(titleLabel)
-        addSubview(addAlunoButton)
-        addAlunoButton.addSubview(imagePlus)
-        addSubview(tableView)
-        addSubview(imagePlus)
+        let views: [UIView] = [titleLabel,addAlunoButton,imagePlus,tableView,imagePlus]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

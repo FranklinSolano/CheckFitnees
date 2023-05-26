@@ -26,8 +26,7 @@ class TabBarVC: UITabBarController {
         tabBar.backgroundColor = UIColor.corTwo
         tabBar.isTranslucent = false
         tabBar.tintColor = UIColor.corOne
-        tabBar.unselectedItemTintColor = .lightGray
-        
+        tabBar.unselectedItemTintColor = .gray
         guard let tabBarItem = tabBar.items else { return }
         
         tabBarItem[0].title = "Home"

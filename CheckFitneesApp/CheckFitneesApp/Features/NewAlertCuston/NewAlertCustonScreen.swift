@@ -38,59 +38,35 @@ class NewAlertCustonScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Nome:"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Nome:")
+        label.textColor = .corTwo
         return label
     }()
     
     lazy var nameTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu nome:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite seu nome"
-        tf.backgroundColor = .corOne
-        tf.textColor = UIColor.corTwo
-        tf.borderStyle = .none
+        let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do aluno",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
+        tf.backgroundColor = UIColor.corOne
         return tf
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = UILabel()
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Modalidade:"
-        label.textColor = UIColor.corTwo
-        label.font = UIFont(name: "PingFang SC", size: 16)
+        let label = TextLabelCustom(title: "Modalidade:")
+        label.textColor = .corTwo
         return label
     }()
     
     lazy var modalidadeTextField: UITextField = {
-        let tf = UITextField()
-        tf.translatesAutoresizingMaskIntoConstraints = false
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua modalidade:",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.autocorrectionType = .no
-        tf.borderStyle = .roundedRect
-        tf.keyboardType = .default
-        tf.placeholder = "Digite sua modalidade:"
+        let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite a modalidade",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
-        tf.textColor = UIColor.corTwo
-        tf.borderStyle = .none
         return tf
     }()
     
     lazy var adicionarButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Adicionar", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 16)
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        let button = ButtonCustom(title: "Adicionar")
         button.backgroundColor = UIColor.corTwo
-        button.clipsToBounds = true
+        button.setTitleColor(UIColor.corOne, for: .normal)
         button.layer.cornerRadius = 8
         button.addTarget(self, action: #selector(tappedAdicionarButton), for: .touchUpInside)
         return button
@@ -100,16 +76,17 @@ class NewAlertCustonScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
-        configTextField()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func configTextField(){
-        nameTextField.setBottomBorder2()
-        modalidadeTextField.setBottomBorder2()
+    public func configTextField(delegate: UITextFieldDelegate){
+        nameTextField.delegate = delegate
+        modalidadeTextField.delegate = delegate
+        nameTextField.setBottomBorder()
+        modalidadeTextField.setBottomBorder()
     }
     
     @objc private func tappedBackButton(){
@@ -126,13 +103,10 @@ class NewAlertCustonScreen: UIView {
 
 extension NewAlertCustonScreen: ViewCode {
     func configElements() {
-        addSubview(contentViewAlert)
-        contentViewAlert.addSubview(backButton)
-        contentViewAlert.addSubview(nameLabel)
-        contentViewAlert.addSubview(nameTextField)
-        contentViewAlert.addSubview(modalidadeLabel)
-        contentViewAlert.addSubview(modalidadeTextField)
-        contentViewAlert.addSubview(adicionarButton)
+        let views: [UIView] = [contentViewAlert,backButton,nameLabel,nameTextField,modalidadeLabel,modalidadeTextField,adicionarButton]
+        for view in views {
+            addSubview(view)
+        }
     }
     
     func configConstraint() {

@@ -9,11 +9,11 @@ import UIKit
 
 extension UIColor {
     static var corTwo: UIColor {
-        return UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 1)
+        return UIColor(red: 217/255, green: 220/255, blue: 211/255, alpha: 1)
     }
     
     static var corOne: UIColor {
-        return UIColor(red: 47/255, green: 109/255, blue: 36/255, alpha: 1)
+        return UIColor(red: 31/255, green: 57/255, blue: 89/255, alpha: 1)
     }
     
     static var corTextField: UIColor {
