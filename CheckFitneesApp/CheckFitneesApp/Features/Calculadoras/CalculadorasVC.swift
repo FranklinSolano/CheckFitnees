@@ -45,7 +45,10 @@ extension CalculadorasVC: CalculadorasScreenProtocol {
     }
     
     func actionDietaFlexivelButton() {
-        
+        let vc:DietaFlexivelVC = DietaFlexivelVC()
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .flipHorizontal
+        self.present(vc, animated: true)
     }
     
     func actionDietaAvancadaButton() {

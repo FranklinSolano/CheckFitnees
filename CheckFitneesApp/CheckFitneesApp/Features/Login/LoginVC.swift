@@ -10,6 +10,7 @@ import UIKit
 class LoginVC: UIViewController {
     
     var screen: LoginScrenn?
+    var viewModel: LoginViewModel = LoginViewModel()
     
     override func loadView() {
         screen = LoginScrenn()
@@ -20,11 +21,13 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTextField(delegate: self)
+        viewModel.delegate(delegate: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        screen?.configButtonOn()
     }
 }
 
@@ -38,8 +41,7 @@ extension LoginVC: LoginScrennProtocol {
     }
     
     func actionLogin() {
-        let vc:TabBarVC = TabBarVC()
-        self.navigationController?.pushViewController(vc, animated: false)
+        viewModel.creatUserFirebase(email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "")
     }
     
     func actionRegister() {
@@ -52,9 +54,27 @@ extension LoginVC: LoginScrennProtocol {
 //MARK: - UITextFieldDelegate
 
 extension LoginVC: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        screen?.configButtonOn()
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+}
+
+//MARK: - LoginViewModelProtocol
+
+extension LoginVC: LoginViewModelProtocol {
+    func sucess() {
+        let vc:TabBarVC = TabBarVC()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
+    func error() {
+        screen?.showErrorLabel()
     }
 }
 

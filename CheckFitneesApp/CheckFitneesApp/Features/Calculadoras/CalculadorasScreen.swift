@@ -13,7 +13,6 @@ protocol CalculadorasScreenProtocol: AnyObject {
     func actionPorcentualGorduraButton()
     func actionCicloCarboidratosButton()
     func actionDietaFlexivelButton()
-    func actionDietaAvancadaButton()
     func actionVolumeTreinoButton()
 }
 
@@ -78,13 +77,6 @@ class CalculadorasScreen: UIView {
         return button
     }()
     
-    lazy var dietaAvancadaButton: UIButton = {
-        let button = ButtonCustom(title: "Dieta Avançada")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tappedDietaAvancadaButton), for: .touchUpInside)
-        return button
-    }()
-    
     lazy var volumeTreinolButton: UIButton = {
         let button = ButtonCustom(title: "Volume de Treino")
         button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
@@ -122,10 +114,6 @@ class CalculadorasScreen: UIView {
         delegate?.actionDietaFlexivelButton()
     }
     
-    @objc private func tappedDietaAvancadaButton(){
-        delegate?.actionDietaAvancadaButton()
-    }
-    
     @objc private func tappedVolumeTreinoButton(){
         delegate?.actionVolumeTreinoButton()
     }
@@ -135,7 +123,7 @@ class CalculadorasScreen: UIView {
 
 extension CalculadorasScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,nameLabel,modalidadeLabel,TaxaMetabolicaBasalButton,porcentualGorduraButton,cicloDeCarboitradosButton,dietaFlexivelButton,dietaAvancadaButton,volumeTreinolButton]
+        let views: [UIView] = [titleLabel,backButton,nameLabel,modalidadeLabel,TaxaMetabolicaBasalButton,porcentualGorduraButton,cicloDeCarboitradosButton,dietaFlexivelButton,volumeTreinolButton]
         for view in views {
             addSubview(view)
         }
@@ -177,12 +165,7 @@ extension CalculadorasScreen: ViewCode {
                 dietaFlexivelButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
                 dietaFlexivelButton.heightAnchor.constraint(equalToConstant: 50),
                 
-                dietaAvancadaButton.topAnchor.constraint(equalTo: dietaFlexivelButton.bottomAnchor,constant: 20),
-                dietaAvancadaButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                dietaAvancadaButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-                dietaAvancadaButton.heightAnchor.constraint(equalToConstant: 50),
-                
-                volumeTreinolButton.topAnchor.constraint(equalTo: dietaAvancadaButton.bottomAnchor,constant: 20),
+                volumeTreinolButton.topAnchor.constraint(equalTo: dietaFlexivelButton.bottomAnchor,constant: 20),
                 volumeTreinolButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
                 volumeTreinolButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
                 volumeTreinolButton.heightAnchor.constraint(equalToConstant: 50),

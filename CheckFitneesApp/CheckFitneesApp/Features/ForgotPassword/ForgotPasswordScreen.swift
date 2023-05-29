@@ -58,7 +58,16 @@ class ForgotPasswordScreen: UIView {
     
     lazy var emailTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        tf.autocapitalizationType = .none
         return tf
+    }()
+    
+    lazy var errorEmailLabel: UILabel = {
+        let label = TextLabelCustom(title: "Email não cadastrado. Tente novamente!")
+        label.textColor = .red
+        label.isHidden = true
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
     
     lazy var enterButton: UIButton = {
@@ -75,6 +84,20 @@ class ForgotPasswordScreen: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    public func configButtonOn(){
+        let email = emailTextField.text ?? ""
+        
+        if !email.isEmpty{
+            enterButton.setTitleColor(.corTwo, for: .normal)
+            enterButton.backgroundColor = .corOne
+            enterButton.isEnabled = true
+        } else {
+            enterButton.setTitleColor(.lightGray, for: .normal)
+            enterButton.backgroundColor = .gray
+            enterButton.isEnabled = false
+        }
     }
     
     public func configTextField(delegate: UITextFieldDelegate){
@@ -94,7 +117,7 @@ class ForgotPasswordScreen: UIView {
 
 extension ForgotPasswordScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,contentView,descriptionLabel,emailLabel,emailTextField,enterButton]
+        let views: [UIView] = [titleLabel,backButton,contentView,descriptionLabel,emailLabel,emailTextField,errorEmailLabel,enterButton]
         for view in views {
             addSubview(view)
         }
@@ -125,6 +148,9 @@ extension ForgotPasswordScreen: ViewCode {
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
+            errorEmailLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 5),
+            errorEmailLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
+            
             enterButton.bottomAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 100),
             enterButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             enterButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
@@ -132,3 +158,4 @@ extension ForgotPasswordScreen: ViewCode {
         ])
     }
 }
+
