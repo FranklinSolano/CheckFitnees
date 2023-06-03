@@ -54,13 +54,22 @@ class RegisterScreen: UIView {
     }()
     
     lazy var emailLabel: UILabel = {
-        let label = TextLabelCustom(title: "Nome:")
+        let label = TextLabelCustom(title: "Email:")
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        tf.autocapitalizationType = .none
         return tf
+    }()
+    
+    lazy var errorEmailLabel: UILabel = {
+        let label = TextLabelCustom(title: "Email já cadastrado!")
+        label.textColor = .red
+        label.isHidden = true
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
     
     lazy var passwordLabel: UILabel = {
@@ -83,6 +92,14 @@ class RegisterScreen: UIView {
         let tf = TextFieldCustom(placeholder: "Digite novamente sua senha:")
         tf.isSecureTextEntry = true
         return tf
+    }()
+    
+    lazy var errorLabel: UILabel = {
+        let label = TextLabelCustom(title: "Senhas divergentes!")
+        label.textColor = .red
+        label.isHidden = true
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
     
     lazy var singUpButton: UIButton = {
@@ -108,6 +125,33 @@ class RegisterScreen: UIView {
         confirmPasswordTextField.delegate = delegate
     }
     
+    public func configButtonOn(){
+        let name = nameTextField.text ?? ""
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let confirmPassword = confirmPasswordTextField.text ?? ""
+        
+        if !name.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPassword.isEmpty {
+            singUpButton.setTitleColor(.corTwo, for: .normal)
+            singUpButton.backgroundColor = .corOne
+            singUpButton.isEnabled = true
+        } else {
+            singUpButton.setTitleColor(.lightGray, for: .normal)
+            singUpButton.backgroundColor = .gray
+            singUpButton.isEnabled = false
+        }
+        
+        
+    }
+    
+    public func passwordDivergentsLabel(){
+        if passwordTextField.text != confirmPasswordTextField.text {
+            errorLabel.isHidden = false
+        } else {
+            errorLabel.isHidden = true
+        }
+    }
+    
     @objc private func tappedBackButton(){
         delegate?.actionBackButton()
     }
@@ -121,7 +165,7 @@ class RegisterScreen: UIView {
 
 extension RegisterScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,singUpButton]
+        let views: [UIView] = [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,errorEmailLabel,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,errorLabel,singUpButton]
         for view in views {
             addSubview(view)
         }
@@ -144,32 +188,38 @@ extension RegisterScreen: ViewCode {
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 30),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 10),
+            nameTextField.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 5),
             nameTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             nameTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 12),
+            emailLabel.topAnchor.constraint(equalTo: nameTextField.bottomAnchor,constant: 22),
             emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 10),
+            emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 5),
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 12),
+            errorEmailLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor),
+            errorEmailLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
+            
+            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 22),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 10),
+            passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 5),
             passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            confirmPasswordLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,constant: 12),
+            confirmPasswordLabel.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,constant: 22),
             confirmPasswordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
-            confirmPasswordTextField.topAnchor.constraint(equalTo: confirmPasswordLabel.bottomAnchor,constant: 10),
+            confirmPasswordTextField.topAnchor.constraint(equalTo: confirmPasswordLabel.bottomAnchor,constant: 5),
             confirmPasswordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             confirmPasswordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            singUpButton.bottomAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor,constant: 100),
+            errorLabel.topAnchor.constraint(equalTo: confirmPasswordTextField.bottomAnchor,constant: 5),
+            errorLabel.leadingAnchor.constraint(equalTo: confirmPasswordLabel.leadingAnchor),
+            
+            singUpButton.bottomAnchor.constraint(equalTo: errorLabel.bottomAnchor,constant: 100),
             singUpButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             singUpButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             singUpButton.heightAnchor.constraint(equalToConstant: 55),

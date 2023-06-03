@@ -1,5 +1,5 @@
 //
-//  PerfilVC.swift
+
 //  CheckFitneesApp
 //
 //  Created by Franklin  Stilhano on 5/24/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PerfilVC: UIViewController {
+class SettingsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

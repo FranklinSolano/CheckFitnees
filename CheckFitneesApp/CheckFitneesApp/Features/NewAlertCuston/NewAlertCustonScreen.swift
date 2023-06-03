@@ -47,6 +47,7 @@ class NewAlertCustonScreen: UIView {
         let tf = TextFieldCustom(placeholder: "Digite seu email:")
         tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do aluno",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
+        tf.textColor = .corTwo
         return tf
     }()
     
@@ -60,6 +61,7 @@ class NewAlertCustonScreen: UIView {
         let tf = TextFieldCustom(placeholder: "Digite seu email:")
         tf.attributedPlaceholder = NSAttributedString(string: "Digite a modalidade",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
+        tf.textColor = .corTwo
         return tf
     }()
     
@@ -87,6 +89,20 @@ class NewAlertCustonScreen: UIView {
         modalidadeTextField.delegate = delegate
         nameTextField.setBottomBorder()
         modalidadeTextField.setBottomBorder()
+    }
+    
+    public func configButtonOn(){
+        let name = nameTextField.text ?? ""
+        let modalidade = modalidadeTextField.text ?? ""
+        
+        if !name.isEmpty && !modalidade.isEmpty {
+            adicionarButton.setTitleColor(.corOne, for: .normal)
+            adicionarButton.isEnabled = true
+        } else {
+           
+            adicionarButton.setTitleColor(.lightGray, for: .normal)
+            adicionarButton.isEnabled = false
+        }
     }
     
     @objc private func tappedBackButton(){

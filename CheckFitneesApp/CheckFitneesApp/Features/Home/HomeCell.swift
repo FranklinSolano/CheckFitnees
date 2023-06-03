@@ -42,6 +42,11 @@ class HomeCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configCell(data:CellTeste){
+        addAlunoLabel.text = data.name
+        modalidadeLabel.text = data.modalidade
+    }
 }
 
 //MARK: - ViewCode

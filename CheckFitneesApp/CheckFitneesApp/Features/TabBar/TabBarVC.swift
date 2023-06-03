@@ -19,7 +19,7 @@ class TabBarVC: UITabBarController {
         
         let homeTabBar = HomeVC()
         let historyTabBar = HistoryVC()
-        let setteingsTabBar = PerfilVC()
+        let setteingsTabBar = SettingsVC()
         
         setViewControllers([homeTabBar, historyTabBar, setteingsTabBar], animated: false)
         

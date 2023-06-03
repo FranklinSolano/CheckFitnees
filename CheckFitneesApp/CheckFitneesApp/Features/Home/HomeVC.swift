@@ -10,16 +10,25 @@ import UIKit
 class HomeVC: UIViewController {
     
     var screen: HomeScreen?
+    var viewModel: HomeViewModel = HomeViewModel()
     
     override func loadView() {
         screen = HomeScreen()
         view = screen
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.fetchFirebase()
         screen?.configTableView(delegate: self, dataSource: self)
         screen?.delegate(delegate: self)
+        viewModel.delegate(delegate: self)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
 }
@@ -31,19 +40,31 @@ extension HomeVC: HomeScreenProtocol {
         let vc:NewAlertCustonVC = NewAlertCustonVC()
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .flipHorizontal
+        vc.delegate(delegate: self)
         self.present(vc, animated: true)
     }
 }
+
+//MARK: - NewAlertCustonVCProtocol
+
+extension HomeVC: NewAlertCustonVCProtocol {
+    func reloadTableView() {
+        viewModel.fetchFirebase()
+        screen?.tableView.reloadData()
+    }
+}
+
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.numberOfRowsInSection
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeCell? = tableView.dequeueReusableCell(withIdentifier: HomeCell.identifier, for: indexPath) as? HomeCell
+        cell?.configCell(data: viewModel.datapopular[indexPath.row])
         return cell ?? UITableViewCell()
     }
     
@@ -52,8 +73,30 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc:CalculadorasVC = CalculadorasVC()
-        self.navigationController?.pushViewController(vc, animated: false)
+        let vc:CalculadoraVC = CalculadoraVC()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let item = viewModel.datapopular[indexPath.row]
+        let itemId = item.id
+        viewModel.removeData(withId: itemId)
+        viewModel.datapopular.remove(at: indexPath.row)
+        tableView.reloadData()
+    }
+    
+}
+
+//MARK: - HomeViewModelProtocol
+
+extension HomeVC: HomeViewModelProtocol {
+    func succes() {
+        self.screen?.tableView.reloadData()
+    }
+    
+    func error() {
+        
+    }
+    
     
 }

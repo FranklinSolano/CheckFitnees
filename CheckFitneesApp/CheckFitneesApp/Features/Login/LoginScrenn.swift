@@ -51,7 +51,16 @@ class LoginScrenn: UIView {
     
     lazy var emailTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        tf.autocapitalizationType = .none
+        tf.text = "franklin@gmail.com" 
         return tf
+    }()
+    
+    lazy var errorLabel: UILabel = {
+        let label = TextLabelCustom(title: "Usuário e/ou senha incorreta")
+        label.textColor = .red
+        label.font = UIFont.systemFont(ofSize: 14)
+        return label
     }()
     
     lazy var passwordLabel: UILabel = {
@@ -61,6 +70,8 @@ class LoginScrenn: UIView {
     
     lazy var passwordTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "Digite sua senha:")
+        tf.isSecureTextEntry = true
+        tf.text = "solano2008"
         return tf
     }()
     
@@ -76,6 +87,8 @@ class LoginScrenn: UIView {
     
     lazy var loginButton: UIButton = {
         let button = ButtonCustom(title: "Entrar")
+        button.isEnabled = false
+        button.setTitleColor(.gray, for: .normal)
         button.addTarget(self, action: #selector(tapeedLoginButton), for: .touchUpInside)
         return button
     }()
@@ -94,6 +107,7 @@ class LoginScrenn: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corOne
+        hideErrorLabel()
     }
     
     required init?(coder: NSCoder) {
@@ -104,6 +118,30 @@ class LoginScrenn: UIView {
         emailTextField.delegate = delegate
         passwordTextField.delegate = delegate
     }
+    
+    public func configButtonOn(){
+        let email = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        
+        if !email.isEmpty && !password.isEmpty {
+            loginButton.setTitleColor(.corTwo, for: .normal)
+            loginButton.backgroundColor = .corOne
+            loginButton.isEnabled = true
+        } else {
+            loginButton.setTitleColor(.lightGray, for: .normal)
+            loginButton.backgroundColor = .gray
+            loginButton.isEnabled = false
+        }
+        
+    }
+    
+   public func hideErrorLabel(){
+          errorLabel.isHidden = true
+      }
+      
+  public func showErrorLabel(){
+          errorLabel.isHidden = false
+      }
     
     @objc private func tapeedForgotPassword(){
         delegate?.actionForgotPassword()
@@ -122,7 +160,7 @@ class LoginScrenn: UIView {
 
 extension LoginScrenn: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,imagePerson,contentView,emailLabel,emailTextField,passwordLabel,passwordTextField,forgotPasswordButton,loginButton,registerButton]
+        let views: [UIView] = [titleLabel,imagePerson,contentView,emailLabel,emailTextField,errorLabel,passwordLabel,passwordTextField,forgotPasswordButton,loginButton,registerButton]
         for view in views {
             addSubview(view)
         }
@@ -151,7 +189,10 @@ extension LoginScrenn: ViewCode {
             emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            passwordLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 12),
+            errorLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 5),
+            errorLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
+            
+            passwordLabel.topAnchor.constraint(equalTo: errorLabel.bottomAnchor,constant: 10),
             passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
             
             passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 5),
