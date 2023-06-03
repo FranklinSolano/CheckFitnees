@@ -7,9 +7,19 @@
 
 import UIKit
 
+protocol NewAlertCustonVCProtocol: AnyObject {
+    func reloadTableView()
+}
+
 class NewAlertCustonVC: UIViewController {
     
+    weak var delegate: NewAlertCustonVCProtocol?
+    func delegate(delegate:NewAlertCustonVCProtocol) {
+        self.delegate = delegate
+    }
+    
     var screen: NewAlertCustonScreen?
+    var viewModel: NewAlertCustonViewModel = NewAlertCustonViewModel()
 
     override func loadView() {
         screen = NewAlertCustonScreen()
@@ -21,6 +31,10 @@ class NewAlertCustonVC: UIViewController {
         screen?.delegate(delegate: self)
         screen?.configTextField(delegate: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        screen?.configButtonOn()
+    }
 }
 
 //MARK: - NewAlertCustonScreenProtocol
@@ -31,6 +45,8 @@ extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
     }
     
     func actionAdicionarButton() {
+        viewModel.savedDados(name: screen?.nameTextField.text ?? "", modalidade: screen?.modalidadeTextField.text ?? "")
+        self.delegate?.reloadTableView()
         dismiss(animated: true)
     }
 }
@@ -38,6 +54,10 @@ extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
 //MARK: - UITextFieldDelegate
 
 extension NewAlertCustonVC: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        screen?.configButtonOn()
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

@@ -52,6 +52,7 @@ class LoginScrenn: UIView {
     lazy var emailTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "Digite seu email:")
         tf.autocapitalizationType = .none
+        tf.text = "franklin@gmail.com" 
         return tf
     }()
     
@@ -70,6 +71,7 @@ class LoginScrenn: UIView {
     lazy var passwordTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "Digite sua senha:")
         tf.isSecureTextEntry = true
+        tf.text = "solano2008"
         return tf
     }()
     

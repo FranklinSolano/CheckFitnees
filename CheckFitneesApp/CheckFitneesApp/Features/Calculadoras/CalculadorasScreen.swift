@@ -9,11 +9,6 @@ import UIKit
 
 protocol CalculadorasScreenProtocol: AnyObject {
     func actionBackButton()
-    func actionTaxaMetabolicaButton()
-    func actionPorcentualGorduraButton()
-    func actionCicloCarboidratosButton()
-    func actionDietaFlexivelButton()
-    func actionVolumeTreinoButton()
 }
 
 class CalculadorasScreen: UIView {
@@ -23,65 +18,54 @@ class CalculadorasScreen: UIView {
         self.delegate = delegate
     }
     
-    lazy var titleLabel: UILabel = {
-        let label = TitleLabelCustom()
-        return label
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corOne
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
     
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corOne
+        button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
     
+    
+    lazy var imagePerson: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "person.circle.fill")
+        image.tintColor = UIColor.corTwo
+        return image
+    }()
+    
     lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
-        label.font = UIFont.systemFont(ofSize: 20)
+        let label = TextLabelCustom(title: "Franklin Solano")
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .corTwo
         return label
     }()
     
-    lazy var modalidadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Modalidade Academia")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label
-    }()
-    
-    lazy var TaxaMetabolicaBasalButton: UIButton = {
-        let button = ButtonCustom(title: "Taxa Metabólica Basal")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tappedTaxaMetabolicaButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var porcentualGorduraButton: UIButton = {
-        let button = ButtonCustom(title: "Porcentual de Gordura %")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tappedPorcentualGorduraButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var cicloDeCarboitradosButton: UIButton = {
-        let button = ButtonCustom(title: "Ciclo de Carboidratos")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tappedCicloCarboidratosButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var dietaFlexivelButton: UIButton = {
-        let button = ButtonCustom(title: "Dieta Flexivel")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tappedDietaFlexivelButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var volumeTreinolButton: UIButton = {
-        let button = ButtonCustom(title: "Volume de Treino")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
-        button.addTarget(self, action: #selector(tappedVolumeTreinoButton), for: .touchUpInside)
-        return button
+    lazy var tableView: UITableView = {
+        let tv = UITableView()
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.backgroundColor = .corTwo
+        tv.separatorStyle = .none
+        tv.register(TaxaMetabolicaCell.self, forCellReuseIdentifier: TaxaMetabolicaCell.identifier)
+        tv.register(PorcentualGorduraCell.self, forCellReuseIdentifier: PorcentualGorduraCell.identifier)
+        tv.register(FichaMedidasCell.self, forCellReuseIdentifier: FichaMedidasCell.identifier)
+        tv.register(PerfilCell.self, forCellReuseIdentifier: PerfilCell.identifier)
+        tv.register(CicloCarboidratoCell.self, forCellReuseIdentifier: CicloCarboidratoCell.identifier)
+        tv.register(TreinoCell.self, forCellReuseIdentifier: TreinoCell.identifier)
+        tv.register(VolumeTreinoCell.self, forCellReuseIdentifier: VolumeTreinoCell.identifier)
+        tv.register(GraficoEvolucaoCell.self, forCellReuseIdentifier: GraficoEvolucaoCell.identifier)
+        return tv
     }()
 
     override init(frame: CGRect) {
@@ -94,36 +78,22 @@ class CalculadorasScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+        tableView.delegate = delegate
+        tableView.dataSource = dataSource
+    }
+    
     @objc private func tappedBackButton(){
         delegate?.actionBackButton()
     }
     
-    @objc private func tappedTaxaMetabolicaButton(){
-        delegate?.actionTaxaMetabolicaButton()
-    }
-    
-    @objc private func tappedPorcentualGorduraButton(){
-        delegate?.actionPorcentualGorduraButton()
-    }
-    
-    @objc private func tappedCicloCarboidratosButton(){
-        delegate?.actionCicloCarboidratosButton()
-    }
-    
-    @objc private func tappedDietaFlexivelButton(){
-        delegate?.actionDietaFlexivelButton()
-    }
-    
-    @objc private func tappedVolumeTreinoButton(){
-        delegate?.actionVolumeTreinoButton()
-    }
 }
 
-//MARK: -
+//MARK: - ViewCode
 
 extension CalculadorasScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,nameLabel,modalidadeLabel,TaxaMetabolicaBasalButton,porcentualGorduraButton,cicloDeCarboitradosButton,dietaFlexivelButton,volumeTreinolButton]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,tableView]
         for view in views {
             addSubview(view)
         }
@@ -132,43 +102,26 @@ extension CalculadorasScreen: ViewCode {
     func configConstraint() {
             NSLayoutConstraint.activate([
                 
-                titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+                contentView.topAnchor.constraint(equalTo: topAnchor),
+                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                contentView.heightAnchor.constraint(equalToConstant: 200),
                 
                 backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
                 backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
                 
-                nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 50),
-                nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+                imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
+                imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
+                imagePerson.heightAnchor.constraint(equalToConstant: 70),
+                imagePerson.widthAnchor.constraint(equalToConstant: 70),
                 
-                modalidadeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-                modalidadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+                nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
+                nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
                 
-                TaxaMetabolicaBasalButton.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 70),
-                TaxaMetabolicaBasalButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                TaxaMetabolicaBasalButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-                TaxaMetabolicaBasalButton.heightAnchor.constraint(equalToConstant: 50),
-                
-                porcentualGorduraButton.topAnchor.constraint(equalTo: TaxaMetabolicaBasalButton.bottomAnchor,constant: 20),
-                porcentualGorduraButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                porcentualGorduraButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-                porcentualGorduraButton.heightAnchor.constraint(equalToConstant: 50),
-                
-                cicloDeCarboitradosButton.topAnchor.constraint(equalTo: porcentualGorduraButton.bottomAnchor,constant: 20),
-                cicloDeCarboitradosButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                cicloDeCarboitradosButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-                cicloDeCarboitradosButton.heightAnchor.constraint(equalToConstant: 50),
-                
-                dietaFlexivelButton.topAnchor.constraint(equalTo: cicloDeCarboitradosButton.bottomAnchor,constant: 20),
-                dietaFlexivelButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                dietaFlexivelButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-                dietaFlexivelButton.heightAnchor.constraint(equalToConstant: 50),
-                
-                volumeTreinolButton.topAnchor.constraint(equalTo: dietaFlexivelButton.bottomAnchor,constant: 20),
-                volumeTreinolButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                volumeTreinolButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-                volumeTreinolButton.heightAnchor.constraint(equalToConstant: 50),
+                tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 10),
+                tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+                tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+                tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
             ])
     }
 }

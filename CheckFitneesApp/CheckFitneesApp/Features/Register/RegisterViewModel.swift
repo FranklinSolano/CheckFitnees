@@ -39,6 +39,8 @@ class RegisterViewModel{
             "name": name,
             "email": email
         ])
+        
+        self.creatCollection(id: id)
     }
     
     func checkEmailFirebase(email: String, label: UILabel) {
@@ -53,5 +55,14 @@ class RegisterViewModel{
             }
         }
     }
+    
+    
+    func creatCollection(id:String){
+        let dataPath = "Cells/\(id)"
+        let docRef = db.document(dataPath)
+        docRef.setData([
+            "cells": []
+            ])
+        }
     
 }

@@ -7,13 +7,6 @@
 
 import UIKit
 
-//protocol CicloCarboidratosCellProtocol: AnyObject {
-//    func action2loxButton()
-//    func action3loxButton()
-//    func action4loxButton()
-//    
-//}
-
 class CicloCarboidratosCell: UITableViewCell {
     
     static let identifier: String = "CicloCarboidratosCell"
