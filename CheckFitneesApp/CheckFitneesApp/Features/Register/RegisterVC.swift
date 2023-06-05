@@ -37,7 +37,7 @@ class RegisterVC: UIViewController {
 
 extension RegisterVC: RegisterScreenProtocol {
     func actionBackButton() {
-        dismiss(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
     
     func actionSingUpButton() {
@@ -66,10 +66,8 @@ extension RegisterVC: UITextFieldDelegate {
 extension RegisterVC: RegisterViewModelProtocol {
     func sucess() {
         alert?.getAlert(titulo: "Parabens", mensagem: "Usuario cadastrado com Sucesso!", completion: {
-            let vc = TabBarVC() 
-            let navigationController = UINavigationController(rootViewController: vc)
-            navigationController.modalPresentationStyle = .fullScreen
-            self.present(navigationController, animated: true)
+            let vc:TabBarVC = TabBarVC()
+            self.navigationController?.pushViewController(vc, animated: false)
         })
     }
     

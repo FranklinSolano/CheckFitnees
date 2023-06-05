@@ -72,7 +72,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = viewModel.datapopular[indexPath.row]
-        let vc:CalculadoraVC = CalculadoraVC()
+        let vc:PerfilVC = PerfilVC()
         vc.viewModel.itemClicked = item
         self.navigationController?.pushViewController(vc, animated: true)
     }

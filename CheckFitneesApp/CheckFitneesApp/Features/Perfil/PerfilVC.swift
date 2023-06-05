@@ -8,14 +8,14 @@
 import UIKit
 
 
-class CalculadoraVC: UIViewController {
+class PerfilVC: UIViewController {
     
-    var screen: CalculadorasScreen?
-    var viewModel: CalculadoraViewModel = CalculadoraViewModel()
+    var screen: PeriflScreen?
+    var viewModel: PerfilViewModel = PerfilViewModel()
     
     
     override func loadView() {
-        screen = CalculadorasScreen()
+        screen = PeriflScreen()
         view = screen
     }
     
@@ -23,20 +23,19 @@ class CalculadoraVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTableView(delegate: self, dataSource: self)
-        viewModel.teste()
+        screen?.setupView(data: viewModel.itemClicked)
+        viewModel.popularDatapopular()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         screen?.tableView.reloadData()
-        screen?.setupView(data: viewModel.itemClicked)
         viewModel.popularDatapopular()
-        viewModel.updateSecondCellLabel(tableView: screen?.tableView ?? UITableView())
     }
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension CalculadoraVC: UITableViewDelegate, UITableViewDataSource {
+extension PerfilVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.datapopular.count
     }
@@ -69,8 +68,10 @@ extension CalculadoraVC: UITableViewDelegate, UITableViewDataSource {
             vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 3:
-            let vc = DietaFlexivelVC()
-            navigationController?.pushViewController(vc, animated: true)
+            let vc:DietaFlexivelVC = DietaFlexivelVC()
+            vc.modalPresentationStyle = .overFullScreen
+            vc.modalTransitionStyle = .flipHorizontal
+            self.present(vc, animated: true)
         case 4:
             let vc = CicloCarboidratosVC()
             navigationController?.pushViewController(vc, animated: true)
@@ -89,15 +90,17 @@ extension CalculadoraVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - TaxaMetabolicaVCProtocol
 
-extension CalculadoraVC: TaxaMetabolicaVCProtocol{
+extension PerfilVC: TaxaMetabolicaVCProtocol{
     func succes(with taxa: Double) {
         viewModel.itemClicked?.taxaMetabolica = taxa
+        print("aloo \(viewModel.itemClicked?.taxaMetabolica ?? 0)")
+        viewModel.updateSecondCellLabel(tableView: screen?.tableView ?? UITableView())
     }
 }
 
 //MARK: - CalculadorasScreenProtocol
 
-extension CalculadoraVC: CalculadorasScreenProtocol {
+extension PerfilVC: PerfilScreenProtocol {
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }

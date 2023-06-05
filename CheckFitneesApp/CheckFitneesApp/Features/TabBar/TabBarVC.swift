@@ -12,7 +12,6 @@ class TabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
-//        configTabBar()
 }
 
     private func setupTabBar(){
@@ -23,9 +22,9 @@ class TabBarVC: UITabBarController {
         
         setViewControllers([homeTabBar, historyTabBar, setteingsTabBar], animated: false)
         
-        tabBar.backgroundColor = UIColor.corTwo
+        tabBar.backgroundColor = UIColor.corOne
         tabBar.isTranslucent = false
-        tabBar.tintColor = UIColor.corOne
+        tabBar.tintColor = UIColor.corTwo 
         tabBar.unselectedItemTintColor = .gray
         guard let tabBarItem = tabBar.items else { return }
         

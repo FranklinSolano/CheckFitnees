@@ -7,14 +7,14 @@
 
 import UIKit
 
-protocol CalculadorasScreenProtocol: AnyObject {
+protocol PerfilScreenProtocol: AnyObject {
     func actionBackButton()
 }
 
-class CalculadorasScreen: UIView {
+class PeriflScreen: UIView {
     
-    weak var delegate: CalculadorasScreenProtocol?
-    public func delegate(delegate:CalculadorasScreenProtocol){
+    weak var delegate: PerfilScreenProtocol?
+    public func delegate(delegate:PerfilScreenProtocol){
         self.delegate = delegate
     }
     
@@ -87,7 +87,7 @@ class CalculadorasScreen: UIView {
 
 //MARK: - ViewCode
 
-extension CalculadorasScreen: ViewCode {
+extension PeriflScreen: ViewCode {
     func configElements() {
         let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,tableView]
         for view in views {
