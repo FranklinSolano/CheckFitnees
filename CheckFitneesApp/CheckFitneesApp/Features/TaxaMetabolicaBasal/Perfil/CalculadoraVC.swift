@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class CalculadoraVC: UIViewController {
     
     var screen: CalculadorasScreen?
@@ -22,8 +23,15 @@ class CalculadoraVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTableView(delegate: self, dataSource: self)
-        viewModel.delegate(delegate: self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        screen?.tableView.reloadData()
+        screen?.setupView(data: viewModel.itemClicked)
+        viewModel.popularDatapopular()
+        viewModel.updateSecondCellLabel(tableView: screen?.tableView ?? UITableView())
+    }
+    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -44,26 +52,44 @@ extension CalculadoraVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            let vc:TaxaMetabolicaVC = TaxaMetabolicaVC()
-            self.navigationController?.pushViewController(vc, animated: true)
-        } else {
-            let vc:PorcentualHomemVC = PorcentualHomemVC()
-            self.navigationController?.pushViewController(vc, animated: true)
+        switch indexPath.row {
+        case 0:
+            let vc = AvaliacaoVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 1:
+            let vc = TaxaMetabolicaVC()
+            vc.viewModel.result = viewModel.itemClicked?.id ?? ""
+            vc.delegate(delegate: self)
+            navigationController?.pushViewController(vc, animated: true)
+        case 2:
+            let vc = PorcentualHomemVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 3:
+            let vc = DietaFlexivelVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 4:
+            let vc = CicloCarboidratosVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 5:
+            let vc = TreinoVC()
+            navigationController?.pushViewController(vc, animated: true)
+        case 6:
+            let vc = VolumeTreinoVC()
+            navigationController?.pushViewController(vc, animated: true)
+        default:
+            let vc = GraficoVC()
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
 
 //MARK: - CalculadoraViewModelProtocol
 
-extension CalculadoraVC: CalculadoraViewModelProtocol{
-    func succes() {
-        
+extension CalculadoraVC: TaxaMetabolicaVCProtocol{
+    func succes(with taxa: String) {
+        viewModel.itemClicked?.taxaMetabolica = taxa
     }
     
-    func error() {
-        
-    }
 }
 
 //MARK: - CalculadorasScreenProtocol

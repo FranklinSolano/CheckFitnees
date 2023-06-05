@@ -20,12 +20,11 @@ class HomeViewModel {
         self.delegate = delegate
     }
     
-    var datapopular: [CellTeste] = []
+    var datapopular: [PerfilModel] = []
     var userId = Auth.auth().currentUser?.uid
     var db = Firestore.firestore()
     var stringTest = ""
     
-    var data: [String] = []
     
     
     var numberOfRowsInSection: Int {
@@ -33,54 +32,47 @@ class HomeViewModel {
     }
     
     func fetchFirebase() {
-        let docRef = Firestore.firestore().collection("Cells").document(self.userId ?? "")
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()
-                
-                if let array = data?["cells"] as? [[String: String]] {
-                    // Criar objetos com base nos elementos do array
-                    let objetosArray = array.map { elemento in
-                        // Acessar nome e modalidade do elemento do array
-                        let name = elemento["name"]
-                        let modalidade = elemento["modalidade"]
-                        let id = elemento["id"]
+        if !(userId?.isEmpty ?? true) {
+            let docRef = Firestore.firestore().collection("cells").whereField("personal", isEqualTo: userId! )
+            
+            docRef.getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    for document in querySnapshot!.documents {
+                        print("\(document.documentID) => \(document.data())")
+                    }
+                    let objetosArray = querySnapshot!.documents.map { element in
+                        let name = element["name"]
+                        let modalidade = element["modalidade"]
+                        let id = element["id"]
+                        let taxaMetabolica = element["taxaMetabolica"]
+                        let porcentual = element["porcentual"]
+                        let carb = element["carb"]
+                        let proteina = element["proteina"]
+                        let gordura = element["gordura"]
                         
                         // Criar seu objeto usando nome e modalidade
-                        return CellTeste(name: "Aluno: \(name ?? "")", modalidade: "Modalidade: \(modalidade ?? "")", id: id ?? "")
+                        return PerfilModel(name: name as! String, modalidade:modalidade as! String, id: id as! String ?? "", taxaMetabolica: taxaMetabolica as! String, porcentual: porcentual as! String as! String, carb: carb as! String, proteina: proteina as! String, gordura: gordura as! String)
+                        
+                        
                     }
-                    
-                    // Popule seu array de objetos com os dados obtidos
                     self.datapopular = objetosArray
                     
                     // Chame o delegate ou realize outras ações necessárias
                     self.delegate?.succes()
-                    
                 }
             }
         }
+        
     }
     
     func removeData(withId id: String) {
-        let docRef = db.collection("Cells").document(userId ?? "")
-        
-        docRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                var cellsArray = document.data()?["cells"] as? [[String: String]] ?? []
-                cellsArray.removeAll { $0["id"] == id }
-                
-                docRef.updateData([
-                    "cells": cellsArray
-                ]) { error in
-                    if let error = error {
-                        // Trate o erro, se ocorrer
-                        print("Erro ao remover os dados: \(error.localizedDescription)")
-                    } else {
-                        // Os dados foram removidos com sucesso
-                        print("Dados removidos com sucesso")
-                    }
-                }
+        db.collection("cells").document(id).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
             }
         }
     }

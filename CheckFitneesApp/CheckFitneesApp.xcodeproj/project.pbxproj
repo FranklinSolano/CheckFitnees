@@ -63,7 +63,10 @@
 		EB2917EA2A16941F00183A92 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917E92A16941F00183A92 /* FirebaseStorage */; };
 		EB2917EC2A16941F00183A92 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917EB2A16941F00183A92 /* FirebaseStorageCombine-Community */; };
 		EB2917EF2A16958400183A92 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917EE2A16958400183A92 /* AlamofireImage */; };
-		EB61272A2A2A68B600EA8020 /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB6127292A2A68B600EA8020 /* PerfilModel.swift */; };
+		EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9342A2AE656001CCA2A /* GraficoVC.swift */; };
+		EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */; };
+		EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9382A2AE678001CCA2A /* TreinoVC.swift */; };
+		EB46B93B2A2AE683001CCA2A /* AvaliacaoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B93A2A2AE683001CCA2A /* AvaliacaoVC.swift */; };
 		EB61272E2A2A7D4100EA8020 /* PerfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */; };
 		EB992DCB2A24204B0049FC8E /* TaxaMetabolicaBasalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */; };
 		EB992DCD2A2503FA0049FC8E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */; };
@@ -71,7 +74,7 @@
 		EB992DD22A252C920049FC8E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD12A252C920049FC8E /* Alert.swift */; };
 		EB992DD42A2539230049FC8E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD32A2539230049FC8E /* ForgotPasswordViewModel.swift */; };
 		EB992DD62A2660EA0049FC8E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD52A2660EA0049FC8E /* HomeViewModel.swift */; };
-		EB992DD82A2662150049FC8E /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD72A2662150049FC8E /* HomeModel.swift */; };
+		EB992DD82A2662150049FC8E /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD72A2662150049FC8E /* PerfilModel.swift */; };
 		EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD92A2667F30049FC8E /* NewAlertCustonViewModel.swift */; };
 		EB992DDC2A293A080049FC8E /* CalculadoraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DDB2A293A070049FC8E /* CalculadoraViewModel.swift */; };
 		EBAF5D372A197DF500AA1692 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D362A197DF500AA1692 /* HomeVC.swift */; };
@@ -116,7 +119,10 @@
 		EB2917B02A1662AA00183A92 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 		EB2917B22A1662C300183A92 /* ForgotPaswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPaswordVC.swift; sourceTree = "<group>"; };
 		EB2917B42A16937600183A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EB6127292A2A68B600EA8020 /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
+		EB46B9342A2AE656001CCA2A /* GraficoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficoVC.swift; sourceTree = "<group>"; };
+		EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTreinoVC.swift; sourceTree = "<group>"; };
+		EB46B9382A2AE678001CCA2A /* TreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinoVC.swift; sourceTree = "<group>"; };
+		EB46B93A2A2AE683001CCA2A /* AvaliacaoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoVC.swift; sourceTree = "<group>"; };
 		EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilCell.swift; sourceTree = "<group>"; };
 		EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaBasalViewModel.swift; sourceTree = "<group>"; };
 		EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -124,7 +130,7 @@
 		EB992DD12A252C920049FC8E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		EB992DD32A2539230049FC8E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		EB992DD52A2660EA0049FC8E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		EB992DD72A2662150049FC8E /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		EB992DD72A2662150049FC8E /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilModel.swift; sourceTree = "<group>"; };
 		EB992DD92A2667F30049FC8E /* NewAlertCustonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonViewModel.swift; sourceTree = "<group>"; };
 		EB992DDB2A293A070049FC8E /* CalculadoraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculadoraViewModel.swift; sourceTree = "<group>"; };
 		EBAF5D362A197DF500AA1692 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -183,6 +189,8 @@
 				EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */,
 				EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */,
 				EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */,
+				EB46B9302A2AE5F3001CCA2A /* Avaliacao */,
+				EBAF5D412A1BB49D00AA1692 /* Perfil */,
 			);
 			path = TaxaMetabolicaBasal;
 			sourceTree = "<group>";
@@ -301,14 +309,16 @@
 		EB2917AE2A1658E400183A92 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				EBCD378B2A217CBC007846EF /* DietaFlexivel */,
+				EB46B9332A2AE646001CCA2A /* Grafico */,
+				EB46B9322A2AE63F001CCA2A /* VolumeTreino */,
+				EB46B9312A2AE634001CCA2A /* Treino */,
 				EB1AE04A2A2066B900B32E1F /* CicloCarboidratos */,
-				EB1AE0362A1E70D400B32E1F /* TabBar */,
+				EBCD378B2A217CBC007846EF /* DietaFlexivel */,
 				EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */,
 				EB1AE0252A1BC80F00B32E1F /* TaxaMetabolicaBasal */,
-				EBAF5D412A1BB49D00AA1692 /* Calculadoras */,
 				EBAF5D3C2A1B9B0200AA1692 /* NewAlertCuston */,
 				EBAF5D352A197DE100AA1692 /* Home */,
+				EB1AE0362A1E70D400B32E1F /* TabBar */,
 				EB2917AF2A16628800183A92 /* ForgotPassword */,
 				EB2917A92A1658AF00183A92 /* Register */,
 				EB2917A32A15958E00183A92 /* Login */,
@@ -326,10 +336,49 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		EB46B92F2A2AE5E4001CCA2A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EB46B9302A2AE5F3001CCA2A /* Avaliacao */ = {
+			isa = PBXGroup;
+			children = (
+				EB46B93A2A2AE683001CCA2A /* AvaliacaoVC.swift */,
+			);
+			path = Avaliacao;
+			sourceTree = "<group>";
+		};
+		EB46B9312A2AE634001CCA2A /* Treino */ = {
+			isa = PBXGroup;
+			children = (
+				EB46B9382A2AE678001CCA2A /* TreinoVC.swift */,
+			);
+			path = Treino;
+			sourceTree = "<group>";
+		};
+		EB46B9322A2AE63F001CCA2A /* VolumeTreino */ = {
+			isa = PBXGroup;
+			children = (
+				EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */,
+			);
+			path = VolumeTreino;
+			sourceTree = "<group>";
+		};
+		EB46B9332A2AE646001CCA2A /* Grafico */ = {
+			isa = PBXGroup;
+			children = (
+				EB46B9342A2AE656001CCA2A /* GraficoVC.swift */,
+			);
+			path = Grafico;
+			sourceTree = "<group>";
+		};
 		EB6127242A2A5A3700EA8020 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -345,11 +394,11 @@
 		EBAF5D352A197DE100AA1692 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				EB46B92F2A2AE5E4001CCA2A /* Cell */,
 				EBAF5D362A197DF500AA1692 /* HomeVC.swift */,
 				EBAF5D382A197E0900AA1692 /* HomeScreen.swift */,
-				EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */,
 				EB992DD52A2660EA0049FC8E /* HomeViewModel.swift */,
-				EB992DD72A2662150049FC8E /* HomeModel.swift */,
+				EB992DD72A2662150049FC8E /* PerfilModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -364,16 +413,16 @@
 			path = NewAlertCuston;
 			sourceTree = "<group>";
 		};
-		EBAF5D412A1BB49D00AA1692 /* Calculadoras */ = {
+		EBAF5D412A1BB49D00AA1692 /* Perfil */ = {
 			isa = PBXGroup;
 			children = (
 				EB6127242A2A5A3700EA8020 /* Cell */,
+				EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */,
 				EBAF5D422A1BB4B500AA1692 /* CalculadoraVC.swift */,
 				EBAF5D442A1BB4C900AA1692 /* CalculadorasScreen.swift */,
 				EB992DDB2A293A070049FC8E /* CalculadoraViewModel.swift */,
-				EB6127292A2A68B600EA8020 /* PerfilModel.swift */,
 			);
-			path = Calculadoras;
+			path = Perfil;
 			sourceTree = "<group>";
 		};
 		EBCD378B2A217CBC007846EF /* DietaFlexivel */ = {
@@ -501,6 +550,7 @@
 				EB992DCB2A24204B0049FC8E /* TaxaMetabolicaBasalViewModel.swift in Sources */,
 				EB1AE0412A1FDB4A00B32E1F /* TextFieldCustom.swift in Sources */,
 				EB2917B32A1662C300183A92 /* ForgotPaswordVC.swift in Sources */,
+				EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */,
 				EB992DD62A2660EA0049FC8E /* HomeViewModel.swift in Sources */,
 				EBAF5D452A1BB4C900AA1692 /* CalculadorasScreen.swift in Sources */,
 				EB992DCF2A2524E60049FC8E /* RegisterViewModel.swift in Sources */,
@@ -519,7 +569,6 @@
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
 				EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */,
 				EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */,
-				EB61272A2A2A68B600EA8020 /* PerfilModel.swift in Sources */,
 				EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */,
 				EB2917942A1593D900183A92 /* LoginVC.swift in Sources */,
 				EB2917A82A15963D00183A92 /* Extension-ViewCode.swift in Sources */,
@@ -530,18 +579,21 @@
 				EB2917AD2A1658D100183A92 /* RegisterVC.swift in Sources */,
 				EB992DDC2A293A080049FC8E /* CalculadoraViewModel.swift in Sources */,
 				EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */,
+				EB46B93B2A2AE683001CCA2A /* AvaliacaoVC.swift in Sources */,
 				EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */,
 				EB2917A52A1595A900183A92 /* LoginScrenn.swift in Sources */,
 				EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */,
 				EBAF5D432A1BB4B500AA1692 /* CalculadoraVC.swift in Sources */,
+				EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */,
 				EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */,
 				EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */,
 				EB61272E2A2A7D4100EA8020 /* PerfilCell.swift in Sources */,
 				EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonVC.swift in Sources */,
 				EB1AE0502A2082B400B32E1F /* CicloCarboidratosCell.swift in Sources */,
 				EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */,
+				EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */,
 				EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */,
-				EB992DD82A2662150049FC8E /* HomeModel.swift in Sources */,
+				EB992DD82A2662150049FC8E /* PerfilModel.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

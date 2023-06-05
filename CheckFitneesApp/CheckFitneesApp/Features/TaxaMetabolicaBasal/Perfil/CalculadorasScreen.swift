@@ -46,7 +46,7 @@ class CalculadorasScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "Franklin Solano")
+        let label = TextLabelCustom(title: "")
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .corTwo
         return label
@@ -57,14 +57,7 @@ class CalculadorasScreen: UIView {
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.backgroundColor = .corTwo
         tv.separatorStyle = .none
-        tv.register(TaxaMetabolicaCell.self, forCellReuseIdentifier: TaxaMetabolicaCell.identifier)
-        tv.register(PorcentualGorduraCell.self, forCellReuseIdentifier: PorcentualGorduraCell.identifier)
-        tv.register(FichaMedidasCell.self, forCellReuseIdentifier: FichaMedidasCell.identifier)
         tv.register(PerfilCell.self, forCellReuseIdentifier: PerfilCell.identifier)
-        tv.register(CicloCarboidratoCell.self, forCellReuseIdentifier: CicloCarboidratoCell.identifier)
-        tv.register(TreinoCell.self, forCellReuseIdentifier: TreinoCell.identifier)
-        tv.register(VolumeTreinoCell.self, forCellReuseIdentifier: VolumeTreinoCell.identifier)
-        tv.register(GraficoEvolucaoCell.self, forCellReuseIdentifier: GraficoEvolucaoCell.identifier)
         return tv
     }()
 
@@ -72,6 +65,7 @@ class CalculadorasScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
+        
     }
     
     required init?(coder: NSCoder) {
@@ -81,6 +75,10 @@ class CalculadorasScreen: UIView {
     func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
         tableView.delegate = delegate
         tableView.dataSource = dataSource
+    }
+    
+    func setupView(data: PerfilModel?){
+        nameLabel.text = data?.name
     }
     
     @objc private func tappedBackButton(){

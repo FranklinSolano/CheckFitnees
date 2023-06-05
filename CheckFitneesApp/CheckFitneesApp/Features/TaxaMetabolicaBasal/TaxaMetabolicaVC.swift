@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol TaxaMetabolicaVCProtocol: AnyObject {
+    func succes(with taxa: String)
+}
+
 class TaxaMetabolicaVC: UIViewController {
+    
+    weak var delegate:TaxaMetabolicaVCProtocol?
+    func delegate(delegate:TaxaMetabolicaVCProtocol) {
+        self.delegate = delegate
+    }
     
     var screen: TaxaMetabolicaScreen?
     var viewModel: TaxaMetabolicaBasalViewModel = TaxaMetabolicaBasalViewModel()
@@ -38,11 +47,14 @@ extension TaxaMetabolicaVC: TaxaMetabolicaScreenProtocol {
     }
     
     func actionBackButton() {
+        self.delegate?.succes(with : viewModel.reusltTaxaMetabolica)
         self.navigationController?.popViewController(animated: true)
     }
     
     func actionCalcularButton() {
         viewModel.calcularTaxaMetabolica(textFieldPeso: screen?.pesoTextField.text ?? "", textFieldAltura: screen?.alturaTextField.text ?? "", textFieldIdade: screen?.idadeTextField.text ?? "", lineView: screen?.lineView ?? UIView(), labelTaxa: screen?.taxaMetabolicaLabel ?? UILabel(), pesoText: screen?.pesoTextField ?? UITextField(), alturaText: screen?.alturaTextField ?? UITextField(), idadeText: screen?.idadeTextField ?? UITextField())
+        viewModel.atualizarDado(id: viewModel.result)
+       
     }
 }
 //MARK: - UITextFieldDelegate

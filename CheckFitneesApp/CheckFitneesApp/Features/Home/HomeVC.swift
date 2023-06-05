@@ -73,14 +73,17 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = viewModel.datapopular[indexPath.row]
+        let itemId = item.id
         let vc:CalculadoraVC = CalculadoraVC()
+        vc.viewModel.itemClicked = item
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let item = viewModel.datapopular[indexPath.row]
         let itemId = item.id
-        viewModel.removeData(withId: itemId)
+        viewModel.removeData(withId: itemId ?? "")
         viewModel.datapopular.remove(at: indexPath.row)
         tableView.reloadData()
     }

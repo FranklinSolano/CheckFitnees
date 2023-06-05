@@ -43,9 +43,9 @@ class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configCell(data:CellTeste){
-        addAlunoLabel.text = data.name
-        modalidadeLabel.text = data.modalidade
+    func configCell(data:PerfilModel){
+        addAlunoLabel.text = "Aluno: \(data.name ?? "")"
+        modalidadeLabel.text = "Modalidade: \(data.modalidade ?? "")"
     }
 }
 

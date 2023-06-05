@@ -6,10 +6,15 @@
 //
 
 import UIKit
+import Firebase
+
 
 class TaxaMetabolicaBasalViewModel {
     
-    var result = 0.0
+    let db = Firestore.firestore()
+    var userId = Auth.auth().currentUser?.uid
+    var result = ""
+    var reusltTaxaMetabolica = ""
     
     public func calcularTaxaMetabolica(textFieldPeso: String,textFieldAltura: String,textFieldIdade: String, lineView: UIView, labelTaxa: UILabel,pesoText: UITextField,alturaText: UITextField,idadeText: UITextField) {
         let pesoString = textFieldPeso
@@ -35,15 +40,31 @@ class TaxaMetabolicaBasalViewModel {
         
         if lineView.backgroundColor == .corOne {
             let calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
-            result = calculoSoma
+            reusltTaxaMetabolica = String(calculoSoma)
         } else {
             let calculoSoma =  665 + (calculoPesoMulher) + (calculoAlturaMulher) - (calculoIdadeMulher)
-            result = calculoSoma
+            reusltTaxaMetabolica = String(calculoSoma)
         }
-        labelTaxa.text = "Sua Taxa Metabólica Basal é \(String(format: "%.2f", result)) Kcal"
+        labelTaxa.text = "Sua Taxa Metabólica Basal é \(reusltTaxaMetabolica) Kcal"
         pesoText.text = ""
         alturaText.text = ""
         idadeText.text = ""
+        
+        
     }
     
+    
+    func atualizarDado(id: String){
+        let result = self.reusltTaxaMetabolica
+        db.collection("cells").document(id).updateData([
+            "taxaMetabolica": result ,
+        ]) { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
+        
     }
+}

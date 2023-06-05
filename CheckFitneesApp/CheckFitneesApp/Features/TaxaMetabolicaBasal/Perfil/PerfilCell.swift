@@ -82,13 +82,13 @@ class PerfilCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(data: Perfil) {
-        titleLabel.text = data.title ?? ""
-        carbolLabel.text = data.carbo ?? ""
-        proteinaLabel.text = data.proteina ?? ""
-        gorduraLabel.text = data.gordura ?? ""
-        calcularButton.setTitle(data.buttonGeneric ?? "", for: .normal)
-        imagePerson.image = data.image
+    func setupCell(data: PerfilModel?) {
+        titleLabel.text = data?.title ?? ""
+        carbolLabel.text = data?.carb ?? ""
+        proteinaLabel.text = data?.proteina ?? ""
+        gorduraLabel.text = data?.gordura ?? ""
+        calcularButton.setTitle(data?.buttonGeneric ?? "", for: .normal)
+        imagePerson.image = data?.image
     }
 }
 
