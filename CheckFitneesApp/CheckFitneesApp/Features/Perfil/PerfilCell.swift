@@ -67,8 +67,6 @@ class PerfilCell: UITableViewCell {
         return image
     }()
     
-    
-    
     static let identifier: String = "DietaFlexivelCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -104,7 +102,6 @@ extension PerfilCell: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            
             contentView1.topAnchor.constraint(equalTo: topAnchor,constant: 20),
             contentView1.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 15),
             contentView1.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -15),

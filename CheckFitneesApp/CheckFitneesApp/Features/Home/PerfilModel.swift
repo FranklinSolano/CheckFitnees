@@ -9,11 +9,10 @@ import UIKit
 import Firebase
 
 public struct PerfilModel{
-    
     let name: String?
     let modalidade: String?
     let id: String?
-    var taxaMetabolica: String?
+    var taxaMetabolica: Double?
     var porcentual: String?
     var carb: String?
     var proteina: String?
@@ -21,6 +20,5 @@ public struct PerfilModel{
     var title: String?
     var buttonGeneric: String?
     var image: UIImage?
-    
 }
 

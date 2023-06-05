@@ -23,9 +23,6 @@ class HomeViewModel {
     var datapopular: [PerfilModel] = []
     var userId = Auth.auth().currentUser?.uid
     var db = Firestore.firestore()
-    var stringTest = ""
-    
-    
     
     var numberOfRowsInSection: Int {
         return datapopular.count
@@ -34,7 +31,6 @@ class HomeViewModel {
     func fetchFirebase() {
         if !(userId?.isEmpty ?? true) {
             let docRef = Firestore.firestore().collection("cells").whereField("personal", isEqualTo: userId! )
-            
             docRef.getDocuments() { (querySnapshot, err) in
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -51,20 +47,13 @@ class HomeViewModel {
                         let carb = element["carb"]
                         let proteina = element["proteina"]
                         let gordura = element["gordura"]
-                        
-                        // Criar seu objeto usando nome e modalidade
-                        return PerfilModel(name: name as! String, modalidade:modalidade as! String, id: id as! String ?? "", taxaMetabolica: taxaMetabolica as! String, porcentual: porcentual as! String as! String, carb: carb as! String, proteina: proteina as! String, gordura: gordura as! String)
-                        
-                        
+                        return PerfilModel(name: name as? String, modalidade:modalidade as? String, id: id as? String ?? "", taxaMetabolica: taxaMetabolica as? Double, porcentual: porcentual as? String, carb: carb as? String, proteina: proteina as? String, gordura: gordura as? String)
                     }
                     self.datapopular = objetosArray
-                    
-                    // Chame o delegate ou realize outras ações necessárias
                     self.delegate?.succes()
                 }
             }
         }
-        
     }
     
     func removeData(withId id: String) {

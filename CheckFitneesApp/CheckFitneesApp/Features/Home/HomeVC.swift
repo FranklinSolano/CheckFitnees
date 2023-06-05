@@ -23,14 +23,13 @@ class HomeVC: UIViewController {
         screen?.configTableView(delegate: self, dataSource: self)
         screen?.delegate(delegate: self)
         viewModel.delegate(delegate: self)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
+        viewModel.fetchFirebase()
     }
-    
 }
 
 //MARK: - HomeScreenProtocol
@@ -54,7 +53,6 @@ extension HomeVC: NewAlertCustonVCProtocol {
     }
 }
 
-
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension HomeVC: UITableViewDelegate, UITableViewDataSource {
@@ -74,7 +72,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = viewModel.datapopular[indexPath.row]
-        let itemId = item.id
         let vc:CalculadoraVC = CalculadoraVC()
         vc.viewModel.itemClicked = item
         self.navigationController?.pushViewController(vc, animated: true)
@@ -87,7 +84,6 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
         viewModel.datapopular.remove(at: indexPath.row)
         tableView.reloadData()
     }
-    
 }
 
 //MARK: - HomeViewModelProtocol
@@ -96,10 +92,7 @@ extension HomeVC: HomeViewModelProtocol {
     func succes() {
         self.screen?.tableView.reloadData()
     }
-    
     func error() {
         
     }
-    
-    
 }

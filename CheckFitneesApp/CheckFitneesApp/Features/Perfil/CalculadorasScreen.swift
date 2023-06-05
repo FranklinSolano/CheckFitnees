@@ -60,12 +60,11 @@ class CalculadorasScreen: UIView {
         tv.register(PerfilCell.self, forCellReuseIdentifier: PerfilCell.identifier)
         return tv
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
-        
     }
     
     required init?(coder: NSCoder) {
@@ -84,7 +83,6 @@ class CalculadorasScreen: UIView {
     @objc private func tappedBackButton(){
         delegate?.actionBackButton()
     }
-    
 }
 
 //MARK: - ViewCode
@@ -98,28 +96,27 @@ extension CalculadorasScreen: ViewCode {
     }
     
     func configConstraint() {
-            NSLayoutConstraint.activate([
-                
-                contentView.topAnchor.constraint(equalTo: topAnchor),
-                contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                contentView.heightAnchor.constraint(equalToConstant: 200),
-                
-                backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-                
-                imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
-                imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-                imagePerson.heightAnchor.constraint(equalToConstant: 70),
-                imagePerson.widthAnchor.constraint(equalToConstant: 70),
-                
-                nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
-                nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
-                
-                tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 10),
-                tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        NSLayoutConstraint.activate([
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 220),
+            
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            
+            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
+            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imagePerson.heightAnchor.constraint(equalToConstant: 70),
+            imagePerson.widthAnchor.constraint(equalToConstant: 70),
+            
+            nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
+            nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 10),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
 }

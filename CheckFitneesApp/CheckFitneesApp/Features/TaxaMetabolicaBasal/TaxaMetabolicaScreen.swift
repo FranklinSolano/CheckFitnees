@@ -12,41 +12,47 @@ protocol TaxaMetabolicaScreenProtocol: AnyObject {
     func actionCalcularButton()
     func actionCalculoMulher()
     func actionCalculoHomem()
-    
 }
 
 class TaxaMetabolicaScreen: UIView {
     
-    var result = 0.0
-    
+    var name = ""
     weak var delegate: TaxaMetabolicaScreenProtocol?
     public func delegate(delegate: TaxaMetabolicaScreenProtocol){
         self.delegate = delegate
     }
     
-    lazy var titleLabel: UILabel = {
-        let label = TitleLabelCustom()
-        return label
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corOne
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
     
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corOne
+        button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
     
-    lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label
+    
+    lazy var imagePerson: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "person.circle.fill")
+        image.tintColor = UIColor.corTwo
+        return image
     }()
     
-    lazy var modalidadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Modalidade Academia")
-        label.font = UIFont.systemFont(ofSize: 20)
+    lazy var nameLabel: UILabel = {
+        let label = TextLabelCustom(title: "" )
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .corTwo
         return label
     }()
     
@@ -138,7 +144,6 @@ class TaxaMetabolicaScreen: UIView {
         backgroundColor = UIColor.corTwo
     }
     
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -164,47 +169,13 @@ class TaxaMetabolicaScreen: UIView {
     @objc private func tappedCalculoHomemButton(){
         delegate?.actionCalculoHomem()
     }
-    
-    func calculoTaxa(){
-        let pesoString = pesoTextField.text
-        let pesoDouble = 0.0
-        let pesoResult = Double(pesoString ?? "") ?? pesoDouble
-        
-        let idadeString = idadeTextField.text
-        let idadeDouble = 0.0
-        let idadeResult = Double(idadeString ?? "") ?? idadeDouble
-        
-        let alturaString = alturaTextField.text
-        let alturaDouble = 0.0
-        let alturaResult = Double(alturaString ?? "") ?? alturaDouble
-        
-        let calculoPeso = 13.7 * pesoResult
-        let calculoAltura = 5.0 * alturaResult
-        let calculoIdade = 6.7 * idadeResult
-        
-        let calculoPesoMulher = 9.6 * pesoResult
-        let calculoAlturaMulher = 1.8 * alturaResult
-        let calculoIdadeMulher = 4.7 * idadeResult
-        
-        if lineView.backgroundColor == .corOne {
-            var calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
-            result = calculoSoma
-        } else {
-            var calculoSoma =  665 + (calculoPesoMulher) + (calculoAlturaMulher) - (calculoIdadeMulher)
-            result = calculoSoma
-        }
-        taxaMetabolicaLabel.text = "Sua Taxa Metabólica Basal é \(result) Kcal"
-        pesoTextField.text = ""
-        alturaTextField.text = ""
-        idadeTextField.text = ""
-    }
 }
 
 //MARK: - ViewCode
 
 extension TaxaMetabolicaScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel, backButton,nameLabel,modalidadeLabel, homemButton,mulherButton,lineView,line2View,pesoLabel,pesoTextField,alturaLabel,alturaTextField,idadeLabel,idadeTextField,taxaMetabolicaLabel,resultButton]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel, homemButton,mulherButton,lineView,line2View,pesoLabel,pesoTextField,alturaLabel,alturaTextField,idadeLabel,idadeTextField,taxaMetabolicaLabel,resultButton]
         for view in views {
             addSubview(view)
         }
@@ -212,20 +183,24 @@ extension TaxaMetabolicaScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 220),
             
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 50),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
+            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imagePerson.heightAnchor.constraint(equalToConstant: 70),
+            imagePerson.widthAnchor.constraint(equalToConstant: 70),
             
-            modalidadeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
+            nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
-            homemButton.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 20),
+            
+            homemButton.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
             homemButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 100),
             homemButton.widthAnchor.constraint(equalToConstant: 100),
             

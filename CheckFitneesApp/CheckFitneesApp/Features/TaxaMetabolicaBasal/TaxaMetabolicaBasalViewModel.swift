@@ -14,7 +14,8 @@ class TaxaMetabolicaBasalViewModel {
     let db = Firestore.firestore()
     var userId = Auth.auth().currentUser?.uid
     var result = ""
-    var reusltTaxaMetabolica = ""
+    var reusltTaxaMetabolica = 0.0
+    var itemClicked: PerfilModel?
     
     public func calcularTaxaMetabolica(textFieldPeso: String,textFieldAltura: String,textFieldIdade: String, lineView: UIView, labelTaxa: UILabel,pesoText: UITextField,alturaText: UITextField,idadeText: UITextField) {
         let pesoString = textFieldPeso
@@ -40,19 +41,16 @@ class TaxaMetabolicaBasalViewModel {
         
         if lineView.backgroundColor == .corOne {
             let calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
-            reusltTaxaMetabolica = String(calculoSoma)
+            reusltTaxaMetabolica = calculoSoma
         } else {
             let calculoSoma =  665 + (calculoPesoMulher) + (calculoAlturaMulher) - (calculoIdadeMulher)
-            reusltTaxaMetabolica = String(calculoSoma)
+            reusltTaxaMetabolica = calculoSoma
         }
-        labelTaxa.text = "Sua Taxa Metabólica Basal é \(reusltTaxaMetabolica) Kcal"
+        labelTaxa.text = "Sua Taxa Metabólica Basal é \(String(format: "%.2f", reusltTaxaMetabolica)) Kcal"
         pesoText.text = ""
         alturaText.text = ""
         idadeText.text = ""
-        
-        
     }
-    
     
     func atualizarDado(id: String){
         let result = self.reusltTaxaMetabolica
@@ -65,6 +63,5 @@ class TaxaMetabolicaBasalViewModel {
                 print("Document successfully updated")
             }
         }
-        
     }
 }

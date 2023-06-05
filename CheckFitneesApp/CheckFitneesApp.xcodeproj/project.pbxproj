@@ -189,8 +189,6 @@
 				EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */,
 				EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */,
 				EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */,
-				EB46B9302A2AE5F3001CCA2A /* Avaliacao */,
-				EBAF5D412A1BB49D00AA1692 /* Perfil */,
 			);
 			path = TaxaMetabolicaBasal;
 			sourceTree = "<group>";
@@ -316,6 +314,8 @@
 				EBCD378B2A217CBC007846EF /* DietaFlexivel */,
 				EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */,
 				EB1AE0252A1BC80F00B32E1F /* TaxaMetabolicaBasal */,
+				EB46B9302A2AE5F3001CCA2A /* Avaliacao */,
+				EBAF5D412A1BB49D00AA1692 /* Perfil */,
 				EBAF5D3C2A1B9B0200AA1692 /* NewAlertCuston */,
 				EBAF5D352A197DE100AA1692 /* Home */,
 				EB1AE0362A1E70D400B32E1F /* TabBar */,

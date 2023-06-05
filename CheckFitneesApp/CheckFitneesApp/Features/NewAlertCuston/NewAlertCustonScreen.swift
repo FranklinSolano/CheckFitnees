@@ -99,7 +99,6 @@ class NewAlertCustonScreen: UIView {
             adicionarButton.setTitleColor(.corOne, for: .normal)
             adicionarButton.isEnabled = true
         } else {
-           
             adicionarButton.setTitleColor(.lightGray, for: .normal)
             adicionarButton.isEnabled = false
         }

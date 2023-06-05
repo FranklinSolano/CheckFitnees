@@ -23,6 +23,7 @@ class CalculadoraVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTableView(delegate: self, dataSource: self)
+        viewModel.teste()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +32,6 @@ class CalculadoraVC: UIViewController {
         viewModel.popularDatapopular()
         viewModel.updateSecondCellLabel(tableView: screen?.tableView ?? UITableView())
     }
-    
 }
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
@@ -57,12 +57,16 @@ extension CalculadoraVC: UITableViewDelegate, UITableViewDataSource {
             let vc = AvaliacaoVC()
             navigationController?.pushViewController(vc, animated: true)
         case 1:
+            let item = screen?.nameLabel.text ?? ""
             let vc = TaxaMetabolicaVC()
             vc.viewModel.result = viewModel.itemClicked?.id ?? ""
+            vc.name = item
             vc.delegate(delegate: self)
             navigationController?.pushViewController(vc, animated: true)
         case 2:
+            let item = screen?.nameLabel.text ?? ""
             let vc = PorcentualHomemVC()
+            vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 3:
             let vc = DietaFlexivelVC()
@@ -83,13 +87,12 @@ extension CalculadoraVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//MARK: - CalculadoraViewModelProtocol
+//MARK: - TaxaMetabolicaVCProtocol
 
 extension CalculadoraVC: TaxaMetabolicaVCProtocol{
-    func succes(with taxa: String) {
+    func succes(with taxa: Double) {
         viewModel.itemClicked?.taxaMetabolica = taxa
     }
-    
 }
 
 //MARK: - CalculadorasScreenProtocol

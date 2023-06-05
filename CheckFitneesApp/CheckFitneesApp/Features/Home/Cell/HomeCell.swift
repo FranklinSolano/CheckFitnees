@@ -68,11 +68,9 @@ extension HomeCell: ViewCode {
             
             addAlunoLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -10),
             addAlunoLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
-           
+            
             modalidadeLabel.topAnchor.constraint(equalTo: addAlunoLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: addAlunoLabel.leadingAnchor),
+            modalidadeLabel.leadingAnchor.constraint(equalTo: addAlunoLabel.leadingAnchor)
         ])
     }
-    
-    
 }

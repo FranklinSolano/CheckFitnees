@@ -53,7 +53,6 @@ class CicloCarboidratosScreen: UIView {
         return tv
     }()
     
-  
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
@@ -72,7 +71,6 @@ class CicloCarboidratosScreen: UIView {
     @objc private func tappedBackButton(){
         delegate?.actionBackButton()
     }
-    
 }
 
 //MARK: - ViewCode
@@ -86,27 +84,24 @@ extension CicloCarboidratosScreen: ViewCode {
     }
     
     func configConstraint() {
-            NSLayoutConstraint.activate([
-                
-                titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-                
-                backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-                backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-                
-                nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 30),
-                nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                
-                modalidadeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-                modalidadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-                
-                tableView.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 40),
-                tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
-                tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-                tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            
+            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 30),
+            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            
+            modalidadeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            modalidadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            
+            tableView.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 40),
+            tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
-    
-    
 }
