@@ -8,22 +8,44 @@
 import UIKit
 
 class AvaliacaoVC: UIViewController {
+    
+    var screen: AvaliacaoScreen?
+    var name = ""
+    
+    override func loadView() {
+        screen = AvaliacaoScreen()
+        view = screen
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.nameLabel.text = name
+        screen?.delegate(delegate: self)
+        screen?.configTextFiled(delegate: self)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        screen?.configSalvarDadosButton()
+        
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension AvaliacaoVC: AvaliacaoScreenProtocol {
+    func actionSalvarDadosButton() {
+        screen?.bloquearDados()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func actionBackButton() {
+        self.navigationController?.popViewController(animated: true)
     }
-    */
+}
 
+extension AvaliacaoVC: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        screen?.configSalvarDadosButton()
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

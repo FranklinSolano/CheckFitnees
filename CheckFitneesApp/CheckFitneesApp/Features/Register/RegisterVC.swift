@@ -74,6 +74,4 @@ extension RegisterVC: RegisterViewModelProtocol {
     func error() {
         alert?.getAlert(titulo: "Atenção", mensagem: "Error ao Cadastrar, Tente Novamente!")
     }
-    
-    
 }

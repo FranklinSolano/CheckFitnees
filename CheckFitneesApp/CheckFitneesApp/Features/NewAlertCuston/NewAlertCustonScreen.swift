@@ -44,7 +44,7 @@ class NewAlertCustonScreen: UIView {
     }()
     
     lazy var nameTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        let tf = TextFieldCustom(placeholder: "")
         tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do aluno",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
         tf.textColor = .corTwo
@@ -58,7 +58,7 @@ class NewAlertCustonScreen: UIView {
     }()
     
     lazy var modalidadeTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu email:")
+        let tf = TextFieldCustom(placeholder: "")
         tf.attributedPlaceholder = NSAttributedString(string: "Digite a modalidade",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
         tf.textColor = .corTwo

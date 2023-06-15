@@ -13,7 +13,6 @@ class PerfilVC: UIViewController {
     var screen: PeriflScreen?
     var viewModel: PerfilViewModel = PerfilViewModel()
     
-    
     override func loadView() {
         screen = PeriflScreen()
         view = screen
@@ -53,7 +52,9 @@ extension PerfilVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
+            let item = screen?.nameLabel.text ?? ""
             let vc = AvaliacaoVC()
+            vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             let item = screen?.nameLabel.text ?? ""
@@ -73,7 +74,9 @@ extension PerfilVC: UITableViewDelegate, UITableViewDataSource {
             vc.modalTransitionStyle = .flipHorizontal
             self.present(vc, animated: true)
         case 4:
+            let item = screen?.nameLabel.text ?? ""
             let vc = CicloCarboidratosVC()
+            vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 5:
             let vc = TreinoVC()

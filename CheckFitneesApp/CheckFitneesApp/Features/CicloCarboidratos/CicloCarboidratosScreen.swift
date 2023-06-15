@@ -18,31 +18,40 @@ class CicloCarboidratosScreen: UIView {
         self.delegate = delegate
     }
     
-    lazy var titleLabel: UILabel = {
-        let label = TitleLabelCustom()
-        return label
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corOne
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
     
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corOne
+        button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
     
+    
+    lazy var imagePerson: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "person.circle.fill")
+        image.tintColor = UIColor.corTwo
+        return image
+    }()
+    
     lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
-        label.font = UIFont.systemFont(ofSize: 20)
+        let label = TextLabelCustom(title: "" )
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .corTwo
         return label
     }()
     
-    lazy var modalidadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Modalidade Academia")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label
-    }()
     
     lazy var tableView: UITableView = {
         let tv = UITableView()
@@ -77,7 +86,7 @@ class CicloCarboidratosScreen: UIView {
 
 extension CicloCarboidratosScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,nameLabel,modalidadeLabel,tableView]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,tableView]
         for view in views {
             addSubview(view)
         }
@@ -85,20 +94,24 @@ extension CicloCarboidratosScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 220),
             
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 30),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
+            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imagePerson.heightAnchor.constraint(equalToConstant: 70),
+            imagePerson.widthAnchor.constraint(equalToConstant: 70),
             
-            modalidadeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
+            nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
-            tableView.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 40),
+            
+            tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

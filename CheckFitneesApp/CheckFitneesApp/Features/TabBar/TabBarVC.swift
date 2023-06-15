@@ -22,9 +22,9 @@ class TabBarVC: UITabBarController {
         
         setViewControllers([homeTabBar, historyTabBar, setteingsTabBar], animated: false)
         
-        tabBar.backgroundColor = UIColor.corOne
+        tabBar.backgroundColor = UIColor.corTwo
         tabBar.isTranslucent = false
-        tabBar.tintColor = UIColor.corTwo 
+        tabBar.tintColor = UIColor.corOne
         tabBar.unselectedItemTintColor = .gray
         guard let tabBarItem = tabBar.items else { return }
         
