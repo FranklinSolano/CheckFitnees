@@ -64,6 +64,7 @@
 		EB2917EC2A16941F00183A92 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917EB2A16941F00183A92 /* FirebaseStorageCombine-Community */; };
 		EB2917EF2A16958400183A92 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917EE2A16958400183A92 /* AlamofireImage */; };
 		EB3F006D2A2FA37700244574 /* AvaliacaoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F006C2A2FA37700244574 /* AvaliacaoScreen.swift */; };
+		EB3F006F2A435D0F00244574 /* PorcentualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F006E2A435D0E00244574 /* PorcentualViewModel.swift */; };
 		EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9342A2AE656001CCA2A /* GraficoVC.swift */; };
 		EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */; };
 		EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9382A2AE678001CCA2A /* TreinoVC.swift */; };
@@ -121,6 +122,7 @@
 		EB2917B22A1662C300183A92 /* ForgotPaswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPaswordVC.swift; sourceTree = "<group>"; };
 		EB2917B42A16937600183A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EB3F006C2A2FA37700244574 /* AvaliacaoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoScreen.swift; sourceTree = "<group>"; };
+		EB3F006E2A435D0E00244574 /* PorcentualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualViewModel.swift; sourceTree = "<group>"; };
 		EB46B9342A2AE656001CCA2A /* GraficoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficoVC.swift; sourceTree = "<group>"; };
 		EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTreinoVC.swift; sourceTree = "<group>"; };
 		EB46B9382A2AE678001CCA2A /* TreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinoVC.swift; sourceTree = "<group>"; };
@@ -200,6 +202,7 @@
 			children = (
 				EB1AE02B2A1BDD1800B32E1F /* PorcentualHomemVC.swift */,
 				EB1AE02D2A1BDD2F00B32E1F /* PorcentualHomemScreen.swift */,
+				EB3F006E2A435D0E00244574 /* PorcentualViewModel.swift */,
 			);
 			path = PorcentualGordura;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				EBAF5D432A1BB4B500AA1692 /* PerfilVC.swift in Sources */,
 				EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */,
 				EB3F006D2A2FA37700244574 /* AvaliacaoScreen.swift in Sources */,
+				EB3F006F2A435D0F00244574 /* PorcentualViewModel.swift in Sources */,
 				EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */,
 				EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */,
 				EB61272E2A2A7D4100EA8020 /* PerfilCell.swift in Sources */,

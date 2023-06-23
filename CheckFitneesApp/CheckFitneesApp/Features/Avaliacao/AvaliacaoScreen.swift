@@ -99,113 +99,154 @@ class AvaliacaoScreen: UIView {
         return label
     }()
     
+    lazy var stackView: UIStackView = {
+        let stack =  UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .horizontal
+        stack.alignment = .leading
+        stack.distribution = .fillProportionally
+        stack.spacing = 15
+        stack.addArrangedSubview(tricepsLabel)
+        stack.addArrangedSubview(bicepsLabel)
+        stack.addArrangedSubview(peitoralLabel)
+        stack.addArrangedSubview(coxaLabel)
+        stack.addArrangedSubview(abdomenLabel)
+        return stack
+    }()
+    
+    lazy var stackView2: UIStackView = {
+        let stack =  UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.alignment = .leading
+        stack.distribution = .fillProportionally
+        stack.spacing = 9
+        stack.backgroundColor = .clear
+        stack.addArrangedSubview(tricepsTextField)
+        stack.addArrangedSubview(bicepsTextField)
+        stack.addArrangedSubview(peitoralTextField)
+        stack.addArrangedSubview(coxaTextField)
+        stack.addArrangedSubview(abdomenTextField)
+        return stack
+    }()
+    
     lazy var tricepsLabel: UILabel = {
-        let label = TextLabelCustom(title: "Triceps:")
+        let label = TextLabelCustom(title: "Triceps: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var tricepsTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var subescapularLabel: UILabel = {
-        let label = TextLabelCustom(title: "Subescapular:")
+        let label = TextLabelCustom(title: "Subescapular: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var subescapularTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var bicepsLabel: UILabel = {
-        let label = TextLabelCustom(title: "Biceps:")
+        let label = TextLabelCustom(title: "Biceps: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var bicepsTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var axiliarLabel: UILabel = {
-        let label = TextLabelCustom(title: "Axiliar Medial:")
+        let label = TextLabelCustom(title: "Axiliar Medial: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var axiliarTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var peitoralLabel: UILabel = {
-        let label = TextLabelCustom(title: "Peitoral:")
+        let label = TextLabelCustom(title: "Peitoral: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var peitoralTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var supraLabel: UILabel = {
-        let label = TextLabelCustom(title: "Supra-iliaca:")
+        let label = TextLabelCustom(title: "Supra-iliaca: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var supraTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var abdomenLabel: UILabel = {
-        let label = TextLabelCustom(title: "Abdomen:")
+        let label = TextLabelCustom(title: "Abdomen: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var abdomenTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var supraEspinhalLabel: UILabel = {
-        let label = TextLabelCustom(title: "Supra-Espinhal:")
+        let label = TextLabelCustom(title: "Supra-Espinhal: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var supraEspinhalTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var coxaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Coxa:")
+        let label = TextLabelCustom(title: "Coxa: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var coxaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var panturrilhaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Panturrilha:")
+        let label = TextLabelCustom(title: "Panturrilha: D")
         label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
     lazy var panturrilhaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "0")
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -222,7 +263,8 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var bracoTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "Ex: 10")
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -233,7 +275,8 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var peitoralMedidaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "Ex: 10")
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -244,7 +287,8 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var abdomenMedidaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "Ex: 10")
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -255,7 +299,8 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var coxaMedidaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "Ex: 10")
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -266,7 +311,8 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var panturrilhaMedidaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 14mm")
+        let tf = TextFieldCustom(placeholder: "Ex: 10")
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -324,8 +370,8 @@ class AvaliacaoScreen: UIView {
         let braco =  bracoTextField.text ?? ""
         let abdomenMedida = abdomenMedidaTextField.text ?? ""
         let panturrilhaMedida = panturrilhaMedidaTextField.text ?? ""
-        let peitoralMedida =  peitoralMedidaTextField.text ?? ""
-        let coxaMedida =  coxaMedidaTextField.text ?? ""
+        _ =  peitoralMedidaTextField.text ?? ""
+        _ =  coxaMedidaTextField.text ?? ""
         
         if !altura.isEmpty && !idade.isEmpty && !peso.isEmpty && !triceps.isEmpty && !biceps.isEmpty && !peitoral.isEmpty && !abdomen.isEmpty && !coxa.isEmpty && !subescapular.isEmpty && !axilar.isEmpty && !supra.isEmpty && !supraEspinhal.isEmpty && !panturrilha.isEmpty && !braco.isEmpty && !abdomenMedida.isEmpty && !panturrilhaMedida.isEmpty {
             salvarDadosButton.setTitleColor(.corTwo, for: .normal)
@@ -396,7 +442,7 @@ class AvaliacaoScreen: UIView {
 
 extension AvaliacaoScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,avaliacaoLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,dobrasLabel,tricepsLabel,tricepsTextField,subescapularLabel,subescapularTextField,axiliarLabel,axiliarTextField,bicepsLabel,bicepsTextField,peitoralLabel,peitoralTextField,supraLabel,supraTextField,supraEspinhalLabel,supraEspinhalTextField,abdomenLabel,abdomenTextField,coxaLabel,coxaTextField,panturrilhaLabel,panturrilhaTextField,medidasLabel,bracoLabel,bracoTextField,peitoralMedidaLabel,peitoralTextField,abdomenMedidaLabel,abdomenMedidaTextField,coxaMedidaLabel,coxaMedidaTextField,panturrilhaMedidaLabel,panturrilhaMedidaTextField,salvarDadosButton]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,avaliacaoLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,dobrasLabel,stackView,stackView2,subescapularLabel,subescapularTextField,axiliarLabel,axiliarTextField,supraLabel,supraTextField,supraEspinhalLabel,supraEspinhalTextField,panturrilhaLabel,panturrilhaTextField,medidasLabel,bracoLabel,bracoTextField,peitoralMedidaLabel,peitoralMedidaTextField,abdomenMedidaLabel,abdomenMedidaTextField,coxaMedidaLabel,coxaMedidaTextField,panturrilhaMedidaLabel,panturrilhaMedidaTextField,salvarDadosButton]
         for view in views {
             addSubview(view)
         }
@@ -447,116 +493,9 @@ extension AvaliacaoScreen: ViewCode {
             pesoTextField.widthAnchor.constraint(equalToConstant: 60),
             pesoTextField.heightAnchor.constraint(equalToConstant: 15),
             
-            dobrasLabel.topAnchor.constraint(equalTo: alturaLabel.bottomAnchor,constant: 20),
-            dobrasLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            tricepsLabel.topAnchor.constraint(equalTo: dobrasLabel.bottomAnchor,constant: 20),
-            tricepsLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            
-            tricepsTextField.centerYAnchor.constraint(equalTo: tricepsLabel.centerYAnchor),
-            tricepsTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 90),
-            tricepsTextField.widthAnchor.constraint(equalToConstant: 80),
-            tricepsTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            bicepsLabel.topAnchor.constraint(equalTo: tricepsTextField.bottomAnchor,constant: 20),
-            bicepsLabel.leadingAnchor.constraint(equalTo: tricepsLabel.leadingAnchor),
-            
-            bicepsTextField.centerYAnchor.constraint(equalTo: bicepsLabel.centerYAnchor),
-            bicepsTextField.leadingAnchor.constraint(equalTo: tricepsTextField.leadingAnchor),
-            bicepsTextField.widthAnchor.constraint(equalToConstant: 80),
-            bicepsTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            peitoralLabel.topAnchor.constraint(equalTo: bicepsTextField.bottomAnchor,constant: 20),
-            peitoralLabel.leadingAnchor.constraint(equalTo: tricepsLabel.leadingAnchor),
-            
-            peitoralTextField.centerYAnchor.constraint(equalTo: peitoralLabel.centerYAnchor),
-            peitoralTextField.leadingAnchor.constraint(equalTo: tricepsTextField.leadingAnchor),
-            peitoralTextField.widthAnchor.constraint(equalToConstant: 80),
-            peitoralTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            abdomenLabel.topAnchor.constraint(equalTo: peitoralTextField.bottomAnchor,constant: 20),
-            abdomenLabel.leadingAnchor.constraint(equalTo: tricepsLabel.leadingAnchor),
-            
-            abdomenTextField.centerYAnchor.constraint(equalTo: abdomenLabel.centerYAnchor),
-            abdomenTextField.leadingAnchor.constraint(equalTo: tricepsTextField.leadingAnchor),
-            abdomenTextField.widthAnchor.constraint(equalToConstant: 80),
-            abdomenTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            coxaLabel.topAnchor.constraint(equalTo: abdomenTextField.bottomAnchor,constant: 20),
-            coxaLabel.leadingAnchor.constraint(equalTo: tricepsLabel.leadingAnchor),
-            
-            coxaTextField.centerYAnchor.constraint(equalTo: coxaLabel.centerYAnchor),
-            coxaTextField.leadingAnchor.constraint(equalTo: tricepsTextField.leadingAnchor),
-            coxaTextField.widthAnchor.constraint(equalToConstant: 80),
-            coxaTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            subescapularLabel.topAnchor.constraint(equalTo: dobrasLabel.bottomAnchor,constant: 20),
-            subescapularLabel.leadingAnchor.constraint(equalTo: tricepsTextField.trailingAnchor,constant: 17),
-            
-            subescapularTextField.centerYAnchor.constraint(equalTo: subescapularLabel.centerYAnchor),
-            subescapularTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            subescapularTextField.widthAnchor.constraint(equalToConstant: 80),
-            subescapularTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            axiliarLabel.topAnchor.constraint(equalTo: subescapularTextField.bottomAnchor,constant: 20),
-            axiliarLabel.leadingAnchor.constraint(equalTo: subescapularLabel.leadingAnchor),
-            
-            axiliarTextField.centerYAnchor.constraint(equalTo: axiliarLabel.centerYAnchor),
-            axiliarTextField.trailingAnchor.constraint(equalTo: subescapularTextField.trailingAnchor),
-            axiliarTextField.widthAnchor.constraint(equalToConstant: 80),
-            axiliarTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            supraLabel.topAnchor.constraint(equalTo: axiliarTextField.bottomAnchor,constant: 20),
-            supraLabel.leadingAnchor.constraint(equalTo: subescapularLabel.leadingAnchor),
-            
-            supraTextField.centerYAnchor.constraint(equalTo: supraLabel.centerYAnchor),
-            supraTextField.trailingAnchor.constraint(equalTo: subescapularTextField.trailingAnchor),
-            supraTextField.widthAnchor.constraint(equalToConstant: 80),
-            supraTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            supraEspinhalLabel.topAnchor.constraint(equalTo: supraTextField.bottomAnchor,constant: 20),
-            supraEspinhalLabel.leadingAnchor.constraint(equalTo: subescapularLabel.leadingAnchor),
-            
-            supraEspinhalTextField.centerYAnchor.constraint(equalTo: supraEspinhalLabel.centerYAnchor),
-            supraEspinhalTextField.trailingAnchor.constraint(equalTo: subescapularTextField.trailingAnchor),
-            supraEspinhalTextField.widthAnchor.constraint(equalToConstant: 80),
-            supraEspinhalTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            panturrilhaLabel.topAnchor.constraint(equalTo: supraEspinhalTextField.bottomAnchor,constant: 20),
-            panturrilhaLabel.leadingAnchor.constraint(equalTo: subescapularLabel.leadingAnchor),
-            
-            panturrilhaTextField.centerYAnchor.constraint(equalTo: panturrilhaLabel.centerYAnchor),
-            panturrilhaTextField.trailingAnchor.constraint(equalTo: subescapularTextField.trailingAnchor),
-            panturrilhaTextField.widthAnchor.constraint(equalToConstant: 80),
-            panturrilhaTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            medidasLabel.topAnchor.constraint(equalTo: panturrilhaLabel.bottomAnchor,constant: 20),
+            medidasLabel.topAnchor.constraint(equalTo: alturaLabel.bottomAnchor,constant: 20),
             medidasLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            bracoLabel.topAnchor.constraint(equalTo: medidasLabel.bottomAnchor,constant: 20),
-            bracoLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            
-            bracoTextField.centerYAnchor.constraint(equalTo: bracoLabel.centerYAnchor),
-            bracoTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 100),
-            bracoTextField.widthAnchor.constraint(equalToConstant: 130),
-            bracoTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            abdomenMedidaLabel.topAnchor.constraint(equalTo: bracoLabel.bottomAnchor,constant: 20),
-            abdomenMedidaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            
-            abdomenMedidaTextField.centerYAnchor.constraint(equalTo: abdomenMedidaLabel.centerYAnchor),
-            abdomenMedidaTextField.leadingAnchor.constraint(equalTo: bracoTextField.leadingAnchor),
-            abdomenMedidaTextField.widthAnchor.constraint(equalToConstant: 130),
-            abdomenMedidaTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            panturrilhaMedidaLabel.topAnchor.constraint(equalTo: abdomenMedidaLabel.bottomAnchor,constant: 20),
-            panturrilhaMedidaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            
-            panturrilhaMedidaTextField.centerYAnchor.constraint(equalTo: panturrilhaMedidaLabel.centerYAnchor),
-            panturrilhaMedidaTextField.leadingAnchor.constraint(equalTo:  bracoTextField.leadingAnchor),
-            panturrilhaMedidaTextField.widthAnchor.constraint(equalToConstant: 130),
-            panturrilhaMedidaTextField.heightAnchor.constraint(equalToConstant: 15),
-            
+        
             salvarDadosButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
             salvarDadosButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             salvarDadosButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
