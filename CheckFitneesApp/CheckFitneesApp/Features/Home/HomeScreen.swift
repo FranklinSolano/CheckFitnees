@@ -52,7 +52,6 @@ class HomeScreen: UIView {
         super.init(frame: frame)
         setupViewCode()
         backgroundColor = UIColor.corTwo
-        
     }
     
     required init?(coder: NSCoder) {

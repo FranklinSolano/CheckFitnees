@@ -21,29 +21,37 @@ class PorcentualHomemScreen: UIView {
         self.delegate = delegate
     }
     
-    lazy var titleLabel: UILabel = {
-        let label = TitleLabelCustom()
-        return label
+    lazy var contentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = UIColor.corOne
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 20
+        return view
     }()
     
     lazy var backButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corOne
+        button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
     
-    lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label
+    
+    lazy var imagePerson: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(systemName: "person.circle.fill")
+        image.tintColor = UIColor.corTwo
+        return image
     }()
     
-    lazy var modalidadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Modalidade Academia")
-        label.font = UIFont.systemFont(ofSize: 20)
+    lazy var nameLabel: UILabel = {
+        let label = TextLabelCustom(title: "" )
+        label.font = UIFont.systemFont(ofSize: 14)
+        label.textColor = .corTwo
         return label
     }()
     
@@ -79,6 +87,29 @@ class PorcentualHomemScreen: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .clear
         return view
+    }()
+    
+    lazy var idadeLabel: UILabel = {
+        let label = TextLabelCustom(title: "Idade:")
+        label.font = UIFont.systemFont(ofSize: 20)
+        return label    }()
+    
+    lazy var idadeTextField: UITextField = {
+        let tf = TextFieldCustom(placeholder: "Ex: 20")
+        tf.textAlignment = .center
+        return tf
+    }()
+    
+    lazy var pesoLabel: UILabel = {
+        let label = TextLabelCustom(title: "Peso:")
+        label.font = UIFont.systemFont(ofSize: 20)
+        return label
+    }()
+    
+    lazy var pesoTextField: UITextField = {
+        let tf = TextFieldCustom(placeholder: "Ex: 70")
+        tf.textAlignment = .center
+        return tf
     }()
     
     lazy var triciptalLabel: UILabel = {
@@ -160,33 +191,12 @@ class PorcentualHomemScreen: UIView {
     
     lazy var resultButton: UIButton = {
         let button = ButtonCustom(title: "Calcular")
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 25)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.addTarget(self, action: #selector(tappedCalcularButton), for: .touchUpInside)
         return button
     }()
     
-    lazy var bfGorduraLabel: UILabel = {
-        let label = TextLabelCustom(title: "% de Gordura")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label    }()
-    
-    lazy var bfGorduraTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 55")
-        tf.textAlignment = .center
-        return tf
-    }()
-    
-    lazy var massaMagraLabel: UILabel = {
-        let label = TextLabelCustom(title: "Massa Magra")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label
-    }()
-    
-    lazy var massaMagraTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 55")
-        tf.textAlignment = .center
-        return tf
-    }()
+
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -229,7 +239,7 @@ class PorcentualHomemScreen: UIView {
 
 extension PorcentualHomemScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,nameLabel,modalidadeLabel,homemButton,mulherButton,lineView,line2View,triciptalLabel,triciptalTextField,peitoralLabel, peitoralTextField, supraLabel, supraTextField,abdominalLabel,abdominalTextField,coxaLabel,coxaTextField, subescapularLabel,subescapularTextField,axilarLabel,axilarTextField,resultButton,bfGorduraLabel,bfGorduraTextField,massaMagraLabel,massaMagraTextField]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,homemButton,mulherButton,lineView,line2View,triciptalLabel,triciptalTextField,peitoralLabel, peitoralTextField, supraLabel, supraTextField,abdominalLabel,abdominalTextField,coxaLabel,coxaTextField, subescapularLabel,subescapularTextField,axilarLabel,axilarTextField,resultButton,idadeLabel,idadeTextField,pesoLabel,pesoTextField]
         for view in views {
             addSubview(view)
         }
@@ -237,20 +247,23 @@ extension PorcentualHomemScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.heightAnchor.constraint(equalToConstant: 220),
             
             backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            nameLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 30),
-            nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
+            imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imagePerson.heightAnchor.constraint(equalToConstant: 70),
+            imagePerson.widthAnchor.constraint(equalToConstant: 70),
             
-            modalidadeLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
+            nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
-            homemButton.topAnchor.constraint(equalTo: modalidadeLabel.bottomAnchor,constant: 20),
+            homemButton.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
             homemButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 100),
             homemButton.widthAnchor.constraint(equalToConstant: 100),
             
@@ -268,7 +281,11 @@ extension PorcentualHomemScreen: ViewCode {
             line2View.heightAnchor.constraint(equalToConstant: 2),
             line2View.trailingAnchor.constraint(equalTo: mulherButton.trailingAnchor),
             
-            triciptalLabel.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 30),
+            idadeLabel.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 30),
+            idadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            
+            
+            triciptalLabel.topAnchor.constraint(equalTo: idadeLabel.bottomAnchor,constant: 30),
             triciptalLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
             triciptalTextField.centerYAnchor.constraint(equalTo: triciptalLabel.centerYAnchor),
@@ -324,23 +341,10 @@ extension PorcentualHomemScreen: ViewCode {
             axilarTextField.trailingAnchor.constraint(equalTo: triciptalTextField.trailingAnchor),
             axilarTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            resultButton.topAnchor.constraint(equalTo: axilarLabel.bottomAnchor,constant: 40),
+            resultButton.topAnchor.constraint(equalTo: axilarLabel.bottomAnchor,constant: 30),
             resultButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             resultButton.widthAnchor.constraint(equalToConstant: 150),
             
-            bfGorduraLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 40),
-            bfGorduraLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
-            
-            bfGorduraTextField.topAnchor.constraint(equalTo: bfGorduraLabel.bottomAnchor,constant: 10),
-            bfGorduraTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            bfGorduraTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            
-            massaMagraLabel.topAnchor.constraint(equalTo: bfGorduraTextField.bottomAnchor,constant: 15),
-            massaMagraLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
-            
-            massaMagraTextField.topAnchor.constraint(equalTo: massaMagraLabel.bottomAnchor,constant: 10),
-            massaMagraTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            massaMagraTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20)
         ])
     }
 }

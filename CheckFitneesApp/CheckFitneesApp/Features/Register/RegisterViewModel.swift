@@ -58,11 +58,11 @@ class RegisterViewModel{
     
     
     func creatCollection(id:String){
-        let dataPath = "Cells/\(id)"
-        let docRef = db.document(dataPath)
-        docRef.setData([
-            "cells": []
-            ])
+//        let dataPath = "Cells/\(id)"
+//        let docRef = db.collection(<#T##collectionPath: String##String#>)
+//        docRef.setData([
+//            "cells": ""
+//            ])
         }
     
 }

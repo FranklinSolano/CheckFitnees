@@ -67,8 +67,6 @@ class PerfilCell: UITableViewCell {
         return image
     }()
     
-    
-    
     static let identifier: String = "DietaFlexivelCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -82,13 +80,13 @@ class PerfilCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCell(data: Perfil) {
-        titleLabel.text = data.title ?? ""
-        carbolLabel.text = data.carbo ?? ""
-        proteinaLabel.text = data.proteina ?? ""
-        gorduraLabel.text = data.gordura ?? ""
-        calcularButton.setTitle(data.buttonGeneric ?? "", for: .normal)
-        imagePerson.image = data.image
+    func setupCell(data: PerfilModel?) {
+        titleLabel.text = data?.title ?? ""
+        carbolLabel.text = data?.carb ?? ""
+        proteinaLabel.text = data?.proteina ?? ""
+        gorduraLabel.text = data?.gordura ?? ""
+        calcularButton.setTitle(data?.buttonGeneric ?? "", for: .normal)
+        imagePerson.image = data?.image
     }
 }
 
@@ -104,7 +102,6 @@ extension PerfilCell: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            
             contentView1.topAnchor.constraint(equalTo: topAnchor,constant: 20),
             contentView1.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 15),
             contentView1.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -15),

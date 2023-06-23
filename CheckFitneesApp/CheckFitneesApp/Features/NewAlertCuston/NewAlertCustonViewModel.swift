@@ -13,31 +13,23 @@ class NewAlertCustonViewModel {
     let db = Firestore.firestore()
     var userId = Auth.auth().currentUser?.uid
     
-    func savedDados(name: String, modalidade: String) {
-        let docRef = db.collection("Cells").document(userId ?? "")
-
-        // Cria um identificador único (UUID)
-        let uuid = UUID().uuidString
+    func savedDados(name: String, modalidade: String, taxaMetabolica: Double, porcentual: String,carb: String,proteina: String, gordura: String) {
         
-        // Cria um dicionário com os dados
+        let cellsCollection = db.collection("cells").document()
+        _ = PerfilModel(name: name, modalidade: modalidade, id: cellsCollection.documentID, taxaMetabolica: taxaMetabolica, porcentual: porcentual, carb: carb, proteina: proteina, gordura: gordura)
+        
         let cellData = [
-            "id": uuid,
-            "name": name,
-            "modalidade": modalidade
-        ]
+            "id": cellsCollection.documentID,
+                    "name": name,
+                    "modalidade": modalidade,
+                    "taxaMetabolica": taxaMetabolica,
+                    "porcentual": porcentual,
+                    "carb": carb,
+                    "proteina": proteina,
+                    "gordura": gordura,
+            "personal": userId ?? ""
+                ] as [String : Any]
         
-        docRef.updateData([
-            "cells": FieldValue.arrayUnion([cellData])
-        ]) { error in
-            if let error = error {
-                // Trate o erro, se ocorrer
-                print("Erro ao atualizar os dados: \(error.localizedDescription)")
-            } else {
-                // Os dados foram atualizados com sucesso
-                print("Dados atualizados com sucesso")
-            }
-        }
+        cellsCollection.setData(cellData)
     }
-
-
 }

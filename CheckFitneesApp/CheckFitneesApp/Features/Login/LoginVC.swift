@@ -36,8 +36,7 @@ class LoginVC: UIViewController {
 extension LoginVC: LoginScrennProtocol {
     func actionForgotPassword() {
         let vc:ForgotPaswordVC = ForgotPaswordVC()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func actionLogin() {
@@ -46,8 +45,7 @@ extension LoginVC: LoginScrennProtocol {
     
     func actionRegister() {
         let vc:RegisterVC = RegisterVC()
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 

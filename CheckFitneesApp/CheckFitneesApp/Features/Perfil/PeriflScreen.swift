@@ -1,20 +1,20 @@
 //
-//  CicloCarboidratosScreen.swift
+//  CalculadorasScreen.swift
 //  CheckFitneesApp
 //
-//  Created by Franklin  Stilhano on 5/26/23.
+//  Created by Franklin  Stilhano on 5/22/23.
 //
 
 import UIKit
 
-protocol CicloCarboidratosScreenProtocol: AnyObject {
+protocol PerfilScreenProtocol: AnyObject {
     func actionBackButton()
 }
 
-class CicloCarboidratosScreen: UIView {
+class PeriflScreen: UIView {
     
-    weak var delegate: CicloCarboidratosScreenProtocol?
-    public func delegate(delegate:CicloCarboidratosScreenProtocol) {
+    weak var delegate: PerfilScreenProtocol?
+    public func delegate(delegate:PerfilScreenProtocol){
         self.delegate = delegate
     }
     
@@ -46,35 +46,38 @@ class CicloCarboidratosScreen: UIView {
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "" )
+        let label = TextLabelCustom(title: "")
         label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .corTwo
         return label
     }()
-    
     
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.backgroundColor = .corTwo
         tv.separatorStyle = .none
-        tv.register(CicloCarboidratosCell.self, forCellReuseIdentifier: CicloCarboidratosCell.identifier)
+        tv.register(PerfilCell.self, forCellReuseIdentifier: PerfilCell.identifier)
         return tv
     }()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = .corTwo
+        backgroundColor = UIColor.corTwo
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
+    func configTableView(delegate: UITableViewDelegate, dataSource: UITableViewDataSource){
         tableView.delegate = delegate
         tableView.dataSource = dataSource
+    }
+    
+    func setupView(data: PerfilModel?){
+        nameLabel.text = data?.name
     }
     
     @objc private func tappedBackButton(){
@@ -84,7 +87,7 @@ class CicloCarboidratosScreen: UIView {
 
 //MARK: - ViewCode
 
-extension CicloCarboidratosScreen: ViewCode {
+extension PeriflScreen: ViewCode {
     func configElements() {
         let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,tableView]
         for view in views {
@@ -110,8 +113,7 @@ extension CicloCarboidratosScreen: ViewCode {
             nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
-            
-            tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
+            tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 10),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

@@ -23,7 +23,6 @@ class LoginScrenn: UIView {
     lazy var titleLabel: UILabel = {
         let label = TitleLabelCustom()
         label.textColor = .corTwo
-        print("teste \(UIFont.familyNames)")
         return label
     }()
     

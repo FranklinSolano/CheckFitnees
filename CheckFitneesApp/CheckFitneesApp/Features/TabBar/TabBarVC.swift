@@ -12,7 +12,6 @@ class TabBarVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBar()
-//        configTabBar()
 }
 
     private func setupTabBar(){

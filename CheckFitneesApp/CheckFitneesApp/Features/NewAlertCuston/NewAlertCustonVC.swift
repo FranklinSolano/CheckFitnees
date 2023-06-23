@@ -45,7 +45,7 @@ extension NewAlertCustonVC: NewAlertCustonScreenProtocol {
     }
     
     func actionAdicionarButton() {
-        viewModel.savedDados(name: screen?.nameTextField.text ?? "", modalidade: screen?.modalidadeTextField.text ?? "")
+        viewModel.savedDados(name: screen?.nameTextField.text ?? "", modalidade: screen?.modalidadeTextField.text ?? "", taxaMetabolica: 0, porcentual: "0", carb: "0", proteina: "0", gordura: "0")
         self.delegate?.reloadTableView()
         dismiss(animated: true)
     }

@@ -8,6 +8,7 @@
 import UIKit
 
 struct Perfil {
+    var name: String?
     var title: String?
     var buttonGeneric: String?
     var image: UIImage?

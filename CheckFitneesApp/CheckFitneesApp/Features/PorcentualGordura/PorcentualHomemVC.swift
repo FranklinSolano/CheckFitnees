@@ -10,10 +10,12 @@ import UIKit
 class PorcentualHomemVC: UIViewController {
 
     var screen: PorcentualHomemScreen?
+    var name = ""
     
     override func loadView() {
         screen = PorcentualHomemScreen()
         view = screen
+        screen?.nameLabel.text = name 
     }
     
     override func viewDidLoad() {
@@ -21,10 +23,9 @@ class PorcentualHomemVC: UIViewController {
         screen?.delegate(delegate: self)
         screen?.configTextField(delegate: self)
     }
-
 }
 
-//MARK: -
+//MARK: - PorcentualHomemScreenProtocol
 
 extension PorcentualHomemVC: PorcentualHomemScreenProtocol {
     func actionCalculoHomem() {

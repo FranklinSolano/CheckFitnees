@@ -43,9 +43,9 @@ class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configCell(data:CellTeste){
-        addAlunoLabel.text = data.name
-        modalidadeLabel.text = data.modalidade
+    func configCell(data:PerfilModel){
+        addAlunoLabel.text = "Aluno: \(data.name ?? "")"
+        modalidadeLabel.text = "Modalidade: \(data.modalidade ?? "")"
     }
 }
 
@@ -68,11 +68,9 @@ extension HomeCell: ViewCode {
             
             addAlunoLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -10),
             addAlunoLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
-           
+            
             modalidadeLabel.topAnchor.constraint(equalTo: addAlunoLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: addAlunoLabel.leadingAnchor),
+            modalidadeLabel.leadingAnchor.constraint(equalTo: addAlunoLabel.leadingAnchor)
         ])
     }
-    
-    
 }

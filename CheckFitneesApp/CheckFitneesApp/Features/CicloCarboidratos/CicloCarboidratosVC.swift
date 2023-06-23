@@ -10,6 +10,7 @@ import UIKit
 class CicloCarboidratosVC: UIViewController {
     
     var screen: CicloCarboidratosScreen?
+    var name = ""
     
     override func loadView() {
         screen = CicloCarboidratosScreen()
@@ -20,6 +21,7 @@ class CicloCarboidratosVC: UIViewController {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTableView(delegate: self, dataSource: self)
+        screen?.nameLabel.text = name
     }
 }
 
