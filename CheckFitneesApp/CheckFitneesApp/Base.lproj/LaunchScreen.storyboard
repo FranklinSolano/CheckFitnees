@@ -37,7 +37,7 @@
                             </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" red="0.76862752440000004" green="0.70980393890000004" blue="0.3058823645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.16142073270000001" green="0.14530012010000001" blue="0.1927160919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sOz-vi-kvm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-100" id="Ci7-L3-jpm"/>
                             <constraint firstItem="sOz-vi-kvm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MUI-U8-ov1"/>

@@ -10,11 +10,10 @@ import UIKit
 protocol PorcentualHomemScreenProtocol: AnyObject {
     func actionBackButton()
     func actionCalcular()
-    func actionCalculoMulher()
-    func actionCalculoHomem()
+    func validacaoCampos()
 }
 
-class PorcentualHomemScreen: UIView {
+class PorcentualScreen: UIView {
     
     weak var delegate: PorcentualHomemScreenProtocol?
     public func delegate(delegate: PorcentualHomemScreenProtocol){
@@ -55,61 +54,10 @@ class PorcentualHomemScreen: UIView {
         return label
     }()
     
-    lazy var homemButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Homem", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 20)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.addTarget(self, action: #selector(tappedCalculoHomemButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var mulherButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Mulher", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 20)
-        button.setTitleColor(UIColor.corOne , for: .normal)
-        button.addTarget(self, action: #selector(tappedCalculoMulherButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var lineView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
-        return view
-    }()
-    
-    lazy var line2View: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .clear
-        return view
-    }()
-    
-    lazy var idadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Idade:")
-        label.font = UIFont.systemFont(ofSize: 20)
-        return label    }()
-    
-    lazy var idadeTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 20")
-        tf.textAlignment = .center
-        return tf
-    }()
-    
-    lazy var pesoLabel: UILabel = {
-        let label = TextLabelCustom(title: "Peso:")
-        label.font = UIFont.systemFont(ofSize: 20)
+    lazy var porcentualLabel: UILabel = {
+        let label = TextLabelCustom(title: "Porcentual de Gordura")
+        label.font = UIFont.systemFont(ofSize: 25)
         return label
-    }()
-    
-    lazy var pesoTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 70")
-        tf.textAlignment = .center
-        return tf
     }()
     
     lazy var triciptalLabel: UILabel = {
@@ -119,7 +67,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var triciptalTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 32")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -130,7 +79,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var peitoralTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 80")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -141,7 +91,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var supraTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 70")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -152,7 +103,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var abdominalTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 75")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -163,7 +115,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var coxaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 65")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -174,7 +127,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var subescapularTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 55")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -185,7 +139,8 @@ class PorcentualHomemScreen: UIView {
     }()
     
     lazy var axilarTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 32")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = ""
         return tf
     }()
     
@@ -218,6 +173,22 @@ class PorcentualHomemScreen: UIView {
         axilarTextField.delegate = delegate
     }
     
+    public func validacaoCamposDaTela(){
+        let triceps = triciptalTextField.text ?? ""
+        let peitoral = peitoralTextField.text ?? ""
+        let axiliar = axilarTextField.text ?? ""
+        let supra = supraTextField.text ?? ""
+        let subescapular = subescapularTextField.text ?? ""
+        let coxa = coxaTextField.text ?? ""
+        let abdomem  = abdominalTextField.text ?? ""
+        
+        if triceps.isEmpty && peitoral.isEmpty && axiliar.isEmpty && supra.isEmpty && subescapular.isEmpty && coxa.isEmpty && abdomem.isEmpty {
+            delegate?.validacaoCampos()
+        }
+        
+        
+    }
+    
     @objc private func tappedBackButton(){
         delegate?.actionBackButton()
     }
@@ -225,21 +196,13 @@ class PorcentualHomemScreen: UIView {
     @objc private func tappedCalcularButton(){
         delegate?.actionCalcular()
     }
-    
-    @objc private func tappedCalculoMulherButton(){
-        delegate?.actionCalculoMulher()
-    }
-    
-    @objc private func tappedCalculoHomemButton(){
-        delegate?.actionCalculoHomem()
-    }
 }
 
 //MARK: - ViewCode
 
-extension PorcentualHomemScreen: ViewCode {
+extension PorcentualScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,homemButton,mulherButton,lineView,line2View,triciptalLabel,triciptalTextField,peitoralLabel, peitoralTextField, supraLabel, supraTextField,abdominalLabel,abdominalTextField,coxaLabel,coxaTextField, subescapularLabel,subescapularTextField,axilarLabel,axilarTextField,resultButton,idadeLabel,idadeTextField,pesoLabel,pesoTextField]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,porcentualLabel,triciptalLabel,triciptalTextField,peitoralLabel, peitoralTextField, supraLabel, supraTextField,abdominalLabel,abdominalTextField,coxaLabel,coxaTextField, subescapularLabel,subescapularTextField,axilarLabel,axilarTextField,resultButton]
         for view in views {
             addSubview(view)
         }
@@ -263,29 +226,10 @@ extension PorcentualHomemScreen: ViewCode {
             nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
-            homemButton.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
-            homemButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 100),
-            homemButton.widthAnchor.constraint(equalToConstant: 100),
+            porcentualLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 30),
+            porcentualLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            mulherButton.topAnchor.constraint(equalTo: homemButton.topAnchor),
-            mulherButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -100),
-            mulherButton.widthAnchor.constraint(equalToConstant: 100),
-            
-            lineView.topAnchor.constraint(equalTo: homemButton.bottomAnchor),
-            lineView.widthAnchor.constraint(equalToConstant: 100),
-            lineView.heightAnchor.constraint(equalToConstant: 2),
-            lineView.leadingAnchor.constraint(equalTo: homemButton.leadingAnchor),
-            
-            line2View.topAnchor.constraint(equalTo: mulherButton.bottomAnchor),
-            line2View.widthAnchor.constraint(equalToConstant: 100),
-            line2View.heightAnchor.constraint(equalToConstant: 2),
-            line2View.trailingAnchor.constraint(equalTo: mulherButton.trailingAnchor),
-            
-            idadeLabel.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 30),
-            idadeLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            
-            
-            triciptalLabel.topAnchor.constraint(equalTo: idadeLabel.bottomAnchor,constant: 30),
+            triciptalLabel.topAnchor.constraint(equalTo: porcentualLabel.bottomAnchor,constant: 30),
             triciptalLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
             triciptalTextField.centerYAnchor.constraint(equalTo: triciptalLabel.centerYAnchor),

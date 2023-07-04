@@ -65,7 +65,7 @@ extension PerfilVC: UITableViewDelegate, UITableViewDataSource {
             navigationController?.pushViewController(vc, animated: true)
         case 2:
             let item = screen?.nameLabel.text ?? ""
-            let vc = PorcentualHomemVC()
+            let vc = PorcentualVC()
             vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 3:

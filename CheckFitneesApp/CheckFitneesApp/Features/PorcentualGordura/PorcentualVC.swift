@@ -7,35 +7,34 @@
 
 import UIKit
 
-class PorcentualHomemVC: UIViewController {
+class PorcentualVC: UIViewController {
 
-    var screen: PorcentualHomemScreen?
+    var screen: PorcentualScreen?
     var name = ""
+    var alert: Alert?
     
     override func loadView() {
-        screen = PorcentualHomemScreen()
+        screen = PorcentualScreen()
         view = screen
-        screen?.nameLabel.text = name 
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         screen?.delegate(delegate: self)
         screen?.configTextField(delegate: self)
+        screen?.nameLabel.text = name
+        alert = Alert(controller: self)
+        screen?.validacaoCamposDaTela()
     }
 }
 
 //MARK: - PorcentualHomemScreenProtocol
 
-extension PorcentualHomemVC: PorcentualHomemScreenProtocol {
-    func actionCalculoHomem() {
-        screen?.lineView.backgroundColor = .corOne
-        screen?.line2View.backgroundColor = .clear
-    }
-    
-    func actionCalculoMulher() {
-        screen?.lineView.backgroundColor = .clear
-        screen?.line2View.backgroundColor = .corOne
+extension PorcentualVC: PorcentualHomemScreenProtocol {
+    func validacaoCampos() {
+        alert?.getAlert(titulo: "Atenção", mensagem: "Preencha os dados na Tela Avaliação Fisica para poder calcular o Porcentual de Gordura", completion: {
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     func actionBackButton() {
@@ -49,7 +48,7 @@ extension PorcentualHomemVC: PorcentualHomemScreenProtocol {
 
 //MARK: - UITextFieldDelegate
 
-extension PorcentualHomemVC: UITextFieldDelegate {
+extension PorcentualVC: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true

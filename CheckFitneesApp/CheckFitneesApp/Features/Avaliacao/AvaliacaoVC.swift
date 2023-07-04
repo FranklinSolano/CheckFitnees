@@ -21,31 +21,34 @@ class AvaliacaoVC: UIViewController {
         super.viewDidLoad()
         screen?.nameLabel.text = name
         screen?.delegate(delegate: self)
-        screen?.configTextFiled(delegate: self)
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        screen?.configSalvarDadosButton()
-        
+        screen?.configTableView(delegate: self, dataSouce: self)
     }
 }
 
-extension AvaliacaoVC: AvaliacaoScreenProtocol {
-    func actionSalvarDadosButton() {
-        screen?.bloquearDados()
+//MARK: - UITableViewDelegate, UITableViewDataSource
+
+extension AvaliacaoVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: AvaliacaoCell? = tableView.dequeueReusableCell(withIdentifier: AvaliacaoCell.identifier, for: indexPath) as? AvaliacaoCell
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        840
+    }
+    
+}
+
+//MARK: - AvaliacaoScreenProtocol
+
+extension AvaliacaoVC: AvaliacaoScreenProtocol {
+
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
 }
 
-extension AvaliacaoVC: UITextFieldDelegate {
-    
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        screen?.configSalvarDadosButton()
-    }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-}

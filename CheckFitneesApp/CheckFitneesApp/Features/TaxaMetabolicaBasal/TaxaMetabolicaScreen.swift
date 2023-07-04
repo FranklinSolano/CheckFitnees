@@ -56,74 +56,52 @@ class TaxaMetabolicaScreen: UIView {
         return label
     }()
     
-    lazy var homemButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Homem", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 20)
-        button.setTitleColor(UIColor.corOne, for: .normal)
-        button.addTarget(self, action: #selector(tappedCalculoHomemButton), for: .touchUpInside)
-        return button
+    
+    lazy var taxaMetabolicaLabel: UILabel = {
+        let label = TextLabelCustom(title: "Taxa Metabolica Basal" )
+        label.font = UIFont.systemFont(ofSize: 25)
+        label.textColor = .corOne
+        return label
     }()
     
-    lazy var mulherButton: UIButton = {
-        let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Mulher", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 20)
-        button.setTitleColor(UIColor.corOne , for: .normal)
-        button.addTarget(self, action: #selector(tappedCalculoMulherButton), for: .touchUpInside)
-        return button
-    }()
-    
-    lazy var lineView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
-        return view
-    }()
-    
-    lazy var line2View: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .clear
-        return view
-    }()
     
     lazy var pesoLabel: UILabel = {
-        let label = TextLabelCustom(title: "Peso:")
+        let label = TextLabelCustom(title: "Peso")
         label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var pesoTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 70")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = "68.8"
         return tf
     }()
     
     lazy var alturaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Altura:")
+        let label = TextLabelCustom(title: "Altura")
         label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var alturaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 170")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = "164"
         return tf
     }()
     
     lazy var idadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Idade:")
+        let label = TextLabelCustom(title: "Idade")
         label.font = UIFont.systemFont(ofSize: 20)
         return label
     }()
     
     lazy var idadeTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Ex: 21")
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = "21"
         return tf
     }()
     
-    lazy var taxaMetabolicaLabel: UILabel = {
+    lazy var resultTaxaMetabolicaLabel: UILabel = {
         let label = TextLabelCustom(title: "")
         label.font = UIFont.systemFont(ofSize: 25)
         label.numberOfLines = 0
@@ -175,7 +153,7 @@ class TaxaMetabolicaScreen: UIView {
 
 extension TaxaMetabolicaScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel, homemButton,mulherButton,lineView,line2View,pesoLabel,pesoTextField,alturaLabel,alturaTextField,idadeLabel,idadeTextField,taxaMetabolicaLabel,resultButton]
+        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,taxaMetabolicaLabel,pesoLabel,pesoTextField,alturaLabel,alturaTextField,idadeLabel,idadeTextField,resultTaxaMetabolicaLabel,resultButton]
         for view in views {
             addSubview(view)
         }
@@ -199,56 +177,40 @@ extension TaxaMetabolicaScreen: ViewCode {
             nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
+            taxaMetabolicaLabel.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 30),
+            taxaMetabolicaLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            homemButton.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
-            homemButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 100),
-            homemButton.widthAnchor.constraint(equalToConstant: 100),
-            
-            mulherButton.topAnchor.constraint(equalTo: homemButton.topAnchor),
-            mulherButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -100),
-            mulherButton.widthAnchor.constraint(equalToConstant: 100),
-            
-            lineView.topAnchor.constraint(equalTo: homemButton.bottomAnchor),
-            lineView.widthAnchor.constraint(equalToConstant: 100),
-            lineView.heightAnchor.constraint(equalToConstant: 2),
-            lineView.leadingAnchor.constraint(equalTo: homemButton.leadingAnchor),
-            
-            line2View.topAnchor.constraint(equalTo: mulherButton.bottomAnchor),
-            line2View.widthAnchor.constraint(equalToConstant: 100),
-            line2View.heightAnchor.constraint(equalToConstant: 2),
-            line2View.trailingAnchor.constraint(equalTo: mulherButton.trailingAnchor),
-            
-            pesoLabel.topAnchor.constraint(equalTo: homemButton.bottomAnchor,constant: 40),
+            pesoLabel.topAnchor.constraint(equalTo: taxaMetabolicaLabel.bottomAnchor,constant: 45),
             pesoLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
             pesoTextField.centerYAnchor.constraint(equalTo: pesoLabel.centerYAnchor),
             pesoTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-            pesoTextField.leadingAnchor.constraint(equalTo: pesoLabel.trailingAnchor,constant: 8),
+            pesoTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 80),
             pesoTextField.heightAnchor.constraint(equalToConstant: 25),
             
             alturaLabel.topAnchor.constraint(equalTo: pesoLabel.bottomAnchor,constant: 25),
             alturaLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),
             
             alturaTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            alturaTextField.leadingAnchor.constraint(equalTo: alturaLabel.trailingAnchor,constant: 8),
+            alturaTextField.leadingAnchor.constraint(equalTo: pesoTextField.leadingAnchor),
             alturaTextField.heightAnchor.constraint(equalToConstant: 25),
-            alturaTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            alturaTextField.trailingAnchor.constraint(equalTo: pesoTextField.trailingAnchor),
             
             idadeLabel.topAnchor.constraint(equalTo: alturaLabel.bottomAnchor,constant: 25),
             idadeLabel.leadingAnchor.constraint(equalTo: pesoLabel.leadingAnchor),
             
             idadeTextField.centerYAnchor.constraint(equalTo: idadeLabel.centerYAnchor),
-            idadeTextField.leadingAnchor.constraint(equalTo: idadeLabel.trailingAnchor,constant: 8),
+            idadeTextField.leadingAnchor.constraint(equalTo: pesoTextField.leadingAnchor),
             idadeTextField.heightAnchor.constraint(equalToConstant: 25),
-            idadeTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            idadeTextField.trailingAnchor.constraint(equalTo: pesoTextField.trailingAnchor),
             
             resultButton.topAnchor.constraint(equalTo: idadeTextField.bottomAnchor,constant: 45),
             resultButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             resultButton.widthAnchor.constraint(equalToConstant: 150),
             
-            taxaMetabolicaLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 30),
-            taxaMetabolicaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-            taxaMetabolicaLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30)
+            resultTaxaMetabolicaLabel.topAnchor.constraint(equalTo: resultButton.bottomAnchor,constant: 30),
+            resultTaxaMetabolicaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            resultTaxaMetabolicaLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30)
         ])
     }
 }

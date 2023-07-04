@@ -40,13 +40,13 @@ class TaxaMetabolicaVC: UIViewController {
 
 extension TaxaMetabolicaVC: TaxaMetabolicaScreenProtocol {
     func actionCalculoHomem() {
-        screen?.lineView.backgroundColor = .corOne
-        screen?.line2View.backgroundColor = .clear
+//        screen?.lineView.backgroundColor = .corOne
+//        screen?.line2View.backgroundColor = .clear
     }
     
     func actionCalculoMulher() {
-        screen?.lineView.backgroundColor = .clear
-        screen?.line2View.backgroundColor = .corOne
+//        screen?.lineView.backgroundColor = .clear
+//        screen?.line2View.backgroundColor = .corOne
     }
     
     func actionBackButton() {
@@ -54,7 +54,7 @@ extension TaxaMetabolicaVC: TaxaMetabolicaScreenProtocol {
     }
     
     func actionCalcularButton() {
-        viewModel.calcularTaxaMetabolica(textFieldPeso: screen?.pesoTextField.text ?? "", textFieldAltura: screen?.alturaTextField.text ?? "", textFieldIdade: screen?.idadeTextField.text ?? "", lineView: screen?.lineView ?? UIView(), labelTaxa: screen?.taxaMetabolicaLabel ?? UILabel(), pesoText: screen?.pesoTextField ?? UITextField(), alturaText: screen?.alturaTextField ?? UITextField(), idadeText: screen?.idadeTextField ?? UITextField())
+        viewModel.calcularTaxaMetabolica(textFieldPeso: screen?.pesoTextField.text ?? "", textFieldAltura: screen?.alturaTextField.text ?? "", textFieldIdade: screen?.idadeTextField.text ?? "", labelTaxa: screen?.resultTaxaMetabolicaLabel ?? UILabel())
         viewModel.atualizarDado(id: viewModel.result)
         self.delegate?.succes(with : viewModel.reusltTaxaMetabolica)
     }
