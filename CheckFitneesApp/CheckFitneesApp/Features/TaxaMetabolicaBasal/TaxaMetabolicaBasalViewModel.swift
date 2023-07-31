@@ -17,7 +17,7 @@ class TaxaMetabolicaBasalViewModel {
     var reusltTaxaMetabolica = 0.0
     var itemClicked: PerfilModel?
     
-    public func calcularTaxaMetabolica(textFieldPeso: String,textFieldAltura: String,textFieldIdade: String, lineView: UIView, labelTaxa: UILabel,pesoText: UITextField,alturaText: UITextField,idadeText: UITextField) {
+    public func calcularTaxaMetabolica(textFieldPeso: String,textFieldAltura: String,textFieldIdade: String,labelTaxa: UILabel) {
         let pesoString = textFieldPeso
         let pesoDouble = 0.0
         let pesoResult = Double(pesoString ) ?? pesoDouble
@@ -39,17 +39,10 @@ class TaxaMetabolicaBasalViewModel {
         let calculoIdadeMulher = 4.7 * idadeResult
         
         
-        if lineView.backgroundColor == .corOne {
-            let calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
-            reusltTaxaMetabolica = calculoSoma
-        } else {
-            let calculoSoma =  665 + (calculoPesoMulher) + (calculoAlturaMulher) - (calculoIdadeMulher)
-            reusltTaxaMetabolica = calculoSoma
-        }
-        labelTaxa.text = "Sua Taxa Metabólica Basal é \(String(format: "%.2f", reusltTaxaMetabolica)) Kcal"
-        pesoText.text = ""
-        alturaText.text = ""
-        idadeText.text = ""
+        let calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
+        reusltTaxaMetabolica = calculoSoma
+        
+        labelTaxa.text = "Taxa Metabólica Basal \(String(format: "%.2f", reusltTaxaMetabolica)) Kcal"
     }
     
     func atualizarDado(id: String){

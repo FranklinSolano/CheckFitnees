@@ -46,7 +46,7 @@ extension CicloCarboidratosVC: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        900
+        880
     }
 }
 

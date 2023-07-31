@@ -47,7 +47,7 @@ extension CicloCarboidratosCell: ViewCode {
     }
 }
 
-//MARK: -
+//MARK: - UITextFieldDelegate
 
 extension CicloCarboidratosCell: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

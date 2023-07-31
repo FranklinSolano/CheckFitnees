@@ -19,6 +19,19 @@ class NewAlertCustonScreen: UIView {
         self.delegate = delegate
     }
     
+    lazy var titleLabel: UILabel = {
+        let label = TitleLabelCustom()
+        label.textColor = .corOne
+        return label
+    }()
+    
+    lazy var imageLogo: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "logo1")
+        return image
+    }()
+    
     lazy var contentViewAlert: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -39,13 +52,13 @@ class NewAlertCustonScreen: UIView {
     
     lazy var fichaLabel: UILabel = {
         let label = TextLabelCustom(title: "Dados do Aluno")
-        label.textColor = .corTwo
-        label.font = UIFont.systemFont(ofSize: 22)
+        label.textColor = .white
+        label.font = UIFont(name: "Roboto-Bold", size: 24)
         return label
     }()
     
     lazy var nameLabel: UILabel = {
-        let label = TextLabelCustom(title: "Nome*")
+        let label = TextLabelCustom(title: "• Nome:")
         label.textColor = .corTwo
         return label
     }()
@@ -54,13 +67,13 @@ class NewAlertCustonScreen: UIView {
         let tf = TextFieldCustom(placeholder: "")
         tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do aluno",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .corTwo
         return tf
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Modalidade*")
+        let label = TextLabelCustom(title: "• Modalidade:")
         label.textColor = .corTwo
         return label
     }()
@@ -69,53 +82,71 @@ class NewAlertCustonScreen: UIView {
         let tf = TextFieldCustom(placeholder: "")
         tf.attributedPlaceholder = NSAttributedString(string: "Digite a modalidade",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.layer.shadowColor = UIColor.white.cgColor
+        tf.textColor = .corTwo
+        return tf
+    }()
+    
+    lazy var emailLabel: UILabel = {
+        let label = TextLabelCustom(title: "• Email:")
+        label.textColor = .corTwo
+        return label
+    }()
+    
+    lazy var emailTextField: UITextField = {
+        let tf = TextFieldCustom(placeholder: "")
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite o email",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
+        tf.backgroundColor = UIColor.corOne
+        tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .corTwo
         return tf
     }()
     
     lazy var alturaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Altura*")
+        let label = TextLabelCustom(title: "• Altura:")
         label.textColor = .corTwo
         return label
     }()
     
     lazy var alturaTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua Altura. Ex: 170",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 170",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .corTwo
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var pesoLabel: UILabel = {
-        let label = TextLabelCustom(title: "Peso*")
+        let label = TextLabelCustom(title: "• Peso:")
         label.textColor = .corTwo
         return label
     }()
     
     lazy var pesoTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu Peso. Ex: 70.0",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70.0",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .corTwo
+        tf.textAlignment = .center
         return tf
     }()
     
     lazy var idadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Idade*")
+        let label = TextLabelCustom(title: "• Idade:")
         label.textColor = .corTwo
         return label
     }()
     
     lazy var idadeTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite sua Idade. Ex: 21",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 21",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
         tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .corTwo
+        tf.textAlignment = .center
         return tf
     }()
     
@@ -151,7 +182,8 @@ class NewAlertCustonScreen: UIView {
         let button = ButtonCustom(title: "Adicionar")
         button.backgroundColor = UIColor.corTwo
         button.setTitleColor(UIColor.corOne, for: .normal)
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 15
+        button.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 18)
         button.addTarget(self, action: #selector(tappedAdicionarButton), for: .touchUpInside)
         return button
     }()
@@ -180,8 +212,9 @@ class NewAlertCustonScreen: UIView {
         let altura = alturaTextField.text ?? ""
         let idade = idadeTextField.text ?? ""
         let peso = pesoTextField.text ?? ""
+        let email = emailTextField.text ?? ""
         
-        if !name.isEmpty && !modalidade.isEmpty && !idade.isEmpty && !altura.isEmpty && !peso.isEmpty {
+        if !name.isEmpty && !modalidade.isEmpty && !idade.isEmpty && !altura.isEmpty && !peso.isEmpty && !email.isEmpty {
             adicionarButton.setTitleColor(.corOne, for: .normal)
             adicionarButton.isEnabled = true
         } else {
@@ -197,14 +230,13 @@ class NewAlertCustonScreen: UIView {
     @objc private func tappedAdicionarButton(){
         delegate?.actionAdicionarButton()
     }
-    
 }
 
 //MARK: - ViewCode
 
 extension NewAlertCustonScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentViewAlert,backButton,fichaLabel,nameLabel,nameTextField,modalidadeLabel,modalidadeTextField,alturaLabel,alturaTextField,pesoLabel,pesoTextField,idadeLabel,idadeTextField,homemLabel,imageCheckBoxHomem,mulherLabel,imageCheckBoxMulher,adicionarButton]
+        let views: [UIView] = [titleLabel,imageLogo,contentViewAlert,backButton,fichaLabel,nameLabel,nameTextField,modalidadeLabel,modalidadeTextField,emailLabel,emailTextField,alturaLabel,alturaTextField,pesoLabel,pesoTextField,idadeLabel,idadeTextField,homemLabel,imageCheckBoxHomem,mulherLabel,imageCheckBoxMulher,adicionarButton]
         for view in views {
             addSubview(view)
         }
@@ -212,16 +244,25 @@ extension NewAlertCustonScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            contentViewAlert.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 100),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            
+            imageLogo.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            imageLogo.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            imageLogo.heightAnchor.constraint(equalToConstant: 46),
+            imageLogo.widthAnchor.constraint(equalToConstant: 52),
+            
+            fichaLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 75),
+            fichaLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
+            
+            contentViewAlert.topAnchor.constraint(equalTo: fichaLabel.bottomAnchor,constant: 15),
             contentViewAlert.centerXAnchor.constraint(equalTo: centerXAnchor),
             contentViewAlert.heightAnchor.constraint(equalToConstant: 380),
             contentViewAlert.widthAnchor.constraint(equalToConstant: 340),
             
             backButton.topAnchor.constraint(equalTo: contentViewAlert.topAnchor,constant: 20),
             backButton.trailingAnchor.constraint(equalTo: contentViewAlert.trailingAnchor,constant: -20),
-            
-            fichaLabel.centerYAnchor.constraint(equalTo: backButton.centerYAnchor),
-            fichaLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             nameLabel.topAnchor.constraint(equalTo: contentViewAlert.topAnchor,constant: 65),
             nameLabel.leadingAnchor.constraint(equalTo: contentViewAlert.leadingAnchor,constant: 15),
@@ -239,7 +280,15 @@ extension NewAlertCustonScreen: ViewCode {
             modalidadeTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
             modalidadeTextField.heightAnchor.constraint(equalToConstant: 20),
             
-            alturaLabel.topAnchor.constraint(equalTo: modalidadeTextField.bottomAnchor,constant: 20),
+            emailLabel.topAnchor.constraint(equalTo: modalidadeTextField.bottomAnchor,constant: 20),
+            emailLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
+            
+            emailTextField.centerYAnchor.constraint(equalTo: emailLabel.centerYAnchor),
+            emailTextField.leadingAnchor.constraint(equalTo: emailLabel.trailingAnchor,constant: 8),
+            emailTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
+            emailTextField.heightAnchor.constraint(equalToConstant: 20),
+            
+            alturaLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 20),
             alturaLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             
             alturaTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
@@ -263,7 +312,7 @@ extension NewAlertCustonScreen: ViewCode {
             idadeTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
             idadeTextField.heightAnchor.constraint(equalToConstant: 20),
             
-            homemLabel.topAnchor.constraint(equalTo: idadeTextField.bottomAnchor,constant: 35),
+            homemLabel.topAnchor.constraint(equalTo: idadeTextField.bottomAnchor,constant: 20),
             homemLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 80),
             
             imageCheckBoxHomem.centerYAnchor.constraint(equalTo: homemLabel.centerYAnchor),

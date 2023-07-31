@@ -31,11 +31,12 @@ class CicloCarboidratosScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setTitle("voltar", for: .normal)
+        button.setTitleColor(.corTwo, for: .normal)
         button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
-    
     
     lazy var imagePerson: UIImageView = {
         let image = UIImageView()
@@ -47,11 +48,9 @@ class CicloCarboidratosScreen: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "" )
-        label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .corTwo
         return label
     }()
-    
     
     lazy var tableView: UITableView = {
         let tv = UITableView()
@@ -99,8 +98,8 @@ extension CicloCarboidratosScreen: ViewCode {
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.heightAnchor.constraint(equalToConstant: 220),
             
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
             
             imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
             imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -109,7 +108,6 @@ extension CicloCarboidratosScreen: ViewCode {
             
             nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
-            
             
             tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),

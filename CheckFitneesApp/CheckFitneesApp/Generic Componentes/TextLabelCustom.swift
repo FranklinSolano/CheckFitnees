@@ -21,7 +21,7 @@ class TextLabelCustom: UILabel {
     
     private func configLabel(){
        self.translatesAutoresizingMaskIntoConstraints = false
-       self.textColor = UIColor.corOne
-       self.font = UIFont(name: "Arial Rounded MT Bold", size: 16)
+       self.textColor = UIColor.white
+       self.font = UIFont(name: "Roboto-Regular", size: 14)
     }
 }

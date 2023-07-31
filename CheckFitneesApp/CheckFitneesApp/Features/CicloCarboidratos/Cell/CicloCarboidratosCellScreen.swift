@@ -11,47 +11,48 @@ class CicloCarboidratosCellScreen: UIView {
     
     lazy var carboidratoslLabel: UILabel = {
           let label = TextLabelCustom(title: "Carboitrados:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
       lazy var carboidratosTextField: UITextField = {
           let tf = TextFieldCustom(placeholder: "Ex: 330")
+          tf.textAlignment = .center
           return tf
       }()
   
       lazy var proteinaLabel: UILabel = {
           let label = TextLabelCustom(title: "Proteina:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
       lazy var proteinaTextField: UITextField = {
           let tf = TextFieldCustom(placeholder: "Ex: 180")
+          tf.textAlignment = .center
           return tf
       }()
   
       lazy var gorduraLabel: UILabel = {
           let label = TextLabelCustom(title: "Gordura:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
       lazy var gorduraTextField: UITextField = {
           let tf = TextFieldCustom(placeholder: "Ex: 70")
+          tf.textAlignment = .center
           return tf
       }()
   
       lazy var kcalMediaLabel: UILabel = {
           let label = TextLabelCustom(title: "Sua media total de Kcal é 3260")
           label.textAlignment = .center
-          label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+          label.font = UIFont(name: "Roboto-Regular", size: 18)
+          label.textColor = .corOne
           return label
       }()
   
       lazy var protocoloLabel: UILabel = {
           let label = TextLabelCustom(title: "Selecione um protocolo:")
-          label.font = UIFont.systemFont(ofSize: 20)
+          label.font = UIFont(name: "Roboto-Bold", size: 18)
           return label
       }()
   
@@ -59,7 +60,7 @@ class CicloCarboidratosCellScreen: UIView {
           let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
           button.translatesAutoresizingMaskIntoConstraints = false
           button.setTitle("2 lox 1 high", for: .normal)
-          button.titleLabel?.font = UIFont(name: "PingFang SC", size: 18)
+          button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 18)
           button.setTitleColor(UIColor.corOne, for: .normal)
           button.addTarget(self, action: #selector(tappedTwoLoxButton), for: .touchUpInside)
           return button
@@ -69,7 +70,7 @@ class CicloCarboidratosCellScreen: UIView {
           let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
           button.translatesAutoresizingMaskIntoConstraints = false
           button.setTitle("3 lox 1 high", for: .normal)
-          button.titleLabel?.font = UIFont(name: "PingFang SC", size: 18)
+          button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 18)
           button.setTitleColor(UIColor.corOne , for: .normal)
           button.addTarget(self, action: #selector(tappedThreeeLokButton), for: .touchUpInside)
           return button
@@ -79,7 +80,7 @@ class CicloCarboidratosCellScreen: UIView {
           let button = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 33))
           button.translatesAutoresizingMaskIntoConstraints = false
           button.setTitle("4 lox 1 high", for: .normal)
-          button.titleLabel?.font = UIFont(name: "PingFang SC", size: 18)
+          button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 18)
           button.setTitleColor(UIColor.corOne , for: .normal)
           button.addTarget(self, action: #selector(tappedForLoxButton), for: .touchUpInside)
           return button
@@ -108,7 +109,7 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var macronutrienteLoxLabel: UILabel = {
           let label = TextLabelCustom(title: "MacroNutrientes para os dias de carbo baixo (lox)")
-          label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+          label.font = UIFont(name: "Roboto-Medium", size: 18)
           label.textAlignment = .center
           label.numberOfLines = 0
           return label
@@ -116,7 +117,6 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var carboidratoslLoxLabel: UILabel = {
           let label = TextLabelCustom(title: "Carboitrados:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
@@ -130,7 +130,6 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var proteinaLoxLabel: UILabel = {
           let label = TextLabelCustom(title: "Proteina:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
@@ -144,7 +143,6 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var gorduraLoxLabel: UILabel = {
           let label = TextLabelCustom(title: "Gordura:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
@@ -159,13 +157,14 @@ class CicloCarboidratosCellScreen: UIView {
       lazy var kcalMediaLoxLabel: UILabel = {
           let label = TextLabelCustom(title: "Sua media total de Kcal é 2821")
           label.textAlignment = .center
-          label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+          label.font = UIFont(name: "Roboto-Regular", size: 18)
+          label.textColor = .corOne
           return label
       }()
   
       lazy var macronutrienteHighLabel: UILabel = {
           let label = TextLabelCustom(title: "MacroNutrientes para os dias de carbo alto (high)")
-          label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+          label.font = UIFont(name: "Roboto-Medium", size: 18)
           label.textAlignment = .center
           label.numberOfLines = 0
           return label
@@ -173,7 +172,6 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var carboidratoslHighLabel: UILabel = {
           let label = TextLabelCustom(title: "Carboitrados:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
@@ -188,7 +186,6 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var proteinaHighLabel: UILabel = {
           let label = TextLabelCustom(title: "Proteina:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
@@ -202,7 +199,6 @@ class CicloCarboidratosCellScreen: UIView {
   
       lazy var gorduraHighLabel: UILabel = {
           let label = TextLabelCustom(title: "Gordura:")
-          label.font = UIFont.systemFont(ofSize: 20)
           return label
       }()
   
@@ -217,7 +213,8 @@ class CicloCarboidratosCellScreen: UIView {
       lazy var kcalMediaHighLabel: UILabel = {
           let label = TextLabelCustom(title: "Sua media total de Kcal é 4138")
           label.textAlignment = .center
-          label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
+          label.font = UIFont(name: "Roboto-Regular", size: 18)
+          label.textColor = .corOne
           return label
       }()
       

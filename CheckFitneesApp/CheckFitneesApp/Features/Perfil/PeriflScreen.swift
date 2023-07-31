@@ -27,10 +27,12 @@ class PeriflScreen: UIView {
         return view
     }()
     
-    lazy var backButton: UIButton = {
+    lazy var backButton1: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setTitle("voltar", for: .normal)
+        button.setTitleColor(.corTwo, for: .normal)
         button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
@@ -89,7 +91,7 @@ class PeriflScreen: UIView {
 
 extension PeriflScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,tableView]
+        let views: [UIView] = [contentView,backButton1,imagePerson,nameLabel,tableView]
         for view in views {
             addSubview(view)
         }
@@ -102,8 +104,8 @@ extension PeriflScreen: ViewCode {
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.heightAnchor.constraint(equalToConstant: 220),
             
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            backButton1.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
+            backButton1.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
             
             imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
             imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),

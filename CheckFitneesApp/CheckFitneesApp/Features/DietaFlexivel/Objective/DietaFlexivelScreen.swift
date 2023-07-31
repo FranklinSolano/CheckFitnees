@@ -21,6 +21,19 @@ class DietaFlexivelScreen: UIView {
         self.delegate = delegate
     }
     
+    lazy var titleLabel: UILabel = {
+        let label = TitleLabelCustom()
+        label.textColor = .corOne
+        return label
+    }()
+    
+    lazy var imageLogo: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "logo1")
+        return image
+    }()
+    
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -32,16 +45,16 @@ class DietaFlexivelScreen: UIView {
     
     lazy var objectiveLabel: UILabel = {
         let label = TextLabelCustom(title: "Escolha um obejtivo")
-        label.font = UIFont.systemFont(ofSize: 30)
+        label.font = UIFont(name: "Roboto-Bold", size: 24)
         label.textAlignment = .center
-        label.textColor = .corTwo
+        label.textColor = .white
         return label
     }()
     
     lazy var gainWeightButton: UIButton = {
         let button = ButtonCustom(title: "Ganhar Peso")
         button.backgroundColor = .corTwo
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tappedGainButton), for: .touchUpInside)
         return button
     }()
@@ -49,7 +62,7 @@ class DietaFlexivelScreen: UIView {
     lazy var maintainWeightButton: UIButton = {
         let button = ButtonCustom(title: "Manter Peso")
         button.backgroundColor = .corTwo
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tappedMaintainButton), for: .touchUpInside)
         return button
     }()
@@ -57,7 +70,7 @@ class DietaFlexivelScreen: UIView {
     lazy var loseWeightButton: UIButton = {
         let button = ButtonCustom(title: "Perder Peso")
         button.backgroundColor = .corTwo
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tappedLoseButton), for: .touchUpInside)
         return button
     }()
@@ -66,7 +79,7 @@ class DietaFlexivelScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Cancelar", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 18)
+        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 18)
         button.setTitleColor(UIColor.corTwo, for: .normal)
         button.addTarget(self, action: #selector(tappedCancelButton), for: .touchUpInside)
         return button
@@ -97,13 +110,18 @@ class DietaFlexivelScreen: UIView {
     @objc private func tappedCancelButton(){
         delegate?.actionCancelButton()
     }
+    
+    func teste(){
+        objectiveLabel.text = "Qual é o seu nivel de atividade?"
+        objectiveLabel.font = UIFont.systemFont(ofSize: 22)
+    }
 }
 
 //MARK: - ViewCode
 
 extension DietaFlexivelScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,objectiveLabel, gainWeightButton,maintainWeightButton,loseWeightButton,cancelButton]
+        let views: [UIView] = [titleLabel,imageLogo,contentView,objectiveLabel, gainWeightButton,maintainWeightButton,loseWeightButton,cancelButton]
         for view in views {
             addSubview(view)
         }
@@ -111,31 +129,40 @@ extension DietaFlexivelScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            contentView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 100),
-            contentView.centerXAnchor.constraint(equalTo: centerXAnchor),
-            contentView.widthAnchor.constraint(equalToConstant: 340),
-            contentView.heightAnchor.constraint(equalToConstant: 400),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
+            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            objectiveLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 20),
+            imageLogo.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            imageLogo.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            imageLogo.heightAnchor.constraint(equalToConstant: 46),
+            imageLogo.widthAnchor.constraint(equalToConstant: 52),
+            
+            objectiveLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 100),
             objectiveLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            gainWeightButton.topAnchor.constraint(equalTo: objectiveLabel.bottomAnchor,constant: 40),
-            gainWeightButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 15),
-            gainWeightButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -15),
-            gainWeightButton.heightAnchor.constraint(equalToConstant: 50),
+            contentView.topAnchor.constraint(equalTo: objectiveLabel.bottomAnchor,constant: 15),
+            contentView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            contentView.widthAnchor.constraint(equalToConstant: 340),
+            contentView.heightAnchor.constraint(equalToConstant: 320),
             
-            maintainWeightButton.topAnchor.constraint(equalTo: gainWeightButton.bottomAnchor,constant: 25),
+            loseWeightButton.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 40),
+            loseWeightButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 15),
+            loseWeightButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -15),
+            loseWeightButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            maintainWeightButton.topAnchor.constraint(equalTo: loseWeightButton.bottomAnchor,constant: 25),
             maintainWeightButton.leadingAnchor.constraint(equalTo: gainWeightButton.leadingAnchor),
             maintainWeightButton.trailingAnchor.constraint(equalTo: gainWeightButton.trailingAnchor),
             maintainWeightButton.heightAnchor.constraint(equalToConstant: 50),
             
-            loseWeightButton.topAnchor.constraint(equalTo: maintainWeightButton.bottomAnchor,constant: 25),
-            loseWeightButton.leadingAnchor.constraint(equalTo: gainWeightButton.leadingAnchor),
-            loseWeightButton.trailingAnchor.constraint(equalTo: gainWeightButton.trailingAnchor),
-            loseWeightButton.heightAnchor.constraint(equalToConstant: 50),
+            gainWeightButton.topAnchor.constraint(equalTo: maintainWeightButton.bottomAnchor,constant: 25),
+            gainWeightButton.leadingAnchor.constraint(equalTo: loseWeightButton.leadingAnchor),
+            gainWeightButton.trailingAnchor.constraint(equalTo: loseWeightButton.trailingAnchor),
+            gainWeightButton.heightAnchor.constraint(equalToConstant: 50),
             
-            cancelButton.topAnchor.constraint(equalTo: loseWeightButton.bottomAnchor,constant: 45),
-            cancelButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 40)
+            cancelButton.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            cancelButton.bottomAnchor.constraint(equalTo: contentView.bottomAnchor,constant: -30)
         ])
     }
 }

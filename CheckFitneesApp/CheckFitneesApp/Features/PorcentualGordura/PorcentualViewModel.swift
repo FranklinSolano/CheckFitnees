@@ -41,9 +41,6 @@ class PorcentualViewModel  {
         
         let soma = tricepsResult + peitoralResult + supraResult + abdomenResult + coxaResult + subescapularResult + axilarResult
         
-        if lineView.backgroundColor == .corOne {
-            
-                    }
         
         
         
