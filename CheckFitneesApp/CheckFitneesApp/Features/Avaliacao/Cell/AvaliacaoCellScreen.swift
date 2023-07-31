@@ -9,72 +9,29 @@ import UIKit
 
 class AvaliacaoCellScreen: UIView {
     
-    lazy var avaliacaoLabel: UILabel = {
-        let label = TextLabelCustom(title: "Avaliação Fisica")
-        label.font = UIFont.systemFont(ofSize: 22)
-        return label
-    }()
-    
-    lazy var alturaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Altura:")
-        label.font = UIFont.systemFont(ofSize: 14)
-        return label
-    }()
-    
-    lazy var alturaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "165"
-        tf.textAlignment = .center
-        return tf
-    }()
-    
-    lazy var idadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Idade:")
-        label.font = UIFont.systemFont(ofSize: 14)
-        return label
-    }()
-    
-    lazy var idadeTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "21"
-        tf.textAlignment = .center
-        return tf
-    }()
-    
-    lazy var pesoLabel: UILabel = {
-        let label = TextLabelCustom(title: "Peso:")
-        label.font = UIFont.systemFont(ofSize: 14)
-        return label
-    }()
-    
-    lazy var pesoTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "68.8"
-        tf.textAlignment = .center
-        return tf
-    }()
-    
     lazy var dobrasLabel: UILabel = {
-        let label = TextLabelCustom(title: "Dobras(mm)")
-        label.font = UIFont.systemFont(ofSize: 22)
+        let label = TextLabelCustom(title: "DOBRAS (mm)")
+        label.font = UIFont(name: "Roboto-Bold", size: 18)
+        label.textColor = .corOne
         return label
     }()
     
     lazy var direitoLabel: UILabel = {
         let label = TextLabelCustom(title: "Direito")
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: "Roboto-Bold", size: 18)
+        label.textColor = .corOne
         return label
     }()
     
     lazy var esquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Esquerdo")
-        label.font = UIFont.systemFont(ofSize: 18)
+        label.font = UIFont(name: "Roboto-Bold", size: 18)
+        label.textColor = .corOne
         return label
     }()
     
     lazy var tricepsLabel: UILabel = {
         let label = TextLabelCustom(title: "Triceps")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -86,7 +43,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var tricepsEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Triceps")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -98,7 +54,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var bicepsLabel: UILabel = {
         let label = TextLabelCustom(title: "Biceps")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -110,7 +65,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var bicepsEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Biceps")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -122,7 +76,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var peitoralLabel: UILabel = {
         let label = TextLabelCustom(title: "Peitoral")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -134,7 +87,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var peitoralEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Peitoral")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -146,7 +98,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var abdomenLabel: UILabel = {
         let label = TextLabelCustom(title: "Abdomen")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -158,7 +109,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var abdomenEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Abdomen")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -170,7 +120,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var coxaLabel: UILabel = {
         let label = TextLabelCustom(title: "Coxa")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -182,7 +131,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var coxaEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Coxa")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -192,10 +140,8 @@ class AvaliacaoCellScreen: UIView {
         return tf
     }()
     
-    
     lazy var subescabularLabel: UILabel = {
         let label = TextLabelCustom(title: "Subescapular")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -207,7 +153,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var subescapularEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Subescaoular")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -219,7 +164,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var axiliarLabel: UILabel = {
         let label = TextLabelCustom(title: "Axiliar-Medio")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -231,7 +175,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var axiliarEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Axiliar-Medio")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -243,7 +186,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var supraLabel: UILabel = {
         let label = TextLabelCustom(title: "Suprailiaca")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -255,7 +197,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var supraEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Suprailiaca")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -267,7 +208,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var supraEspinhalLabel: UILabel = {
         let label = TextLabelCustom(title: "Supra-Espinhal")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -279,7 +219,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var supraEspinhalEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Supra-Espinhal")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -291,7 +230,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var panturrilhaLabel: UILabel = {
         let label = TextLabelCustom(title: "Paturrilha")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -303,7 +241,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var panturrilhaEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Panturrilha")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -314,14 +251,14 @@ class AvaliacaoCellScreen: UIView {
     }()
     
     lazy var medidasLabel: UILabel = {
-        let label = TextLabelCustom(title: "Medidas(cm)")
-        label.font = UIFont.systemFont(ofSize: 22)
+        let label = TextLabelCustom(title: "MEDIDAS (cm)")
+        label.font = UIFont(name: "Roboto-Bold", size: 18)
+        label.textColor = .corOne
         return label
     }()
     
     lazy var bracoLabel: UILabel = {
         let label = TextLabelCustom(title: "Braço D Relaxado")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -333,7 +270,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var bracoContraidoLabel: UILabel = {
         let label = TextLabelCustom(title: "Braço D Contraido")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -345,7 +281,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var bracoEsquerdoLabel: UILabel = {
         let label = TextLabelCustom(title: "Braço E Relaxado")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -357,7 +292,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var bracoEsquerdoContraidoLabel: UILabel = {
         let label = TextLabelCustom(title: "Braço E Contraido")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -369,7 +303,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var peitoralMedidaLabel: UILabel = {
         let label = TextLabelCustom(title: "Peitoral")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -381,7 +314,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var abdominalLabel: UILabel = {
         let label = TextLabelCustom(title: "Abdômen")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -393,7 +325,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var coxaMedidaLabel: UILabel = {
         let label = TextLabelCustom(title: "Coxa Direita")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -405,7 +336,6 @@ class AvaliacaoCellScreen: UIView {
     
     lazy var coxaEsquerdaMedidaLabel: UILabel = {
         let label = TextLabelCustom(title: "Coxa Esquerda")
-        label.font = UIFont.systemFont(ofSize: 14)
         return label
     }()
     
@@ -416,8 +346,7 @@ class AvaliacaoCellScreen: UIView {
     }()
     
     lazy var panturrilhaMedidaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Paturrilha Direita")
-        label.font = UIFont.systemFont(ofSize: 14)
+        let label = TextLabelCustom(title: "Paturrilha D")
         return label
     }()
     
@@ -428,8 +357,7 @@ class AvaliacaoCellScreen: UIView {
     }()
     
     lazy var panturrilhaEsquerdoMedidaLabel: UILabel = {
-        let label = TextLabelCustom(title: "Panturrilha Esquerda")
-        label.font = UIFont.systemFont(ofSize: 14)
+        let label = TextLabelCustom(title: "Panturrilha E")
         return label
     }()
     
@@ -437,6 +365,11 @@ class AvaliacaoCellScreen: UIView {
         let tf = TextFieldCustom(placeholder: "Ex:10")
         tf.textAlignment = .center
         return tf
+    }()
+    
+    lazy var salvarDadosButton: UIButton = {
+        let button = ButtonCustom(title: "SALVAR")
+        return button
     }()
     
     override init(frame: CGRect) {
@@ -448,11 +381,15 @@ class AvaliacaoCellScreen: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func teste2(){
+        print("deu certooooo")
+    }
 }
 
 extension AvaliacaoCellScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [avaliacaoLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,dobrasLabel,direitoLabel,esquerdoLabel,tricepsLabel,tricepsTextField,tricepsEsquerdoLabel,tricepsEsquerdoTextField,subescabularLabel,subescabularTextField,subescapularEsquerdoLabel,subescapularEsquerdoTextField,axiliarLabel,axiliarTextField,axiliarEsquerdoLabel,axiliarEsquerdoTextField,bicepsLabel,bicepsTextField,bicepsEsquerdoLabel,bicepsEsquerdoTextField,peitoralLabel,peitoralTextField,peitoralEsquerdoLabel,peitoralEsquerdoTextField,abdomenLabel,abdomenTextField,abdomenEsquerdoLabel,abdomenEsquerdoTextField,coxaLabel,coxaTextField,coxaEsquerdoLabel,coxaEsquerdoTextField,supraLabel,supraTextField,supraEsquerdoLabel,supraEsquerdoTextField,supraEspinhalLabel,supraEspinhalTextField,supraEspinhalEsquerdoLabel,supraEspinhalEsquerdoTextField,panturrilhaLabel,panturrilhaTextField,panturrilhaEsquerdoLabel,panturrilhaEsquerdoTextField,medidasLabel,bracoLabel,bracoTextField,bracoContraidoLabel,bracoContraidoTextField,bracoEsquerdoLabel,bracoEsquerdoTextField,bracoEsquerdoContraidoLabel,bracoEsquerdoContraidoTextField,peitoralMedidaLabel,peitoralMedidaTextField,abdominalLabel,abdominalTextField,coxaMedidaLabel,coxaMedidaTextField,coxaEsquerdaMedidaLabel,coxaEsquerdaMedidaTextField,panturrilhaMedidaLabel,panturrilhaMedidaTextField,panturrilhaEsquerdoMedidaLabel,panturrilhaEsquerdoMedidaTextField]
+        let views: [UIView] = [dobrasLabel,direitoLabel,esquerdoLabel,tricepsLabel,tricepsTextField,tricepsEsquerdoLabel,tricepsEsquerdoTextField,subescabularLabel,subescabularTextField,subescapularEsquerdoLabel,subescapularEsquerdoTextField,axiliarLabel,axiliarTextField,axiliarEsquerdoLabel,axiliarEsquerdoTextField,bicepsLabel,bicepsTextField,bicepsEsquerdoLabel,bicepsEsquerdoTextField,peitoralLabel,peitoralTextField,peitoralEsquerdoLabel,peitoralEsquerdoTextField,abdomenLabel,abdomenTextField,abdomenEsquerdoLabel,abdomenEsquerdoTextField,coxaLabel,coxaTextField,coxaEsquerdoLabel,coxaEsquerdoTextField,supraLabel,supraTextField,supraEsquerdoLabel,supraEsquerdoTextField,supraEspinhalLabel,supraEspinhalTextField,supraEspinhalEsquerdoLabel,supraEspinhalEsquerdoTextField,panturrilhaLabel,panturrilhaTextField,panturrilhaEsquerdoLabel,panturrilhaEsquerdoTextField,medidasLabel,bracoLabel,bracoTextField,bracoContraidoLabel,bracoContraidoTextField,bracoEsquerdoLabel,bracoEsquerdoTextField,bracoEsquerdoContraidoLabel,bracoEsquerdoContraidoTextField,peitoralMedidaLabel,peitoralMedidaTextField,abdominalLabel,abdominalTextField,coxaMedidaLabel,coxaMedidaTextField,coxaEsquerdaMedidaLabel,coxaEsquerdaMedidaTextField,panturrilhaMedidaLabel,panturrilhaMedidaTextField,panturrilhaEsquerdoMedidaLabel,panturrilhaEsquerdoMedidaTextField,salvarDadosButton]
         for view in views {
             addSubview(view)
         }
@@ -460,41 +397,14 @@ extension AvaliacaoCellScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            avaliacaoLabel.topAnchor.constraint(equalTo: topAnchor),
-            avaliacaoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            alturaLabel.topAnchor.constraint(equalTo: avaliacaoLabel.bottomAnchor,constant: 20),
-            alturaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            
-            alturaTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            alturaTextField.leadingAnchor.constraint(equalTo: alturaLabel.trailingAnchor, constant: 10),
-            alturaTextField.widthAnchor.constraint(equalToConstant: 60),
-            alturaTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            idadeLabel.topAnchor.constraint(equalTo: alturaLabel.topAnchor),
-            idadeLabel.leadingAnchor.constraint(equalTo: alturaTextField.trailingAnchor,constant: 15),
-            
-            idadeTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            idadeTextField.leadingAnchor.constraint(equalTo: idadeLabel.trailingAnchor, constant: 10),
-            idadeTextField.widthAnchor.constraint(equalToConstant: 60),
-            idadeTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            pesoLabel.topAnchor.constraint(equalTo: alturaLabel.topAnchor),
-            pesoLabel.leadingAnchor.constraint(equalTo: idadeTextField.trailingAnchor,constant: 15),
-            
-            pesoTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            pesoTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            pesoTextField.widthAnchor.constraint(equalToConstant: 60),
-            pesoTextField.heightAnchor.constraint(equalToConstant: 15),
-            
-            dobrasLabel.topAnchor.constraint(equalTo: alturaLabel.bottomAnchor,constant: 20),
+            dobrasLabel.topAnchor.constraint(equalTo: topAnchor),
             dobrasLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            direitoLabel.topAnchor.constraint(equalTo: dobrasLabel.bottomAnchor,constant: 20),
-            direitoLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 84),
+            direitoLabel.topAnchor.constraint(equalTo: dobrasLabel.bottomAnchor,constant: 35),
+            direitoLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 70),
             
-            esquerdoLabel.topAnchor.constraint(equalTo: dobrasLabel.bottomAnchor,constant: 20),
-            esquerdoLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -84),
+            esquerdoLabel.topAnchor.constraint(equalTo: dobrasLabel.bottomAnchor,constant: 35),
+            esquerdoLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -65),
             
             tricepsLabel.topAnchor.constraint(equalTo: direitoLabel.bottomAnchor,constant: 20),
             tricepsLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
@@ -644,24 +554,24 @@ extension AvaliacaoCellScreen: ViewCode {
             
             peitoralMedidaTextField.centerYAnchor.constraint(equalTo: peitoralMedidaLabel.centerYAnchor),
             peitoralMedidaTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            peitoralMedidaTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 95),
+            peitoralMedidaTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 85),
             
             abdominalLabel.topAnchor.constraint(equalTo: peitoralMedidaLabel.bottomAnchor,constant: 20),
             abdominalLabel.leadingAnchor.constraint(equalTo: tricepsLabel.leadingAnchor),
             
             abdominalTextField.centerYAnchor.constraint(equalTo: abdominalLabel.centerYAnchor),
-            abdominalTextField.leadingAnchor.constraint(equalTo: abdominalLabel.trailingAnchor,constant: 10),
+            abdominalTextField.leadingAnchor.constraint(equalTo: peitoralMedidaTextField.leadingAnchor),
             abdominalTextField.trailingAnchor.constraint(equalTo: peitoralMedidaTextField.trailingAnchor),
             
             bracoLabel.topAnchor.constraint(equalTo: abdominalLabel.bottomAnchor,constant: 20),
             bracoLabel.leadingAnchor.constraint(equalTo: tricepsLabel.leadingAnchor),
             
             bracoTextField.centerYAnchor.constraint(equalTo: bracoLabel.centerYAnchor),
-            bracoTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 148),
+            bracoTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 135),
             bracoTextField.widthAnchor.constraint(equalToConstant: 50),
             
             bracoEsquerdoLabel.topAnchor.constraint(equalTo: abdominalLabel.bottomAnchor,constant: 20),
-            bracoEsquerdoLabel.leadingAnchor.constraint(equalTo: tricepsTextField.trailingAnchor,constant: 29),
+            bracoEsquerdoLabel.leadingAnchor.constraint(equalTo: tricepsTextField.trailingAnchor,constant: 20),
             
             bracoEsquerdoTextField.centerYAnchor.constraint(equalTo: bracoEsquerdoLabel.centerYAnchor),
             bracoEsquerdoTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
@@ -709,11 +619,10 @@ extension AvaliacaoCellScreen: ViewCode {
             panturrilhaEsquerdoMedidaTextField.trailingAnchor.constraint(equalTo: bracoEsquerdoTextField.trailingAnchor),
             panturrilhaEsquerdoMedidaTextField.widthAnchor.constraint(equalToConstant: 50),
            
-            
-            
-            
-            
+            salvarDadosButton.topAnchor.constraint(equalTo: panturrilhaMedidaTextField.bottomAnchor, constant: 35),
+            salvarDadosButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            salvarDadosButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            salvarDadosButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
-    
 }

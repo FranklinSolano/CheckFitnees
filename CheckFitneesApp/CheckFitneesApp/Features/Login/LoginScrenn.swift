@@ -22,36 +22,47 @@ class LoginScrenn: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = TitleLabelCustom()
-        label.textColor = .corTwo
+        label.textColor = .corOne
         return label
     }()
     
     lazy var imagePerson: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(systemName: "figure.strengthtraining.traditional")
-        image.tintColor = UIColor.corTwo
+        image.image = UIImage(named: "logo1")
         return image
-    }()
-    
-    lazy var contentView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 20
-        return view
     }()
     
     lazy var emailLabel: UILabel = {
         let label = TextLabelCustom(title: "Email:")
+        label.textColor = .corOne
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu email:")
-        tf.autocapitalizationType = .none
-        tf.text = "franklin@gmail.com" 
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .default
+        tf.placeholder = "Digite seu email"
+        tf.clipsToBounds = true
+        tf.layer.cornerRadius = 17
+        tf.backgroundColor = .corTwo
+        tf.textColor = .white
+        tf.text = "franklin@gmail.com"
+        // Adicionar image no TextField ao lado esquerdo
+        let imageLogin = UIImageView(image: UIImage(named: "logoemail"))
+        imageLogin.frame = CGRect(x: 8, y: 0, width: 24, height: 24)
+        imageLogin.contentMode = .center
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        containerView.addSubview(imageLogin)
+        
+        tf.leftView = containerView
+        tf.leftViewMode = .always
+        tf.layer.borderColor = UIColor.corOne.cgColor
+        tf.layer.borderWidth = 2
         return tf
     }()
     
@@ -64,28 +75,52 @@ class LoginScrenn: UIView {
     
     lazy var passwordLabel: UILabel = {
         let label = TextLabelCustom(title: "Senha:")
+        label.textColor = .corOne
+        label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
     lazy var passwordTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite sua senha:")
-        tf.isSecureTextEntry = true
+        let tf = UITextField()
+        tf.translatesAutoresizingMaskIntoConstraints = false
+        tf.autocorrectionType = .no
+        tf.borderStyle = .roundedRect
+        tf.keyboardType = .default
+        tf.placeholder = "Digite sua senha"
+        tf.clipsToBounds = true
+        tf.layer.cornerRadius = 17
+        tf.backgroundColor = .corTwo
+        tf.textColor = .white
         tf.text = "solano2008"
+        tf.isSecureTextEntry = true
+        // Adicionar image no TextField ao lado esquerdo
+        let imageLogin = UIImageView(image: UIImage(named: "logosenha"))
+        imageLogin.frame = CGRect(x: 8, y: 0, width: 24, height: 24)
+        imageLogin.contentMode = .center
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        containerView.addSubview(imageLogin)
+        
+        tf.leftView = containerView
+        tf.leftViewMode = .always
+        tf.layer.borderColor = UIColor.corOne.cgColor
+        tf.layer.borderWidth = 2
         return tf
     }()
     
     lazy var forgotPasswordButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Esqueceu senha?", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 15)
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.setTitle("Esqueceu a senha?", for: .normal)
+        button.titleLabel?.font = UIFont(name: "Roboto-Regular", size: 14)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tapeedForgotPassword), for: .touchUpInside)
         return button
     }()
     
     lazy var loginButton: UIButton = {
         let button = ButtonCustom(title: "Entrar")
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 17
         button.isEnabled = false
         button.setTitleColor(.gray, for: .normal)
         button.addTarget(self, action: #selector(tapeedLoginButton), for: .touchUpInside)
@@ -96,8 +131,8 @@ class LoginScrenn: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Não tem conta ? Cadastre se", for: .normal)
-        button.titleLabel?.font = UIFont(name: "PingFang SC", size: 16)
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 16)
+        button.setTitleColor(UIColor.white, for: .normal)
         button.addTarget(self, action: #selector(tapeedRegisterButton), for: .touchUpInside)
         return button
     }()
@@ -105,8 +140,11 @@ class LoginScrenn: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.corTwo
         hideErrorLabel()
+        for name in UIFont.fontNames(forFamilyName: "Roboto") {
+            print(name)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -123,8 +161,8 @@ class LoginScrenn: UIView {
         let password = passwordTextField.text ?? ""
         
         if !email.isEmpty && !password.isEmpty {
-            loginButton.setTitleColor(.corTwo, for: .normal)
-            loginButton.backgroundColor = .corOne
+            loginButton.setTitleColor(.white, for: .normal)
+            loginButton.backgroundColor = .corTwo
             loginButton.isEnabled = true
         } else {
             loginButton.setTitleColor(.lightGray, for: .normal)
@@ -159,7 +197,7 @@ class LoginScrenn: UIView {
 
 extension LoginScrenn: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,imagePerson,contentView,emailLabel,emailTextField,errorLabel,passwordLabel,passwordTextField,forgotPasswordButton,loginButton,registerButton]
+        let views: [UIView] = [imagePerson,titleLabel,emailLabel,emailTextField,errorLabel,passwordLabel,passwordTextField,forgotPasswordButton,loginButton,registerButton]
         for view in views {
             addSubview(view)
         }
@@ -167,46 +205,43 @@ extension LoginScrenn: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            imagePerson.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 30),
+            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 25),
             imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
-            imagePerson.heightAnchor.constraint(equalToConstant: 105),
-            imagePerson.widthAnchor.constraint(equalToConstant: 150),
+            imagePerson.heightAnchor.constraint(equalToConstant: 88),
+            imagePerson.widthAnchor.constraint(equalToConstant: 98),
             
-            contentView.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 20),
-            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            contentView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            titleLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 5),
+            titleLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            emailLabel.topAnchor.constraint(equalTo: contentView.topAnchor,constant: 40),
-            emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
+            emailLabel.topAnchor.constraint(equalTo: titleLabel.topAnchor,constant: 100),
+            emailLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 22),
             
             emailTextField.topAnchor.constraint(equalTo: emailLabel.bottomAnchor,constant: 5),
-            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            emailTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            emailTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
             
             errorLabel.topAnchor.constraint(equalTo: emailTextField.bottomAnchor,constant: 5),
             errorLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
             
             passwordLabel.topAnchor.constraint(equalTo: errorLabel.bottomAnchor,constant: 10),
-            passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 18),
+            passwordLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 22),
             
             passwordTextField.topAnchor.constraint(equalTo: passwordLabel.bottomAnchor,constant: 5),
-            passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            passwordTextField.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            passwordTextField.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 50),
             
-            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,constant: 5),
-            forgotPasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -25),
+            forgotPasswordButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor,constant: 10),
+            forgotPasswordButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -35),
             
-            loginButton.bottomAnchor.constraint(equalTo: forgotPasswordButton.bottomAnchor,constant: 100),
-            loginButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            loginButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            loginButton.heightAnchor.constraint(equalToConstant: 55),
+            loginButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor,constant: -70),
+            loginButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            loginButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            loginButton.heightAnchor.constraint(equalToConstant: 50),
             
-            registerButton.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -30),
+            registerButton.topAnchor.constraint(equalTo: loginButton.bottomAnchor,constant: 20),
             registerButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }

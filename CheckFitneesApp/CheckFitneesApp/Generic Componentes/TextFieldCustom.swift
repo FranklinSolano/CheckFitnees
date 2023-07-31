@@ -24,14 +24,14 @@ class TextFieldCustom: UITextField {
     
    private func configTextField() {
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.attributedPlaceholder = NSAttributedString(string: title ?? "",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corOne])
+        self.attributedPlaceholder = NSAttributedString(string: title ?? "",attributes: [NSAttributedString.Key.foregroundColor: UIColor.white])
         self.autocorrectionType = .no
         self.borderStyle = .roundedRect
         self.keyboardType = .default
         self.backgroundColor = UIColor.corTwo
-        self.textColor = UIColor.corOne
+        self.textColor = UIColor.white
         self.borderStyle = .none
-        self.layer.shadowColor = UIColor.corOne.cgColor
+        self.layer.shadowColor = UIColor.white.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0

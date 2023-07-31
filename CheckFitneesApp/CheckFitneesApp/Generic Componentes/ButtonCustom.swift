@@ -22,11 +22,13 @@ class ButtonCustom: UIButton {
     
     private func configButton(){
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        self.setTitleColor(UIColor.corTwo, for: .normal)
-        self.backgroundColor = UIColor.corOne
+        self.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 18)
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.backgroundColor = UIColor.corTwo
         self.clipsToBounds = true
         self.layer.cornerRadius = 12
+        self.layer.borderColor = UIColor.corOne.cgColor
+        self.layer.borderWidth = 2
     }
 
 }

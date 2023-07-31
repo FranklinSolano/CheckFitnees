@@ -23,9 +23,17 @@ class HomeScreen: UIView {
         return label
     }()
     
+    lazy var imageLogo: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "logo1")
+        return image
+    }()
+    
     lazy var addAlunoButton: UIButton = {
         let button = ButtonCustom(title: "     Adicionar")
         button.contentHorizontalAlignment = .left
+        button.setTitleColor(.white, for: .normal)
         button.addTarget(self, action: #selector(tappedAddAluno), for: .touchUpInside)
         return button
     }()
@@ -34,7 +42,7 @@ class HomeScreen: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "plus.circle.fill")
-        image.tintColor = UIColor.corTwo
+        image.tintColor = UIColor.white
         return image
     }()
     
@@ -72,7 +80,7 @@ class HomeScreen: UIView {
 
 extension HomeScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,addAlunoButton,imagePlus,tableView,imagePlus]
+        let views: [UIView] = [titleLabel,imageLogo,addAlunoButton,imagePlus,tableView]
         for view in views {
             addSubview(view)
         }
@@ -80,11 +88,16 @@ extension HomeScreen: ViewCode {
     
     func configConstraint() {
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
             titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
             
-            addAlunoButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 20),
+            imageLogo.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor),
+            imageLogo.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 10),
+            imageLogo.heightAnchor.constraint(equalToConstant: 46),
+            imageLogo.widthAnchor.constraint(equalToConstant: 52),
+            
+            addAlunoButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 35),
             addAlunoButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
             addAlunoButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
             addAlunoButton.heightAnchor.constraint(equalToConstant: 60),

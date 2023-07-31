@@ -12,21 +12,21 @@ class HomeCell: UITableViewCell {
     lazy var contentViewHome: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
+        view.backgroundColor = UIColor.corTwo
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
+        view.layer.borderColor = UIColor.corOne.cgColor
+        view.layer.borderWidth = 2
         return view
     }()
     
     lazy var addAlunoLabel: UILabel = {
-        let label = TextLabelCustom(title: "Aluno: Franklin Solano")
-        label.textColor = .corTwo
+        let label = TextLabelCustom(title: "")
         return label
     }()
     
     lazy var modalidadeLabel: UILabel = {
-        let label = TextLabelCustom(title: "Modalidade Academia")
-        label.textColor = .corTwo
+        let label = TextLabelCustom(title: "")
         return label
     }()
     
@@ -66,7 +66,7 @@ extension HomeCell: ViewCode {
             contentViewHome.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -10),
             contentViewHome.heightAnchor.constraint(equalToConstant: 70),
             
-            addAlunoLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -10),
+            addAlunoLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -7),
             addAlunoLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
             
             modalidadeLabel.topAnchor.constraint(equalTo: addAlunoLabel.bottomAnchor),

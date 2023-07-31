@@ -42,7 +42,7 @@ class TaxaMetabolicaBasalViewModel {
         let calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
         reusltTaxaMetabolica = calculoSoma
         
-        labelTaxa.text = "Sua Taxa Metabólica Basal é \(String(format: "%.2f", reusltTaxaMetabolica)) Kcal"
+        labelTaxa.text = "Taxa Metabólica Basal \(String(format: "%.2f", reusltTaxaMetabolica)) Kcal"
     }
     
     func atualizarDado(id: String){

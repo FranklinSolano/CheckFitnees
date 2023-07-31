@@ -9,6 +9,7 @@ import UIKit
 
 protocol AvaliacaoScreenProtocol: AnyObject {
     func actionBackButton()
+    func actionEditarButton()
 }
 
 class AvaliacaoScreen: UIView {
@@ -32,8 +33,19 @@ class AvaliacaoScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+        button.setTitle("voltar", for: .normal)
+        button.setTitleColor(.corTwo, for: .normal)
         button.tintColor = UIColor.corTwo
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
+        return button
+    }()
+    
+    lazy var editarButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "editar"), for: .normal)
+        button.tintColor = UIColor.corTwo
+        button.addTarget(self, action: #selector(tappedEditarButton), for: .touchUpInside)
         return button
     }()
 
@@ -47,9 +59,56 @@ class AvaliacaoScreen: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "" )
-        label.font = UIFont.systemFont(ofSize: 14)
         label.textColor = .corTwo
         return label
+    }()
+    
+    lazy var alturaLabel: UILabel = {
+        let label = TextLabelCustom(title: "Altura:")
+        label.textColor = .corTwo
+        return label
+    }()
+    
+    lazy var alturaTextField: UITextField = {
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = "165"
+        tf.textAlignment = .center
+        tf.backgroundColor = UIColor.corOne
+        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.textColor = .corTwo
+        return tf
+    }()
+    
+    lazy var idadeLabel: UILabel = {
+        let label = TextLabelCustom(title: "Idade:")
+        label.textColor = .corTwo
+        return label
+    }()
+    
+    lazy var idadeTextField: UITextField = {
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = "22"
+        tf.textAlignment = .center
+        tf.backgroundColor = UIColor.corOne
+        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.textColor = .corTwo
+        return tf
+    }()
+    
+    lazy var pesoLabel: UILabel = {
+        let label = TextLabelCustom(title: "Peso:")
+        label.textColor = .corTwo
+        return label
+    }()
+    
+    lazy var pesoTextField: UITextField = {
+        let tf = TextFieldCustom(placeholder: "")
+        tf.text = "68.8"
+        tf.textAlignment = .center
+        tf.backgroundColor = UIColor.corOne
+        tf.layer.shadowColor = UIColor.corTwo.cgColor
+        tf.textColor = .corTwo
+        return tf
     }()
     
     lazy var tableView: UITableView = {
@@ -59,11 +118,6 @@ class AvaliacaoScreen: UIView {
         tv.separatorStyle = .none
         tv.register(AvaliacaoCell.self, forCellReuseIdentifier: AvaliacaoCell.identifier)
         return tv
-    }()
-    
-    lazy var salvarDadosButton: UIButton = {
-        let button = ButtonCustom(title: "Salvar Dados")
-        return button
     }()
 
     override init(frame: CGRect) {
@@ -85,11 +139,14 @@ class AvaliacaoScreen: UIView {
         delegate?.actionBackButton()
     }
     
+    @objc func tappedEditarButton(){
+        delegate?.actionEditarButton()
+    }
 }
 
 extension AvaliacaoScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton,imagePerson,nameLabel,tableView,salvarDadosButton]
+        let views: [UIView] = [contentView,backButton,editarButton,imagePerson,nameLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,tableView]
         for view in views {
             addSubview(view)
         }
@@ -102,10 +159,13 @@ extension AvaliacaoScreen: ViewCode {
             contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
             contentView.heightAnchor.constraint(equalToConstant: 220),
             
-            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
+            backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
             
-            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 20),
+            editarButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
+            editarButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
+            
+            imagePerson.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             imagePerson.centerXAnchor.constraint(equalTo: centerXAnchor),
             imagePerson.heightAnchor.constraint(equalToConstant: 70),
             imagePerson.widthAnchor.constraint(equalToConstant: 70),
@@ -113,15 +173,34 @@ extension AvaliacaoScreen: ViewCode {
             nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
+            alturaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 20),
+            alturaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            
+            alturaTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
+            alturaTextField.leadingAnchor.constraint(equalTo: alturaLabel.trailingAnchor, constant: 10),
+            alturaTextField.widthAnchor.constraint(equalToConstant: 60),
+            alturaTextField.heightAnchor.constraint(equalToConstant: 15),
+            
+            idadeLabel.topAnchor.constraint(equalTo: alturaLabel.topAnchor),
+            idadeLabel.leadingAnchor.constraint(equalTo: alturaTextField.trailingAnchor,constant: 20),
+            
+            idadeTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
+            idadeTextField.leadingAnchor.constraint(equalTo: idadeLabel.trailingAnchor, constant: 10),
+            idadeTextField.widthAnchor.constraint(equalToConstant: 60),
+            idadeTextField.heightAnchor.constraint(equalToConstant: 15),
+            
+            pesoLabel.topAnchor.constraint(equalTo: alturaLabel.topAnchor),
+            pesoLabel.leadingAnchor.constraint(equalTo: idadeTextField.trailingAnchor,constant: 20),
+            
+            pesoTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
+            pesoTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            pesoTextField.widthAnchor.constraint(equalToConstant: 60),
+            pesoTextField.heightAnchor.constraint(equalToConstant: 15),
+            
             tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -120),
-            
-            salvarDadosButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -10),
-            salvarDadosButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
-            salvarDadosButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            salvarDadosButton.heightAnchor.constraint(equalToConstant: 55)
+            tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

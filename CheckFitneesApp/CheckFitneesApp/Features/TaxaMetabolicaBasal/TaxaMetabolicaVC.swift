@@ -33,22 +33,11 @@ class TaxaMetabolicaVC: UIViewController {
         screen?.configTextField(delegate: self)
         screen?.nameLabel.text = name
     }
-    
 }
 
 //MARK: - TaxaMetabolicaScreenProtocol
 
 extension TaxaMetabolicaVC: TaxaMetabolicaScreenProtocol {
-    func actionCalculoHomem() {
-//        screen?.lineView.backgroundColor = .corOne
-//        screen?.line2View.backgroundColor = .clear
-    }
-    
-    func actionCalculoMulher() {
-//        screen?.lineView.backgroundColor = .clear
-//        screen?.line2View.backgroundColor = .corOne
-    }
-    
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }

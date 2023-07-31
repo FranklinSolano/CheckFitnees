@@ -8,7 +8,7 @@
 import UIKit
 
 class AvaliacaoCell: UITableViewCell {
-
+    
     static let identifier: String = "AvaliacaoCell"
     
     private lazy var screen: AvaliacaoCellScreen = {
@@ -22,12 +22,12 @@ class AvaliacaoCell: UITableViewCell {
         selectionStyle = .none
         backgroundColor = .corTwo
         setupViewCode()
+     
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 extension AvaliacaoCell: ViewCode {
@@ -36,13 +36,11 @@ extension AvaliacaoCell: ViewCode {
     }
     
     func configConstraint() {
-            NSLayoutConstraint.activate([
-                screen.topAnchor.constraint(equalTo: topAnchor),
-                screen.leadingAnchor.constraint(equalTo: leadingAnchor),
-                screen.trailingAnchor.constraint(equalTo: trailingAnchor),
-                screen.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        NSLayoutConstraint.activate([
+            screen.topAnchor.constraint(equalTo: topAnchor),
+            screen.leadingAnchor.constraint(equalTo: leadingAnchor),
+            screen.trailingAnchor.constraint(equalTo: trailingAnchor),
+            screen.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
     }
-    
-    
 }

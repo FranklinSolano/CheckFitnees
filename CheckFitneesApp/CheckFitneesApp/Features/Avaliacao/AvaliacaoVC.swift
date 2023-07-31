@@ -46,6 +46,9 @@ extension AvaliacaoVC: UITableViewDelegate, UITableViewDataSource {
 //MARK: - AvaliacaoScreenProtocol
 
 extension AvaliacaoVC: AvaliacaoScreenProtocol {
+    func actionEditarButton() {
+    }
+    
 
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
