@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
     
     var screen: LoginScrenn?
     var viewModel: LoginViewModel = LoginViewModel()
@@ -33,7 +33,7 @@ class LoginVC: UIViewController {
 
 //MARK: - LoginScreenProtocol
 
-extension LoginVC: LoginScrennProtocol {
+extension LoginViewController: LoginScrennProtocol {
     func actionForgotPassword() {
         let vc:ForgotPaswordVC = ForgotPaswordVC()
         self.navigationController?.pushViewController(vc, animated: false)
@@ -51,7 +51,7 @@ extension LoginVC: LoginScrennProtocol {
 
 //MARK: - UITextFieldDelegate
 
-extension LoginVC: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         screen?.configButtonOn()
@@ -65,7 +65,7 @@ extension LoginVC: UITextFieldDelegate {
 
 //MARK: - LoginViewModelProtocol
 
-extension LoginVC: LoginViewModelProtocol {
+extension LoginViewController: LoginViewModelProtocol {
     func sucess() {
         let vc:TabBarVC = TabBarVC()
         self.navigationController?.pushViewController(vc, animated: false)

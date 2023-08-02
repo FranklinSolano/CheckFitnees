@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterVC: UIViewController {
+class RegisterViewController: UIViewController {
     
     var screen: RegisterScreen?
     var viewModel: RegisterViewModel = RegisterViewModel()
@@ -35,7 +35,7 @@ class RegisterVC: UIViewController {
 
 //MARK: - RegisterScreenProtocol
 
-extension RegisterVC: RegisterScreenProtocol {
+extension RegisterViewController: RegisterScreenProtocol {
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -48,7 +48,7 @@ extension RegisterVC: RegisterScreenProtocol {
 
 //MARK: - UITextFieldDelegate
 
-extension RegisterVC: UITextFieldDelegate {
+extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         screen?.configButtonOn()
@@ -63,7 +63,7 @@ extension RegisterVC: UITextFieldDelegate {
 
 //MARK: - RegisterViewModelProtocol
 
-extension RegisterVC: RegisterViewModelProtocol {
+extension RegisterViewController: RegisterViewModelProtocol {
     func sucess() {
         alert?.getAlert(titulo: "Parabens", mensagem: "Usuario cadastrado com Sucesso!", completion: {
             let vc:TabBarVC = TabBarVC()
