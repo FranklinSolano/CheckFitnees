@@ -3,4 +3,150 @@
    uuid = "9BA53230-C727-4DA4-8B5C-A6D2A287FE0E"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF716452-5AF4-4FD5-800D-D57FC30013F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheckFitneesApp/Features/ForgotPassword/ForgotPasswordViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "checkEmailFirebase(email:label:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5B274906-C1B1-451E-B6FB-54C3C35EFDB0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheckFitneesApp/Features/ForgotPassword/ForgotPasswordViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "checkEmailFirebase(email:label:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CCB70182-86D1-48F5-9E0F-60409E274BEA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheckFitneesApp/Features/ForgotPassword/ForgotPasswordViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "checkEmailFirebase(email:label:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3E556248-ADCA-4AED-965A-53B637C43D2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheckFitneesApp/Features/Avaliacao/Cell/AvaliacaoCellScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "386"
+            endingLineNumber = "386"
+            landmarkName = "teste2()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "3E556248-ADCA-4AED-965A-53B637C43D2A - 4bc2a54af221f400"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CheckFitneesApp.AvaliacaoCellScreen.panturrilhaMedidaTextField.getter : __C.UITextField"
+                  moduleName = "CheckFitneesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franklinstilhano/Desktop/CheckFitnees/CheckFitneesApp/CheckFitneesApp/Features/Avaliacao/Cell/AvaliacaoCellScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "386"
+                  endingLineNumber = "386"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "3E556248-ADCA-4AED-965A-53B637C43D2A - b0466740663f9481"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CheckFitneesApp.AvaliacaoCellScreen.teste2() -&gt; ()"
+                  moduleName = "CheckFitneesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franklinstilhano/Desktop/CheckFitnees/CheckFitneesApp/CheckFitneesApp/Features/Avaliacao/Cell/AvaliacaoCellScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "386"
+                  endingLineNumber = "386"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0176F2CA-9580-466B-94E7-24522F2321AA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CheckFitneesApp/Features/Avaliacao/Cell/AvaliacaoCellScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
+            landmarkName = "teste2()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0176F2CA-9580-466B-94E7-24522F2321AA - 5ca3c4fc3669a43a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UITextField in CheckFitneesApp.AvaliacaoCellScreen.panturrilhaMedidaTextField.getter : __C.UITextField"
+                  moduleName = "CheckFitneesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franklinstilhano/Desktop/CheckFitnees/CheckFitneesApp/CheckFitneesApp/Features/Avaliacao/Cell/AvaliacaoCellScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "385"
+                  endingLineNumber = "385"
+                  offsetFromSymbolStart = "116">
+               </Location>
+               <Location
+                  uuid = "0176F2CA-9580-466B-94E7-24522F2321AA - b0466740663f9481"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CheckFitneesApp.AvaliacaoCellScreen.teste2() -&gt; ()"
+                  moduleName = "CheckFitneesApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/franklinstilhano/Desktop/CheckFitnees/CheckFitneesApp/CheckFitneesApp/Features/Avaliacao/Cell/AvaliacaoCellScreen.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "386"
+                  endingLineNumber = "386"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
