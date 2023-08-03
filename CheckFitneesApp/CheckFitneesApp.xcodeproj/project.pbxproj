@@ -12,7 +12,7 @@
 		EB1AE02C2A1BDD1800B32E1F /* PorcentualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02B2A1BDD1800B32E1F /* PorcentualVC.swift */; };
 		EB1AE02E2A1BDD2F00B32E1F /* PorcentualScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02D2A1BDD2F00B32E1F /* PorcentualScreen.swift */; };
 		EB1AE0352A1C5A8100B32E1F /* Extension-Cors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */; };
-		EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0372A1E710700B32E1F /* TabBarVC.swift */; };
+		EB1AE0382A1E710700B32E1F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0372A1E710700B32E1F /* TabBarViewController.swift */; };
 		EB1AE03A2A1E734000B32E1F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0392A1E734000B32E1F /* SettingsVC.swift */; };
 		EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */; };
 		EB1AE0412A1FDB4A00B32E1F /* TextFieldCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0402A1FDB4A00B32E1F /* TextFieldCustom.swift */; };
@@ -117,7 +117,7 @@
 		EB992DD82A2662150049FC8E /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD72A2662150049FC8E /* PerfilModel.swift */; };
 		EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD92A2667F30049FC8E /* NewAlertCustonViewModel.swift */; };
 		EB992DDC2A293A080049FC8E /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DDB2A293A070049FC8E /* PerfilViewModel.swift */; };
-		EBAF5D372A197DF500AA1692 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D362A197DF500AA1692 /* HomeVC.swift */; };
+		EBAF5D372A197DF500AA1692 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D362A197DF500AA1692 /* HomeViewController.swift */; };
 		EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D382A197E0900AA1692 /* HomeScreen.swift */; };
 		EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */; };
 		EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3D2A1B9B4100AA1692 /* NewAlertCustonScreen.swift */; };
@@ -135,7 +135,7 @@
 		EB1AE02B2A1BDD1800B32E1F /* PorcentualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualVC.swift; sourceTree = "<group>"; };
 		EB1AE02D2A1BDD2F00B32E1F /* PorcentualScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualScreen.swift; sourceTree = "<group>"; };
 		EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Cors.swift"; sourceTree = "<group>"; };
-		EB1AE0372A1E710700B32E1F /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		EB1AE0372A1E710700B32E1F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		EB1AE0392A1E734000B32E1F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		EB1AE0402A1FDB4A00B32E1F /* TextFieldCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCustom.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		EB992DD72A2662150049FC8E /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilModel.swift; path = ../Home/PerfilModel.swift; sourceTree = "<group>"; };
 		EB992DD92A2667F30049FC8E /* NewAlertCustonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonViewModel.swift; sourceTree = "<group>"; };
 		EB992DDB2A293A070049FC8E /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
-		EBAF5D362A197DF500AA1692 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		EBAF5D362A197DF500AA1692 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBAF5D382A197E0900AA1692 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		EBAF5D3D2A1B9B4100AA1692 /* NewAlertCustonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonScreen.swift; sourceTree = "<group>"; };
@@ -288,7 +288,7 @@
 		EB1AE0362A1E70D400B32E1F /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
-				EB1AE0372A1E710700B32E1F /* TabBarVC.swift */,
+				EB1AE0372A1E710700B32E1F /* TabBarViewController.swift */,
 				EB1AE0392A1E734000B32E1F /* SettingsVC.swift */,
 				EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */,
 			);
@@ -582,7 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				EB46B92F2A2AE5E4001CCA2A /* Cell */,
-				EBAF5D362A197DF500AA1692 /* HomeVC.swift */,
+				EBAF5D362A197DF500AA1692 /* HomeViewController.swift */,
 				EBAF5D382A197E0900AA1692 /* HomeScreen.swift */,
 				EB992DD52A2660EA0049FC8E /* HomeViewModel.swift */,
 			);
@@ -775,7 +775,7 @@
 				EB992DCF2A2524E60049FC8E /* RegisterViewModel.swift in Sources */,
 				EBCD378F2A217D16007846EF /* DietaFlexivelVC.swift in Sources */,
 				EB992DD42A2539230049FC8E /* ForgotPasswordViewModel.swift in Sources */,
-				EBAF5D372A197DF500AA1692 /* HomeVC.swift in Sources */,
+				EBAF5D372A197DF500AA1692 /* HomeViewController.swift in Sources */,
 				EB1AE02C2A1BDD1800B32E1F /* PorcentualVC.swift in Sources */,
 				EB2917AB2A1658C200183A92 /* RegisterScreen.swift in Sources */,
 				EB992DCD2A2503FA0049FC8E /* LoginViewModel.swift in Sources */,
@@ -818,7 +818,7 @@
 				EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */,
 				EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */,
 				EB4245FE2A5DEF88000B648B /* LevelActivityScreen.swift in Sources */,
-				EB1AE0382A1E710700B32E1F /* TabBarVC.swift in Sources */,
+				EB1AE0382A1E710700B32E1F /* TabBarViewController.swift in Sources */,
 				EB992DD82A2662150049FC8E /* PerfilModel.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 				EB4246042A5DFF81000B648B /* LevelActivityModel.swift in Sources */,

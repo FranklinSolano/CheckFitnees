@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+ final class HomeViewController: UIViewController {
     
     var screen: HomeScreen?
     var viewModel: HomeViewModel = HomeViewModel()
@@ -34,7 +34,7 @@ class HomeVC: UIViewController {
 
 //MARK: - HomeScreenProtocol
 
-extension HomeVC: HomeScreenProtocol {
+extension HomeViewController: HomeScreenProtocol {
     func actionAddButton() {
         let vc:NewAlertCustonVC = NewAlertCustonVC()
         vc.modalPresentationStyle = .overFullScreen
@@ -46,7 +46,7 @@ extension HomeVC: HomeScreenProtocol {
 
 //MARK: - NewAlertCustonVCProtocol
 
-extension HomeVC: NewAlertCustonVCProtocol {
+extension HomeViewController: NewAlertCustonVCProtocol {
     func reloadTableView() {
         viewModel.fetchFirebase()
         screen?.tableView.reloadData()
@@ -55,7 +55,7 @@ extension HomeVC: NewAlertCustonVCProtocol {
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension HomeVC: UITableViewDelegate, UITableViewDataSource {
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsInSection
     }
@@ -88,7 +88,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - HomeViewModelProtocol
 
-extension HomeVC: HomeViewModelProtocol {
+extension HomeViewController: HomeViewModelProtocol {
     func succes() {
         self.screen?.tableView.reloadData()
     }
