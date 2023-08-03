@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ForgotPaswordVC: UIViewController {
+ final class ForgotPaswordViewController: UIViewController {
     
     var screen: ForgotPasswordScreen?
     var viewModel: ForgotPasswordViewModel = ForgotPasswordViewModel()
@@ -33,7 +33,7 @@ class ForgotPaswordVC: UIViewController {
 
 //MARK: - ForgotPasswordScreenProtocol
 
-extension ForgotPaswordVC: ForgotPasswordScreenProtocol {
+extension ForgotPaswordViewController: ForgotPasswordScreenProtocol {
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
@@ -45,7 +45,7 @@ extension ForgotPaswordVC: ForgotPasswordScreenProtocol {
 
 //MARK: - UITextFieldDelegate
 
-extension ForgotPaswordVC: UITextFieldDelegate {
+extension ForgotPaswordViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         screen?.configButtonOn()
@@ -58,7 +58,7 @@ extension ForgotPaswordVC: UITextFieldDelegate {
 
 //MARK: - ForgotPasswordViewModelProtocol
 
-extension ForgotPaswordVC: ForgotPasswordViewModelProtocol {
+extension ForgotPaswordViewController: ForgotPasswordViewModelProtocol {
     func sucess() {
         self.alert?.getAlert(titulo: "Sucesso", mensagem: "Link para redefinar a senha enviado!", completion: {
             self.dismiss(animated: true)

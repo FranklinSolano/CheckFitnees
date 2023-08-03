@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterVC: UIViewController {
+class RegisterViewController: UIViewController {
     
     var screen: RegisterScreen?
     var viewModel: RegisterViewModel = RegisterViewModel()
@@ -29,30 +29,30 @@ class RegisterVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        screen?.configButtonOn()
+        viewModel.configButtonOn(name: screen?.nameTextField.text ?? "", email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "", confirmPassword: screen?.confirmPasswordTextField.text ?? "")
     }
 }
 
 //MARK: - RegisterScreenProtocol
 
-extension RegisterVC: RegisterScreenProtocol {
+extension RegisterViewController: RegisterScreenProtocol {
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
     
     func actionSingUpButton() {
-        viewModel.checkEmailFirebase(email: screen?.emailTextField.text ?? "", label: screen?.errorEmailLabel ?? UILabel())
+        viewModel.checkEmailFirebase(email: screen?.emailTextField.text ?? "")
         viewModel.creatDadosUser(name: screen?.nameTextField.text ?? "", email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "")
     }
 }
 
 //MARK: - UITextFieldDelegate
 
-extension RegisterVC: UITextFieldDelegate {
+extension RegisterViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        screen?.configButtonOn()
-        screen?.passwordDivergentsLabel()
+        viewModel.configButtonOn(name: screen?.nameTextField.text ?? "", email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "", confirmPassword: screen?.confirmPasswordTextField.text ?? "")
+        viewModel.divergentsPassword(password: screen?.passwordTextField.text ?? "", confirmPassword: screen?.confirmPasswordTextField.text ?? "")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -63,8 +63,36 @@ extension RegisterVC: UITextFieldDelegate {
 
 //MARK: - RegisterViewModelProtocol
 
-extension RegisterVC: RegisterViewModelProtocol {
-    func sucess() {
+extension RegisterViewController: RegisterViewModelProtocol {
+    func divergentsPassword() {
+        screen?.errorLabel.isHidden = false
+    }
+    
+    func samePassword() {
+        screen?.errorLabel.isHidden = false
+    }
+    
+    func buttonOn() {
+        screen?.singUpButton.setTitleColor(.corTwo, for: .normal)
+        screen?.singUpButton.backgroundColor = .corOne
+        screen?.singUpButton.isEnabled = true
+    }
+    
+    func buttonOf() {
+        screen?.singUpButton.setTitleColor(.lightGray, for: .normal)
+        screen?.singUpButton.backgroundColor = .gray
+        screen?.singUpButton.isEnabled = false
+    }
+    
+    func existingEmail() {
+        screen?.errorEmailLabel.isHidden = false
+    }
+    
+    func nonExistentEmail() {
+        screen?.errorEmailLabel.isHidden = true
+    }
+    
+    func success() {
         alert?.getAlert(titulo: "Parabens", mensagem: "Usuario cadastrado com Sucesso!", completion: {
             let vc:TabBarVC = TabBarVC()
             self.navigationController?.pushViewController(vc, animated: false)

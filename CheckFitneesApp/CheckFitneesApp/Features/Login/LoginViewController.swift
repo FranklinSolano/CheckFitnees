@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginVC: UIViewController {
+class LoginViewController: UIViewController {
     
     var screen: LoginScrenn?
     var viewModel: LoginViewModel = LoginViewModel()
@@ -27,13 +27,13 @@ class LoginVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        screen?.configButtonOn()
+        viewModel.configButtonOn(email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "")
     }
 }
 
 //MARK: - LoginScreenProtocol
 
-extension LoginVC: LoginScrennProtocol {
+extension LoginViewController: LoginScrennProtocol {
     func actionForgotPassword() {
         let vc:ForgotPaswordVC = ForgotPaswordVC()
         self.navigationController?.pushViewController(vc, animated: false)
@@ -44,17 +44,17 @@ extension LoginVC: LoginScrennProtocol {
     }
     
     func actionRegister() {
-        let vc:RegisterVC = RegisterVC()
+        let vc:RegisterViewController = RegisterViewController()
         self.navigationController?.pushViewController(vc, animated: false)
     }
 }
 
 //MARK: - UITextFieldDelegate
 
-extension LoginVC: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        screen?.configButtonOn()
+        viewModel.configButtonOn(email: screen?.emailTextField.text ?? "", password: screen?.passwordTextField.text ?? "")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -65,14 +65,26 @@ extension LoginVC: UITextFieldDelegate {
 
 //MARK: - LoginViewModelProtocol
 
-extension LoginVC: LoginViewModelProtocol {
-    func sucess() {
+extension LoginViewController: LoginViewModelProtocol {
+    func buttonOn() {
+        screen?.loginButton.setTitleColor(.white, for: .normal)
+        screen?.loginButton.backgroundColor = .corTwo
+        screen?.loginButton.isEnabled = true
+    }
+    
+    func buttonOf() {
+        screen?.loginButton.setTitleColor(.lightGray, for: .normal)
+        screen?.loginButton.backgroundColor = .gray
+        screen?.loginButton.isEnabled = false
+    }
+    
+    func success() {
         let vc:TabBarVC = TabBarVC()
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
     func error() {
-        screen?.showErrorLabel()
+        screen?.errorLabel.isHidden = false
     }
 }
 
