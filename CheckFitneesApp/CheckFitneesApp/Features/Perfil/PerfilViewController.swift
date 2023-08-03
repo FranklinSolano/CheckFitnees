@@ -8,7 +8,7 @@
 import UIKit
 
 
-class PerfilVC: UIViewController {
+ final class PerfilViewController: UIViewController {
     
     var screen: PeriflScreen?
     var viewModel: PerfilViewModel = PerfilViewModel()
@@ -34,7 +34,7 @@ class PerfilVC: UIViewController {
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension PerfilVC: UITableViewDelegate, UITableViewDataSource {
+extension PerfilViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.datapopular.count
     }
@@ -93,7 +93,7 @@ extension PerfilVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - TaxaMetabolicaVCProtocol
 
-extension PerfilVC: TaxaMetabolicaVCProtocol{
+extension PerfilViewController: TaxaMetabolicaVCProtocol{
     func succes(with taxa: Double) {
         viewModel.itemClicked?.taxaMetabolica = taxa
         print("aloo \(viewModel.itemClicked?.taxaMetabolica ?? 0)")
@@ -103,7 +103,7 @@ extension PerfilVC: TaxaMetabolicaVCProtocol{
 
 //MARK: - CalculadorasScreenProtocol
 
-extension PerfilVC: PerfilScreenProtocol {
+extension PerfilViewController: PerfilScreenProtocol {
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
