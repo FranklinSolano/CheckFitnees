@@ -8,13 +8,13 @@
 import UIKit
 
 
- final class PerfilViewController: UIViewController {
+ final class ProfileViewController: UIViewController {
     
-    var screen: PeriflScreen?
-    var viewModel: PerfilViewModel = PerfilViewModel()
+    var screen: ProfileScreen?
+    var viewModel: ProfileViewModel = ProfileViewModel()
     
     override func loadView() {
-        screen = PeriflScreen()
+        screen = ProfileScreen()
         view = screen
     }
     
@@ -34,7 +34,7 @@ import UIKit
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension PerfilViewController: UITableViewDelegate, UITableViewDataSource {
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.datapopular.count
     }
@@ -53,7 +53,7 @@ extension PerfilViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let item = screen?.nameLabel.text ?? ""
-            let vc = AvaliacaoVC()
+            let vc = AvaliacaoViewController()
             vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 1:
@@ -93,18 +93,28 @@ extension PerfilViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - TaxaMetabolicaVCProtocol
 
-extension PerfilViewController: TaxaMetabolicaVCProtocol{
+extension ProfileViewController: TaxaMetabolicaVCProtocol{
     func succes(with taxa: Double) {
         viewModel.itemClicked?.taxaMetabolica = taxa
-        print("aloo \(viewModel.itemClicked?.taxaMetabolica ?? 0)")
-        viewModel.updateSecondCellLabel(tableView: screen?.tableView ?? UITableView())
+        viewModel.updateSecondCellLabel()
     }
 }
 
 //MARK: - CalculadorasScreenProtocol
 
-extension PerfilViewController: PerfilScreenProtocol {
+extension ProfileViewController: ProfileScreenProtocol {
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+ 
+//MARK: - PerfilViewModelProtocol
+
+extension ProfileViewController: PerfilViewModelProtocol {
+    func updateSecondCellPerfilLabel() {
+        let tableview = UITableView()
+          if let cell = tableview.cellForRow(at: IndexPath(row: 1, section: 0)) as? PerfilCell {
+                 cell.titleLabel.text = "Sua Taxa Metabolica Basal é \(String(format: "%.2f", viewModel.itemClicked?.taxaMetabolica ?? 0)) Kcal"
+             }
     }
 }

@@ -94,8 +94,8 @@
 		EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9342A2AE656001CCA2A /* GraficoVC.swift */; };
 		EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */; };
 		EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9382A2AE678001CCA2A /* TreinoVC.swift */; };
-		EB46B93B2A2AE683001CCA2A /* AvaliacaoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B93A2A2AE683001CCA2A /* AvaliacaoVC.swift */; };
-		EB61272E2A2A7D4100EA8020 /* PerfilCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */; };
+		EB46B93B2A2AE683001CCA2A /* AvaliacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B93A2A2AE683001CCA2A /* AvaliacaoViewController.swift */; };
+		EB61272E2A2A7D4100EA8020 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61272D2A2A7D4100EA8020 /* ProfileCell.swift */; };
 		EB6AF6172A7023DC00ADB92A /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF60B2A7023DC00ADB92A /* Roboto-LightItalic.ttf */; };
 		EB6AF6182A7023DC00ADB92A /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF60C2A7023DC00ADB92A /* Roboto-MediumItalic.ttf */; };
 		EB6AF6192A7023DC00ADB92A /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF60D2A7023DC00ADB92A /* Roboto-BlackItalic.ttf */; };
@@ -114,16 +114,16 @@
 		EB992DD22A252C920049FC8E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD12A252C920049FC8E /* Alert.swift */; };
 		EB992DD42A2539230049FC8E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD32A2539230049FC8E /* ForgotPasswordViewModel.swift */; };
 		EB992DD62A2660EA0049FC8E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD52A2660EA0049FC8E /* HomeViewModel.swift */; };
-		EB992DD82A2662150049FC8E /* PerfilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD72A2662150049FC8E /* PerfilModel.swift */; };
+		EB992DD82A2662150049FC8E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD72A2662150049FC8E /* ProfileModel.swift */; };
 		EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD92A2667F30049FC8E /* NewAlertCustonViewModel.swift */; };
-		EB992DDC2A293A080049FC8E /* PerfilViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DDB2A293A070049FC8E /* PerfilViewModel.swift */; };
+		EB992DDC2A293A080049FC8E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DDB2A293A070049FC8E /* ProfileViewModel.swift */; };
 		EBAF5D372A197DF500AA1692 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D362A197DF500AA1692 /* HomeViewController.swift */; };
 		EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D382A197E0900AA1692 /* HomeScreen.swift */; };
 		EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */; };
 		EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3D2A1B9B4100AA1692 /* NewAlertCustonScreen.swift */; };
 		EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonViewController.swift */; };
-		EBAF5D432A1BB4B500AA1692 /* PerfilViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D422A1BB4B500AA1692 /* PerfilViewController.swift */; };
-		EBAF5D452A1BB4C900AA1692 /* PeriflScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D442A1BB4C900AA1692 /* PeriflScreen.swift */; };
+		EBAF5D432A1BB4B500AA1692 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D422A1BB4B500AA1692 /* ProfileViewController.swift */; };
+		EBAF5D452A1BB4C900AA1692 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D442A1BB4C900AA1692 /* ProfileScreen.swift */; };
 		EBBF558F2A780517005459B0 /* TreinoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF558E2A780517005459B0 /* TreinoScreen.swift */; };
 		EBCD378D2A217CE3007846EF /* DietaFlexivelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD378C2A217CE3007846EF /* DietaFlexivelScreen.swift */; };
 		EBCD378F2A217D16007846EF /* DietaFlexivelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD378E2A217D16007846EF /* DietaFlexivelVC.swift */; };
@@ -191,8 +191,8 @@
 		EB46B9342A2AE656001CCA2A /* GraficoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficoVC.swift; sourceTree = "<group>"; };
 		EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTreinoVC.swift; sourceTree = "<group>"; };
 		EB46B9382A2AE678001CCA2A /* TreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinoVC.swift; sourceTree = "<group>"; };
-		EB46B93A2A2AE683001CCA2A /* AvaliacaoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoVC.swift; sourceTree = "<group>"; };
-		EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilCell.swift; sourceTree = "<group>"; };
+		EB46B93A2A2AE683001CCA2A /* AvaliacaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoViewController.swift; sourceTree = "<group>"; };
+		EB61272D2A2A7D4100EA8020 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		EB6AF60B2A7023DC00ADB92A /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		EB6AF60C2A7023DC00ADB92A /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		EB6AF60D2A7023DC00ADB92A /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
@@ -211,16 +211,16 @@
 		EB992DD12A252C920049FC8E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		EB992DD32A2539230049FC8E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		EB992DD52A2660EA0049FC8E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		EB992DD72A2662150049FC8E /* PerfilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PerfilModel.swift; path = ../Home/PerfilModel.swift; sourceTree = "<group>"; };
+		EB992DD72A2662150049FC8E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileModel.swift; path = ../Home/ProfileModel.swift; sourceTree = "<group>"; };
 		EB992DD92A2667F30049FC8E /* NewAlertCustonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonViewModel.swift; sourceTree = "<group>"; };
-		EB992DDB2A293A070049FC8E /* PerfilViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewModel.swift; sourceTree = "<group>"; };
+		EB992DDB2A293A070049FC8E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		EBAF5D362A197DF500AA1692 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		EBAF5D382A197E0900AA1692 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		EBAF5D3A2A19816C00AA1692 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		EBAF5D3D2A1B9B4100AA1692 /* NewAlertCustonScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonScreen.swift; sourceTree = "<group>"; };
 		EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonViewController.swift; sourceTree = "<group>"; };
-		EBAF5D422A1BB4B500AA1692 /* PerfilViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfilViewController.swift; sourceTree = "<group>"; };
-		EBAF5D442A1BB4C900AA1692 /* PeriflScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriflScreen.swift; sourceTree = "<group>"; };
+		EBAF5D422A1BB4B500AA1692 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		EBAF5D442A1BB4C900AA1692 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
 		EBBF558E2A780517005459B0 /* TreinoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinoScreen.swift; sourceTree = "<group>"; };
 		EBCD378C2A217CE3007846EF /* DietaFlexivelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaFlexivelScreen.swift; sourceTree = "<group>"; };
 		EBCD378E2A217D16007846EF /* DietaFlexivelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaFlexivelVC.swift; sourceTree = "<group>"; };
@@ -484,7 +484,7 @@
 		EB46B9302A2AE5F3001CCA2A /* Avaliacao */ = {
 			isa = PBXGroup;
 			children = (
-				EB46B93A2A2AE683001CCA2A /* AvaliacaoVC.swift */,
+				EB46B93A2A2AE683001CCA2A /* AvaliacaoViewController.swift */,
 				EB3F006C2A2FA37700244574 /* AvaliacaoScreen.swift */,
 				EB4245F92A4C989C000B648B /* Cell */,
 			);
@@ -519,7 +519,7 @@
 		EB6127242A2A5A3700EA8020 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EB61272D2A2A7D4100EA8020 /* PerfilCell.swift */,
+				EB61272D2A2A7D4100EA8020 /* ProfileCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -603,10 +603,10 @@
 			isa = PBXGroup;
 			children = (
 				EB6127242A2A5A3700EA8020 /* Cell */,
-				EBAF5D422A1BB4B500AA1692 /* PerfilViewController.swift */,
-				EBAF5D442A1BB4C900AA1692 /* PeriflScreen.swift */,
-				EB992DDB2A293A070049FC8E /* PerfilViewModel.swift */,
-				EB992DD72A2662150049FC8E /* PerfilModel.swift */,
+				EBAF5D422A1BB4B500AA1692 /* ProfileViewController.swift */,
+				EBAF5D442A1BB4C900AA1692 /* ProfileScreen.swift */,
+				EB992DDB2A293A070049FC8E /* ProfileViewModel.swift */,
+				EB992DD72A2662150049FC8E /* ProfileModel.swift */,
 			);
 			path = Perfil;
 			sourceTree = "<group>";
@@ -771,7 +771,7 @@
 				EB2917B32A1662C300183A92 /* ForgotPaswordViewController.swift in Sources */,
 				EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */,
 				EB992DD62A2660EA0049FC8E /* HomeViewModel.swift in Sources */,
-				EBAF5D452A1BB4C900AA1692 /* PeriflScreen.swift in Sources */,
+				EBAF5D452A1BB4C900AA1692 /* ProfileScreen.swift in Sources */,
 				EB992DCF2A2524E60049FC8E /* RegisterViewModel.swift in Sources */,
 				EBCD378F2A217D16007846EF /* DietaFlexivelVC.swift in Sources */,
 				EB992DD42A2539230049FC8E /* ForgotPasswordViewModel.swift in Sources */,
@@ -797,29 +797,29 @@
 				EB992DD22A252C920049FC8E /* Alert.swift in Sources */,
 				EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */,
 				EB2917AD2A1658D100183A92 /* RegisterViewController.swift in Sources */,
-				EB992DDC2A293A080049FC8E /* PerfilViewModel.swift in Sources */,
+				EB992DDC2A293A080049FC8E /* ProfileViewModel.swift in Sources */,
 				EBBF558F2A780517005459B0 /* TreinoScreen.swift in Sources */,
 				EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */,
-				EB46B93B2A2AE683001CCA2A /* AvaliacaoVC.swift in Sources */,
+				EB46B93B2A2AE683001CCA2A /* AvaliacaoViewController.swift in Sources */,
 				EB4245FB2A4C98CC000B648B /* AvaliacaoCellScreen.swift in Sources */,
 				EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */,
 				EB4246012A5DF633000B648B /* LevelActivityCell.swift in Sources */,
 				EB2917A52A1595A900183A92 /* LoginScrenn.swift in Sources */,
 				EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */,
-				EBAF5D432A1BB4B500AA1692 /* PerfilViewController.swift in Sources */,
+				EBAF5D432A1BB4B500AA1692 /* ProfileViewController.swift in Sources */,
 				EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */,
 				EB3F006D2A2FA37700244574 /* AvaliacaoScreen.swift in Sources */,
 				EB3F006F2A435D0F00244574 /* PorcentualViewModel.swift in Sources */,
 				EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */,
 				EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */,
-				EB61272E2A2A7D4100EA8020 /* PerfilCell.swift in Sources */,
+				EB61272E2A2A7D4100EA8020 /* ProfileCell.swift in Sources */,
 				EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonViewController.swift in Sources */,
 				EB1AE0502A2082B400B32E1F /* CicloCarboidratosCell.swift in Sources */,
 				EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */,
 				EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */,
 				EB4245FE2A5DEF88000B648B /* LevelActivityScreen.swift in Sources */,
 				EB1AE0382A1E710700B32E1F /* TabBarViewController.swift in Sources */,
-				EB992DD82A2662150049FC8E /* PerfilModel.swift in Sources */,
+				EB992DD82A2662150049FC8E /* ProfileModel.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 				EB4246042A5DFF81000B648B /* LevelActivityModel.swift in Sources */,
 				EB4245F82A4C9834000B648B /* AvaliacaoCell.swift in Sources */,

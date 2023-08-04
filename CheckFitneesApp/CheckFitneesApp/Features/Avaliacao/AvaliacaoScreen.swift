@@ -7,15 +7,15 @@
 
 import UIKit
 
-protocol AvaliacaoScreenProtocol: AnyObject {
+protocol AssessmentScreenProtocol: AnyObject {
     func actionBackButton()
     func actionEditarButton()
 }
 
-class AvaliacaoScreen: UIView {
+ final class AvaliacaoScreen: UIView {
     
-    weak var delegate: AvaliacaoScreenProtocol?
-    func delegate(delegate:AvaliacaoScreenProtocol) {
+    weak var delegate: AssessmentScreenProtocol?
+    func delegate(delegate:AssessmentScreenProtocol) {
         self.delegate = delegate
     }
     var buttonSalvarDados = false
@@ -70,13 +70,13 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var alturaTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "165"
-        tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
-        tf.textColor = .corTwo
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = "165"
+        textField.textAlignment = .center
+        textField.backgroundColor = UIColor.corOne
+        textField.layer.shadowColor = UIColor.corTwo.cgColor
+        textField.textColor = .corTwo
+        return textField
     }()
     
     lazy var idadeLabel: UILabel = {
@@ -86,13 +86,13 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var idadeTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "22"
-        tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
-        tf.textColor = .corTwo
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = "22"
+        textField.textAlignment = .center
+        textField.backgroundColor = UIColor.corOne
+        textField.layer.shadowColor = UIColor.corTwo.cgColor
+        textField.textColor = .corTwo
+        return textField
     }()
     
     lazy var pesoLabel: UILabel = {
@@ -102,22 +102,22 @@ class AvaliacaoScreen: UIView {
     }()
     
     lazy var pesoTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "68.8"
-        tf.textAlignment = .center
-        tf.backgroundColor = UIColor.corOne
-        tf.layer.shadowColor = UIColor.corTwo.cgColor
-        tf.textColor = .corTwo
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = "68.8"
+        textField.textAlignment = .center
+        textField.backgroundColor = UIColor.corOne
+        textField.layer.shadowColor = UIColor.corTwo.cgColor
+        textField.textColor = .corTwo
+        return textField
     }()
     
     lazy var tableView: UITableView = {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = .corTwo
-        tv.separatorStyle = .none
-        tv.register(AvaliacaoCell.self, forCellReuseIdentifier: AvaliacaoCell.identifier)
-        return tv
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .corTwo
+        tableView.separatorStyle = .none
+        tableView.register(AvaliacaoCell.self, forCellReuseIdentifier: AvaliacaoCell.identifier)
+        return tableView
     }()
 
     override init(frame: CGRect) {
@@ -146,10 +146,7 @@ class AvaliacaoScreen: UIView {
 
 extension AvaliacaoScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton,editarButton,imagePerson,nameLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,tableView]
-        for view in views {
-            addSubview(view)
-        }
+        [contentView,backButton,editarButton,imagePerson,nameLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,tableView].forEach({addSubview($0)})
     }
     
     func configConstraint() {

@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class PerfilCell: UITableViewCell {
+ final class ProfileCell: UITableViewCell {
     
     lazy var contentView1: UIView = {
         let view = UIView()
@@ -28,21 +28,21 @@ class PerfilCell: UITableViewCell {
         return label
     }()
     
-    lazy var carbolLabel: UILabel = {
+    lazy var carbohydrateLabel: UILabel = {
         let label = TextLabelCustom(title: "Carboidratos: 0")
         label.font = UIFont(name: "Roboto-Bold", size: 9.3)
         label.textColor = .white
         return label
     }()
     
-    lazy var proteinaLabel: UILabel = {
+    lazy var proteinLabel: UILabel = {
         let label = TextLabelCustom(title: "Proteina: 0")
         label.font = UIFont(name: "Roboto-Bold", size: 9.3)
         label.textColor = .white
         return label
     }()
     
-    lazy var gorduraLabel: UILabel = {
+    lazy var fatLabel: UILabel = {
         let label = TextLabelCustom(title: "Gordura: 0")
         label.font = UIFont(name: "Roboto-Bold", size: 9.3)
         label.textColor = .white
@@ -50,7 +50,7 @@ class PerfilCell: UITableViewCell {
     }()
     
     
-    lazy var calcularButton: UIButton = {
+    lazy var calculateButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Calcular Dieta", for: .normal)
@@ -82,24 +82,21 @@ class PerfilCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func setupCell(data: PerfilModel?) {
+    public func setupCell(data: ProfileModel?) {
         titleLabel.text = data?.title ?? ""
-        carbolLabel.text = data?.carb ?? ""
-        proteinaLabel.text = data?.proteina ?? ""
-        gorduraLabel.text = data?.gordura ?? ""
-        calcularButton.setTitle(data?.buttonGeneric ?? "", for: .normal)
-        imagePerson.image = data?.image
+        carbohydrateLabel.text = data?.carb ?? ""
+        proteinLabel.text = data?.proteina ?? ""
+        fatLabel.text = data?.gordura ?? ""
+        calculateButton.setTitle(data?.buttonGeneric ?? "", for: .normal)
+        imagePerson.image = UIImage(named: data?.image ?? "")
     }
 }
 
 //MARK: - ViewCode
 
-extension PerfilCell: ViewCode {
+extension ProfileCell: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView1,titleLabel,carbolLabel,proteinaLabel,gorduraLabel,calcularButton,imagePerson]
-        for view in views {
-            addSubview(view)
-        }
+        [contentView1,titleLabel,carbohydrateLabel,proteinLabel,fatLabel,calculateButton,imagePerson].forEach({addSubview($0)})
     }
     
     func configConstraint() {
@@ -114,17 +111,17 @@ extension PerfilCell: ViewCode {
             titleLabel.leadingAnchor.constraint(equalTo: contentView1.leadingAnchor,constant: 15),
             titleLabel.trailingAnchor.constraint(equalTo: contentView1.trailingAnchor,constant: -15),
             
-            carbolLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
-            carbolLabel.leadingAnchor.constraint(equalTo: contentView1.leadingAnchor,constant: 30),
+            carbohydrateLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor),
+            carbohydrateLabel.leadingAnchor.constraint(equalTo: contentView1.leadingAnchor,constant: 30),
             
-            proteinaLabel.topAnchor.constraint(equalTo: carbolLabel.bottomAnchor),
-            proteinaLabel.leadingAnchor.constraint(equalTo: carbolLabel.leadingAnchor),
+            proteinLabel.topAnchor.constraint(equalTo: carbohydrateLabel.bottomAnchor),
+            proteinLabel.leadingAnchor.constraint(equalTo: carbohydrateLabel.leadingAnchor),
             
-            gorduraLabel.topAnchor.constraint(equalTo: proteinaLabel.bottomAnchor),
-            gorduraLabel.leadingAnchor.constraint(equalTo: carbolLabel.leadingAnchor),
+            fatLabel.topAnchor.constraint(equalTo: proteinLabel.bottomAnchor),
+            fatLabel.leadingAnchor.constraint(equalTo: carbohydrateLabel.leadingAnchor),
             
-            calcularButton.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -20),
-            calcularButton.leadingAnchor.constraint(equalTo: contentView1.leadingAnchor,constant: 30),
+            calculateButton.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -20),
+            calculateButton.leadingAnchor.constraint(equalTo: contentView1.leadingAnchor,constant: 30),
             
             imagePerson.trailingAnchor.constraint(equalTo: contentView1.trailingAnchor,constant: -20),
             imagePerson.topAnchor.constraint(equalTo: contentView1.topAnchor,constant: 55),

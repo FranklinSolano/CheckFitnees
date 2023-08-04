@@ -11,7 +11,7 @@ protocol PerfilScreenProtocol: AnyObject {
     func actionBackButton()
 }
 
-class PeriflScreen: UIView {
+ final class ProfileScreen: UIView {
     
     weak var delegate: PerfilScreenProtocol?
     public func delegate(delegate:PerfilScreenProtocol){
@@ -55,12 +55,12 @@ class PeriflScreen: UIView {
     }()
     
     lazy var tableView: UITableView = {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = .corTwo
-        tv.separatorStyle = .none
-        tv.register(PerfilCell.self, forCellReuseIdentifier: PerfilCell.identifier)
-        return tv
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .corTwo
+        tableView.separatorStyle = .none
+        tableView.register(PerfilCell.self, forCellReuseIdentifier: PerfilCell.identifier)
+        return tableView
     }()
     
     override init(frame: CGRect) {
@@ -78,7 +78,7 @@ class PeriflScreen: UIView {
         tableView.dataSource = dataSource
     }
     
-    func setupView(data: PerfilModel?){
+    func setupView(data: ProfileModel?){
         nameLabel.text = data?.name
     }
     
@@ -89,12 +89,9 @@ class PeriflScreen: UIView {
 
 //MARK: - ViewCode
 
-extension PeriflScreen: ViewCode {
+extension ProfileScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView,backButton1,imagePerson,nameLabel,tableView]
-        for view in views {
-            addSubview(view)
-        }
+        [contentView,backButton1,imagePerson,nameLabel,tableView].forEach({addSubview($0)})
     }
     
     func configConstraint() {

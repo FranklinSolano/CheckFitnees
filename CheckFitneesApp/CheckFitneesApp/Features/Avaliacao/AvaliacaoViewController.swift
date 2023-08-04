@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AvaliacaoVC: UIViewController {
+ final class AvaliacaoViewController: UIViewController {
     
     var screen: AvaliacaoScreen?
     var name = ""
@@ -27,7 +27,7 @@ class AvaliacaoVC: UIViewController {
 
 //MARK: - UITableViewDelegate, UITableViewDataSource
 
-extension AvaliacaoVC: UITableViewDelegate, UITableViewDataSource {
+extension AvaliacaoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -45,11 +45,10 @@ extension AvaliacaoVC: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - AvaliacaoScreenProtocol
 
-extension AvaliacaoVC: AvaliacaoScreenProtocol {
+extension AvaliacaoViewController: AvaliacaoScreenProtocol {
     func actionEditarButton() {
     }
     
-
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }

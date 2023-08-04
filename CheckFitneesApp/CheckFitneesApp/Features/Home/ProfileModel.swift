@@ -5,10 +5,9 @@
 //  Created by Franklin  Stilhano on 5/30/23.
 //
 
-import UIKit
-import Firebase
+import Foundation
 
-public struct PerfilModel{
+public struct ProfileModel{
     let name: String?
     let modalidade: String?
     let id: String?
@@ -19,6 +18,6 @@ public struct PerfilModel{
     var gordura: String?
     var title: String?
     var buttonGeneric: String?
-    var image: UIImage?
+    var image: String?
 }
 
