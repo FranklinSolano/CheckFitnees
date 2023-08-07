@@ -91,7 +91,7 @@ protocol ProfileScreenProtocol: AnyObject {
 
 extension ProfileScreen: ViewCode {
     func configElements() {
-        [contentView,backButton1,imagePerson,nameLabel,tableView].forEach({addSubview($0)})
+        [contentView, backButton1, imagePerson, nameLabel, tableView].forEach({addSubview($0)})
     }
     
     func configConstraint() {

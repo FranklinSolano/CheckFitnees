@@ -96,7 +96,7 @@ import UIKit
 
 extension ProfileCell: ViewCode {
     func configElements() {
-        [contentView1,titleLabel,carbohydrateLabel,proteinLabel,fatLabel,calculateButton,imagePerson].forEach({addSubview($0)})
+        [contentView1, titleLabel, carbohydrateLabel, proteinLabel, fatLabel, calculateButton, imagePerson].forEach({addSubview($0)})
     }
     
     func configConstraint() {

@@ -63,13 +63,13 @@ protocol AssessmentScreenProtocol: AnyObject {
         return label
     }()
     
-    lazy var alturaLabel: UILabel = {
+    lazy var heightLabel: UILabel = {
         let label = TextLabelCustom(title: "Altura:")
         label.textColor = .secondaryColor
         return label
     }()
     
-    lazy var alturaTextField: UITextField = {
+    lazy var heightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
         textField.text = "165"
         textField.textAlignment = .center
@@ -79,13 +79,13 @@ protocol AssessmentScreenProtocol: AnyObject {
         return textField
     }()
     
-    lazy var idadeLabel: UILabel = {
+    lazy var ageLabel: UILabel = {
         let label = TextLabelCustom(title: "Idade:")
         label.textColor = .secondaryColor
         return label
     }()
     
-    lazy var idadeTextField: UITextField = {
+    lazy var ageTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
         textField.text = "22"
         textField.textAlignment = .center
@@ -95,13 +95,13 @@ protocol AssessmentScreenProtocol: AnyObject {
         return textField
     }()
     
-    lazy var pesoLabel: UILabel = {
+    lazy var weightLabel: UILabel = {
         let label = TextLabelCustom(title: "Peso:")
         label.textColor = .secondaryColor
         return label
     }()
     
-    lazy var pesoTextField: UITextField = {
+    lazy var weightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
         textField.text = "68.8"
         textField.textAlignment = .center
@@ -146,7 +146,7 @@ protocol AssessmentScreenProtocol: AnyObject {
 
 extension AssessmentScreen: ViewCode {
     func configElements() {
-        [contentView,backButton,editarButton,imagePerson,nameLabel,alturaLabel,alturaTextField,idadeLabel,idadeTextField,pesoLabel,pesoTextField,tableView].forEach({addSubview($0)})
+        [contentView, backButton, editarButton, imagePerson, nameLabel, heightLabel, heightTextField, ageLabel, ageTextField, weightLabel, weightTextField, tableView].forEach({addSubview($0)})
     }
     
     func configConstraint() {
@@ -170,29 +170,29 @@ extension AssessmentScreen: ViewCode {
             nameLabel.topAnchor.constraint(equalTo: imagePerson.bottomAnchor,constant: 10),
             nameLabel.centerXAnchor.constraint(equalTo: imagePerson.centerXAnchor),
             
-            alturaLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 20),
-            alturaLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
+            heightLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor,constant: 20),
+            heightLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             
-            alturaTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            alturaTextField.leadingAnchor.constraint(equalTo: alturaLabel.trailingAnchor, constant: 10),
-            alturaTextField.widthAnchor.constraint(equalToConstant: 60),
-            alturaTextField.heightAnchor.constraint(equalToConstant: 15),
+            heightTextField.centerYAnchor.constraint(equalTo: heightLabel.centerYAnchor),
+            heightTextField.leadingAnchor.constraint(equalTo: heightLabel.trailingAnchor, constant: 10),
+            heightTextField.widthAnchor.constraint(equalToConstant: 60),
+            heightTextField.heightAnchor.constraint(equalToConstant: 15),
             
-            idadeLabel.topAnchor.constraint(equalTo: alturaLabel.topAnchor),
-            idadeLabel.leadingAnchor.constraint(equalTo: alturaTextField.trailingAnchor,constant: 20),
+            ageLabel.topAnchor.constraint(equalTo: heightLabel.topAnchor),
+            ageLabel.leadingAnchor.constraint(equalTo: heightTextField.trailingAnchor,constant: 20),
             
-            idadeTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            idadeTextField.leadingAnchor.constraint(equalTo: idadeLabel.trailingAnchor, constant: 10),
-            idadeTextField.widthAnchor.constraint(equalToConstant: 60),
-            idadeTextField.heightAnchor.constraint(equalToConstant: 15),
+            ageTextField.centerYAnchor.constraint(equalTo: heightLabel.centerYAnchor),
+            ageTextField.leadingAnchor.constraint(equalTo: ageLabel.trailingAnchor, constant: 10),
+            ageTextField.widthAnchor.constraint(equalToConstant: 60),
+            ageTextField.heightAnchor.constraint(equalToConstant: 15),
             
-            pesoLabel.topAnchor.constraint(equalTo: alturaLabel.topAnchor),
-            pesoLabel.leadingAnchor.constraint(equalTo: idadeTextField.trailingAnchor,constant: 20),
+            weightLabel.topAnchor.constraint(equalTo: heightLabel.topAnchor),
+            weightLabel.leadingAnchor.constraint(equalTo: ageTextField.trailingAnchor,constant: 20),
             
-            pesoTextField.centerYAnchor.constraint(equalTo: alturaLabel.centerYAnchor),
-            pesoTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            pesoTextField.widthAnchor.constraint(equalToConstant: 60),
-            pesoTextField.heightAnchor.constraint(equalToConstant: 15),
+            weightTextField.centerYAnchor.constraint(equalTo: heightLabel.centerYAnchor),
+            weightTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            weightTextField.widthAnchor.constraint(equalToConstant: 60),
+            weightTextField.heightAnchor.constraint(equalToConstant: 15),
             
             tableView.topAnchor.constraint(equalTo: contentView.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
