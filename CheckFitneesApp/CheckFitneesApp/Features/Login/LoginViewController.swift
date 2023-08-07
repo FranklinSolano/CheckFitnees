@@ -7,13 +7,13 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+ final class LoginViewController: UIViewController {
     
-    var screen: LoginScrenn?
+    var screen: LoginScreen?
     var viewModel: LoginViewModel = LoginViewModel()
     
     override func loadView() {
-        screen = LoginScrenn()
+        screen = LoginScreen()
         view = screen
     }
 
@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
 
 extension LoginViewController: LoginScrennProtocol {
     func actionForgotPassword() {
-        let vc:ForgotPaswordVC = ForgotPaswordVC()
+        let vc: ForgotPaswordViewController = ForgotPaswordViewController()
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
@@ -68,7 +68,7 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController: LoginViewModelProtocol {
     func buttonOn() {
         screen?.loginButton.setTitleColor(.white, for: .normal)
-        screen?.loginButton.backgroundColor = .corTwo
+        screen?.loginButton.backgroundColor = .secondaryColor
         screen?.loginButton.isEnabled = true
     }
     
@@ -79,7 +79,7 @@ extension LoginViewController: LoginViewModelProtocol {
     }
     
     func success() {
-        let vc:TabBarVC = TabBarVC()
+        let vc: TabBarViewController = TabBarViewController()
         self.navigationController?.pushViewController(vc, animated: false)
     }
     
