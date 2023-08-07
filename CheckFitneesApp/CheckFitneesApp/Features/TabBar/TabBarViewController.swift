@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,10 +36,6 @@ class TabBarViewController: UITabBarController {
 
         tabBarItem[2].title = "Perfil"
         tabBarItem[2].image = UIImage(systemName: "person")
-        
-        
     }
-    
-    
 }
 

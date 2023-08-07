@@ -12,7 +12,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
     func actionAdicionarButton()
 }
 
-class NewAlertCustonScreen: UIView {
+ final class NewAlertCustonScreen: UIView {
     
     weak var delegate: NewAlertCustonScreenProtocol?
     public func delegate(delegate: NewAlertCustonScreenProtocol){

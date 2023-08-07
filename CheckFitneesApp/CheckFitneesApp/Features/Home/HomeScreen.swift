@@ -11,7 +11,7 @@ protocol HomeScreenProtocol: AnyObject {
     func actionAddButton()
 }
 
-class HomeScreen: UIView {
+ final class HomeScreen: UIView {
     
     weak var delegate: HomeScreenProtocol?
     public func delegate(delegate:HomeScreenProtocol){
@@ -30,7 +30,7 @@ class HomeScreen: UIView {
         return image
     }()
     
-    lazy var addAlunoButton: UIButton = {
+    lazy var addButton: UIButton = {
         let button = ButtonCustom(title: "     Adicionar")
         button.contentHorizontalAlignment = .left
         button.setTitleColor(.white, for: .normal)
@@ -48,12 +48,12 @@ class HomeScreen: UIView {
     
     
     lazy var tableView: UITableView = {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor.secondaryColor
-        tv.separatorStyle = .none
-        tv.register(HomeCell.self, forCellReuseIdentifier: HomeCell.identifier)
-        return tv
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = UIColor.secondaryColor
+        tableView.separatorStyle = .none
+        tableView.register(HomeCell.self, forCellReuseIdentifier: HomeCell.identifier)
+        return tableView
     }()
     
     override init(frame: CGRect) {
@@ -80,10 +80,7 @@ class HomeScreen: UIView {
 
 extension HomeScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,imageLogo,addAlunoButton,imagePlus,tableView]
-        for view in views {
-            addSubview(view)
-        }
+        [titleLabel,imageLogo,addButton,imagePlus,tableView].forEach({addSubview($0)})
     }
     
     func configConstraint() {
@@ -97,17 +94,17 @@ extension HomeScreen: ViewCode {
             imageLogo.heightAnchor.constraint(equalToConstant: 46),
             imageLogo.widthAnchor.constraint(equalToConstant: 52),
             
-            addAlunoButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 35),
-            addAlunoButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
-            addAlunoButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
-            addAlunoButton.heightAnchor.constraint(equalToConstant: 60),
+            addButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 35),
+            addButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+            addButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+            addButton.heightAnchor.constraint(equalToConstant: 60),
             
-            imagePlus.centerYAnchor.constraint(equalTo: addAlunoButton.centerYAnchor),
-            imagePlus.trailingAnchor.constraint(equalTo: addAlunoButton.trailingAnchor,constant: -30),
+            imagePlus.centerYAnchor.constraint(equalTo: addButton.centerYAnchor),
+            imagePlus.trailingAnchor.constraint(equalTo: addButton.trailingAnchor,constant: -30),
             imagePlus.heightAnchor.constraint(equalToConstant: 30),
             imagePlus.widthAnchor.constraint(equalToConstant: 30),
             
-            tableView.topAnchor.constraint(equalTo: addAlunoButton.bottomAnchor,constant: 20),
+            tableView.topAnchor.constraint(equalTo: addButton.bottomAnchor,constant: 20),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeCell: UITableViewCell {
+ final class HomeCell: UITableViewCell {
     
     lazy var contentViewHome: UIView = {
         let view = UIView()
@@ -20,12 +20,12 @@ class HomeCell: UITableViewCell {
         return view
     }()
     
-    lazy var addAlunoLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "")
         return label
     }()
     
-    lazy var modalidadeLabel: UILabel = {
+    lazy var modalityLabel: UILabel = {
         let label = TextLabelCustom(title: "")
         return label
     }()
@@ -44,8 +44,8 @@ class HomeCell: UITableViewCell {
     }
     
     func configCell(data:ProfileModel){
-        addAlunoLabel.text = "Aluno: \(data.name ?? "")"
-        modalidadeLabel.text = "Modalidade: \(data.modalidade ?? "")"
+        nameLabel.text = "Aluno: \(data.name ?? "")"
+        modalityLabel.text = "Modalidade: \(data.modality ?? "")"
     }
 }
 
@@ -54,8 +54,8 @@ class HomeCell: UITableViewCell {
 extension HomeCell: ViewCode {
     func configElements() {
         addSubview(contentViewHome)
-        contentViewHome.addSubview(addAlunoLabel)
-        contentViewHome.addSubview(modalidadeLabel)
+        contentViewHome.addSubview(nameLabel)
+        contentViewHome.addSubview(modalityLabel)
     }
     
     func configConstraint() {
@@ -66,11 +66,11 @@ extension HomeCell: ViewCode {
             contentViewHome.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -10),
             contentViewHome.heightAnchor.constraint(equalToConstant: 70),
             
-            addAlunoLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -7),
-            addAlunoLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
+            nameLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -7),
+            nameLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
             
-            modalidadeLabel.topAnchor.constraint(equalTo: addAlunoLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: addAlunoLabel.leadingAnchor)
+            modalityLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            modalityLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         ])
     }
 }

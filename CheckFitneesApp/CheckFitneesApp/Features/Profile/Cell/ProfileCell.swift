@@ -84,9 +84,9 @@ import UIKit
     
     public func setupCell(data: ProfileModel?) {
         titleLabel.text = data?.title ?? ""
-        carbohydrateLabel.text = data?.carb ?? ""
-        proteinLabel.text = data?.proteina ?? ""
-        fatLabel.text = data?.gordura ?? ""
+        carbohydrateLabel.text = data?.carbohydrates ?? ""
+        proteinLabel.text = data?.protein ?? ""
+        fatLabel.text = data?.fat ?? ""
         calculateButton.setTitle(data?.buttonGeneric ?? "", for: .normal)
         imagePerson.image = UIImage(named: data?.image ?? "")
     }

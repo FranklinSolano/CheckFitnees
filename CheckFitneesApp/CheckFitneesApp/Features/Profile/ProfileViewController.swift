@@ -95,7 +95,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ProfileViewController: BasalMetabolicRateViewControllerProtocol{
     func succes(with taxa: Double) {
-        viewModel.itemClicked?.taxaMetabolica = taxa
+        viewModel.itemClicked?.basalMetabolicRate = taxa
         viewModel.updateSecondCellLabel()
     }
 }
@@ -114,7 +114,7 @@ extension ProfileViewController: PerfilViewModelProtocol {
     func updateSecondCellPerfilLabel() {
         let tableview = UITableView()
           if let cell = tableview.cellForRow(at: IndexPath(row: 1, section: 0)) as? ProfileCell {
-                 cell.titleLabel.text = "Sua Taxa Metabolica Basal é \(String(format: "%.2f", viewModel.itemClicked?.taxaMetabolica ?? 0)) Kcal"
+                 cell.titleLabel.text = "Sua Taxa Metabolica Basal é \(String(format: "%.2f", viewModel.itemClicked?.basalMetabolicRate ?? 0)) Kcal"
              }
     }
 }

@@ -12,7 +12,7 @@ protocol ForgotPasswordScreenProtocol: AnyObject {
     func actionEnterButton()
 }
 
-class ForgotPasswordScreen: UIView {
+final class ForgotPasswordScreen: UIView {
     
     weak var delegate: ForgotPasswordScreenProtocol?
     public func delegate(delegate: ForgotPasswordScreenProtocol){

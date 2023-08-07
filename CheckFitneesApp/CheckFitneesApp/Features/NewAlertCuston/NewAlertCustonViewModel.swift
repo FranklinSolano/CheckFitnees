@@ -25,7 +25,7 @@ final class NewAlertCustonViewModel {
     public func savedDados(name: String, modalidade: String, taxaMetabolica: Double, porcentual: String,carb: String,proteina: String, gordura: String) {
         
         let cellsCollection = db.collection("cells").document()
-        _ = ProfileModel(name: name, modalidade: modalidade, id: cellsCollection.documentID, taxaMetabolica: taxaMetabolica, porcentual: porcentual, carb: carb, proteina: proteina, gordura: gordura)
+        _ = ProfileModel(name: name, modality: modalidade, id: cellsCollection.documentID, basalMetabolicRate: taxaMetabolica, percentage: porcentual, carbohydrates: carb, protein: proteina, fat: gordura)
         
         let cellData = [
             "id": cellsCollection.documentID,

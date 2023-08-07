@@ -89,7 +89,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - HomeViewModelProtocol
 
 extension HomeViewController: HomeViewModelProtocol {
-    func succes() {
+    func success() {
         self.screen?.tableView.reloadData()
     }
     func error() {
