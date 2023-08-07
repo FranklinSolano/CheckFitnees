@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LevelActivityViewModel{
+final class LevelActivityViewModel{
     
     var data: [LevelActivityModel] = [LevelActivityModel(title: "Nao muito ativo", subTitle: "Passa boa parte do dia sentado (ex: caixa de banco, trabalho escitorio)"),
                                       LevelActivityModel(title: "Levemeente Ativo", subTitle: "Passa boa parte do dia de pé (ex: professor, vendedor)"),

@@ -53,12 +53,12 @@ protocol CarbCycleScreenProtocol: AnyObject {
     }()
     
     lazy var tableView: UITableView = {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = .secondaryColor
-        tv.separatorStyle = .none
-        tv.register(CarbCycleCell.self, forCellReuseIdentifier: CarbCycleCell.identifier)
-        return tv
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .secondaryColor
+        tableView.separatorStyle = .none
+        tableView.register(CarbCycleCell.self, forCellReuseIdentifier: CarbCycleCell.identifier)
+        return tableView
     }()
     
     override init(frame: CGRect) {

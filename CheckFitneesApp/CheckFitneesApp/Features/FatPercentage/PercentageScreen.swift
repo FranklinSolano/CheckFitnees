@@ -76,11 +76,11 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var triciptalTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
+        return textField
     }()
     
     lazy var breastplateLabel: UILabel = {
@@ -90,11 +90,11 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var breastplateTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
+        return textField
     }()
     
     lazy var suprailiacLabel: UILabel = {
@@ -104,11 +104,11 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var suprailiacTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
+        return textField
     }()
     
     lazy var abdominalLabel: UILabel = {
@@ -118,11 +118,11 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var abdominalTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
+        return textField
     }()
     
     lazy var thighLabel: UILabel = {
@@ -132,10 +132,10 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var thighTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
         return tf
     }()
     
@@ -146,11 +146,11 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var subscapularTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
+        return textField
     }()
     
     lazy var middleAuxiliaryLabel: UILabel = {
@@ -160,11 +160,11 @@ protocol PercentageScreenProtocol: AnyObject {
     }()
     
     lazy var middleAuxiliaryTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = ""
-        tf.backgroundColor = .primaryColor
-        tf.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = ""
+        textField.backgroundColor = .primaryColor
+        textField.layer.shadowColor = UIColor.white.cgColor
+        return textField
     }()
     
     lazy var resultPercentageLabel: UILabel = {

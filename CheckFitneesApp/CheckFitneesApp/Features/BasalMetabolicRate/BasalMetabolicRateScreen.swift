@@ -77,13 +77,13 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     }()
     
     lazy var weightTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "68.8"
-        tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textAlignment = .center
-        tf.backgroundColor = .primaryColor
-        tf.textColor = .secondaryColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = "68.8"
+        textField.layer.shadowColor = UIColor.white.cgColor
+        textField.textAlignment = .center
+        textField.backgroundColor = .primaryColor
+        textField.textColor = .secondaryColor
+        return textField
     }()
     
     lazy var heightLabel: UILabel = {
@@ -93,13 +93,13 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     }()
     
     lazy var heightTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "164"
-        tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textAlignment = .center
-        tf.backgroundColor = .primaryColor
-        tf.textColor = .secondaryColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = "164"
+        textField.layer.shadowColor = UIColor.white.cgColor
+        textField.textAlignment = .center
+        textField.backgroundColor = .primaryColor
+        textField.textColor = .secondaryColor
+        return textField
     }()
     
     lazy var ageLabel: UILabel = {
@@ -109,13 +109,13 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     }()
     
     lazy var ageTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "")
-        tf.text = "22"
-        tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textAlignment = .center
-        tf.backgroundColor = .primaryColor
-        tf.textColor = .secondaryColor
-        return tf
+        let textField = TextFieldCustom(placeholder: "")
+        textField.text = "22"
+        textField.layer.shadowColor = UIColor.white.cgColor
+        textField.textAlignment = .center
+        textField.backgroundColor = .primaryColor
+        textField.textColor = .secondaryColor
+        return textField
     }()
     
     lazy var resultBasalMetabolicRateLabel: UILabel = {

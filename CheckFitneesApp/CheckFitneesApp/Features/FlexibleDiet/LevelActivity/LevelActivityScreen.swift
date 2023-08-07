@@ -12,7 +12,7 @@ protocol LevelActivityScreenProtocol: AnyObject {
     func actionNextButton()
 }
 
-class LevelActivityScreen: UIView {
+final class LevelActivityScreen: UIView {
     
     weak var delegate: LevelActivityScreenProtocol?
     func delegate(delegate:LevelActivityScreenProtocol){
@@ -51,13 +51,13 @@ class LevelActivityScreen: UIView {
     }()
     
     lazy var tableView: UITableView = {
-        let tv = UITableView()
-        tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = .primaryColor
-        tv.separatorStyle = .none
-        tv.isUserInteractionEnabled = false
-        tv.register(LevelActivityCell.self, forCellReuseIdentifier: LevelActivityCell.identifier)
-        return tv
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.backgroundColor = .primaryColor
+        tableView.separatorStyle = .none
+        tableView.isUserInteractionEnabled = false
+        tableView.register(LevelActivityCell.self, forCellReuseIdentifier: LevelActivityCell.identifier)
+        return tableView
     }()
     
     lazy var backButton: UIButton = {
@@ -108,10 +108,7 @@ class LevelActivityScreen: UIView {
 
 extension LevelActivityScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,imageLogo,contentView,levelLabel,tableView,backButton,nextButton]
-        for view in views {
-            addSubview(view)
-        }
+        [titleLabel, imageLogo, contentView, levelLabel, tableView, backButton, nextButton].forEach({addSubview($0)})
     }
     
     func configConstraint() {
