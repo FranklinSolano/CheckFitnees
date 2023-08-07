@@ -57,9 +57,9 @@ class ForgotPasswordScreen: UIView {
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu email:")
-        tf.autocapitalizationType = .none
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite seu email:")
+        textField.autocapitalizationType = .none
+        return textField
     }()
     
     lazy var errorEmailLabel: UILabel = {
@@ -86,20 +86,6 @@ class ForgotPasswordScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configButtonOn(){
-        let email = emailTextField.text ?? ""
-        
-        if !email.isEmpty{
-            enterButton.setTitleColor(.secondaryColor, for: .normal)
-            enterButton.backgroundColor = .primaryColor
-            enterButton.isEnabled = true
-        } else {
-            enterButton.setTitleColor(.lightGray, for: .normal)
-            enterButton.backgroundColor = .gray
-            enterButton.isEnabled = false
-        }
-    }
-    
     public func configTextField(delegate: UITextFieldDelegate){
         emailTextField.delegate = delegate
     }
@@ -117,10 +103,7 @@ class ForgotPasswordScreen: UIView {
 
 extension ForgotPasswordScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,contentView,descriptionLabel,emailLabel,emailTextField,errorEmailLabel,enterButton]
-        for view in views {
-            addSubview(view)
-        }
+        [titleLabel, backButton, contentView, descriptionLabel, emailLabel, emailTextField, errorEmailLabel ,enterButton].forEach({addSubview($0)})
     }
     
     func configConstraint() {

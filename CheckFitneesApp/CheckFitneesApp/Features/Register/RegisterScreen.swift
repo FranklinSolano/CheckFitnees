@@ -12,7 +12,7 @@ protocol RegisterScreenProtocol: AnyObject {
     func actionSingUpButton()
 }
 
-class RegisterScreen: UIView {
+final class RegisterScreen: UIView {
     
     weak var delegate: RegisterScreenProtocol?
     public func delegate(delegate: RegisterScreenProtocol){
@@ -49,8 +49,8 @@ class RegisterScreen: UIView {
     }()
     
     lazy var nameTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu nome")
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite seu nome")
+        return textField
     }()
     
     lazy var emailLabel: UILabel = {
@@ -59,9 +59,9 @@ class RegisterScreen: UIView {
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu email:")
-        tf.autocapitalizationType = .none
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite seu email:")
+        textField.autocapitalizationType = .none
+        return textField
     }()
     
     lazy var errorEmailLabel: UILabel = {
@@ -78,9 +78,9 @@ class RegisterScreen: UIView {
     }()
     
     lazy var passwordTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite sua senha:")
-        tf.isSecureTextEntry = true
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite sua senha:")
+        textField.isSecureTextEntry = true
+        return textField
     }()
     
     lazy var confirmPasswordLabel: UILabel = {
@@ -89,9 +89,9 @@ class RegisterScreen: UIView {
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite novamente sua senha:")
-        tf.isSecureTextEntry = true
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite novamente sua senha:")
+        textField.isSecureTextEntry = true
+        return textField
     }()
     
     lazy var errorLabel: UILabel = {
@@ -125,14 +125,6 @@ class RegisterScreen: UIView {
         confirmPasswordTextField.delegate = delegate
     }
     
-    public func passwordDivergentsLabel(){
-        if passwordTextField.text != confirmPasswordTextField.text {
-            errorLabel.isHidden = false
-        } else {
-            errorLabel.isHidden = true
-        }
-    }
-    
     @objc private func tappedBackButton(){
         delegate?.actionBackButton()
     }
@@ -146,10 +138,7 @@ class RegisterScreen: UIView {
 
 extension RegisterScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,errorEmailLabel,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,errorLabel,singUpButton]
-        for view in views {
-            addSubview(view)
-        }
+        [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,errorEmailLabel,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,errorLabel,singUpButton].forEach({addSubview($0)})
     }
     
     func configConstraint() {
@@ -203,7 +192,7 @@ extension RegisterScreen: ViewCode {
             singUpButton.bottomAnchor.constraint(equalTo: errorLabel.bottomAnchor,constant: 100),
             singUpButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             singUpButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            singUpButton.heightAnchor.constraint(equalToConstant: 55),
+            singUpButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

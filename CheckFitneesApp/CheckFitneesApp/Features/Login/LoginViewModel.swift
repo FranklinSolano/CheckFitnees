@@ -30,9 +30,7 @@ protocol LoginViewModelProtocol: AnyObject {
             }
         }
     }
-    
-    
-    
+     
     func configButtonOn(email: String, password: String){
         if !email.isEmpty && !password.isEmpty {
             self.delegate?.buttonOn()
@@ -40,8 +38,4 @@ protocol LoginViewModelProtocol: AnyObject {
             self.delegate?.buttonOf()
         }
     }
-    
-    
-    
-    
 }

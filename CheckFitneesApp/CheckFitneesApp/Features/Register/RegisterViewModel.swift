@@ -74,6 +74,4 @@ protocol RegisterViewModelProtocol: AnyObject {
             self.delegate?.samePassword()
         }
     }
-    
-    
 }
