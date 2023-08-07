@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EB1AE0272A1BC83500B32E1F /* TaxaMetabolicaScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */; };
-		EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */; };
-		EB1AE02C2A1BDD1800B32E1F /* PorcentualVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02B2A1BDD1800B32E1F /* PorcentualVC.swift */; };
-		EB1AE02E2A1BDD2F00B32E1F /* PorcentualScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02D2A1BDD2F00B32E1F /* PorcentualScreen.swift */; };
-		EB1AE0352A1C5A8100B32E1F /* Extension-Cors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */; };
+		EB1AE0272A1BC83500B32E1F /* BasalMetabolicRateScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0262A1BC83500B32E1F /* BasalMetabolicRateScreen.swift */; };
+		EB1AE0292A1BC84A00B32E1F /* BasalMetabolicRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0282A1BC84A00B32E1F /* BasalMetabolicRateViewController.swift */; };
+		EB1AE02C2A1BDD1800B32E1F /* PercentageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02B2A1BDD1800B32E1F /* PercentageViewController.swift */; };
+		EB1AE02E2A1BDD2F00B32E1F /* PercentageScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE02D2A1BDD2F00B32E1F /* PercentageScreen.swift */; };
+		EB1AE0352A1C5A8100B32E1F /* Extension+Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0342A1C5A8100B32E1F /* Extension+Colors.swift */; };
 		EB1AE0382A1E710700B32E1F /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0372A1E710700B32E1F /* TabBarViewController.swift */; };
 		EB1AE03A2A1E734000B32E1F /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0392A1E734000B32E1F /* SettingsVC.swift */; };
 		EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */; };
@@ -19,17 +19,17 @@
 		EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */; };
 		EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */; };
 		EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */; };
-		EB1AE04C2A2066EE00B32E1F /* CicloCarboidratosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04B2A2066EE00B32E1F /* CicloCarboidratosScreen.swift */; };
-		EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04D2A20670600B32E1F /* CicloCarboidratosVC.swift */; };
-		EB1AE0502A2082B400B32E1F /* CicloCarboidratosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04F2A2082B400B32E1F /* CicloCarboidratosCell.swift */; };
-		EB1AE0522A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0512A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift */; };
+		EB1AE04C2A2066EE00B32E1F /* CarbCycleScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04B2A2066EE00B32E1F /* CarbCycleScreen.swift */; };
+		EB1AE04E2A20670600B32E1F /* CarbCycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04D2A20670600B32E1F /* CarbCycleViewController.swift */; };
+		EB1AE0502A2082B400B32E1F /* CarbCycleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE04F2A2082B400B32E1F /* CarbCycleCell.swift */; };
+		EB1AE0522A20FCB100B32E1F /* CarbCycleCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1AE0512A20FCB100B32E1F /* CarbCycleCellScreen.swift */; };
 		EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB29178F2A1593D900183A92 /* AppDelegate.swift */; };
 		EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917912A1593D900183A92 /* SceneDelegate.swift */; };
 		EB2917942A1593D900183A92 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917932A1593D900183A92 /* LoginViewController.swift */; };
 		EB2917992A1593DB00183A92 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB2917982A1593DB00183A92 /* Assets.xcassets */; };
 		EB29179C2A1593DB00183A92 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB29179A2A1593DB00183A92 /* LaunchScreen.storyboard */; };
-		EB2917A52A1595A900183A92 /* LoginScrenn.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917A42A1595A900183A92 /* LoginScrenn.swift */; };
-		EB2917A82A15963D00183A92 /* Extension-ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917A72A15963D00183A92 /* Extension-ViewCode.swift */; };
+		EB2917A52A1595A900183A92 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917A42A1595A900183A92 /* LoginScreen.swift */; };
+		EB2917A82A15963D00183A92 /* Extension+ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917A72A15963D00183A92 /* Extension+ViewCode.swift */; };
 		EB2917AB2A1658C200183A92 /* RegisterScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917AA2A1658C200183A92 /* RegisterScreen.swift */; };
 		EB2917AD2A1658D100183A92 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917AC2A1658D100183A92 /* RegisterViewController.swift */; };
 		EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2917B02A1662AA00183A92 /* ForgotPasswordScreen.swift */; };
@@ -63,10 +63,10 @@
 		EB2917EA2A16941F00183A92 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917E92A16941F00183A92 /* FirebaseStorage */; };
 		EB2917EC2A16941F00183A92 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917EB2A16941F00183A92 /* FirebaseStorageCombine-Community */; };
 		EB2917EF2A16958400183A92 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = EB2917EE2A16958400183A92 /* AlamofireImage */; };
-		EB3F006D2A2FA37700244574 /* AvaliacaoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F006C2A2FA37700244574 /* AvaliacaoScreen.swift */; };
-		EB3F006F2A435D0F00244574 /* PorcentualViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F006E2A435D0E00244574 /* PorcentualViewModel.swift */; };
-		EB4245F82A4C9834000B648B /* AvaliacaoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4245F72A4C9834000B648B /* AvaliacaoCell.swift */; };
-		EB4245FB2A4C98CC000B648B /* AvaliacaoCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4245FA2A4C98CC000B648B /* AvaliacaoCellScreen.swift */; };
+		EB3F006D2A2FA37700244574 /* AssessmentScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F006C2A2FA37700244574 /* AssessmentScreen.swift */; };
+		EB3F006F2A435D0F00244574 /* PercentageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3F006E2A435D0E00244574 /* PercentageViewModel.swift */; };
+		EB4245F82A4C9834000B648B /* AssessmentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4245F72A4C9834000B648B /* AssessmentCell.swift */; };
+		EB4245FB2A4C98CC000B648B /* AssessmentCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4245FA2A4C98CC000B648B /* AssessmentCellScreen.swift */; };
 		EB4245FE2A5DEF88000B648B /* LevelActivityScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4245FD2A5DEF88000B648B /* LevelActivityScreen.swift */; };
 		EB4246012A5DF633000B648B /* LevelActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4246002A5DF633000B648B /* LevelActivityCell.swift */; };
 		EB4246042A5DFF81000B648B /* LevelActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4246032A5DFF81000B648B /* LevelActivityModel.swift */; };
@@ -91,10 +91,10 @@
 		EB42462E2A5F5A37000B648B /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB42461A2A5F5A36000B648B /* Montserrat-Light.ttf */; };
 		EB42462F2A5F5A37000B648B /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB42461B2A5F5A36000B648B /* Montserrat-SemiBoldItalic.ttf */; };
 		EB4246302A5F5A37000B648B /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB42461C2A5F5A36000B648B /* Montserrat-Medium.ttf */; };
-		EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9342A2AE656001CCA2A /* GraficoVC.swift */; };
-		EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */; };
-		EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9382A2AE678001CCA2A /* TreinoVC.swift */; };
-		EB46B93B2A2AE683001CCA2A /* AvaliacaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B93A2A2AE683001CCA2A /* AvaliacaoViewController.swift */; };
+		EB46B9352A2AE656001CCA2A /* GraphicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9342A2AE656001CCA2A /* GraphicViewController.swift */; };
+		EB46B9372A2AE665001CCA2A /* TrainingVolumeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9362A2AE665001CCA2A /* TrainingVolumeViewController.swift */; };
+		EB46B9392A2AE678001CCA2A /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B9382A2AE678001CCA2A /* TrainingViewController.swift */; };
+		EB46B93B2A2AE683001CCA2A /* AssessmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB46B93A2A2AE683001CCA2A /* AssessmentViewController.swift */; };
 		EB61272E2A2A7D4100EA8020 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB61272D2A2A7D4100EA8020 /* ProfileCell.swift */; };
 		EB6AF6172A7023DC00ADB92A /* Roboto-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF60B2A7023DC00ADB92A /* Roboto-LightItalic.ttf */; };
 		EB6AF6182A7023DC00ADB92A /* Roboto-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF60C2A7023DC00ADB92A /* Roboto-MediumItalic.ttf */; };
@@ -108,7 +108,7 @@
 		EB6AF6202A7023DC00ADB92A /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6142A7023DC00ADB92A /* Roboto-BoldItalic.ttf */; };
 		EB6AF6212A7023DC00ADB92A /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6152A7023DC00ADB92A /* Roboto-Black.ttf */; };
 		EB6AF6222A7023DC00ADB92A /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6162A7023DC00ADB92A /* Roboto-Italic.ttf */; };
-		EB992DCB2A24204B0049FC8E /* TaxaMetabolicaBasalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */; };
+		EB992DCB2A24204B0049FC8E /* BasalMetabolicRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */; };
 		EB992DCD2A2503FA0049FC8E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */; };
 		EB992DCF2A2524E60049FC8E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCE2A2524E60049FC8E /* RegisterViewModel.swift */; };
 		EB992DD22A252C920049FC8E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DD12A252C920049FC8E /* Alert.swift */; };
@@ -124,17 +124,17 @@
 		EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonViewController.swift */; };
 		EBAF5D432A1BB4B500AA1692 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D422A1BB4B500AA1692 /* ProfileViewController.swift */; };
 		EBAF5D452A1BB4C900AA1692 /* ProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAF5D442A1BB4C900AA1692 /* ProfileScreen.swift */; };
-		EBBF558F2A780517005459B0 /* TreinoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF558E2A780517005459B0 /* TreinoScreen.swift */; };
-		EBCD378D2A217CE3007846EF /* DietaFlexivelScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD378C2A217CE3007846EF /* DietaFlexivelScreen.swift */; };
-		EBCD378F2A217D16007846EF /* DietaFlexivelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD378E2A217D16007846EF /* DietaFlexivelVC.swift */; };
+		EBBF558F2A780517005459B0 /* TrainingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBF558E2A780517005459B0 /* TrainingScreen.swift */; };
+		EBCD378D2A217CE3007846EF /* FlexibleDietScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD378C2A217CE3007846EF /* FlexibleDietScreen.swift */; };
+		EBCD378F2A217D16007846EF /* FlexibleDietViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCD378E2A217D16007846EF /* FlexibleDietViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaScreen.swift; sourceTree = "<group>"; };
-		EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaVC.swift; sourceTree = "<group>"; };
-		EB1AE02B2A1BDD1800B32E1F /* PorcentualVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualVC.swift; sourceTree = "<group>"; };
-		EB1AE02D2A1BDD2F00B32E1F /* PorcentualScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualScreen.swift; sourceTree = "<group>"; };
-		EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Cors.swift"; sourceTree = "<group>"; };
+		EB1AE0262A1BC83500B32E1F /* BasalMetabolicRateScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalMetabolicRateScreen.swift; sourceTree = "<group>"; };
+		EB1AE0282A1BC84A00B32E1F /* BasalMetabolicRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalMetabolicRateViewController.swift; sourceTree = "<group>"; };
+		EB1AE02B2A1BDD1800B32E1F /* PercentageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageViewController.swift; sourceTree = "<group>"; };
+		EB1AE02D2A1BDD2F00B32E1F /* PercentageScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageScreen.swift; sourceTree = "<group>"; };
+		EB1AE0342A1C5A8100B32E1F /* Extension+Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Colors.swift"; sourceTree = "<group>"; };
 		EB1AE0372A1E710700B32E1F /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		EB1AE0392A1E734000B32E1F /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		EB1AE03B2A1E735300B32E1F /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
@@ -142,10 +142,10 @@
 		EB1AE0422A1FE70800B32E1F /* ButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonCustom.swift; sourceTree = "<group>"; };
 		EB1AE0442A1FEC5B00B32E1F /* TitleLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabelCustom.swift; sourceTree = "<group>"; };
 		EB1AE0462A1FEE5A00B32E1F /* TextLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextLabelCustom.swift; sourceTree = "<group>"; };
-		EB1AE04B2A2066EE00B32E1F /* CicloCarboidratosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosScreen.swift; sourceTree = "<group>"; };
-		EB1AE04D2A20670600B32E1F /* CicloCarboidratosVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosVC.swift; sourceTree = "<group>"; };
-		EB1AE04F2A2082B400B32E1F /* CicloCarboidratosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosCell.swift; sourceTree = "<group>"; };
-		EB1AE0512A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CicloCarboidratosCellScreen.swift; sourceTree = "<group>"; };
+		EB1AE04B2A2066EE00B32E1F /* CarbCycleScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbCycleScreen.swift; sourceTree = "<group>"; };
+		EB1AE04D2A20670600B32E1F /* CarbCycleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbCycleViewController.swift; sourceTree = "<group>"; };
+		EB1AE04F2A2082B400B32E1F /* CarbCycleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbCycleCell.swift; sourceTree = "<group>"; };
+		EB1AE0512A20FCB100B32E1F /* CarbCycleCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarbCycleCellScreen.swift; sourceTree = "<group>"; };
 		EB29178C2A1593D900183A92 /* CheckFitneesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CheckFitneesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB29178F2A1593D900183A92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB2917912A1593D900183A92 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,17 +153,17 @@
 		EB2917982A1593DB00183A92 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EB29179B2A1593DB00183A92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB29179D2A1593DB00183A92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB2917A42A1595A900183A92 /* LoginScrenn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScrenn.swift; sourceTree = "<group>"; };
-		EB2917A72A15963D00183A92 /* Extension-ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-ViewCode.swift"; sourceTree = "<group>"; };
+		EB2917A42A1595A900183A92 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		EB2917A72A15963D00183A92 /* Extension+ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+ViewCode.swift"; sourceTree = "<group>"; };
 		EB2917AA2A1658C200183A92 /* RegisterScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScreen.swift; sourceTree = "<group>"; };
 		EB2917AC2A1658D100183A92 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		EB2917B02A1662AA00183A92 /* ForgotPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordScreen.swift; sourceTree = "<group>"; };
 		EB2917B22A1662C300183A92 /* ForgotPaswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPaswordViewController.swift; sourceTree = "<group>"; };
 		EB2917B42A16937600183A92 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		EB3F006C2A2FA37700244574 /* AvaliacaoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoScreen.swift; sourceTree = "<group>"; };
-		EB3F006E2A435D0E00244574 /* PorcentualViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorcentualViewModel.swift; sourceTree = "<group>"; };
-		EB4245F72A4C9834000B648B /* AvaliacaoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoCell.swift; sourceTree = "<group>"; };
-		EB4245FA2A4C98CC000B648B /* AvaliacaoCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoCellScreen.swift; sourceTree = "<group>"; };
+		EB3F006C2A2FA37700244574 /* AssessmentScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentScreen.swift; sourceTree = "<group>"; };
+		EB3F006E2A435D0E00244574 /* PercentageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageViewModel.swift; sourceTree = "<group>"; };
+		EB4245F72A4C9834000B648B /* AssessmentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCell.swift; sourceTree = "<group>"; };
+		EB4245FA2A4C98CC000B648B /* AssessmentCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCellScreen.swift; sourceTree = "<group>"; };
 		EB4245FD2A5DEF88000B648B /* LevelActivityScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelActivityScreen.swift; sourceTree = "<group>"; };
 		EB4246002A5DF633000B648B /* LevelActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelActivityCell.swift; sourceTree = "<group>"; };
 		EB4246032A5DFF81000B648B /* LevelActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelActivityModel.swift; sourceTree = "<group>"; };
@@ -188,10 +188,10 @@
 		EB42461A2A5F5A36000B648B /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		EB42461B2A5F5A36000B648B /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		EB42461C2A5F5A36000B648B /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
-		EB46B9342A2AE656001CCA2A /* GraficoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraficoVC.swift; sourceTree = "<group>"; };
-		EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeTreinoVC.swift; sourceTree = "<group>"; };
-		EB46B9382A2AE678001CCA2A /* TreinoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinoVC.swift; sourceTree = "<group>"; };
-		EB46B93A2A2AE683001CCA2A /* AvaliacaoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaliacaoViewController.swift; sourceTree = "<group>"; };
+		EB46B9342A2AE656001CCA2A /* GraphicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicViewController.swift; sourceTree = "<group>"; };
+		EB46B9362A2AE665001CCA2A /* TrainingVolumeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingVolumeViewController.swift; sourceTree = "<group>"; };
+		EB46B9382A2AE678001CCA2A /* TrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
+		EB46B93A2A2AE683001CCA2A /* AssessmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentViewController.swift; sourceTree = "<group>"; };
 		EB61272D2A2A7D4100EA8020 /* ProfileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		EB6AF60B2A7023DC00ADB92A /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		EB6AF60C2A7023DC00ADB92A /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
@@ -205,7 +205,7 @@
 		EB6AF6142A7023DC00ADB92A /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EB6AF6152A7023DC00ADB92A /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		EB6AF6162A7023DC00ADB92A /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxaMetabolicaBasalViewModel.swift; sourceTree = "<group>"; };
+		EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalMetabolicRateViewModel.swift; sourceTree = "<group>"; };
 		EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EB992DCE2A2524E60049FC8E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		EB992DD12A252C920049FC8E /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
@@ -221,9 +221,9 @@
 		EBAF5D3F2A1B9B5C00AA1692 /* NewAlertCustonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlertCustonViewController.swift; sourceTree = "<group>"; };
 		EBAF5D422A1BB4B500AA1692 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		EBAF5D442A1BB4C900AA1692 /* ProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreen.swift; sourceTree = "<group>"; };
-		EBBF558E2A780517005459B0 /* TreinoScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreinoScreen.swift; sourceTree = "<group>"; };
-		EBCD378C2A217CE3007846EF /* DietaFlexivelScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaFlexivelScreen.swift; sourceTree = "<group>"; };
-		EBCD378E2A217D16007846EF /* DietaFlexivelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DietaFlexivelVC.swift; sourceTree = "<group>"; };
+		EBBF558E2A780517005459B0 /* TrainingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingScreen.swift; sourceTree = "<group>"; };
+		EBCD378C2A217CE3007846EF /* FlexibleDietScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleDietScreen.swift; sourceTree = "<group>"; };
+		EBCD378E2A217D16007846EF /* FlexibleDietViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexibleDietViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,24 +265,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EB1AE0252A1BC80F00B32E1F /* TaxaMetabolicaBasal */ = {
+		EB1AE0252A1BC80F00B32E1F /* BasalMetabolicRate */ = {
 			isa = PBXGroup;
 			children = (
-				EB1AE0262A1BC83500B32E1F /* TaxaMetabolicaScreen.swift */,
-				EB1AE0282A1BC84A00B32E1F /* TaxaMetabolicaVC.swift */,
-				EB992DCA2A24204A0049FC8E /* TaxaMetabolicaBasalViewModel.swift */,
+				EB1AE0262A1BC83500B32E1F /* BasalMetabolicRateScreen.swift */,
+				EB1AE0282A1BC84A00B32E1F /* BasalMetabolicRateViewController.swift */,
+				EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */,
 			);
-			path = TaxaMetabolicaBasal;
+			path = BasalMetabolicRate;
 			sourceTree = "<group>";
 		};
-		EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */ = {
+		EB1AE02A2A1BDD0000B32E1F /* FatPercentage */ = {
 			isa = PBXGroup;
 			children = (
-				EB1AE02B2A1BDD1800B32E1F /* PorcentualVC.swift */,
-				EB1AE02D2A1BDD2F00B32E1F /* PorcentualScreen.swift */,
-				EB3F006E2A435D0E00244574 /* PorcentualViewModel.swift */,
+				EB1AE02B2A1BDD1800B32E1F /* PercentageViewController.swift */,
+				EB1AE02D2A1BDD2F00B32E1F /* PercentageScreen.swift */,
+				EB3F006E2A435D0E00244574 /* PercentageViewModel.swift */,
 			);
-			path = PorcentualGordura;
+			path = FatPercentage;
 			sourceTree = "<group>";
 		};
 		EB1AE0362A1E70D400B32E1F /* TabBar */ = {
@@ -306,21 +306,21 @@
 			path = "Generic Componentes";
 			sourceTree = "<group>";
 		};
-		EB1AE04A2A2066B900B32E1F /* CicloCarboidratos */ = {
+		EB1AE04A2A2066B900B32E1F /* CarbCycle */ = {
 			isa = PBXGroup;
 			children = (
-				EB1AE04B2A2066EE00B32E1F /* CicloCarboidratosScreen.swift */,
-				EB1AE04D2A20670600B32E1F /* CicloCarboidratosVC.swift */,
+				EB1AE04B2A2066EE00B32E1F /* CarbCycleScreen.swift */,
+				EB1AE04D2A20670600B32E1F /* CarbCycleViewController.swift */,
 				EB1AE0532A2172BE00B32E1F /* Cell */,
 			);
-			path = CicloCarboidratos;
+			path = CarbCycle;
 			sourceTree = "<group>";
 		};
 		EB1AE0532A2172BE00B32E1F /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EB1AE04F2A2082B400B32E1F /* CicloCarboidratosCell.swift */,
-				EB1AE0512A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift */,
+				EB1AE04F2A2082B400B32E1F /* CarbCycleCell.swift */,
+				EB1AE0512A20FCB100B32E1F /* CarbCycleCellScreen.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -362,7 +362,7 @@
 		EB2917A32A15958E00183A92 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				EB2917A42A1595A900183A92 /* LoginScrenn.swift */,
+				EB2917A42A1595A900183A92 /* LoginScreen.swift */,
 				EB2917932A1593D900183A92 /* LoginViewController.swift */,
 				EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */,
 			);
@@ -372,8 +372,8 @@
 		EB2917A62A15962D00183A92 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				EB2917A72A15963D00183A92 /* Extension-ViewCode.swift */,
-				EB1AE0342A1C5A8100B32E1F /* Extension-Cors.swift */,
+				EB2917A72A15963D00183A92 /* Extension+ViewCode.swift */,
+				EB1AE0342A1C5A8100B32E1F /* Extension+Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,15 +391,15 @@
 		EB2917AE2A1658E400183A92 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				EB46B9332A2AE646001CCA2A /* Grafico */,
-				EB46B9322A2AE63F001CCA2A /* VolumeTreino */,
-				EB46B9312A2AE634001CCA2A /* Treino */,
-				EB1AE04A2A2066B900B32E1F /* CicloCarboidratos */,
-				EBCD378B2A217CBC007846EF /* DietaFlexivel */,
-				EB1AE02A2A1BDD0000B32E1F /* PorcentualGordura */,
-				EB1AE0252A1BC80F00B32E1F /* TaxaMetabolicaBasal */,
-				EB46B9302A2AE5F3001CCA2A /* Avaliacao */,
-				EBAF5D412A1BB49D00AA1692 /* Perfil */,
+				EB46B9332A2AE646001CCA2A /* Graphic */,
+				EB46B9322A2AE63F001CCA2A /* TrainingVolume */,
+				EB46B9312A2AE634001CCA2A /* Training */,
+				EB1AE04A2A2066B900B32E1F /* CarbCycle */,
+				EBCD378B2A217CBC007846EF /* FlexibleDiet */,
+				EB1AE02A2A1BDD0000B32E1F /* FatPercentage */,
+				EB1AE0252A1BC80F00B32E1F /* BasalMetabolicRate */,
+				EB46B9302A2AE5F3001CCA2A /* Assessment */,
+				EBAF5D412A1BB49D00AA1692 /* Profile */,
 				EBAF5D3C2A1B9B0200AA1692 /* NewAlertCuston */,
 				EBAF5D352A197DE100AA1692 /* Home */,
 				EB1AE0362A1E70D400B32E1F /* TabBar */,
@@ -423,8 +423,8 @@
 		EB4245F92A4C989C000B648B /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				EB4245F72A4C9834000B648B /* AvaliacaoCell.swift */,
-				EB4245FA2A4C98CC000B648B /* AvaliacaoCellScreen.swift */,
+				EB4245F72A4C9834000B648B /* AssessmentCell.swift */,
+				EB4245FA2A4C98CC000B648B /* AssessmentCellScreen.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -432,10 +432,10 @@
 		EB4245FC2A5DEF57000B648B /* LevelActivity */ = {
 			isa = PBXGroup;
 			children = (
-				EB4246052A5E0092000B648B /* LevelActivityViewModel */,
-				EB4246022A5DFF50000B648B /* Model */,
-				EB4245FF2A5DF60A000B648B /* Cell */,
+				EB4246062A5E00B3000B648B /* LevelActivityViewModel.swift */,
 				EB4245FD2A5DEF88000B648B /* LevelActivityScreen.swift */,
+				EB4246032A5DFF81000B648B /* LevelActivityModel.swift */,
+				EB4245FF2A5DF60A000B648B /* Cell */,
 			);
 			path = LevelActivity;
 			sourceTree = "<group>";
@@ -446,22 +446,6 @@
 				EB4246002A5DF633000B648B /* LevelActivityCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		EB4246022A5DFF50000B648B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				EB4246032A5DFF81000B648B /* LevelActivityModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		EB4246052A5E0092000B648B /* LevelActivityViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				EB4246062A5E00B3000B648B /* LevelActivityViewModel.swift */,
-			);
-			path = LevelActivityViewModel;
 			sourceTree = "<group>";
 		};
 		EB4246082A5F59D4000B648B /* Fonts */ = {
@@ -481,39 +465,39 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		EB46B9302A2AE5F3001CCA2A /* Avaliacao */ = {
+		EB46B9302A2AE5F3001CCA2A /* Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				EB46B93A2A2AE683001CCA2A /* AvaliacaoViewController.swift */,
-				EB3F006C2A2FA37700244574 /* AvaliacaoScreen.swift */,
+				EB46B93A2A2AE683001CCA2A /* AssessmentViewController.swift */,
+				EB3F006C2A2FA37700244574 /* AssessmentScreen.swift */,
 				EB4245F92A4C989C000B648B /* Cell */,
 			);
-			path = Avaliacao;
+			path = Assessment;
 			sourceTree = "<group>";
 		};
-		EB46B9312A2AE634001CCA2A /* Treino */ = {
+		EB46B9312A2AE634001CCA2A /* Training */ = {
 			isa = PBXGroup;
 			children = (
-				EB46B9382A2AE678001CCA2A /* TreinoVC.swift */,
-				EBBF558E2A780517005459B0 /* TreinoScreen.swift */,
+				EB46B9382A2AE678001CCA2A /* TrainingViewController.swift */,
+				EBBF558E2A780517005459B0 /* TrainingScreen.swift */,
 			);
-			path = Treino;
+			path = Training;
 			sourceTree = "<group>";
 		};
-		EB46B9322A2AE63F001CCA2A /* VolumeTreino */ = {
+		EB46B9322A2AE63F001CCA2A /* TrainingVolume */ = {
 			isa = PBXGroup;
 			children = (
-				EB46B9362A2AE665001CCA2A /* VolumeTreinoVC.swift */,
+				EB46B9362A2AE665001CCA2A /* TrainingVolumeViewController.swift */,
 			);
-			path = VolumeTreino;
+			path = TrainingVolume;
 			sourceTree = "<group>";
 		};
-		EB46B9332A2AE646001CCA2A /* Grafico */ = {
+		EB46B9332A2AE646001CCA2A /* Graphic */ = {
 			isa = PBXGroup;
 			children = (
-				EB46B9342A2AE656001CCA2A /* GraficoVC.swift */,
+				EB46B9342A2AE656001CCA2A /* GraphicViewController.swift */,
 			);
-			path = Grafico;
+			path = Graphic;
 			sourceTree = "<group>";
 		};
 		EB6127242A2A5A3700EA8020 /* Cell */ = {
@@ -599,7 +583,7 @@
 			path = NewAlertCuston;
 			sourceTree = "<group>";
 		};
-		EBAF5D412A1BB49D00AA1692 /* Perfil */ = {
+		EBAF5D412A1BB49D00AA1692 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
 				EB6127242A2A5A3700EA8020 /* Cell */,
@@ -608,23 +592,23 @@
 				EB992DDB2A293A070049FC8E /* ProfileViewModel.swift */,
 				EB992DD72A2662150049FC8E /* ProfileModel.swift */,
 			);
-			path = Perfil;
+			path = Profile;
 			sourceTree = "<group>";
 		};
-		EBCD378B2A217CBC007846EF /* DietaFlexivel */ = {
+		EBCD378B2A217CBC007846EF /* FlexibleDiet */ = {
 			isa = PBXGroup;
 			children = (
 				EB4245FC2A5DEF57000B648B /* LevelActivity */,
 				EBCD37902A228817007846EF /* Objective */,
 			);
-			path = DietaFlexivel;
+			path = FlexibleDiet;
 			sourceTree = "<group>";
 		};
 		EBCD37902A228817007846EF /* Objective */ = {
 			isa = PBXGroup;
 			children = (
-				EBCD378C2A217CE3007846EF /* DietaFlexivelScreen.swift */,
-				EBCD378E2A217D16007846EF /* DietaFlexivelVC.swift */,
+				EBCD378C2A217CE3007846EF /* FlexibleDietScreen.swift */,
+				EBCD378E2A217D16007846EF /* FlexibleDietViewController.swift */,
 			);
 			path = Objective;
 			sourceTree = "<group>";
@@ -766,63 +750,63 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB992DCB2A24204B0049FC8E /* TaxaMetabolicaBasalViewModel.swift in Sources */,
+				EB992DCB2A24204B0049FC8E /* BasalMetabolicRateViewModel.swift in Sources */,
 				EB1AE0412A1FDB4A00B32E1F /* TextFieldCustom.swift in Sources */,
 				EB2917B32A1662C300183A92 /* ForgotPaswordViewController.swift in Sources */,
-				EB46B9392A2AE678001CCA2A /* TreinoVC.swift in Sources */,
+				EB46B9392A2AE678001CCA2A /* TrainingViewController.swift in Sources */,
 				EB992DD62A2660EA0049FC8E /* HomeViewModel.swift in Sources */,
 				EBAF5D452A1BB4C900AA1692 /* ProfileScreen.swift in Sources */,
 				EB992DCF2A2524E60049FC8E /* RegisterViewModel.swift in Sources */,
-				EBCD378F2A217D16007846EF /* DietaFlexivelVC.swift in Sources */,
+				EBCD378F2A217D16007846EF /* FlexibleDietViewController.swift in Sources */,
 				EB992DD42A2539230049FC8E /* ForgotPasswordViewModel.swift in Sources */,
 				EBAF5D372A197DF500AA1692 /* HomeViewController.swift in Sources */,
-				EB1AE02C2A1BDD1800B32E1F /* PorcentualVC.swift in Sources */,
+				EB1AE02C2A1BDD1800B32E1F /* PercentageViewController.swift in Sources */,
 				EB2917AB2A1658C200183A92 /* RegisterScreen.swift in Sources */,
 				EB992DCD2A2503FA0049FC8E /* LoginViewModel.swift in Sources */,
 				EB1AE03A2A1E734000B32E1F /* SettingsVC.swift in Sources */,
-				EBCD378D2A217CE3007846EF /* DietaFlexivelScreen.swift in Sources */,
-				EB1AE02E2A1BDD2F00B32E1F /* PorcentualScreen.swift in Sources */,
+				EBCD378D2A217CE3007846EF /* FlexibleDietScreen.swift in Sources */,
+				EB1AE02E2A1BDD2F00B32E1F /* PercentageScreen.swift in Sources */,
 				EB4246072A5E00B3000B648B /* LevelActivityViewModel.swift in Sources */,
-				EB1AE0272A1BC83500B32E1F /* TaxaMetabolicaScreen.swift in Sources */,
-				EB1AE0522A20FCB100B32E1F /* CicloCarboidratosCellScreen.swift in Sources */,
-				EB1AE04C2A2066EE00B32E1F /* CicloCarboidratosScreen.swift in Sources */,
+				EB1AE0272A1BC83500B32E1F /* BasalMetabolicRateScreen.swift in Sources */,
+				EB1AE0522A20FCB100B32E1F /* CarbCycleCellScreen.swift in Sources */,
+				EB1AE04C2A2066EE00B32E1F /* CarbCycleScreen.swift in Sources */,
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
 				EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */,
 				EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */,
 				EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */,
 				EB2917942A1593D900183A92 /* LoginViewController.swift in Sources */,
-				EB2917A82A15963D00183A92 /* Extension-ViewCode.swift in Sources */,
-				EB1AE0352A1C5A8100B32E1F /* Extension-Cors.swift in Sources */,
-				EB1AE0292A1BC84A00B32E1F /* TaxaMetabolicaVC.swift in Sources */,
+				EB2917A82A15963D00183A92 /* Extension+ViewCode.swift in Sources */,
+				EB1AE0352A1C5A8100B32E1F /* Extension+Colors.swift in Sources */,
+				EB1AE0292A1BC84A00B32E1F /* BasalMetabolicRateViewController.swift in Sources */,
 				EB992DD22A252C920049FC8E /* Alert.swift in Sources */,
 				EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */,
 				EB2917AD2A1658D100183A92 /* RegisterViewController.swift in Sources */,
 				EB992DDC2A293A080049FC8E /* ProfileViewModel.swift in Sources */,
-				EBBF558F2A780517005459B0 /* TreinoScreen.swift in Sources */,
+				EBBF558F2A780517005459B0 /* TrainingScreen.swift in Sources */,
 				EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */,
-				EB46B93B2A2AE683001CCA2A /* AvaliacaoViewController.swift in Sources */,
-				EB4245FB2A4C98CC000B648B /* AvaliacaoCellScreen.swift in Sources */,
+				EB46B93B2A2AE683001CCA2A /* AssessmentViewController.swift in Sources */,
+				EB4245FB2A4C98CC000B648B /* AssessmentCellScreen.swift in Sources */,
 				EBAF5D3E2A1B9B4100AA1692 /* NewAlertCustonScreen.swift in Sources */,
 				EB4246012A5DF633000B648B /* LevelActivityCell.swift in Sources */,
-				EB2917A52A1595A900183A92 /* LoginScrenn.swift in Sources */,
+				EB2917A52A1595A900183A92 /* LoginScreen.swift in Sources */,
 				EBAF5D3B2A19816C00AA1692 /* HomeCell.swift in Sources */,
 				EBAF5D432A1BB4B500AA1692 /* ProfileViewController.swift in Sources */,
-				EB46B9352A2AE656001CCA2A /* GraficoVC.swift in Sources */,
-				EB3F006D2A2FA37700244574 /* AvaliacaoScreen.swift in Sources */,
-				EB3F006F2A435D0F00244574 /* PorcentualViewModel.swift in Sources */,
+				EB46B9352A2AE656001CCA2A /* GraphicViewController.swift in Sources */,
+				EB3F006D2A2FA37700244574 /* AssessmentScreen.swift in Sources */,
+				EB3F006F2A435D0F00244574 /* PercentageViewModel.swift in Sources */,
 				EB1AE0472A1FEE5A00B32E1F /* TextLabelCustom.swift in Sources */,
-				EB1AE04E2A20670600B32E1F /* CicloCarboidratosVC.swift in Sources */,
+				EB1AE04E2A20670600B32E1F /* CarbCycleViewController.swift in Sources */,
 				EB61272E2A2A7D4100EA8020 /* ProfileCell.swift in Sources */,
 				EBAF5D402A1B9B5C00AA1692 /* NewAlertCustonViewController.swift in Sources */,
-				EB1AE0502A2082B400B32E1F /* CicloCarboidratosCell.swift in Sources */,
+				EB1AE0502A2082B400B32E1F /* CarbCycleCell.swift in Sources */,
 				EB992DDA2A2667F30049FC8E /* NewAlertCustonViewModel.swift in Sources */,
-				EB46B9372A2AE665001CCA2A /* VolumeTreinoVC.swift in Sources */,
+				EB46B9372A2AE665001CCA2A /* TrainingVolumeViewController.swift in Sources */,
 				EB4245FE2A5DEF88000B648B /* LevelActivityScreen.swift in Sources */,
 				EB1AE0382A1E710700B32E1F /* TabBarViewController.swift in Sources */,
 				EB992DD82A2662150049FC8E /* ProfileModel.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 				EB4246042A5DFF81000B648B /* LevelActivityModel.swift in Sources */,
-				EB4245F82A4C9834000B648B /* AvaliacaoCell.swift in Sources */,
+				EB4245F82A4C9834000B648B /* AssessmentCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
