@@ -14,7 +14,7 @@ protocol LoginViewModelProtocol: AnyObject {
     func buttonOf()
 }
 
-class LoginViewModel{
+ final class LoginViewModel{
     
     weak var delegate: LoginViewModelProtocol?
     func delegate(delegate:LoginViewModelProtocol){

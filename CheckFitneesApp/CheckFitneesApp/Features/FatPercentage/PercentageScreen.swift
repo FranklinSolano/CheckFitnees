@@ -28,16 +28,16 @@ protocol PercentageScreenProtocol: AnyObject {
         return view
     }()
     
-    lazy var backButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.setTitle("voltar", for: .normal)
-        button.setTitleColor(.primaryColor, for: .normal)
-        button.tintColor = UIColor.secondaryColor
-        button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
-        return button
-    }()
+     lazy var backButton: UIButton = {
+         let button = UIButton()
+         button.translatesAutoresizingMaskIntoConstraints = false
+         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+         button.setTitle("voltar", for: .normal)
+         button.setTitleColor(.secondaryColor, for: .normal)
+         button.tintColor = UIColor.secondaryColor
+         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
+         return button
+     }()
     
     lazy var imagePerson: UIImageView = {
         let image = UIImageView()

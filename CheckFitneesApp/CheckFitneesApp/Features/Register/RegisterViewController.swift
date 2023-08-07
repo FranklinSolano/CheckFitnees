@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+ final class RegisterViewController: UIViewController {
     
     var screen: RegisterScreen?
     var viewModel: RegisterViewModel = RegisterViewModel()
@@ -70,7 +70,7 @@ extension RegisterViewController: RegisterViewModelProtocol {
     }
     
     func samePassword() {
-        screen?.errorLabel.isHidden = false
+        screen?.errorLabel.isHidden = true
     }
     
     func buttonOn() {

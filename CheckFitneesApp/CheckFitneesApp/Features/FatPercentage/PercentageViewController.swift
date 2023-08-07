@@ -26,6 +26,7 @@ final class PercentageViewController: UIViewController {
         screen?.nameLabel.text = name
         alert = Alert(controller: self)
         viewModel.delegate(delegate: self)
+        viewModel.validateFields(triceps: screen?.triciptalTextField.text ?? "", breastplate: screen?.breastplateTextField.text ?? "", middleAuxiliary: screen?.middleAuxiliaryTextField.text ?? "", suprailiac: screen?.suprailiacTextField.text ?? "", subscapular: screen?.subscapularTextField.text ?? "", thigh: screen?.thighTextField.text ?? "", abdominal: screen?.abdominalTextField.text ?? "")
         
     }
 }

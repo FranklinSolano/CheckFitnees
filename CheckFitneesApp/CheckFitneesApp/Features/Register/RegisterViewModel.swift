@@ -5,7 +5,6 @@
 //  Created by Franklin  Stilhano on 5/29/23.
 //
 
-import UIKit
 import Firebase
 
 protocol RegisterViewModelProtocol: AnyObject {
@@ -19,7 +18,7 @@ protocol RegisterViewModelProtocol: AnyObject {
     func divergentsPassword()
 }
 
-class RegisterViewModel{
+ final class RegisterViewModel{
     
     weak var delegate: RegisterViewModelProtocol?
     func delegate(delegate: RegisterViewModelProtocol){
