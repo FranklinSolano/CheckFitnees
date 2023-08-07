@@ -23,7 +23,7 @@ protocol AssessmentScreenProtocol: AnyObject {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
+        view.backgroundColor = UIColor.primaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -34,8 +34,8 @@ protocol AssessmentScreenProtocol: AnyObject {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.setTitle("voltar", for: .normal)
-        button.setTitleColor(.corTwo, for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.setTitleColor(.secondaryColor, for: .normal)
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -44,7 +44,7 @@ protocol AssessmentScreenProtocol: AnyObject {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "editar"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedEditarButton), for: .touchUpInside)
         return button
     }()
@@ -53,19 +53,19 @@ protocol AssessmentScreenProtocol: AnyObject {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "person.circle.fill")
-        image.tintColor = UIColor.corTwo
+        image.tintColor = UIColor.secondaryColor
         return image
     }()
     
     lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "" )
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var alturaLabel: UILabel = {
         let label = TextLabelCustom(title: "Altura:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -73,15 +73,15 @@ protocol AssessmentScreenProtocol: AnyObject {
         let textField = TextFieldCustom(placeholder: "")
         textField.text = "165"
         textField.textAlignment = .center
-        textField.backgroundColor = UIColor.corOne
-        textField.layer.shadowColor = UIColor.corTwo.cgColor
-        textField.textColor = .corTwo
+        textField.backgroundColor = UIColor.primaryColor
+        textField.layer.shadowColor = UIColor.secondaryColor.cgColor
+        textField.textColor = .secondaryColor
         return textField
     }()
     
     lazy var idadeLabel: UILabel = {
         let label = TextLabelCustom(title: "Idade:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -89,15 +89,15 @@ protocol AssessmentScreenProtocol: AnyObject {
         let textField = TextFieldCustom(placeholder: "")
         textField.text = "22"
         textField.textAlignment = .center
-        textField.backgroundColor = UIColor.corOne
-        textField.layer.shadowColor = UIColor.corTwo.cgColor
-        textField.textColor = .corTwo
+        textField.backgroundColor = UIColor.primaryColor
+        textField.layer.shadowColor = UIColor.secondaryColor.cgColor
+        textField.textColor = .secondaryColor
         return textField
     }()
     
     lazy var pesoLabel: UILabel = {
         let label = TextLabelCustom(title: "Peso:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -105,16 +105,16 @@ protocol AssessmentScreenProtocol: AnyObject {
         let textField = TextFieldCustom(placeholder: "")
         textField.text = "68.8"
         textField.textAlignment = .center
-        textField.backgroundColor = UIColor.corOne
-        textField.layer.shadowColor = UIColor.corTwo.cgColor
-        textField.textColor = .corTwo
+        textField.backgroundColor = UIColor.primaryColor
+        textField.layer.shadowColor = UIColor.secondaryColor.cgColor
+        textField.textColor = .secondaryColor
         return textField
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .corTwo
+        tableView.backgroundColor = .secondaryColor
         tableView.separatorStyle = .none
         tableView.register(AssessmentCell.self, forCellReuseIdentifier: AssessmentCell.identifier)
         return tableView
@@ -123,7 +123,7 @@ protocol AssessmentScreenProtocol: AnyObject {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = .corTwo
+        backgroundColor = .secondaryColor
     }
     
     required init?(coder: NSCoder) {

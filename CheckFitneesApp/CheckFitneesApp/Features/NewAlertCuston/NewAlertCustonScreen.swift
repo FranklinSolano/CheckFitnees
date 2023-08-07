@@ -21,7 +21,7 @@ class NewAlertCustonScreen: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = TitleLabelCustom()
-        label.textColor = .corOne
+        label.textColor = .primaryColor
         return label
     }()
     
@@ -35,7 +35,7 @@ class NewAlertCustonScreen: UIView {
     lazy var contentViewAlert: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
+        view.backgroundColor = UIColor.primaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 27
         return view
@@ -45,7 +45,7 @@ class NewAlertCustonScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "multiply.circle.fill"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -59,100 +59,100 @@ class NewAlertCustonScreen: UIView {
     
     lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "• Nome:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var nameTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do aluno",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.backgroundColor = UIColor.corOne
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite o nome do aluno",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textColor = .corTwo
+        tf.textColor = .secondaryColor
         return tf
     }()
     
     lazy var modalidadeLabel: UILabel = {
         let label = TextLabelCustom(title: "• Modalidade:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var modalidadeTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite a modalidade",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.backgroundColor = UIColor.corOne
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite a modalidade",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textColor = .corTwo
+        tf.textColor = .secondaryColor
         return tf
     }()
     
     lazy var emailLabel: UILabel = {
         let label = TextLabelCustom(title: "• Email:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var emailTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite o email",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.backgroundColor = UIColor.corOne
+        tf.attributedPlaceholder = NSAttributedString(string: "Digite o email",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textColor = .corTwo
+        tf.textColor = .secondaryColor
         return tf
     }()
     
     lazy var alturaLabel: UILabel = {
         let label = TextLabelCustom(title: "• Altura:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var alturaTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 170",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.backgroundColor = UIColor.corOne
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 170",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textColor = .corTwo
+        tf.textColor = .secondaryColor
         tf.textAlignment = .center
         return tf
     }()
     
     lazy var pesoLabel: UILabel = {
         let label = TextLabelCustom(title: "• Peso:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var pesoTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70.0",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.backgroundColor = UIColor.corOne
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 70.0",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textColor = .corTwo
+        tf.textColor = .secondaryColor
         tf.textAlignment = .center
         return tf
     }()
     
     lazy var idadeLabel: UILabel = {
         let label = TextLabelCustom(title: "• Idade:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var idadeTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 21",attributes: [NSAttributedString.Key.foregroundColor: UIColor.corTwo])
-        tf.backgroundColor = UIColor.corOne
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 21",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
-        tf.textColor = .corTwo
+        tf.textColor = .secondaryColor
         tf.textAlignment = .center
         return tf
     }()
     
     lazy var homemLabel: UILabel = {
         let label = TextLabelCustom(title: "Homem")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -160,13 +160,13 @@ class NewAlertCustonScreen: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "circle.fill")
-        image.tintColor = .corTwo
+        image.tintColor = .secondaryColor
         return image
     }()
     
     lazy var mulherLabel: UILabel = {
         let label = TextLabelCustom(title: "Mulher")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -174,14 +174,14 @@ class NewAlertCustonScreen: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "circle")
-        image.tintColor = .corTwo
+        image.tintColor = .secondaryColor
         return image
     }()
     
     lazy var adicionarButton: UIButton = {
         let button = ButtonCustom(title: "Adicionar")
-        button.backgroundColor = UIColor.corTwo
-        button.setTitleColor(UIColor.corOne, for: .normal)
+        button.backgroundColor = UIColor.secondaryColor
+        button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.layer.cornerRadius = 15
         button.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 18)
         button.addTarget(self, action: #selector(tappedAdicionarButton), for: .touchUpInside)
@@ -191,7 +191,7 @@ class NewAlertCustonScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corTwo
+        backgroundColor = UIColor.secondaryColor
     }
     
     required init?(coder: NSCoder) {
@@ -215,7 +215,7 @@ class NewAlertCustonScreen: UIView {
         let email = emailTextField.text ?? ""
         
         if !name.isEmpty && !modalidade.isEmpty && !idade.isEmpty && !altura.isEmpty && !peso.isEmpty && !email.isEmpty {
-            adicionarButton.setTitleColor(.corOne, for: .normal)
+            adicionarButton.setTitleColor(.primaryColor, for: .normal)
             adicionarButton.isEnabled = true
         } else {
             adicionarButton.setTitleColor(.lightGray, for: .normal)

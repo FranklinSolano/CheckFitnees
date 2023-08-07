@@ -21,7 +21,7 @@ class ForgotPasswordScreen: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = TitleLabelCustom()
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -29,7 +29,7 @@ class ForgotPasswordScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -37,7 +37,7 @@ class ForgotPasswordScreen: UIView {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -79,7 +79,7 @@ class ForgotPasswordScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.primaryColor
     }
     
     required init?(coder: NSCoder) {
@@ -90,8 +90,8 @@ class ForgotPasswordScreen: UIView {
         let email = emailTextField.text ?? ""
         
         if !email.isEmpty{
-            enterButton.setTitleColor(.corTwo, for: .normal)
-            enterButton.backgroundColor = .corOne
+            enterButton.setTitleColor(.secondaryColor, for: .normal)
+            enterButton.backgroundColor = .primaryColor
             enterButton.isEnabled = true
         } else {
             enterButton.setTitleColor(.lightGray, for: .normal)

@@ -53,39 +53,39 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             let item = screen?.nameLabel.text ?? ""
-            let vc = AvaliacaoViewController()
+            let vc = AssessmentViewController()
             vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             let item = screen?.nameLabel.text ?? ""
-            let vc = TaxaMetabolicaVC()
+            let vc = BasalMetabolicRateViewController()
             vc.viewModel.result = viewModel.itemClicked?.id ?? ""
             vc.name = item
             vc.delegate(delegate: self)
             navigationController?.pushViewController(vc, animated: true)
         case 2:
             let item = screen?.nameLabel.text ?? ""
-            let vc = PorcentualVC()
+            let vc = PercentageViewController()
             vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 3:
-            let vc:DietaFlexivelVC = DietaFlexivelVC()
+            let vc = FlexibleDietViewController()
             vc.modalPresentationStyle = .overFullScreen
             vc.modalTransitionStyle = .flipHorizontal
             self.present(vc, animated: true)
         case 4:
             let item = screen?.nameLabel.text ?? ""
-            let vc = CicloCarboidratosVC()
+            let vc = CarbCycleViewController()
             vc.name = item
             navigationController?.pushViewController(vc, animated: true)
         case 5:
-            let vc = TreinoVC()
+            let vc = TrainingViewController()
             navigationController?.pushViewController(vc, animated: true)
         case 6:
-            let vc = VolumeTreinoVC()
+            let vc = TrainingVolumeViewController()
             navigationController?.pushViewController(vc, animated: true)
         default:
-            let vc = GraficoVC()
+            let vc = GraphicViewController()
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -93,7 +93,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - TaxaMetabolicaVCProtocol
 
-extension ProfileViewController: TaxaMetabolicaVCProtocol{
+extension ProfileViewController: BasalMetabolicRateViewControllerProtocol{
     func succes(with taxa: Double) {
         viewModel.itemClicked?.taxaMetabolica = taxa
         viewModel.updateSecondCellLabel()

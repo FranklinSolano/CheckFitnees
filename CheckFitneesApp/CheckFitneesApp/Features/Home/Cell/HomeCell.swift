@@ -12,10 +12,10 @@ class HomeCell: UITableViewCell {
     lazy var contentViewHome: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
-        view.layer.borderColor = UIColor.corOne.cgColor
+        view.layer.borderColor = UIColor.primaryColor.cgColor
         view.layer.borderWidth = 2
         return view
     }()
@@ -35,7 +35,7 @@ class HomeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        backgroundColor = UIColor.corTwo
+        backgroundColor = UIColor.secondaryColor
         setupViewCode()
     }
     
@@ -43,7 +43,7 @@ class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configCell(data:PerfilModel){
+    func configCell(data:ProfileModel){
         addAlunoLabel.text = "Aluno: \(data.name ?? "")"
         modalidadeLabel.text = "Modalidade: \(data.modalidade ?? "")"
     }

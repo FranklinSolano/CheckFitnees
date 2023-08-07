@@ -50,7 +50,7 @@ class HomeScreen: UIView {
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.backgroundColor = UIColor.corTwo
+        tv.backgroundColor = UIColor.secondaryColor
         tv.separatorStyle = .none
         tv.register(HomeCell.self, forCellReuseIdentifier: HomeCell.identifier)
         return tv
@@ -59,7 +59,7 @@ class HomeScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corTwo
+        backgroundColor = UIColor.secondaryColor
     }
     
     required init?(coder: NSCoder) {

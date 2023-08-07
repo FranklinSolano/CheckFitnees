@@ -23,7 +23,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
+        view.backgroundColor = UIColor.primaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -34,8 +34,8 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.setTitle("voltar", for: .normal)
-        button.setTitleColor(.corTwo, for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.setTitleColor(.secondaryColor, for: .normal)
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -44,13 +44,13 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "person.circle.fill")
-        image.tintColor = UIColor.corTwo
+        image.tintColor = UIColor.secondaryColor
         return image
     }()
     
     lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "" )
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -64,7 +64,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     lazy var contentView2: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
+        view.backgroundColor = UIColor.primaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -72,7 +72,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     
     lazy var weightLabel: UILabel = {
         let label = TextLabelCustom(title: "• Peso:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -81,14 +81,14 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
         tf.text = "68.8"
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textAlignment = .center
-        tf.backgroundColor = .corOne
-        tf.textColor = .corTwo
+        tf.backgroundColor = .primaryColor
+        tf.textColor = .secondaryColor
         return tf
     }()
     
     lazy var heightLabel: UILabel = {
         let label = TextLabelCustom(title: "• Altura:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -97,14 +97,14 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
         tf.text = "164"
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textAlignment = .center
-        tf.backgroundColor = .corOne
-        tf.textColor = .corTwo
+        tf.backgroundColor = .primaryColor
+        tf.textColor = .secondaryColor
         return tf
     }()
     
     lazy var ageLabel: UILabel = {
         let label = TextLabelCustom(title: "• Idade:")
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -113,8 +113,8 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
         tf.text = "22"
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textAlignment = .center
-        tf.backgroundColor = .corOne
-        tf.textColor = .corTwo
+        tf.backgroundColor = .primaryColor
+        tf.textColor = .secondaryColor
         return tf
     }()
     
@@ -123,7 +123,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
         label.font = UIFont(name: "Roboto-Regular", size: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -136,7 +136,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corTwo
+        backgroundColor = UIColor.secondaryColor
     }
     
     required init?(coder: NSCoder) {

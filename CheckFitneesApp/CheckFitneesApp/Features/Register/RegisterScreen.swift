@@ -21,7 +21,7 @@ class RegisterScreen: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = TitleLabelCustom()
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -29,7 +29,7 @@ class RegisterScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -37,7 +37,7 @@ class RegisterScreen: UIView {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -111,7 +111,7 @@ class RegisterScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.primaryColor
     }
     
     required init?(coder: NSCoder) {
@@ -123,25 +123,6 @@ class RegisterScreen: UIView {
         emailTextField.delegate = delegate
         passwordTextField.delegate = delegate
         confirmPasswordTextField.delegate = delegate
-    }
-    
-    public func configButtonOn(){
-        let name = nameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let confirmPassword = confirmPasswordTextField.text ?? ""
-        
-        if !name.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPassword.isEmpty {
-            singUpButton.setTitleColor(.corTwo, for: .normal)
-            singUpButton.backgroundColor = .corOne
-            singUpButton.isEnabled = true
-        } else {
-            singUpButton.setTitleColor(.lightGray, for: .normal)
-            singUpButton.backgroundColor = .gray
-            singUpButton.isEnabled = false
-        }
-        
-        
     }
     
     public func passwordDivergentsLabel(){

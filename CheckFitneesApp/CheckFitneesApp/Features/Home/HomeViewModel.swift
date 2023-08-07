@@ -20,7 +20,7 @@ class HomeViewModel {
         self.delegate = delegate
     }
     
-    var datapopular: [PerfilModel] = []
+    var datapopular: [ProfileModel] = []
     var userId = Auth.auth().currentUser?.uid
     var db = Firestore.firestore()
     
@@ -47,7 +47,7 @@ class HomeViewModel {
                         let carb = element["carb"]
                         let proteina = element["proteina"]
                         let gordura = element["gordura"]
-                        return PerfilModel(name: name as? String, modalidade:modalidade as? String, id: id as? String ?? "", taxaMetabolica: taxaMetabolica as? Double, porcentual: porcentual as? String, carb: carb as? String, proteina: proteina as? String, gordura: gordura as? String)
+                        return ProfileModel(name: name as? String, modalidade:modalidade as? String, id: id as? String ?? "", taxaMetabolica: taxaMetabolica as? Double, porcentual: porcentual as? String, carb: carb as? String, proteina: proteina as? String, gordura: gordura as? String)
                     }
                     self.datapopular = objetosArray
                     self.delegate?.succes()

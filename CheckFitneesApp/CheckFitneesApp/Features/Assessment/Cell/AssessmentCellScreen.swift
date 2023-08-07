@@ -12,21 +12,21 @@ final class AssessmentCellScreen: UIView {
     lazy var foldsLabel: UILabel = {
         let label = TextLabelCustom(title: "DOBRAS (mm)")
         label.font = UIFont(name: "Roboto-Bold", size: 18)
-        label.textColor = .corOne
+        label.textColor = .primaryColor
         return label
     }()
     
     lazy var rightLabel: UILabel = {
         let label = TextLabelCustom(title: "Direito")
         label.font = UIFont(name: "Roboto-Bold", size: 18)
-        label.textColor = .corOne
+        label.textColor = .primaryColor
         return label
     }()
     
     lazy var leftLabel: UILabel = {
         let label = TextLabelCustom(title: "Esquerdo")
         label.font = UIFont(name: "Roboto-Bold", size: 18)
-        label.textColor = .corOne
+        label.textColor = .primaryColor
         return label
     }()
     
@@ -253,7 +253,7 @@ final class AssessmentCellScreen: UIView {
     lazy var measurementsLabel: UILabel = {
         let label = TextLabelCustom(title: "MEDIDAS (cm)")
         label.font = UIFont(name: "Roboto-Bold", size: 18)
-        label.textColor = .corOne
+        label.textColor = .primaryColor
         return label
     }()
     
@@ -375,7 +375,7 @@ final class AssessmentCellScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = .corTwo
+        backgroundColor = .secondaryColor
     }
     
     required init?(coder: NSCoder) {

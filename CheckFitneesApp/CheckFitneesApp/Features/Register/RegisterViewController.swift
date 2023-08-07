@@ -64,6 +64,7 @@ extension RegisterViewController: UITextFieldDelegate {
 //MARK: - RegisterViewModelProtocol
 
 extension RegisterViewController: RegisterViewModelProtocol {
+    
     func divergentsPassword() {
         screen?.errorLabel.isHidden = false
     }
@@ -73,8 +74,8 @@ extension RegisterViewController: RegisterViewModelProtocol {
     }
     
     func buttonOn() {
-        screen?.singUpButton.setTitleColor(.corTwo, for: .normal)
-        screen?.singUpButton.backgroundColor = .corOne
+        screen?.singUpButton.setTitleColor(.secondaryColor, for: .normal)
+        screen?.singUpButton.backgroundColor = .primaryColor
         screen?.singUpButton.isEnabled = true
     }
     
@@ -94,7 +95,7 @@ extension RegisterViewController: RegisterViewModelProtocol {
     
     func success() {
         alert?.getAlert(titulo: "Parabens", mensagem: "Usuario cadastrado com Sucesso!", completion: {
-            let vc:TabBarVC = TabBarVC()
+            let vc: TabBarViewController = TabBarViewController()
             self.navigationController?.pushViewController(vc, animated: false)
         })
     }

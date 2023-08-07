@@ -11,10 +11,10 @@ import UIKit
     lazy var contentView1: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
-        view.layer.borderColor = UIColor.corOne.cgColor
+        view.layer.borderColor = UIColor.primaryColor.cgColor
         view.layer.borderWidth = 2
         return view
     }()
@@ -65,7 +65,7 @@ import UIKit
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "dieta")
-        image.tintColor = .corOne
+        image.tintColor = .primaryColor
         return image
     }()
     
@@ -74,7 +74,7 @@ import UIKit
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        backgroundColor = .corTwo
+        backgroundColor = .secondaryColor
         setupViewCode()
     }
     
