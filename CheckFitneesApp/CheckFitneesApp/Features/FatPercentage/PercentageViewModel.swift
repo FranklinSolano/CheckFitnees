@@ -23,8 +23,5 @@ protocol PercentageViewModelProtocol: AnyObject {
          if triceps.isEmpty && breastplate.isEmpty && middleAuxiliary.isEmpty && suprailiac.isEmpty && subscapular.isEmpty && thigh.isEmpty && abdominal.isEmpty {
              self.delegate?.validateFields()
          }
-         
-         
      }
-    
 }

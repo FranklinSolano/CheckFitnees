@@ -36,7 +36,7 @@ import UIKit
 
 extension HomeViewController: HomeScreenProtocol {
     func actionAddButton() {
-        let vc:NewAlertCustonVC = NewAlertCustonVC()
+        let vc: NewAlertCustonViewController = NewAlertCustonViewController()
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .flipHorizontal
         vc.delegate(delegate: self)
@@ -72,7 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = viewModel.datapopular[indexPath.row]
-        let vc:PerfilVC = PerfilVC()
+        let vc: ProfileViewController = ProfileViewController()
         vc.viewModel.itemClicked = item
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -89,7 +89,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //MARK: - HomeViewModelProtocol
 
 extension HomeViewController: HomeViewModelProtocol {
-    func succes() {
+    func success() {
         self.screen?.tableView.reloadData()
     }
     func error() {

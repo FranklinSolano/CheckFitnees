@@ -12,7 +12,7 @@ protocol RegisterScreenProtocol: AnyObject {
     func actionSingUpButton()
 }
 
-class RegisterScreen: UIView {
+final class RegisterScreen: UIView {
     
     weak var delegate: RegisterScreenProtocol?
     public func delegate(delegate: RegisterScreenProtocol){
@@ -21,7 +21,7 @@ class RegisterScreen: UIView {
     
     lazy var titleLabel: UILabel = {
         let label = TitleLabelCustom()
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
@@ -29,7 +29,7 @@ class RegisterScreen: UIView {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -37,7 +37,7 @@ class RegisterScreen: UIView {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -49,8 +49,8 @@ class RegisterScreen: UIView {
     }()
     
     lazy var nameTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu nome")
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite seu nome")
+        return textField
     }()
     
     lazy var emailLabel: UILabel = {
@@ -59,9 +59,9 @@ class RegisterScreen: UIView {
     }()
     
     lazy var emailTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite seu email:")
-        tf.autocapitalizationType = .none
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite seu email:")
+        textField.autocapitalizationType = .none
+        return textField
     }()
     
     lazy var errorEmailLabel: UILabel = {
@@ -78,9 +78,9 @@ class RegisterScreen: UIView {
     }()
     
     lazy var passwordTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite sua senha:")
-        tf.isSecureTextEntry = true
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite sua senha:")
+        textField.isSecureTextEntry = true
+        return textField
     }()
     
     lazy var confirmPasswordLabel: UILabel = {
@@ -89,9 +89,9 @@ class RegisterScreen: UIView {
     }()
     
     lazy var confirmPasswordTextField: UITextField = {
-        let tf = TextFieldCustom(placeholder: "Digite novamente sua senha:")
-        tf.isSecureTextEntry = true
-        return tf
+        let textField = TextFieldCustom(placeholder: "Digite novamente sua senha:")
+        textField.isSecureTextEntry = true
+        return textField
     }()
     
     lazy var errorLabel: UILabel = {
@@ -111,7 +111,7 @@ class RegisterScreen: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corOne
+        backgroundColor = UIColor.primaryColor
     }
     
     required init?(coder: NSCoder) {
@@ -123,33 +123,6 @@ class RegisterScreen: UIView {
         emailTextField.delegate = delegate
         passwordTextField.delegate = delegate
         confirmPasswordTextField.delegate = delegate
-    }
-    
-    public func configButtonOn(){
-        let name = nameTextField.text ?? ""
-        let email = emailTextField.text ?? ""
-        let password = passwordTextField.text ?? ""
-        let confirmPassword = confirmPasswordTextField.text ?? ""
-        
-        if !name.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPassword.isEmpty {
-            singUpButton.setTitleColor(.corTwo, for: .normal)
-            singUpButton.backgroundColor = .corOne
-            singUpButton.isEnabled = true
-        } else {
-            singUpButton.setTitleColor(.lightGray, for: .normal)
-            singUpButton.backgroundColor = .gray
-            singUpButton.isEnabled = false
-        }
-        
-        
-    }
-    
-    public func passwordDivergentsLabel(){
-        if passwordTextField.text != confirmPasswordTextField.text {
-            errorLabel.isHidden = false
-        } else {
-            errorLabel.isHidden = true
-        }
     }
     
     @objc private func tappedBackButton(){
@@ -165,10 +138,7 @@ class RegisterScreen: UIView {
 
 extension RegisterScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,errorEmailLabel,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,errorLabel,singUpButton]
-        for view in views {
-            addSubview(view)
-        }
+        [titleLabel,backButton,contentView,nameLabel,nameTextField,emailLabel,emailTextField,errorEmailLabel,passwordLabel,passwordTextField,confirmPasswordLabel,confirmPasswordTextField,errorLabel,singUpButton].forEach({addSubview($0)})
     }
     
     func configConstraint() {
@@ -222,7 +192,7 @@ extension RegisterScreen: ViewCode {
             singUpButton.bottomAnchor.constraint(equalTo: errorLabel.bottomAnchor,constant: 100),
             singUpButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 20),
             singUpButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -20),
-            singUpButton.heightAnchor.constraint(equalToConstant: 55),
+            singUpButton.heightAnchor.constraint(equalToConstant: 55)
         ])
     }
 }

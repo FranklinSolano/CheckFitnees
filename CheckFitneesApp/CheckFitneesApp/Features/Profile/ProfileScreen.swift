@@ -21,7 +21,7 @@ protocol ProfileScreenProtocol: AnyObject {
     lazy var contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corOne
+        view.backgroundColor = UIColor.primaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 20
         return view
@@ -32,8 +32,8 @@ protocol ProfileScreenProtocol: AnyObject {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "chevron.left"), for: .normal)
         button.setTitle("voltar", for: .normal)
-        button.setTitleColor(.corTwo, for: .normal)
-        button.tintColor = UIColor.corTwo
+        button.setTitleColor(.secondaryColor, for: .normal)
+        button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
         return button
     }()
@@ -43,21 +43,21 @@ protocol ProfileScreenProtocol: AnyObject {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(systemName: "person.circle.fill")
-        image.tintColor = UIColor.corTwo
+        image.tintColor = UIColor.secondaryColor
         return image
     }()
     
     lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "")
         label.font = UIFont.systemFont(ofSize: 14)
-        label.textColor = .corTwo
+        label.textColor = .secondaryColor
         return label
     }()
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.backgroundColor = .corTwo
+        tableView.backgroundColor = .secondaryColor
         tableView.separatorStyle = .none
         tableView.register(ProfileCell.self, forCellReuseIdentifier: ProfileCell.identifier)
         return tableView
@@ -66,7 +66,7 @@ protocol ProfileScreenProtocol: AnyObject {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupViewCode()
-        backgroundColor = UIColor.corTwo
+        backgroundColor = UIColor.secondaryColor
     }
     
     required init?(coder: NSCoder) {
@@ -91,7 +91,7 @@ protocol ProfileScreenProtocol: AnyObject {
 
 extension ProfileScreen: ViewCode {
     func configElements() {
-        [contentView,backButton1,imagePerson,nameLabel,tableView].forEach({addSubview($0)})
+        [contentView, backButton1, imagePerson, nameLabel, tableView].forEach({addSubview($0)})
     }
     
     func configConstraint() {

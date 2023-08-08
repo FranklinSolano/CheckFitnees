@@ -9,13 +9,13 @@ import Foundation
 
 public struct ProfileModel{
     let name: String?
-    let modalidade: String?
+    let modality: String?
     let id: String?
-    var taxaMetabolica: Double?
-    var porcentual: String?
-    var carb: String?
-    var proteina: String?
-    var gordura: String?
+    var basalMetabolicRate: Double?
+    var percentage: String?
+    var carbohydrates: String?
+    var protein: String?
+    var fat: String?
     var title: String?
     var buttonGeneric: String?
     var image: String?

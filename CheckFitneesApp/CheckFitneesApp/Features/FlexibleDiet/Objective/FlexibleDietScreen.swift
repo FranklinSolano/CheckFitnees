@@ -14,7 +14,7 @@ protocol FlexibleDietScreenProtocol: AnyObject {
     func actionCancelButton()
 }
 
-class FlexibleDietScreen: UIView {
+ final class FlexibleDietScreen: UIView {
     
     weak var delegate: FlexibleDietScreenProtocol?
     public func delegate(delegate:FlexibleDietScreenProtocol) {
@@ -121,10 +121,7 @@ class FlexibleDietScreen: UIView {
 
 extension FlexibleDietScreen: ViewCode {
     func configElements() {
-        let views: [UIView] = [titleLabel,imageLogo,contentView,objectiveLabel, gainWeightButton,maintainWeightButton,loseWeightButton,cancelButton]
-        for view in views {
-            addSubview(view)
-        }
+        [titleLabel, imageLogo, contentView, objectiveLabel, gainWeightButton, maintainWeightButton, loseWeightButton, cancelButton].forEach({addSubview($0)})
     }
     
     func configConstraint() {

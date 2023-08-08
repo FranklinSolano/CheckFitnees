@@ -28,7 +28,7 @@ class TextFieldCustom: UITextField {
         self.autocorrectionType = .no
         self.borderStyle = .roundedRect
         self.keyboardType = .default
-        self.backgroundColor = UIColor.corTwo
+        self.backgroundColor = UIColor.secondaryColor
         self.textColor = UIColor.white
         self.borderStyle = .none
         self.layer.shadowColor = UIColor.white.cgColor
@@ -42,7 +42,7 @@ class TextFieldCustom: UITextField {
 extension UITextField {
     
     func setBottomBorder(){
-        self.layer.shadowColor = UIColor.corTwo.cgColor
+        self.layer.shadowColor = UIColor.secondaryColor.cgColor
         self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
         self.layer.shadowOpacity = 1.0
         self.layer.shadowRadius = 0.0

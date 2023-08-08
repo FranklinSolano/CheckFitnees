@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+ final class RegisterViewController: UIViewController {
     
     var screen: RegisterScreen?
     var viewModel: RegisterViewModel = RegisterViewModel()
@@ -64,17 +64,18 @@ extension RegisterViewController: UITextFieldDelegate {
 //MARK: - RegisterViewModelProtocol
 
 extension RegisterViewController: RegisterViewModelProtocol {
+    
     func divergentsPassword() {
         screen?.errorLabel.isHidden = false
     }
     
     func samePassword() {
-        screen?.errorLabel.isHidden = false
+        screen?.errorLabel.isHidden = true
     }
     
     func buttonOn() {
-        screen?.singUpButton.setTitleColor(.corTwo, for: .normal)
-        screen?.singUpButton.backgroundColor = .corOne
+        screen?.singUpButton.setTitleColor(.secondaryColor, for: .normal)
+        screen?.singUpButton.backgroundColor = .primaryColor
         screen?.singUpButton.isEnabled = true
     }
     
@@ -94,7 +95,7 @@ extension RegisterViewController: RegisterViewModelProtocol {
     
     func success() {
         alert?.getAlert(titulo: "Parabens", mensagem: "Usuario cadastrado com Sucesso!", completion: {
-            let vc:TabBarVC = TabBarVC()
+            let vc: TabBarViewController = TabBarViewController()
             self.navigationController?.pushViewController(vc, animated: false)
         })
     }

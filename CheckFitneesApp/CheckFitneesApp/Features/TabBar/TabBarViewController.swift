@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,15 +16,15 @@ class TabBarViewController: UITabBarController {
 
     private func setupTabBar(){
         
-        let homeTabBar = HomeVC()
+        let homeTabBar = HomeViewController()
         let historyTabBar = HistoryVC()
         let setteingsTabBar = SettingsVC()
         
         setViewControllers([homeTabBar, historyTabBar, setteingsTabBar], animated: false)
         
-        tabBar.backgroundColor = UIColor.corTwo
+        tabBar.backgroundColor = UIColor.secondaryColor
         tabBar.isTranslucent = false
-        tabBar.tintColor = UIColor.corOne
+        tabBar.tintColor = UIColor.primaryColor
         tabBar.unselectedItemTintColor = .gray
         guard let tabBarItem = tabBar.items else { return }
         
@@ -36,10 +36,6 @@ class TabBarViewController: UITabBarController {
 
         tabBarItem[2].title = "Perfil"
         tabBarItem[2].image = UIImage(systemName: "person")
-        
-        
     }
-    
-    
 }
 

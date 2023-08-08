@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AssessmentViewController: UIViewController {
+ final class AssessmentViewController: UIViewController {
     
     var screen: AssessmentScreen?
     var name = ""

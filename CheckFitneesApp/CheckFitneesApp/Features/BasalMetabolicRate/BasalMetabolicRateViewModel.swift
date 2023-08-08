@@ -32,11 +32,7 @@ import Firebase
         let calculoPeso = 13.7 * pesoResult
         let calculoAltura = 5.0 * alturaResult
         let calculoIdade = 6.7 * idadeResult
-        
-        let calculoPesoMulher = 9.6 * pesoResult
-        let calculoAlturaMulher = 1.8 * alturaResult
-        let calculoIdadeMulher = 4.7 * idadeResult
-        
+    
         
         let calculoSoma =  66 + (calculoPeso) + (calculoAltura) - (calculoIdade)
         reusltTaxaMetabolica = calculoSoma

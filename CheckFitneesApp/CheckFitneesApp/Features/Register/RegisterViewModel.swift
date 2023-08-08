@@ -5,15 +5,20 @@
 //  Created by Franklin  Stilhano on 5/29/23.
 //
 
-import UIKit
 import Firebase
 
 protocol RegisterViewModelProtocol: AnyObject {
-    func sucess()
+    func success()
     func error()
+    func buttonOn()
+    func buttonOf()
+    func nonExistentEmail()
+    func existingEmail()
+    func samePassword()
+    func divergentsPassword()
 }
 
-class RegisterViewModel{
+ final class RegisterViewModel{
     
     weak var delegate: RegisterViewModelProtocol?
     func delegate(delegate: RegisterViewModelProtocol){
@@ -27,7 +32,7 @@ class RegisterViewModel{
                 self.delegate?.error()
             } else {
                 self.savedDadosUser(email: email, name: name, id: result?.user.uid ?? "")
-                self.delegate?.sucess()
+                self.delegate?.success()
             }
         }
     }
@@ -39,30 +44,34 @@ class RegisterViewModel{
             "name": name,
             "email": email
         ])
-        
-        self.creatCollection(id: id)
     }
     
-    func checkEmailFirebase(email: String, label: UILabel) {
+    func checkEmailFirebase(email: String) {
         Auth.auth().fetchSignInMethods(forEmail: email) { (methods, error) in
-            if let error = error {
+            if error != nil {
             } else if let methods = methods {
                 if !methods.isEmpty {
-                    label.isHidden = false
+                    self.delegate?.existingEmail()
                 }
             } else {
-                label.isHidden = true
+                self.delegate?.nonExistentEmail()
             }
         }
     }
     
-    
-    func creatCollection(id:String){
-//        let dataPath = "Cells/\(id)"
-//        let docRef = db.collection(<#T##collectionPath: String##String#>)
-//        docRef.setData([
-//            "cells": ""
-//            ])
+    func configButtonOn(name: String, email: String, password: String, confirmPassword: String){
+        if !name.isEmpty && !email.isEmpty && !password.isEmpty && !confirmPassword.isEmpty {
+            self.delegate?.buttonOn()
+        } else {
+            self.delegate?.buttonOf()
         }
+    }
     
+    func divergentsPassword(password: String, confirmPassword: String) {
+        if password != confirmPassword {
+            self.delegate?.divergentsPassword()
+        } else {
+            self.delegate?.samePassword()
+        }
+    }
 }

@@ -24,10 +24,10 @@ class ButtonCustom: UIButton {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 18)
         self.setTitleColor(UIColor.white, for: .normal)
-        self.backgroundColor = UIColor.corTwo
+        self.backgroundColor = UIColor.secondaryColor
         self.clipsToBounds = true
         self.layer.cornerRadius = 12
-        self.layer.borderColor = UIColor.corOne.cgColor
+        self.layer.borderColor = UIColor.primaryColor.cgColor
         self.layer.borderWidth = 2
     }
 
@@ -38,7 +38,7 @@ extension UIButton {
         
         let bottomBorder = CALayer()
         bottomBorder.frame = CGRect(x: 0, y: button.frame.height - 1, width: button.frame.width, height: 2)
-        bottomBorder.backgroundColor = UIColor.corOne.cgColor
+        bottomBorder.backgroundColor = UIColor.primaryColor.cgColor
         button.layer.addSublayer(bottomBorder)
     }
     

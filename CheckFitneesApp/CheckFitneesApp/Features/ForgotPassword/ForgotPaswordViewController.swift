@@ -27,7 +27,7 @@ import UIKit
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        screen?.configButtonOn()
+        viewModel.configButtonOn(email: screen?.emailTextField.text ?? "")
     }
 }
 
@@ -39,7 +39,7 @@ extension ForgotPaswordViewController: ForgotPasswordScreenProtocol {
     }
     
     func actionEnterButton() {
-        viewModel.checkEmailFirebase(email: screen?.emailTextField.text ?? "", label: screen?.errorEmailLabel ?? UILabel())
+        viewModel.checkEmailFirebase(email: screen?.emailTextField.text ?? "")
     }
 }
 
@@ -48,7 +48,7 @@ extension ForgotPaswordViewController: ForgotPasswordScreenProtocol {
 extension ForgotPaswordViewController: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        screen?.configButtonOn()
+        viewModel.configButtonOn(email: screen?.emailTextField.text ?? "")
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
@@ -59,7 +59,25 @@ extension ForgotPaswordViewController: UITextFieldDelegate {
 //MARK: - ForgotPasswordViewModelProtocol
 
 extension ForgotPaswordViewController: ForgotPasswordViewModelProtocol {
-    func sucess() {
+    func emailDoesNotExist() {
+        screen?.errorEmailLabel.isHidden = false
+    }
+    
+    func buttonOn() {
+        screen?.enterButton.setTitleColor(.secondaryColor, for: .normal)
+        screen?.enterButton.backgroundColor = .primaryColor
+        screen?.enterButton.isEnabled = true
+    }
+    
+    func buttonOf() {
+        screen?.enterButton.setTitleColor(.lightGray, for: .normal)
+        screen?.enterButton.backgroundColor = .gray
+        screen?.enterButton.isEnabled = false
+    }
+    
+    
+    func success() {
+        screen?.errorEmailLabel.isHidden = true
         self.alert?.getAlert(titulo: "Sucesso", mensagem: "Link para redefinar a senha enviado!", completion: {
             self.dismiss(animated: true)
         })
@@ -68,6 +86,5 @@ extension ForgotPaswordViewController: ForgotPasswordViewModelProtocol {
     func error() {
         self.alert?.getAlert(titulo: "Atenção", mensagem: "Erro ao verificar email. Tente novamente!")
     }
-    
-    
+
 }

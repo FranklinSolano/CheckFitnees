@@ -11,10 +11,10 @@ import UIKit
     lazy var contentView1: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
-        view.layer.borderColor = UIColor.corOne.cgColor
+        view.layer.borderColor = UIColor.primaryColor.cgColor
         view.layer.borderWidth = 2
         return view
     }()
@@ -65,7 +65,7 @@ import UIKit
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "dieta")
-        image.tintColor = .corOne
+        image.tintColor = .primaryColor
         return image
     }()
     
@@ -74,7 +74,7 @@ import UIKit
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        backgroundColor = .corTwo
+        backgroundColor = .secondaryColor
         setupViewCode()
     }
     
@@ -84,9 +84,9 @@ import UIKit
     
     public func setupCell(data: ProfileModel?) {
         titleLabel.text = data?.title ?? ""
-        carbohydrateLabel.text = data?.carb ?? ""
-        proteinLabel.text = data?.proteina ?? ""
-        fatLabel.text = data?.gordura ?? ""
+        carbohydrateLabel.text = data?.carbohydrates ?? ""
+        proteinLabel.text = data?.protein ?? ""
+        fatLabel.text = data?.fat ?? ""
         calculateButton.setTitle(data?.buttonGeneric ?? "", for: .normal)
         imagePerson.image = UIImage(named: data?.image ?? "")
     }
@@ -96,7 +96,7 @@ import UIKit
 
 extension ProfileCell: ViewCode {
     func configElements() {
-        [contentView1,titleLabel,carbohydrateLabel,proteinLabel,fatLabel,calculateButton,imagePerson].forEach({addSubview($0)})
+        [contentView1, titleLabel, carbohydrateLabel, proteinLabel, fatLabel, calculateButton, imagePerson].forEach({addSubview($0)})
     }
     
     func configConstraint() {

@@ -52,10 +52,7 @@ class LevelActivityCell: UITableViewCell {
 
 extension LevelActivityCell: ViewCode {
     func configElements() {
-        let views: [UIView] = [contentView1,titleLabel,subTitleLabel]
-        for view in views {
-            addSubview(view)
-        }
+        [contentView1, titleLabel, subTitleLabel].forEach({addSubview($0)})
     }
     
     func configConstraint() {

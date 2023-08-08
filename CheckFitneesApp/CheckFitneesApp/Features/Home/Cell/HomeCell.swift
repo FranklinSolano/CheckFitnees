@@ -7,25 +7,25 @@
 
 import UIKit
 
-class HomeCell: UITableViewCell {
+ final class HomeCell: UITableViewCell {
     
     lazy var contentViewHome: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.corTwo
+        view.backgroundColor = UIColor.secondaryColor
         view.clipsToBounds = true
         view.layer.cornerRadius = 15
-        view.layer.borderColor = UIColor.corOne.cgColor
+        view.layer.borderColor = UIColor.primaryColor.cgColor
         view.layer.borderWidth = 2
         return view
     }()
     
-    lazy var addAlunoLabel: UILabel = {
+    lazy var nameLabel: UILabel = {
         let label = TextLabelCustom(title: "")
         return label
     }()
     
-    lazy var modalidadeLabel: UILabel = {
+    lazy var modalityLabel: UILabel = {
         let label = TextLabelCustom(title: "")
         return label
     }()
@@ -35,7 +35,7 @@ class HomeCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
-        backgroundColor = UIColor.corTwo
+        backgroundColor = UIColor.secondaryColor
         setupViewCode()
     }
     
@@ -43,9 +43,9 @@ class HomeCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configCell(data:PerfilModel){
-        addAlunoLabel.text = "Aluno: \(data.name ?? "")"
-        modalidadeLabel.text = "Modalidade: \(data.modalidade ?? "")"
+    func configCell(data:ProfileModel){
+        nameLabel.text = "Aluno: \(data.name ?? "")"
+        modalityLabel.text = "Modalidade: \(data.modality ?? "")"
     }
 }
 
@@ -54,8 +54,8 @@ class HomeCell: UITableViewCell {
 extension HomeCell: ViewCode {
     func configElements() {
         addSubview(contentViewHome)
-        contentViewHome.addSubview(addAlunoLabel)
-        contentViewHome.addSubview(modalidadeLabel)
+        contentViewHome.addSubview(nameLabel)
+        contentViewHome.addSubview(modalityLabel)
     }
     
     func configConstraint() {
@@ -66,11 +66,11 @@ extension HomeCell: ViewCode {
             contentViewHome.bottomAnchor.constraint(equalTo: bottomAnchor,constant: -10),
             contentViewHome.heightAnchor.constraint(equalToConstant: 70),
             
-            addAlunoLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -7),
-            addAlunoLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
+            nameLabel.centerYAnchor.constraint(equalTo: contentViewHome.centerYAnchor,constant: -7),
+            nameLabel.leadingAnchor.constraint(equalTo: contentViewHome.leadingAnchor,constant: 30),
             
-            modalidadeLabel.topAnchor.constraint(equalTo: addAlunoLabel.bottomAnchor),
-            modalidadeLabel.leadingAnchor.constraint(equalTo: addAlunoLabel.leadingAnchor)
+            modalityLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
+            modalityLabel.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor)
         ])
     }
 }

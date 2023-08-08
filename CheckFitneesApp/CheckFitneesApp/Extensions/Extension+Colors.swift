@@ -14,6 +14,4 @@ extension UIColor {
     
     static var primaryColor: UIColor {
         return UIColor(red: 166/255, green: 202/255, blue: 51/255, alpha: 1)  }
-    
-
 }

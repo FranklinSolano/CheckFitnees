@@ -5,15 +5,17 @@
 //  Created by Franklin  Stilhano on 5/29/23.
 //
 
-import UIKit
 import Firebase
 
 protocol ForgotPasswordViewModelProtocol: AnyObject {
-    func sucess()
+    func success()
     func error()
+    func buttonOn()
+    func buttonOf()
+    func emailDoesNotExist()
 }
 
-class ForgotPasswordViewModel {
+final class ForgotPasswordViewModel {
     
     var delegate: ForgotPasswordViewModelProtocol?
     func delegate(delegate: ForgotPasswordViewModelProtocol){
@@ -25,20 +27,27 @@ class ForgotPasswordViewModel {
     }
     
     
-    func checkEmailFirebase(email:String, label: UILabel){
+    func checkEmailFirebase(email:String){
         Auth.auth().fetchSignInMethods(forEmail: email) { (methods, error ) in
             if error != nil {
                 self.delegate?.error()
             } else if let methods = methods {
                 if methods.isEmpty {
-                    label.isHidden = false
+                    self.delegate?.emailDoesNotExist()
                 } else {
-                    label.isHidden = true
-                    self.delegate?.sucess()
+                    self.delegate?.success()
                 }
             } else {
-                label.isHidden = false
+                self.delegate?.emailDoesNotExist()
             }
+        }
+    }
+    
+    func configButtonOn(email: String){
+        if !email.isEmpty {
+            self.delegate?.buttonOn()
+        } else {
+            self.delegate?.buttonOf()
         }
     }
 }

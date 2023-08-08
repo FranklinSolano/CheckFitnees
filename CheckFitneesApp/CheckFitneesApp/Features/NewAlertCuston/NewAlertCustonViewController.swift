@@ -77,6 +77,4 @@ extension NewAlertCustonViewController: NewAlertCustonViewModelProtocol{
         screen?.toAddButton.setTitleColor(.lightGray, for: .normal)
         screen?.toAddButton.isEnabled = false
     }
-    
-    
 }

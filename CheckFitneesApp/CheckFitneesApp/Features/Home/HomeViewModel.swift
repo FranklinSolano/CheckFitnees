@@ -5,22 +5,21 @@
 //  Created by Franklin  Stilhano on 5/30/23.
 //
 
-import UIKit
 import Firebase
 
 protocol HomeViewModelProtocol: AnyObject {
-    func succes()
+    func success()
     func error()
 }
 
-class HomeViewModel {
+final class HomeViewModel {
     
     weak var delegate: HomeViewModelProtocol?
     func delegate(delegate:HomeViewModelProtocol) {
         self.delegate = delegate
     }
     
-    var datapopular: [PerfilModel] = []
+    var datapopular: [ProfileModel] = []
     var userId = Auth.auth().currentUser?.uid
     var db = Firestore.firestore()
     
@@ -47,10 +46,10 @@ class HomeViewModel {
                         let carb = element["carb"]
                         let proteina = element["proteina"]
                         let gordura = element["gordura"]
-                        return PerfilModel(name: name as? String, modalidade:modalidade as? String, id: id as? String ?? "", taxaMetabolica: taxaMetabolica as? Double, porcentual: porcentual as? String, carb: carb as? String, proteina: proteina as? String, gordura: gordura as? String)
+                        return ProfileModel(name: name as? String, modality:modalidade as? String, id: id as? String ?? "", basalMetabolicRate: taxaMetabolica as? Double, percentage: porcentual as? String, carbohydrates: carb as? String, protein: proteina as? String, fat: gordura as? String)
                     }
                     self.datapopular = objetosArray
-                    self.delegate?.succes()
+                    self.delegate?.success()
                 }
             }
         }

@@ -24,19 +24,19 @@ protocol PerfilViewModelProtocol: AnyObject {
     var datapopular: [ProfileModel] = []
     
     public func createPerfilModel(name: String, carb: String, proteina: String, gordura: String, title: String, buttonGeneric: String, image: String?) -> ProfileModel {
-        return ProfileModel(name: name, modalidade: "", id: "", taxaMetabolica: 0, porcentual: "", carb: carb, proteina: proteina, gordura: gordura, title: title, buttonGeneric: buttonGeneric, image: image)
+        return ProfileModel(name: name, modality: "", id: "", basalMetabolicRate: 0, percentage: "", carbohydrates: carb, protein: proteina, fat: gordura, title: title, buttonGeneric: buttonGeneric, image: image)
     }
     
     public func popularDatapopular() {
-        let taxaMetabolicaTitle = "Sua Taxa Metabólica Basal é \(String(format: "%.2f", self.itemClicked?.taxaMetabolica ?? 0)) Kcal"
-        let porcentualGorduraTitle = "   Seu porcentual de gordura é \(self.itemClicked?.porcentual ?? "") %"
+        let taxaMetabolicaTitle = "Sua Taxa Metabólica Basal é \(String(format: "%.2f", self.itemClicked?.basalMetabolicRate ?? 0)) Kcal"
+        let porcentualGorduraTitle = "   Seu porcentual de gordura é \(self.itemClicked?.percentage ?? "") %"
         
         let titles = ["Avaliação Fisica",taxaMetabolicaTitle, porcentualGorduraTitle, "Dieta Flexivel", "Ciclo de Carboidratos", "Treino", "Volume de Treino", "Grafico Evolução"]
         let buttonGenerics = ["Calcular Medidas", "Calcular", "Calcular", "Calcular Dieta", "Calcular Carboidratos", "Calcular Treino", "Calcular Volume de Treino", "Check Evolução"]
         let images =  ["1", "2", "3", "4", "5", "6", "7", "8"]
-        let carbo = ["","","","Carboidratos: \(self.itemClicked?.carb ?? "")", "","","",""]
-        let proteina = ["","","","Proteina: \(self.itemClicked?.proteina ?? "")", "","","",""]
-        let gordura = ["","","","Gordura: \(self.itemClicked?.gordura ?? "")", "","","",""]
+        let carbo = ["","","","Carboidratos: \(self.itemClicked?.carbohydrates ?? "")", "","","",""]
+        let proteina = ["","","","Proteina: \(self.itemClicked?.protein ?? "")", "","","",""]
+        let gordura = ["","","","Gordura: \(self.itemClicked?.fat ?? "")", "","","",""]
         
         self.datapopular = [
             createPerfilModel(name: "", carb: carbo[0], proteina: proteina[0], gordura: gordura[0], title: titles[0], buttonGeneric: buttonGenerics[0], image: images[0]),

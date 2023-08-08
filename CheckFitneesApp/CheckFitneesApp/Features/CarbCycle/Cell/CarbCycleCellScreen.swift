@@ -26,9 +26,9 @@ import UIKit
       }()
   
       lazy var proteinTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "Ex: 180")
-          tf.textAlignment = .center
-          return tf
+          let textField = TextFieldCustom(placeholder: "Ex: 180")
+          textField.textAlignment = .center
+          return textField
       }()
   
       lazy var fatLabel: UILabel = {
@@ -37,9 +37,9 @@ import UIKit
       }()
   
       lazy var fatTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "Ex: 70")
-          tf.textAlignment = .center
-          return tf
+          let textField = TextFieldCustom(placeholder: "Ex: 70")
+          textField.textAlignment = .center
+          return textField
       }()
   
       lazy var averageKcalLabel: UILabel = {
@@ -121,11 +121,11 @@ import UIKit
       }()
   
       lazy var carbohydratesLoxTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "")
-          tf.text = "182g"
-          tf.textAlignment = .center
-          tf.isEnabled = false
-          return tf
+          let textField = TextFieldCustom(placeholder: "")
+          textField.text = "182g"
+          textField.textAlignment = .center
+          textField.isEnabled = false
+          return textField
       }()
   
       lazy var proteinLoxLabel: UILabel = {
@@ -134,11 +134,11 @@ import UIKit
       }()
   
       lazy var proteinLoxTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "")
-          tf.text = "193g"
-          tf.textAlignment = .center
-          tf.isEnabled = false
-          return tf
+          let textField = TextFieldCustom(placeholder: "")
+          textField.text = "193g"
+          textField.textAlignment = .center
+          textField.isEnabled = false
+          return textField
       }()
   
       lazy var fatLoxLabel: UILabel = {
@@ -147,11 +147,11 @@ import UIKit
       }()
   
       lazy var fatLoxTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "")
-          tf.text = "89g"
-          tf.textAlignment = .center
-          tf.isEnabled = false
-          return tf
+          let textField = TextFieldCustom(placeholder: "")
+          textField.text = "89g"
+          textField.textAlignment = .center
+          textField.isEnabled = false
+          return textField
       }()
   
       lazy var averageKcalLoxLabel: UILabel = {
@@ -176,12 +176,11 @@ import UIKit
       }()
   
       lazy var carbohydratesHighTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "")
-          tf.text = "626g"
-          tf.textAlignment = .center
-          tf.isEnabled = false
-  
-          return tf
+          let textField = TextFieldCustom(placeholder: "")
+          textField.text = "626g"
+          textField.textAlignment = .center
+          textField.isEnabled = false
+          return textField
       }()
   
       lazy var proteinHighLabel: UILabel = {
@@ -190,11 +189,11 @@ import UIKit
       }()
   
       lazy var proteinHighTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "")
-          tf.text = "154g"
-          tf.textAlignment = .center
-          tf.isEnabled = false
-          return tf
+          let textField = TextFieldCustom(placeholder: "")
+          textField.text = "154g"
+          textField.textAlignment = .center
+          textField.isEnabled = false
+          return textField
       }()
   
       lazy var fatHighLabel: UILabel = {
@@ -203,11 +202,11 @@ import UIKit
       }()
   
       lazy var fatHighTextField: UITextField = {
-          let tf = TextFieldCustom(placeholder: "")
-          tf.text = "62g"
-          tf.textAlignment = .center
-          tf.isEnabled = false
-          return tf
+          let textField = TextFieldCustom(placeholder: "")
+          textField.text = "62g"
+          textField.textAlignment = .center
+          textField.isEnabled = false
+          return textField
       }()
   
       lazy var averageKcalHighLabel: UILabel = {
