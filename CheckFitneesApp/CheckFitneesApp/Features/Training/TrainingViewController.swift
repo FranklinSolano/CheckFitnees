@@ -18,5 +18,15 @@ import UIKit
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        screen?.delegate(delegate: self)
     }
+}
+
+//MARK: -
+extension TrainingViewController: TrainingScreenProtocol {
+    func actionBackButton() {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    
 }

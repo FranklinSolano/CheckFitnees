@@ -136,7 +136,7 @@ protocol PercentageScreenProtocol: AnyObject {
         textField.text = ""
         textField.backgroundColor = .primaryColor
         textField.layer.shadowColor = UIColor.white.cgColor
-        return tf
+        return textField
     }()
     
     lazy var subscapularLabel: UILabel = {
