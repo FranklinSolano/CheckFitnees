@@ -108,6 +108,7 @@
 		EB6AF6202A7023DC00ADB92A /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6142A7023DC00ADB92A /* Roboto-BoldItalic.ttf */; };
 		EB6AF6212A7023DC00ADB92A /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6152A7023DC00ADB92A /* Roboto-Black.ttf */; };
 		EB6AF6222A7023DC00ADB92A /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6162A7023DC00ADB92A /* Roboto-Italic.ttf */; };
+		EB7A1C302AC1C51100A48955 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A1C2F2AC1C51100A48955 /* Utils.swift */; };
 		EB82C5F82AA42123003CFD43 /* AlertTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82C5F72AA42123003CFD43 /* AlertTrainingViewController.swift */; };
 		EB82C5FA2AA4213B003CFD43 /* AlertTrainingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82C5F92AA4213B003CFD43 /* AlertTrainingScreen.swift */; };
 		EB992DCB2A24204B0049FC8E /* BasalMetabolicRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */; };
@@ -207,6 +208,7 @@
 		EB6AF6142A7023DC00ADB92A /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EB6AF6152A7023DC00ADB92A /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		EB6AF6162A7023DC00ADB92A /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
+		EB7A1C2F2AC1C51100A48955 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		EB82C5F72AA42123003CFD43 /* AlertTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTrainingViewController.swift; sourceTree = "<group>"; };
 		EB82C5F92AA4213B003CFD43 /* AlertTrainingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTrainingScreen.swift; sourceTree = "<group>"; };
 		EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalMetabolicRateViewModel.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 		EB29178E2A1593D900183A92 /* CheckFitneesApp */ = {
 			isa = PBXGroup;
 			children = (
+				EB7A1C2E2AC1C4F800A48955 /* Utils */,
 				EB4246082A5F59D4000B648B /* Fonts */,
 				EB992DD02A252C790049FC8E /* Alert */,
 				EB1AE03F2A1FDB2400B32E1F /* Generic Componentes */,
@@ -557,6 +560,14 @@
 				EB6AF6122A7023DC00ADB92A /* Roboto-ThinItalic.ttf */,
 			);
 			path = Roboto;
+			sourceTree = "<group>";
+		};
+		EB7A1C2E2AC1C4F800A48955 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EB7A1C2F2AC1C51100A48955 /* Utils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		EB82C5F62AA420F7003CFD43 /* AlertTraining */ = {
@@ -799,6 +810,7 @@
 				EB2917AD2A1658D100183A92 /* RegisterViewController.swift in Sources */,
 				EB992DDC2A293A080049FC8E /* ProfileViewModel.swift in Sources */,
 				EBBF558F2A780517005459B0 /* TrainingScreen.swift in Sources */,
+				EB7A1C302AC1C51100A48955 /* Utils.swift in Sources */,
 				EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */,
 				EB46B93B2A2AE683001CCA2A /* AssessmentViewController.swift in Sources */,
 				EB4245FB2A4C98CC000B648B /* AssessmentCellScreen.swift in Sources */,
@@ -970,7 +982,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1000,7 +1012,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

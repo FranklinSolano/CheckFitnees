@@ -237,7 +237,7 @@ extension NewAlertCustonScreen: ViewCode {
             imageLogo.heightAnchor.constraint(equalToConstant: 46),
             imageLogo.widthAnchor.constraint(equalToConstant: 52),
             
-            tokenLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 75),
+            tokenLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 50),
             tokenLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             contentViewAlert.topAnchor.constraint(equalTo: tokenLabel.bottomAnchor,constant: 15),

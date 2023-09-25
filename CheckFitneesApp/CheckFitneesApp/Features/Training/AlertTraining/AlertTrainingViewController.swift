@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AlertTrainingViewController: UIViewController {
+final class AlertTrainingViewController: UIViewController {
     
     var screen: AlertTrainingScreen?
 
