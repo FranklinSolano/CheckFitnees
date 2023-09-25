@@ -184,7 +184,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
         button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.layer.cornerRadius = 15
         button.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 18)
-        button.addTarget(self, action: #selector(tappedAdicionarButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedToAddButton), for: .touchUpInside)
         return button
     }()
     
@@ -211,7 +211,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
         delegate?.actionBackButton()
     }
     
-    @objc private func tappedAdicionarButton(){
+    @objc private func tappedToAddButton(){
         delegate?.actionAdicionarButton()
     }
 }

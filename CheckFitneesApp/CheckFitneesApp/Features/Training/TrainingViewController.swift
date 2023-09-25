@@ -22,8 +22,13 @@ import UIKit
     }
 }
 
-//MARK: -
+//MARK: - TrainingScreenProtocol
 extension TrainingViewController: TrainingScreenProtocol {
+    func actionDataTraining() {
+        let vc: AlertTrainingViewController = AlertTrainingViewController()
+        self.navigationController?.pushViewController(vc, animated: false)
+    }
+    
     func actionBackButton() {
         self.navigationController?.popViewController(animated: true)
     }
