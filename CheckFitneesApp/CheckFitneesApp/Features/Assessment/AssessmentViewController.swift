@@ -11,6 +11,7 @@ import UIKit
     
     var screen: AssessmentScreen?
     var name = ""
+     var viewModel: AssessmentViewModel = AssessmentViewModel()
     
     override func loadView() {
         screen = AssessmentScreen()
@@ -22,6 +23,7 @@ import UIKit
         screen?.nameLabel.text = name
         screen?.delegate(delegate: self)
         screen?.configTableView(delegate: self, dataSouce: self)
+        viewModel.delegate(delegate: self)
     }
 }
 
@@ -47,6 +49,7 @@ extension AssessmentViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension AssessmentViewController: AssessmentScreenProtocol {
     func actionEditarButton() {
+        viewModel.enableButtonEdit(button: screen?.editDataButton ?? false)
     }
     
     func actionBackButton() {
@@ -54,3 +57,15 @@ extension AssessmentViewController: AssessmentScreenProtocol {
     }
 }
 
+//MARK: - AssessmentViewModelProtocol
+
+extension AssessmentViewController: AssessmentViewModelProtocol {
+    func enableButton() {
+        screen?.enableButton()
+    }
+    
+    func disableButton() {
+        screen?.disableButton()
+    }
+
+}

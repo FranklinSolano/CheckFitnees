@@ -122,7 +122,7 @@ extension LevelActivityScreen: ViewCode {
             imageLogo.heightAnchor.constraint(equalToConstant: 46),
             imageLogo.widthAnchor.constraint(equalToConstant: 52),
       
-            levelLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 80),
+            levelLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 50),
             levelLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: 15),
             levelLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -15),
             

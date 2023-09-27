@@ -7,7 +7,18 @@
 
 import UIKit
 
+protocol AssessmentCellScreenProtocol: AnyObject {
+    func buttonEnableOrDisable()
+}
+
 final class AssessmentCellScreen: UIView {
+    
+    weak var delegate: AssessmentCellScreenProtocol?
+    func delegate(delegate: AssessmentCellScreenProtocol) {
+        self.delegate = delegate
+    }
+    
+    var editAssessmentButton = false
     
     lazy var foldsLabel: UILabel = {
         let label = TextLabelCustom(title: "DOBRAS (mm)")
@@ -38,6 +49,7 @@ final class AssessmentCellScreen: UIView {
     lazy var tricepsTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -49,6 +61,7 @@ final class AssessmentCellScreen: UIView {
     lazy var tricepsLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -60,6 +73,7 @@ final class AssessmentCellScreen: UIView {
     lazy var bicepsTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -71,6 +85,7 @@ final class AssessmentCellScreen: UIView {
     lazy var bicepsLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -82,6 +97,7 @@ final class AssessmentCellScreen: UIView {
     lazy var breastplateTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -92,6 +108,7 @@ final class AssessmentCellScreen: UIView {
     
     lazy var breastplateLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
+        textField.isEnabled = false
         textField.textAlignment = .center
         return textField
     }()
@@ -104,6 +121,7 @@ final class AssessmentCellScreen: UIView {
     lazy var abdomenTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -115,6 +133,7 @@ final class AssessmentCellScreen: UIView {
     lazy var abdomenLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -126,6 +145,7 @@ final class AssessmentCellScreen: UIView {
     lazy var thighTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -137,6 +157,7 @@ final class AssessmentCellScreen: UIView {
     lazy var thighLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -148,6 +169,7 @@ final class AssessmentCellScreen: UIView {
     lazy var subscabularTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -159,6 +181,7 @@ final class AssessmentCellScreen: UIView {
     lazy var subscapularLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -170,6 +193,7 @@ final class AssessmentCellScreen: UIView {
     lazy var middleAssistantTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -181,6 +205,7 @@ final class AssessmentCellScreen: UIView {
     lazy var middleAssistantLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -192,6 +217,7 @@ final class AssessmentCellScreen: UIView {
     lazy var suprailiacTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -203,6 +229,7 @@ final class AssessmentCellScreen: UIView {
     lazy var suprailiacLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -214,6 +241,7 @@ final class AssessmentCellScreen: UIView {
     lazy var supraspinalTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -225,6 +253,7 @@ final class AssessmentCellScreen: UIView {
     lazy var supraspinalLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -236,6 +265,7 @@ final class AssessmentCellScreen: UIView {
     lazy var calfTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -247,6 +277,7 @@ final class AssessmentCellScreen: UIView {
     lazy var calfLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -265,6 +296,7 @@ final class AssessmentCellScreen: UIView {
     lazy var armTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -276,6 +308,7 @@ final class AssessmentCellScreen: UIView {
     lazy var contractedArmTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -287,6 +320,7 @@ final class AssessmentCellScreen: UIView {
     lazy var armLeftTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -298,6 +332,7 @@ final class AssessmentCellScreen: UIView {
     lazy var contractedLeftArmTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -309,6 +344,7 @@ final class AssessmentCellScreen: UIView {
     lazy var chestMeasurementTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -320,6 +356,7 @@ final class AssessmentCellScreen: UIView {
     lazy var abdominalTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -331,6 +368,7 @@ final class AssessmentCellScreen: UIView {
     lazy var measuredThighTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -342,6 +380,7 @@ final class AssessmentCellScreen: UIView {
     lazy var measureLeftThighTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -353,6 +392,7 @@ final class AssessmentCellScreen: UIView {
     lazy var easuredCalfTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
@@ -364,11 +404,13 @@ final class AssessmentCellScreen: UIView {
     lazy var pmeasureLeftCalfTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "Ex:10")
         textField.textAlignment = .center
+        textField.isEnabled = false
         return textField
     }()
     
     lazy var saveDataButton: UIButton = {
-        let button = ButtonCustom(title: "SALVAR")
+        let button = ButtonCustom(title: "EDITAR")
+        button.addTarget(self, action: #selector(tappedEditButton), for: .touchUpInside)
         return button
     }()
     
@@ -382,8 +424,82 @@ final class AssessmentCellScreen: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func enableButton(){
+        saveDataButton.setTitle("EDITAR", for: .normal)
+        saveDataButton.setTitleColor(UIColor.white, for: .normal)
+        tricepsTextField.isEnabled = false
+        tricepsLeftTextField.isEnabled = false
+        subscabularTextField.isEnabled = false
+        subscapularLeftTextField.isEnabled = false
+        middleAssistantTextField.isEnabled = false
+        middleAssistantLeftTextField.isEnabled = false
+        bicepsTextField.isEnabled = false
+        bicepsLeftTextField.isEnabled = false
+        breastplateTextField.isEnabled = false
+        breastplateLeftTextField.isEnabled = false
+        abdomenTextField.isEnabled = false
+        abdomenLeftTextField.isEnabled = false
+        thighTextField.isEnabled = false
+        thighLeftTextField.isEnabled = false
+        suprailiacTextField.isEnabled = false
+        suprailiacLeftTextField.isEnabled = false
+        supraspinalTextField.isEnabled = false
+        supraspinalLeftTextField.isEnabled = false
+        calfTextField.isEnabled = false
+        calfLeftTextField.isEnabled = false
+        armTextField.isEnabled = false
+        contractedArmTextField.isEnabled = false
+        armLeftTextField.isEnabled = false
+        contractedLeftArmTextField.isEnabled = false
+        chestMeasurementTextField.isEnabled = false
+        abdominalTextField.isEnabled = false
+        measuredThighTextField.isEnabled = false
+        measureLeftThighTextField.isEnabled = false
+        easuredCalfTextField.isEnabled = false
+        pmeasureLeftCalfTextField.isEnabled = false
+        editAssessmentButton = false
+    }
+    
+    func disableButton(){
+        saveDataButton.setTitle("SALVAR", for: .normal)
+        saveDataButton.setTitleColor(UIColor.red, for: .normal)
+        tricepsTextField.isEnabled = true
+        tricepsLeftTextField.isEnabled = true
+        subscabularTextField.isEnabled = true
+        subscapularLeftTextField.isEnabled = true
+        middleAssistantTextField.isEnabled = true
+        middleAssistantLeftTextField.isEnabled = true
+        bicepsTextField.isEnabled = true
+        bicepsLeftTextField.isEnabled = true
+        breastplateTextField.isEnabled = true
+        breastplateLeftTextField.isEnabled = true
+        abdomenTextField.isEnabled = true
+        abdomenLeftTextField.isEnabled = true
+        thighTextField.isEnabled = true
+        thighLeftTextField.isEnabled = true
+        suprailiacTextField.isEnabled = true
+        suprailiacLeftTextField.isEnabled = true
+        supraspinalTextField.isEnabled = true
+        supraspinalLeftTextField.isEnabled = true
+        calfTextField.isEnabled = true
+        calfLeftTextField.isEnabled = true
+        armTextField.isEnabled = true
+        contractedArmTextField.isEnabled = true
+        armLeftTextField.isEnabled = true
+        contractedLeftArmTextField.isEnabled = true
+        chestMeasurementTextField.isEnabled = true
+        abdominalTextField.isEnabled = true
+        measuredThighTextField.isEnabled = true
+        measureLeftThighTextField.isEnabled = true
+        easuredCalfTextField.isEnabled = true
+        pmeasureLeftCalfTextField.isEnabled = true
+        editAssessmentButton = true
+    }
+    
+    @objc func tappedEditButton(){
+        delegate?.buttonEnableOrDisable()
+    }
 }
-
 extension AssessmentCellScreen: ViewCode {
     func configElements() {
         [foldsLabel, rightLabel, leftLabel, tricepsLabel, tricepsTextField, tricepsLeftLabel, tricepsLeftTextField, subscabularLabel, subscabularTextField, subscapularLeftLabel, subscapularLeftTextField, middleAssistantLabel, middleAssistantTextField, middleAssistantLeftLabel, middleAssistantLeftTextField, bicepsLabel,bicepsTextField, bicepsLeftLabel, bicepsLeftTextField, breastplateLabel, breastplateTextField, breastplateLeftLabel, breastplateLeftTextField, abdomenLabel, abdomenTextField, abdomenLeftLabel, abdomenLeftTextField, thighLabel, thighTextField, thighLeftLabel, thighLeftTextField, suprailiacLabel, suprailiacTextField, suprailiacLeftLabel, suprailiacLeftTextField, supraspinalLabel, supraspinalTextField, supraspinalLeftLabel, supraspinalLeftTextField, calfLabel, calfTextField, calfLeftLabel, calfLeftTextField, measurementsLabel, armLabel, armTextField, contractedArmLabel, contractedArmTextField, armLeftLabel, armLeftTextField, contractedLeftArmLabel, contractedLeftArmTextField, chestMeasurementLabel, chestMeasurementTextField, abdominalLabel, abdominalTextField, measuredThighLabel, measuredThighTextField, measureLeftThighLabel, measureLeftThighTextField, measuredCalfLabel, easuredCalfTextField, pmeasureLeftCalfLabel, pmeasureLeftCalfTextField, saveDataButton].forEach({addSubview($0)})

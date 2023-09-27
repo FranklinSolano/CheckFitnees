@@ -99,6 +99,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
         tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .secondaryColor
+        tf.autocapitalizationType = .none
         return tf
     }()
     
@@ -142,7 +143,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
     
     lazy var ageTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 21",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 20",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
         tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .secondaryColor

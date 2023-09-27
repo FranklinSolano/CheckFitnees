@@ -77,7 +77,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     
     lazy var weightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
-        textField.text = "68.8"
+        textField.text = "67"
         textField.layer.shadowColor = UIColor.white.cgColor
         textField.textAlignment = .center
         textField.backgroundColor = .primaryColor
@@ -93,7 +93,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     
     lazy var heightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
-        textField.text = "164"
+        textField.text = "167"
         textField.layer.shadowColor = UIColor.white.cgColor
         textField.textAlignment = .center
         textField.backgroundColor = .primaryColor
