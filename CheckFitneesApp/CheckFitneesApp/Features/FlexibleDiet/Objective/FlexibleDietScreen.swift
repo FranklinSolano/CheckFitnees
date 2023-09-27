@@ -135,7 +135,7 @@ extension FlexibleDietScreen: ViewCode {
             imageLogo.heightAnchor.constraint(equalToConstant: 46),
             imageLogo.widthAnchor.constraint(equalToConstant: 52),
             
-            objectiveLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 100),
+            objectiveLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: 50),
             objectiveLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             contentView.topAnchor.constraint(equalTo: objectiveLabel.bottomAnchor,constant: 15),

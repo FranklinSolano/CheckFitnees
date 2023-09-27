@@ -9,6 +9,7 @@ import UIKit
 
 protocol TrainingScreenProtocol: AnyObject {
     func actionBackButton()
+    func actionDataTraining()
 }
 
  final class TrainingScreen: UIView {
@@ -42,6 +43,21 @@ protocol TrainingScreenProtocol: AnyObject {
          return button
      }()
      
+     lazy var dataTrainingButton: UIButton = {
+         let button = ButtonCustom(title: "     Dados do Treino")
+         button.contentHorizontalAlignment = .left
+         button.setTitleColor(.white, for: .normal)
+         button.addTarget(self, action: #selector(tappedDataTraining), for: .touchUpInside)
+         return button
+     }()
+     
+     lazy var imagePlus: UIImageView = {
+         let image = UIImageView()
+         image.translatesAutoresizingMaskIntoConstraints = false
+         image.image = UIImage(systemName: "plus.circle.fill")
+         image.tintColor = UIColor.white
+         return image
+     }()
      
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -56,14 +72,20 @@ protocol TrainingScreenProtocol: AnyObject {
      @objc func tappedBackButton(){
          self.delegate?.actionBackButton()
      }
+     
+     @objc func tappedDataTraining(){
+         self.delegate?.actionDataTraining()
+     }
+     
+     
     
 }
 
-//MARK: -
+//MARK: - ViewCode
 
 extension TrainingScreen: ViewCode {
     func configElements() {
-        [titleLabel, imageLogo, backButton].forEach({addSubview($0)})
+        [titleLabel, imageLogo, backButton, dataTrainingButton, imagePlus].forEach({addSubview($0)})
     }
     
     func configConstraint() {
@@ -80,9 +102,15 @@ extension TrainingScreen: ViewCode {
                 backButton.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor,constant: 10),
                 backButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 25),
                 
-                
+                dataTrainingButton.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 35),
+                dataTrainingButton.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
+                dataTrainingButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
+                dataTrainingButton.heightAnchor.constraint(equalToConstant: 60),
+
+                imagePlus.centerYAnchor.constraint(equalTo: dataTrainingButton.centerYAnchor),
+                imagePlus.trailingAnchor.constraint(equalTo: dataTrainingButton.trailingAnchor,constant: -30),
+                imagePlus.heightAnchor.constraint(equalToConstant: 30),
+                imagePlus.widthAnchor.constraint(equalToConstant: 30)
             ])
     }
-    
-    
 }

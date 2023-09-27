@@ -64,7 +64,6 @@ import UIKit
     lazy var imagePerson: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "dieta")
         image.tintColor = .primaryColor
         return image
     }()

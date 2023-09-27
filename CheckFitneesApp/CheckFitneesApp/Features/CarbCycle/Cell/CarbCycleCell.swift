@@ -22,6 +22,7 @@ import UIKit
         screen.configTextField(delegate: self)
         selectionStyle = .none
         backgroundColor = .secondaryColor
+        screen.delegate(delegate: self)
         setupViewCode()
     }
     
@@ -54,4 +55,28 @@ extension CarbCycleCell: UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+}
+
+//MARK: - CarbCycleCellScreenProtocol
+
+extension CarbCycleCell: CarbCycleCellScreenProtocol {
+    func actionTwoLoxButton() {
+        screen.lineView.backgroundColor = .primaryColor
+        screen.line2View.backgroundColor = .clear
+        screen.lineView3.backgroundColor = .clear
+    }
+    
+    func actionThreeLoxButton() {
+        screen.lineView.backgroundColor = .clear
+        screen.line2View.backgroundColor = .primaryColor
+        screen.lineView3.backgroundColor = .clear
+    }
+    
+    func actionForLoxButton() {
+        screen.lineView.backgroundColor = .clear
+        screen.line2View.backgroundColor = .clear
+        screen.lineView3.backgroundColor = .primaryColor
+    }
+    
+    
 }
