@@ -18,7 +18,7 @@ protocol AssessmentScreenProtocol: AnyObject {
     func delegate(delegate:AssessmentScreenProtocol) {
         self.delegate = delegate
     }
-    var editDataButton = false
+    var buttonSalvarDados = false
     
     lazy var contentView: UIView = {
         let view = UIView()
@@ -43,7 +43,7 @@ protocol AssessmentScreenProtocol: AnyObject {
     lazy var editarButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(systemName: "pencil"), for: .normal)
+        button.setImage(UIImage(named: "editar"), for: .normal)
         button.tintColor = UIColor.secondaryColor
         button.addTarget(self, action: #selector(tappedEditarButton), for: .touchUpInside)
         return button
@@ -71,12 +71,11 @@ protocol AssessmentScreenProtocol: AnyObject {
     
     lazy var heightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
-        textField.text = "167"
+        textField.text = "165"
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.primaryColor
         textField.layer.shadowColor = UIColor.secondaryColor.cgColor
         textField.textColor = .secondaryColor
-        textField.isEnabled = false
         return textField
     }()
     
@@ -93,7 +92,6 @@ protocol AssessmentScreenProtocol: AnyObject {
         textField.backgroundColor = UIColor.primaryColor
         textField.layer.shadowColor = UIColor.secondaryColor.cgColor
         textField.textColor = .secondaryColor
-        textField.isEnabled = false
         return textField
     }()
     
@@ -105,12 +103,11 @@ protocol AssessmentScreenProtocol: AnyObject {
     
     lazy var weightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
-        textField.text = "67"
+        textField.text = "68.8"
         textField.textAlignment = .center
         textField.backgroundColor = UIColor.primaryColor
         textField.layer.shadowColor = UIColor.secondaryColor.cgColor
         textField.textColor = .secondaryColor
-        textField.isEnabled = false
         return textField
     }()
     
@@ -137,22 +134,6 @@ protocol AssessmentScreenProtocol: AnyObject {
         tableView.delegate = delegate
         tableView.dataSource = dataSouce
     }
-     
-     func enableButton(){
-         editarButton.tintColor = UIColor.black
-         heightTextField.isEnabled = false
-         weightTextField.isEnabled = false
-         ageTextField.isEnabled = false
-         editDataButton = false
-     }
-     
-     func disableButton() {
-        editarButton.tintColor = UIColor.red
-        heightTextField.isEnabled = true
-        weightTextField.isEnabled = true
-        ageTextField.isEnabled =  true
-        editDataButton = true
-     }
     
     @objc func tappedBackButton(){
         delegate?.actionBackButton()

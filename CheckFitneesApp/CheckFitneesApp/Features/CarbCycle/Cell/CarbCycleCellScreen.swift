@@ -7,19 +7,8 @@
 
 import UIKit
 
-protocol CarbCycleCellScreenProtocol: AnyObject {
-    func actionTwoLoxButton()
-    func actionThreeLoxButton()
-    func actionForLoxButton()
-}
-
  final class CarbCycleCellScreen: UIView {
     
-     weak var delegate: CarbCycleCellScreenProtocol?
-     func delegate(delegate: CarbCycleCellScreenProtocol){
-         self.delegate = delegate
-     }
-     
     lazy var carbohydratesLabel: UILabel = {
           let label = TextLabelCustom(title: "Carboitrados:")
           return label
@@ -83,7 +72,7 @@ protocol CarbCycleCellScreenProtocol: AnyObject {
           button.setTitle("3 lox 1 high", for: .normal)
           button.titleLabel?.font = UIFont(name: "Roboto-Bold", size: 18)
           button.setTitleColor(UIColor.primaryColor , for: .normal)
-          button.addTarget(self, action: #selector(tappedThreeeLoxButton), for: .touchUpInside)
+          button.addTarget(self, action: #selector(tappedThreeeLokButton), for: .touchUpInside)
           return button
       }()
   
@@ -246,15 +235,20 @@ protocol CarbCycleCellScreenProtocol: AnyObject {
     }
     
     @objc private func tappedTwoLoxButton(){
-        delegate?.actionTwoLoxButton()
+        lineView.backgroundColor = .primaryColor
+        line2View.backgroundColor = .clear
+        lineView3.backgroundColor = .clear
     }
 
-    @objc private func tappedThreeeLoxButton(){
-        delegate?.actionThreeLoxButton()
-    }
+    @objc private func tappedThreeeLokButton(){
+        lineView.backgroundColor = .clear
+        line2View.backgroundColor = .primaryColor
+        lineView3.backgroundColor = .clear    }
 
     @objc private func tappedForLoxButton(){
-        delegate?.actionForLoxButton()
+        lineView.backgroundColor = .clear
+        line2View.backgroundColor = .clear
+        lineView3.backgroundColor = .primaryColor
     }
     
 }

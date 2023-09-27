@@ -108,11 +108,6 @@
 		EB6AF6202A7023DC00ADB92A /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6142A7023DC00ADB92A /* Roboto-BoldItalic.ttf */; };
 		EB6AF6212A7023DC00ADB92A /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6152A7023DC00ADB92A /* Roboto-Black.ttf */; };
 		EB6AF6222A7023DC00ADB92A /* Roboto-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB6AF6162A7023DC00ADB92A /* Roboto-Italic.ttf */; };
-		EB749B342AC32E8000C5D05E /* AssessmentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB749B332AC32E8000C5D05E /* AssessmentViewModel.swift */; };
-		EB749B362AC336AB00C5D05E /* AssessmentCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB749B352AC336AB00C5D05E /* AssessmentCellViewModel.swift */; };
-		EB7A1C302AC1C51100A48955 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB7A1C2F2AC1C51100A48955 /* Utils.swift */; };
-		EB82C5F82AA42123003CFD43 /* AlertTrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82C5F72AA42123003CFD43 /* AlertTrainingViewController.swift */; };
-		EB82C5FA2AA4213B003CFD43 /* AlertTrainingScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB82C5F92AA4213B003CFD43 /* AlertTrainingScreen.swift */; };
 		EB992DCB2A24204B0049FC8E /* BasalMetabolicRateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */; };
 		EB992DCD2A2503FA0049FC8E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */; };
 		EB992DCF2A2524E60049FC8E /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB992DCE2A2524E60049FC8E /* RegisterViewModel.swift */; };
@@ -210,11 +205,6 @@
 		EB6AF6142A7023DC00ADB92A /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
 		EB6AF6152A7023DC00ADB92A /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
 		EB6AF6162A7023DC00ADB92A /* Roboto-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Italic.ttf"; sourceTree = "<group>"; };
-		EB749B332AC32E8000C5D05E /* AssessmentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentViewModel.swift; sourceTree = "<group>"; };
-		EB749B352AC336AB00C5D05E /* AssessmentCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentCellViewModel.swift; sourceTree = "<group>"; };
-		EB7A1C2F2AC1C51100A48955 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		EB82C5F72AA42123003CFD43 /* AlertTrainingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTrainingViewController.swift; sourceTree = "<group>"; };
-		EB82C5F92AA4213B003CFD43 /* AlertTrainingScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTrainingScreen.swift; sourceTree = "<group>"; };
 		EB992DCA2A24204A0049FC8E /* BasalMetabolicRateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasalMetabolicRateViewModel.swift; sourceTree = "<group>"; };
 		EB992DCC2A2503FA0049FC8E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		EB992DCE2A2524E60049FC8E /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
@@ -354,7 +344,6 @@
 		EB29178E2A1593D900183A92 /* CheckFitneesApp */ = {
 			isa = PBXGroup;
 			children = (
-				EB7A1C2E2AC1C4F800A48955 /* Utils */,
 				EB4246082A5F59D4000B648B /* Fonts */,
 				EB992DD02A252C790049FC8E /* Alert */,
 				EB1AE03F2A1FDB2400B32E1F /* Generic Componentes */,
@@ -436,7 +425,6 @@
 			children = (
 				EB4245F72A4C9834000B648B /* AssessmentCell.swift */,
 				EB4245FA2A4C98CC000B648B /* AssessmentCellScreen.swift */,
-				EB749B352AC336AB00C5D05E /* AssessmentCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -480,7 +468,6 @@
 		EB46B9302A2AE5F3001CCA2A /* Assessment */ = {
 			isa = PBXGroup;
 			children = (
-				EB749B332AC32E8000C5D05E /* AssessmentViewModel.swift */,
 				EB46B93A2A2AE683001CCA2A /* AssessmentViewController.swift */,
 				EB3F006C2A2FA37700244574 /* AssessmentScreen.swift */,
 				EB4245F92A4C989C000B648B /* Cell */,
@@ -493,7 +480,6 @@
 			children = (
 				EB46B9382A2AE678001CCA2A /* TrainingViewController.swift */,
 				EBBF558E2A780517005459B0 /* TrainingScreen.swift */,
-				EB82C5F62AA420F7003CFD43 /* AlertTraining */,
 			);
 			path = Training;
 			sourceTree = "<group>";
@@ -566,23 +552,6 @@
 				EB6AF6122A7023DC00ADB92A /* Roboto-ThinItalic.ttf */,
 			);
 			path = Roboto;
-			sourceTree = "<group>";
-		};
-		EB7A1C2E2AC1C4F800A48955 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				EB7A1C2F2AC1C51100A48955 /* Utils.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		EB82C5F62AA420F7003CFD43 /* AlertTraining */ = {
-			isa = PBXGroup;
-			children = (
-				EB82C5F72AA42123003CFD43 /* AlertTrainingViewController.swift */,
-				EB82C5F92AA4213B003CFD43 /* AlertTrainingScreen.swift */,
-			);
-			path = AlertTraining;
 			sourceTree = "<group>";
 		};
 		EB992DD02A252C790049FC8E /* Alert */ = {
@@ -803,7 +772,6 @@
 				EB1AE04C2A2066EE00B32E1F /* CarbCycleScreen.swift in Sources */,
 				EB2917B12A1662AA00183A92 /* ForgotPasswordScreen.swift in Sources */,
 				EB1AE0432A1FE70900B32E1F /* ButtonCustom.swift in Sources */,
-				EB82C5FA2AA4213B003CFD43 /* AlertTrainingScreen.swift in Sources */,
 				EBAF5D392A197E0900AA1692 /* HomeScreen.swift in Sources */,
 				EB1AE03C2A1E735300B32E1F /* HistoryVC.swift in Sources */,
 				EB2917942A1593D900183A92 /* LoginViewController.swift in Sources */,
@@ -811,12 +779,10 @@
 				EB1AE0352A1C5A8100B32E1F /* Extension+Colors.swift in Sources */,
 				EB1AE0292A1BC84A00B32E1F /* BasalMetabolicRateViewController.swift in Sources */,
 				EB992DD22A252C920049FC8E /* Alert.swift in Sources */,
-				EB82C5F82AA42123003CFD43 /* AlertTrainingViewController.swift in Sources */,
 				EB2917902A1593D900183A92 /* AppDelegate.swift in Sources */,
 				EB2917AD2A1658D100183A92 /* RegisterViewController.swift in Sources */,
 				EB992DDC2A293A080049FC8E /* ProfileViewModel.swift in Sources */,
 				EBBF558F2A780517005459B0 /* TrainingScreen.swift in Sources */,
-				EB7A1C302AC1C51100A48955 /* Utils.swift in Sources */,
 				EB1AE0452A1FEC5B00B32E1F /* TitleLabelCustom.swift in Sources */,
 				EB46B93B2A2AE683001CCA2A /* AssessmentViewController.swift in Sources */,
 				EB4245FB2A4C98CC000B648B /* AssessmentCellScreen.swift in Sources */,
@@ -837,9 +803,7 @@
 				EB46B9372A2AE665001CCA2A /* TrainingVolumeViewController.swift in Sources */,
 				EB4245FE2A5DEF88000B648B /* LevelActivityScreen.swift in Sources */,
 				EB1AE0382A1E710700B32E1F /* TabBarViewController.swift in Sources */,
-				EB749B362AC336AB00C5D05E /* AssessmentCellViewModel.swift in Sources */,
 				EB992DD82A2662150049FC8E /* ProfileModel.swift in Sources */,
-				EB749B342AC32E8000C5D05E /* AssessmentViewModel.swift in Sources */,
 				EB2917922A1593D900183A92 /* SceneDelegate.swift in Sources */,
 				EB4246042A5DFF81000B648B /* LevelActivityModel.swift in Sources */,
 				EB4245F82A4C9834000B648B /* AssessmentCell.swift in Sources */,
@@ -990,7 +954,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1020,7 +984,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

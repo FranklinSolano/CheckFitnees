@@ -62,8 +62,6 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             vc.viewModel.result = viewModel.itemClicked?.id ?? ""
             vc.name = item
             vc.delegate(delegate: self)
-            let resultBasal = viewModel.itemClicked?.basalMetabolicRate
-            vc.resultBasal = resultBasal ?? 0
             navigationController?.pushViewController(vc, animated: true)
         case 2:
             let item = screen?.nameLabel.text ?? ""

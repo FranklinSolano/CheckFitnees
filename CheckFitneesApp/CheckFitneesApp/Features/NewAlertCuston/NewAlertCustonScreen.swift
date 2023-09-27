@@ -99,7 +99,6 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
         tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .secondaryColor
-        tf.autocapitalizationType = .none
         return tf
     }()
     
@@ -143,7 +142,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
     
     lazy var ageTextField: UITextField = {
         let tf = TextFieldCustom(placeholder: "")
-        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 20",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
+        tf.attributedPlaceholder = NSAttributedString(string: "Ex: 21",attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryColor])
         tf.backgroundColor = UIColor.primaryColor
         tf.layer.shadowColor = UIColor.white.cgColor
         tf.textColor = .secondaryColor
@@ -185,7 +184,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
         button.setTitleColor(UIColor.primaryColor, for: .normal)
         button.layer.cornerRadius = 15
         button.titleLabel?.font = UIFont(name: "Roboto-Medium", size: 18)
-        button.addTarget(self, action: #selector(tappedToAddButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(tappedAdicionarButton), for: .touchUpInside)
         return button
     }()
     
@@ -212,7 +211,7 @@ protocol NewAlertCustonScreenProtocol: AnyObject {
         delegate?.actionBackButton()
     }
     
-    @objc private func tappedToAddButton(){
+    @objc private func tappedAdicionarButton(){
         delegate?.actionAdicionarButton()
     }
 }
@@ -238,7 +237,7 @@ extension NewAlertCustonScreen: ViewCode {
             imageLogo.heightAnchor.constraint(equalToConstant: 46),
             imageLogo.widthAnchor.constraint(equalToConstant: 52),
             
-            tokenLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 50),
+            tokenLabel.topAnchor.constraint(equalTo: imageLogo.bottomAnchor,constant: 75),
             tokenLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             contentViewAlert.topAnchor.constraint(equalTo: tokenLabel.bottomAnchor,constant: 15),

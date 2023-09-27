@@ -10,8 +10,6 @@ import UIKit
  final class AssessmentCell: UITableViewCell {
     
     static let identifier: String = "AvaliacaoCell"
-     
-     var viewModel: AssessmentCellViewModel = AssessmentCellViewModel()
     
     private lazy var screen: AssessmentCellScreen = {
         let view = AssessmentCellScreen()
@@ -23,8 +21,6 @@ import UIKit
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
         backgroundColor = .secondaryColor
-        screen.delegate(delegate: self)
-        viewModel.delegate(delegate: self)
         setupViewCode()
      
     }
@@ -47,25 +43,4 @@ extension AssessmentCell: ViewCode {
             screen.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-}
-//MARK: - AssessmentCellScreenProtocol
-extension AssessmentCell: AssessmentCellScreenProtocol {
-    func buttonEnableOrDisable() {
-        viewModel.enableButtonSaved(button: screen.editAssessmentButton )
-    }
-    
-    
-}
-
-//MARK: - AssessmentCellViewModelProtocol
-extension AssessmentCell: AssessmentCellViewModelProtocol {
-    func enableButton() {
-        screen.enableButton()
-    }
-    
-    func disableButton() {
-        screen.disableButton()
-    }
-    
-    
 }

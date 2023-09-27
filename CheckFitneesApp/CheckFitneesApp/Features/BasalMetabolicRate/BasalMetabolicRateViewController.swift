@@ -11,7 +11,7 @@ protocol BasalMetabolicRateViewControllerProtocol: AnyObject {
     func succes(with taxa: Double)
 }
 
-final class BasalMetabolicRateViewController: UIViewController {
+ final class BasalMetabolicRateViewController: UIViewController {
     
     weak var delegate:BasalMetabolicRateViewControllerProtocol?
     func delegate(delegate:BasalMetabolicRateViewControllerProtocol) {
@@ -21,8 +21,6 @@ final class BasalMetabolicRateViewController: UIViewController {
     var screen: BasalMetabolicRateScreen?
     var viewModel: BasalMetabolicRateViewModel = BasalMetabolicRateViewModel()
     var name = ""
-    var resultBasal = 0.0
-    
     
     override func loadView() {
         screen = BasalMetabolicRateScreen()
@@ -34,7 +32,6 @@ final class BasalMetabolicRateViewController: UIViewController {
         screen?.delegate(delegate: self)
         screen?.configTextField(delegate: self)
         screen?.nameLabel.text = name
-        screen?.resultBasalMetabolicRateLabel.text = "Taxa Metabólica Basal \(String(format: "%.2f", resultBasal)) Kcal"
     }
 }
 

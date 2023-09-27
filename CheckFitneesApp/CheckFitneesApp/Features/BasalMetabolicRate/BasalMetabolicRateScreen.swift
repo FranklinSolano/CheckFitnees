@@ -14,6 +14,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
 
  final class BasalMetabolicRateScreen: UIView {
     
+    var name = ""
     weak var delegate: BasalMetabolicRateScreenProtocol?
     public func delegate(delegate: BasalMetabolicRateScreenProtocol){
         self.delegate = delegate
@@ -77,7 +78,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     
     lazy var weightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
-        textField.text = "67"
+        textField.text = "68.8"
         textField.layer.shadowColor = UIColor.white.cgColor
         textField.textAlignment = .center
         textField.backgroundColor = .primaryColor
@@ -93,7 +94,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     
     lazy var heightTextField: UITextField = {
         let textField = TextFieldCustom(placeholder: "")
-        textField.text = "167"
+        textField.text = "164"
         textField.layer.shadowColor = UIColor.white.cgColor
         textField.textAlignment = .center
         textField.backgroundColor = .primaryColor
@@ -118,7 +119,7 @@ protocol BasalMetabolicRateScreenProtocol: AnyObject {
     }()
     
     lazy var resultBasalMetabolicRateLabel: UILabel = {
-        let label = TextLabelCustom(title: "")
+        let label = TextLabelCustom(title: "Taxa Metabólica Basal 0.0 Kcal")
         label.font = UIFont(name: "Roboto-Regular", size: 18)
         label.numberOfLines = 0
         label.textAlignment = .center
@@ -186,7 +187,7 @@ extension BasalMetabolicRateScreen: ViewCode {
             basalMetabolicRateLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             contentView2.topAnchor.constraint(equalTo: basalMetabolicRateLabel.bottomAnchor,constant: 15),
-            contentView2.heightAnchor.constraint(equalToConstant: 245),
+            contentView2.heightAnchor.constraint(equalToConstant: 300),
             contentView2.widthAnchor.constraint(equalToConstant: 340),
             contentView2.centerXAnchor.constraint(equalTo: centerXAnchor),
             
@@ -215,7 +216,7 @@ extension BasalMetabolicRateScreen: ViewCode {
             ageTextField.trailingAnchor.constraint(equalTo: weightTextField.trailingAnchor),
             ageTextField.heightAnchor.constraint(equalToConstant: 25),
             
-            resultBasalMetabolicRateLabel.bottomAnchor.constraint(equalTo: contentView2.bottomAnchor,constant: -15),
+            resultBasalMetabolicRateLabel.topAnchor.constraint(equalTo: ageTextField.bottomAnchor,constant: 50),
             resultBasalMetabolicRateLabel.leadingAnchor.constraint(equalTo: leadingAnchor,constant: 30),
             resultBasalMetabolicRateLabel.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -30),
             
